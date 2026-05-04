@@ -1,0 +1,66 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Check Python syntax
+        run: python -m py_compile feed.py
+
+      - name: Validate example config
+        run: |
+          python -c "
+          import yaml
+          with open('config.example.yaml') as f:
+              config = yaml.safe_load(f)
+          settings = config.get('settings', {})
+          assert 'base_url' in settings, 'Missing settings.base_url'
+          topics = config.get('topics', [])
+          assert len(topics) > 0, 'No topics defined'
+          for t in topics:
+              assert 'id' in t, f'Topic missing id: {t}'
+              assert 'target' in t, f'Topic {t[\"id\"]} missing target'
+              assert 'depth' in t, f'Topic {t[\"id\"]} missing depth'
+          feeds = config.get('feeds', [])
+          assert len(feeds) > 0, 'No feeds defined'
+          for f in feeds:
+              assert 'id' in f, f'Feed missing id: {f}'
+              assert 'combined_feed' in f, f'Feed {f[\"id\"]} missing combined_feed'
+              assert 'topics' in f, f'Feed {f[\"id\"]} missing topics'
+          topic_ids = {t['id'] for t in topics}
+          for f in feeds:
+              for tid in f['topics']:
+                  assert tid in topic_ids, f'Feed {f[\"id\"]} references unknown topic: {tid}'
+          print('Config validation passed')
+          "
+
+      - name: Check topic briefs exist for example config
+        run: |
+          python -c "
+          import yaml, os
+          with open('config.example.yaml') as f:
+              config = yaml.safe_load(f)
+          for t in config.get('topics', []):
+              brief = f'.claude/agents/topics/{t[\"id\"]}.md'
+              assert os.path.exists(brief), f'Missing topic brief: {brief}'
+              print(f'  OK: {brief}')
+          print('Topic brief check passed')
+          "
+
+      - name: Check template exists
+        run: test -f .claude/agents/topics/_template.md
