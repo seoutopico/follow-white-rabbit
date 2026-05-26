@@ -12,6 +12,11 @@ import uuid
 
 if os.name == "nt":
     import msvcrt
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except (AttributeError, OSError):
+        pass
 else:
     import fcntl
 from datetime import datetime, timezone
@@ -875,13 +880,17 @@ def generate_index_html(config, base_url):
         state = load_state(topic["id"], state_dir)
         total_entries += len(state.get("entries", []))
 
-    # Build per-feed subscribe links
+    # Build per-feed subscribe links (HTML for reading, XML for RSS readers)
     feed_links = []
     for feed_def in feed_defs:
-        feed_url = f"{base_url.rstrip('/')}/{feed_def['combined_feed']}.xml"
-        feed_links.append(f'    <a href="{feed_url}">{html.escape(feed_def["feed_name"])}</a>')
+        feed_html_url = f"{base_url.rstrip('/')}/{feed_def['combined_feed']}.html"
+        feed_xml_url = f"{base_url.rstrip('/')}/{feed_def['combined_feed']}.xml"
+        feed_links.append(
+            f'    <a href="{feed_html_url}">{html.escape(feed_def["feed_name"])}</a> '
+            f'<a href="{feed_xml_url}" class="rss" title="RSS XML">RSS</a>'
+        )
 
-    # Build per-topic channel sections for split feeds
+    # Build per-topic channel sections for split feeds (link to HTML reading pages)
     per_topic_html = ""
     for feed_def in feed_defs:
         if feed_def.get("split_by_topic"):
@@ -890,8 +899,12 @@ def generate_index_html(config, base_url):
                 topic = get_topic(config, topic_id)
                 topic_name = topic.get("name", topic_id) if topic else topic_id
                 slug = get_per_topic_feed_name(feed_def["combined_feed"], topic_id)
-                topic_url = f"{base_url.rstrip('/')}/{slug}.xml"
-                channel_links.append(f'<a href="{topic_url}">{html.escape(topic_name)}</a>')
+                topic_html_url = f"{base_url.rstrip('/')}/{slug}.html"
+                topic_xml_url = f"{base_url.rstrip('/')}/{slug}.xml"
+                channel_links.append(
+                    f'<a href="{topic_html_url}">{html.escape(topic_name)}</a> '
+                    f'<a href="{topic_xml_url}" class="rss" title="RSS XML">RSS</a>'
+                )
             if channel_links:
                 per_topic_html += f'  <div class="channels"><strong>{html.escape(feed_def["feed_name"])} channels:</strong><br/>\n'
                 per_topic_html += "    " + " &middot; ".join(channel_links) + "\n"
@@ -917,6 +930,8 @@ def generate_index_html(config, base_url):
         '    .channels { margin: 0.5rem 0 0; padding: 0.75rem 1rem; background: #f8f8f8; border-radius: 4px; font-size: 0.9rem; line-height: 1.6; }',
         '    .channels a { color: #0066cc; text-decoration: none; }',
         '    .channels a:hover { text-decoration: underline; }',
+        '    a.rss { font-size: 0.7rem; color: #999; text-decoration: none; padding: 0 0.3rem; border: 1px solid #ddd; border-radius: 3px; vertical-align: middle; }',
+        '    a.rss:hover { color: #f26522; border-color: #f26522; }',
         '    .topics { margin: 1rem 0; color: #666; font-size: 0.9rem; }',
         '    .meta { color: #999; font-size: 0.85rem; margin-top: 0.5rem; }',
         '    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e0e0e0; color: #999; font-size: 0.85rem; }',
@@ -941,9 +956,154 @@ def generate_index_html(config, base_url):
     ])
 
     index_path = feeds_dir / "index.html"
-    with open(index_path, "w") as f:
+    with open(index_path, "w", encoding="utf-8") as f:
         f.write("\n".join(parts))
     print(f"Generated index: {index_path}")
+
+
+PAGE_CSS = """
+  body { font-family: -apple-system, system-ui, sans-serif; max-width: 760px; margin: 2rem auto; padding: 0 1rem; color: #222; line-height: 1.6; }
+  header { border-bottom: 2px solid #e0e0e0; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+  header h1 { margin: 0 0 0.25rem; }
+  header .nav { font-size: 0.85rem; color: #666; }
+  header .nav a { color: #0066cc; text-decoration: none; }
+  header .nav a:hover { text-decoration: underline; }
+  article { padding: 1.5rem 0; border-bottom: 1px solid #eee; }
+  article:last-child { border-bottom: none; }
+  article h2 { margin: 0 0 0.25rem; font-size: 1.3rem; line-height: 1.3; }
+  article .date { color: #999; font-size: 0.85rem; margin-bottom: 0.75rem; }
+  article .body img, article .body figure img { max-width: 100%; height: auto; border-radius: 4px; margin: 0.5rem 0; }
+  article .body figure { margin: 1rem 0; }
+  article .body figure figcaption { font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.25rem; }
+  article .body a { color: #0066cc; }
+  article .body hr { border: 0; border-top: 1px solid #eee; margin: 1rem 0; }
+  article .body ul { padding-left: 1.2rem; }
+  article .thumb { float: right; max-width: 220px; max-height: 160px; margin: 0 0 0.75rem 1rem; border-radius: 4px; }
+  footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e0e0e0; color: #999; font-size: 0.85rem; }
+"""
+
+
+def _parse_feed_items(xml_path):
+    """Parse RSS XML and return (channel_title, channel_description, [items])."""
+    if not xml_path.exists():
+        return None, None, []
+    try:
+        tree = ET.parse(xml_path)
+    except ET.ParseError:
+        return None, None, []
+    channel = tree.getroot().find("channel")
+    if channel is None:
+        return None, None, []
+    ch_title = (channel.findtext("title") or "").strip()
+    ch_desc = (channel.findtext("description") or "").strip()
+    items = []
+    for item in channel.findall("item"):
+        pub = item.findtext("pubDate") or ""
+        # Sort key: parse pubDate, fallback to empty string for sort stability
+        try:
+            from email.utils import parsedate_to_datetime
+            sort_dt = parsedate_to_datetime(pub) if pub else datetime.min.replace(tzinfo=timezone.utc)
+        except (TypeError, ValueError):
+            sort_dt = datetime.min.replace(tzinfo=timezone.utc)
+        enclosure = item.find("enclosure")
+        img_url = enclosure.get("url") if enclosure is not None else None
+        items.append({
+            "title": (item.findtext("title") or "").strip(),
+            "description": item.findtext("description") or "",
+            "link": (item.findtext("link") or "").strip(),
+            "pubDate": pub,
+            "date_short": sort_dt.strftime("%Y-%m-%d") if sort_dt > datetime.min.replace(tzinfo=timezone.utc) else "",
+            "image": img_url,
+            "sort_dt": sort_dt,
+        })
+    items.sort(key=lambda x: x["sort_dt"], reverse=True)  # newest first
+    return ch_title, ch_desc, items
+
+
+def _render_page(title, description, items, base_url, xml_filename):
+    """Render a single HTML page for one feed (combined or per-topic)."""
+    rss_url = f"{base_url.rstrip('/')}/{xml_filename}"
+    parts = [
+        '<!DOCTYPE html>',
+        '<html lang="es">',
+        '<head>',
+        '  <meta charset="utf-8">',
+        '  <meta name="viewport" content="width=device-width, initial-scale=1">',
+        f'  <title>{html.escape(title)}</title>',
+        f'  <link rel="alternate" type="application/rss+xml" title="{html.escape(title)} RSS" href="{rss_url}">',
+        '  <style>' + PAGE_CSS + '  </style>',
+        '</head>',
+        '<body>',
+        '  <header>',
+        f'    <h1>{html.escape(title)}</h1>',
+        f'    <div class="nav"><a href="./">&larr; Volver al inicio</a> &middot; <a href="{rss_url}">Suscribir RSS</a> &middot; {len(items)} entradas</div>',
+    ]
+    if description:
+        parts.append(f'    <p style="margin:0.5rem 0 0;color:#666;">{html.escape(description)}</p>')
+    parts.append('  </header>')
+
+    if not items:
+        parts.append('  <p style="color:#999;">Todavía no hay entradas en este feed.</p>')
+    else:
+        for it in items:
+            parts.append('  <article>')
+            parts.append(f'    <h2>{html.escape(it["title"])}</h2>')
+            if it["date_short"]:
+                parts.append(f'    <div class="date">{it["date_short"]}</div>')
+            if it["image"]:
+                parts.append(f'    <img class="thumb" src="{html.escape(it["image"])}" alt="">')
+            parts.append(f'    <div class="body">{it["description"]}</div>')
+            parts.append('  </article>')
+
+    parts.extend([
+        f'  <footer>Generated by cc-deepfeed &middot; {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")}</footer>',
+        '</body>',
+        '</html>',
+    ])
+    return "\n".join(parts)
+
+
+def generate_topic_pages(config, base_url):
+    """Generate human-readable HTML pages: one per topic + one per combined feed."""
+    feeds_dir, _ = get_dirs(config)
+    written = 0
+    for feed_def in config.get("feeds", []):
+        # Combined feed page
+        combined = feed_def["combined_feed"]
+        xml_path = feed_path(feeds_dir, combined)
+        title, desc, items = _parse_feed_items(xml_path)
+        if title is not None:
+            html_out = _render_page(
+                title or feed_def["feed_name"],
+                desc or feed_def.get("feed_description", ""),
+                items, base_url, f"{combined}.xml",
+            )
+            out_path = feeds_dir / f"{combined}.html"
+            with open(out_path, "w", encoding="utf-8") as f:
+                f.write(html_out)
+            print(f"Generated page: {out_path} ({len(items)} entries)")
+            written += 1
+
+        # Per-topic pages if split_by_topic
+        if feed_def.get("split_by_topic"):
+            for topic_id in feed_def.get("topics", []):
+                slug = get_per_topic_feed_name(combined, topic_id)
+                topic_xml = feed_path(feeds_dir, slug)
+                t_title, t_desc, t_items = _parse_feed_items(topic_xml)
+                topic = get_topic(config, topic_id)
+                topic_name = (topic.get("name", topic_id) if topic else topic_id)
+                if t_title is not None:
+                    html_out = _render_page(
+                        t_title or topic_name,
+                        t_desc or "",
+                        t_items, base_url, f"{slug}.xml",
+                    )
+                    out_path = feeds_dir / f"{slug}.html"
+                    with open(out_path, "w", encoding="utf-8") as f:
+                        f.write(html_out)
+                    print(f"Generated page: {out_path} ({len(t_items)} entries)")
+                    written += 1
+    print(f"Total HTML pages generated: {written}")
 
 
 def backfill_split(config, feeds_dir):
@@ -1123,6 +1283,10 @@ def main():
     p_index = sub.add_parser("index-html", help="Generate index.html for all feeds")
     p_index.add_argument("--base-url", required=True, help="Base URL where feeds are hosted")
 
+    # render-html (human-readable pages per feed and per topic)
+    p_render = sub.add_parser("render-html", help="Generate human-readable HTML pages for each feed and topic")
+    p_render.add_argument("--base-url", required=True, help="Base URL where feeds are hosted")
+
     # check-targets
     p_check = sub.add_parser("check-targets", help="Check if entry targets were met for a run")
     p_check.add_argument("--run-id", default=None, help="Run ID to check (default: today's entries)")
@@ -1222,6 +1386,8 @@ def main():
         generate_opml(config, args.base_url)
     elif args.command == "index-html":
         generate_index_html(config, args.base_url)
+    elif args.command == "render-html":
+        generate_topic_pages(config, args.base_url)
     elif args.command == "check-targets":
         check_targets(config, args.run_id)
     elif args.command == "backfill-images":
