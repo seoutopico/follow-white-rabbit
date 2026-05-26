@@ -1,0 +1,404 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:ns0="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Papers Importantes de IA</title>
+    <description>Per-topic feed: Papers Importantes de IA</description>
+    <link>https://seoutopico.github.io/follow-white-rabbit/white-rabbit-papers-ia.xml</link>
+    <lastBuildDate>Tue, 26 May 2026 07:05:58 +0000</lastBuildDate>
+    <generator>cc-deepfeed</generator>
+    <ns0:link rel="self" href="https://seoutopico.github.io/follow-white-rabbit/white-rabbit-papers-ia.xml" type="application/rss+xml" />
+    <item>
+      <title>Recursive Language Models: cuando el LLM gestiona su propio contexto como variables en un REPL</title>
+      <description>&lt;p&gt;&lt;strong&gt;Paper:&lt;/strong&gt; &lt;em&gt;Recursive Language Models&lt;/em&gt;, Alex L. Zhang, Tim Kraska, Omar Khattab (MIT CSAIL), arXiv:2512.24601, diciembre 2025.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;El problema.&lt;/strong&gt; Los context windows largos siguen siendo un cuello de botella de calidad, no solo de coste. Métodos como RAG, summarization recursiva o long-context fine-tuning intentan parchearlo, pero todos comparten un supuesto: el prompt entero tiene que pasar por la atención del modelo en algún momento. Esto rompe cuando el input excede el window físico, y degrada (lost in the middle) mucho antes de eso.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;La idea clave.&lt;/strong&gt; En vez de meter el prompt en el context window, trátalo como una variable en un entorno externo (un REPL de Python) y deja que el LLM lo manipule programáticamente. El modelo puede inspeccionar trozos, hacer grep, descomponer la tarea, y lanzar llamadas recursivas a sí mismo (o a sub-LLMs) sobre fragmentos. La gestión del contexto deja de ser implícita (atención) y pasa a ser &lt;em&gt;explícita y delegada al propio modelo&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Método.&lt;/strong&gt; El RLM ejecuta en un sandbox tipo REPL donde el prompt original vive como un objeto Python. El modelo emite código que lee partes de ese objeto, llama recursivamente a otra instancia del LLM con un sub-prompt construido programáticamente, y agrega los resultados. No hay summarization fija ni chunking predeterminado: el patrón de descomposición emerge según la tarea. Los autores muestran trayectorias donde el modelo, por ejemplo, escribe un loop que itera sobre documentos, llama a un sub-LLM por cada uno, y combina las respuestas con código.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Resultados concretos.&lt;/strong&gt; Sobre cuatro benchmarks de long-context (incluyendo OOLONG y BrowseComp-Plus), RLM-Qwen3-8B mejora un &lt;strong&gt;28.3% de media&lt;/strong&gt; sobre el Qwen3-8B base, y se acerca a GPT-5 vanilla en tres de las cuatro tareas. Procesa inputs hasta &lt;strong&gt;dos órdenes de magnitud por encima del context window nominal&lt;/strong&gt; del modelo subyacente. El coste API es comparable a llamadas vanilla largas — el extra de orquestación se compensa porque las sub-llamadas son cortas y caben en context windows pequeños.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://arxiv.org/html/2512.24601v1/x1.png" alt="Comparativa GPT-5 vs RLM en tareas long-context" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Figura 1 del paper: RLM-Qwen3-8B alcanzando GPT-5 vanilla en tres de cuatro benchmarks de long-context.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Limitaciones reales.&lt;/strong&gt; El paper es honesto en algunos puntos pero esquiva otros. Lo que reconoce: la latencia end-to-end puede dispararse porque las llamadas recursivas son secuenciales en parte de la trayectoria, y el coste varía mucho por trayectoria (los autores reportan distribuciones, no solo medias). Lo que no aborda en profundidad: cómo se comporta el método cuando la tarea requiere razonamiento que cruza fragmentos distantes del prompt — el toy ejemplo de needle-in-haystack es fácil para un RLM porque el modelo puede hacer grep, pero ¿qué pasa con una tarea que necesita ver dos extremos de un documento de 500k tokens simultáneamente para deducir una contradicción? El paper no prueba ese caso adversarial.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Por qué importa fuera del paper.&lt;/strong&gt; Es un cambio de framing más que una técnica nueva. Convierte el problema "¿cómo extiendo el context window?" en "¿cómo le doy al modelo herramientas de programación para que él decida qué meter en su context window?". Conceptualmente está alineado con DSPy y con la línea de Khattab — programación declarativa sobre LLMs — pero aplicado a long-context en vez de a pipelines. Si esto se sostiene, deja de tener sentido entrenar long-context windows de millones de tokens cuando puedes resolverlo con un Qwen3-8B + un REPL.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué seguiría yo.&lt;/strong&gt; Si trabajo en RAG o agentes con knowledge bases grandes, probaría RLM-style scaffolds antes de seguir invirtiendo en chunking heurístico. La pregunta abierta más interesante: ¿cuánto del rendimiento depende del modelo base sabiendo escribir buen código de manipulación de strings? Un modelo base débil en código probablemente colapsa en este paradigma. El código está en GitHub (alexzhang13/rlm) — vale la pena leer las trayectorias emergentes antes de implementarlo desde cero.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2512.24601"&gt;https://arxiv.org/abs/2512.24601&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://alexzhang13.github.io/blog/2025/rlm/"&gt;https://alexzhang13.github.io/blog/2025/rlm/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/alexzhang13/rlm"&gt;https://github.com/alexzhang13/rlm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">91686251-4f72-5c1a-9f07-11cee02ae712</guid>
+      <pubDate>Mon, 04 May 2026 08:30:52 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2512.24601</link>
+      <enclosure url="https://arxiv.org/html/2512.24601v1/x1.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Latent-GRPO: por qué hacer RL sobre razonamiento latente rompe GRPO y cómo arreglarlo</title>
+      <description>&lt;p&gt;&lt;strong&gt;Paper:&lt;/strong&gt; &lt;em&gt;Latent-GRPO: Group Relative Policy Optimization for Latent Reasoning&lt;/em&gt;, Jingcheng Deng, Zihao Wei, Liang Pang et al., arXiv:2604.27998, abril 2026.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;El problema.&lt;/strong&gt; El razonamiento latente — comprimir Chain-of-Thought en vectores continuos en lugar de tokens explícitos — promete cadenas de razonamiento 3-4× más cortas y, por tanto, mucha menos latencia y coste. Pero entrenarlo con RL no es trivial. Si coges GRPO (la receta de DeepSeek-R1) y la aplicas tal cual a representaciones latentes, el entrenamiento explota o converge a algo peor que el modelo de partida. Este paper diagnostica exactamente por qué.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;La idea clave.&lt;/strong&gt; Tres patologías específicas de RL en espacio latente que no existen en RL sobre tokens: (1) las muestras se salen del manifold latente válido, (2) la perturbación de exploración (Gumbel) puede mover la masa de probabilidad en la dirección contraria al reward, y (3) reforzar dos caminos correctos a la vez puede producir una mezcla latente que &lt;em&gt;no&lt;/em&gt; es válida. Latent-GRPO añade tres parches específicos para cada una.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Método.&lt;/strong&gt; Tres modificaciones a GRPO:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Invalid-sample advantage masking.&lt;/strong&gt; Las trayectorias que se vuelven non-terminating (porque el latente se fue del manifold) se descartan del cómputo de advantage en vez de penalizarse. Penalizarlas envía gradiente sobre estados que ya están corruptos.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;One-sided noise sampling.&lt;/strong&gt; En lugar de Gumbel simétrico, se restringe la perturbación a ser positiva. Esto garantiza que la dirección del update siempre tenga el signo correcto respecto al advantage. Suena tonto, pero es lo que estabiliza el entrenamiento.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Optimal correct-path first-token selection.&lt;/strong&gt; Cuando varios rollouts llegan a la respuesta correcta por caminos distintos, no se promedian sus latentes (porque el promedio puede no ser válido). Se elige el primer token del camino con mayor probabilidad y se entrena solo sobre ese.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Resultados concretos.&lt;/strong&gt; Sobre ocho benchmarks de matemáticas (cuatro low-difficulty tipo GSM8K-Aug y cuatro high-difficulty incluyendo AIME), Latent-GRPO mejora &lt;strong&gt;+7.86 puntos Pass@1&lt;/strong&gt; en las fáciles y &lt;strong&gt;+14.77 puntos&lt;/strong&gt; en las difíciles sobre la inicialización latente. Más interesante: &lt;strong&gt;+4.27 puntos sobre GRPO explícito&lt;/strong&gt; en las difíciles, con cadenas de razonamiento &lt;strong&gt;3-4× más cortas&lt;/strong&gt;. Es decir, no es solo "más barato a costa de calidad" — es estrictamente mejor en hard math.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Limitaciones reales.&lt;/strong&gt; Lo que el paper reconoce abiertamente: es trabajo en desarrollo activo, los autores anuncian futuras revisiones del arXiv. Lo que se ve leyendo entre líneas: todos los benchmarks son de matemáticas. No hay evaluación en code generation, multi-hop QA ni tareas de agentes. El razonamiento latente comprime bien cuando el espacio de soluciones es estructuralmente similar (resolver ecuaciones), pero no está claro que comprima razonamiento heterogéneo (un agente que mezcla búsqueda, código y planificación). Tampoco hay ablation contra modelos mucho mayores — los resultados son sobre tamaños modestos.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Por qué importa fuera del paper.&lt;/strong&gt; Si el razonamiento latente acaba siendo viable a escala, cambia la economía de los reasoning models tipo o1 / R1. Hoy, parte importante del coste de inference es el throughput de tokens del CoT explícito; si puedes recortar 3-4× la longitud sin perder calidad, los reasoning models dejan de ser un lujo de inference. Pero la lección más importante del paper no es el resultado, es el diagnóstico: muestra que GRPO (y por extensión PPO) tienen supuestos discretos que se rompen sutilmente en continuo. Cualquiera que intente hacer RL sobre representaciones continuas (world models, latent action spaces en robótica) debería leer la sección de las tres patologías antes de empezar.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué seguiría yo.&lt;/strong&gt; Replicar el método en una tarea no-matemática para ver si la compresión 3-4× se sostiene fuera de problemas con estructura algorítmica clara. Y mirar de cerca si el one-sided noise sampling es generalizable como técnica para cualquier RL con perturbación Gumbel — me huele a que es una corrección útil mucho más allá de latent reasoning. El código no aparece todavía referenciado en la página del arXiv; conviene esperar a la siguiente versión antes de invertir tiempo en reimplementarlo.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2604.27998"&gt;https://arxiv.org/abs/2604.27998&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/html/2604.27998"&gt;https://arxiv.org/html/2604.27998&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">5374551f-3f60-52b4-bf30-5d86b1059c60</guid>
+      <pubDate>Mon, 04 May 2026 08:31:42 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2604.27998</link>
+      <enclosure url="https://arxiv.org/html/2604.27998/x1.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>MinerU2.5: parsing de documentos a 4 páginas/segundo con un VLM de 1.2B parámetros</title>
+      <description>&lt;p&gt;&lt;strong&gt;Paper:&lt;/strong&gt; &lt;em&gt;MinerU2.5: A Decoupled Vision-Language Model for Efficient High-Resolution Document Parsing&lt;/em&gt;, Junbo Niu, Zheng Liu, Zhuangcheng Gu, Bin Wang et al. (OpenDataLab), arXiv:2509.22186, septiembre 2025 (v2 actualizada).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;El problema.&lt;/strong&gt; Parsear PDFs complejos — tablas, fórmulas matemáticas, layouts a dos columnas, papers científicos — sigue siendo un cuello de botella feo en cualquier pipeline de RAG o de ingestion para training data. Los modelos generalistas tipo Qwen2.5-VL-72B funcionan razonablemente pero son carísimos por página. Los modelos especializados tipo dots.ocr o MonkeyOCR son más eficientes pero pierden precisión en formato denso. La pregunta práctica: ¿se puede tener calidad SOTA sin pagar el coste de un VLM gigante?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;La idea clave.&lt;/strong&gt; Desacoplar layout analysis y content recognition en dos pasadas, con resoluciones diferentes en cada una. Layout en imagen downsampleada (rápido), content en crops a resolución nativa (preciso). El modelo es uno solo de 1.2B parámetros, pero se invoca dos veces con prompts distintos.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Método.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Stage 1 — Layout analysis.&lt;/strong&gt; Imagen downsampleada se mete al VLM, que identifica regiones (texto, tabla, fórmula, figura) con bounding boxes y reading order. Como el input es pequeño, esta pasada es muy rápida.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Stage 2 — Content recognition.&lt;/strong&gt; Para cada región detectada, se extrae el crop a resolución nativa de la imagen original y se pasa al mismo VLM con un prompt específico ("reconoce esta tabla", "reconoce esta fórmula", etc.). Cada crop es pequeño, así que el coste de atención escala linealmente con número de regiones, no cuadráticamente con el tamaño total de la página.&lt;/li&gt;
+  &lt;li&gt;El truco está en que &lt;strong&gt;la atención nunca opera sobre la imagen completa a alta resolución&lt;/strong&gt; — que es donde se va el compute en VLMs naive de documentos.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;&lt;img src="https://arxiv.org/html/2509.22186v2/x1.png" alt="Performance highlights de MinerU2.5 vs otros modelos OCR" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Figura 1 del paper: MinerU2.5 alcanza SOTA en cuatro métricas (texto, fórmulas, tablas, reading order) con un orden de magnitud menos de cómputo que Qwen2.5-VL-72B.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Resultados concretos.&lt;/strong&gt; Sobre OmniDocBench (1.355 páginas):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Score global: 90.67&lt;/strong&gt; (state-of-the-art)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Text edit distance: 0.047&lt;/strong&gt; vs 0.094 de Qwen2.5-VL-72B (el modelo es 60× más pequeño)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tabla TEDS: 88.22&lt;/strong&gt; (el mejor del benchmark, supera a dots.ocr 86.78 y a Qwen2.5-VL-72B 82.15)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Fórmulas CDM: 88.46&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Throughput: 4.47 páginas/segundo en H200&lt;/strong&gt;, 2.12 páginas/segundo en A100. Esto es &lt;strong&gt;~7× más rápido que dots.ocr&lt;/strong&gt; y ~4× más rápido que MonkeyOCR-pro-3B en deployment optimizado con vLLM.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Limitaciones reales.&lt;/strong&gt; El paper se vende muy bien pero hay matices. Primero, OmniDocBench es un benchmark dominado por papers científicos en inglés y chino — no está claro cómo se comporta en documentos manuscritos, formularios oficiales con sellos, o PDFs degradados típicos de archivos legales. Segundo, el throughput reportado es con batch optimizado y vLLM; en single-document inference la ventaja se reduce. Tercero, el desacoplamiento layout/content depende de que la primera pasada acierte la segmentación: si el layout analysis falla en una región, ningún content recognition la rescata. No hay reportado un análisis de propagación de errores entre stages.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Por qué importa fuera del paper.&lt;/strong&gt; Es el primer modelo open-source de parsing de documentos donde la calidad/coste compite seriamente con APIs cerradas tipo Mistral OCR o Reducto. Los pesos están en Hugging Face (opendatalab/MinerU2.5-2509-1.2B), licencia clara, y el throughput es lo bastante alto como para procesar un corpus de millones de PDFs en horas, no semanas. Para cualquier equipo construyendo RAG sobre documentos no triviales — papers, reports financieros, manuales técnicos — esto cambia el cálculo de make-vs-buy.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué seguiría yo.&lt;/strong&gt; Probarlo contra un corpus interno propio antes que confiar en OmniDocBench, especialmente si los documentos no son papers académicos. La arquitectura de dos stages es replicable conceptualmente con cualquier VLM base — sería interesante ver si la receta funciona aplicándola sobre Qwen3-VL o sobre modelos más pequeños tipo Qwen2-VL-2B. También vale la pena estudiar el data engine (ellos generaron corpora sintéticos masivos) — esa parte del paper es más interesante de lo que parece, porque la calidad SOTA con 1.2B parámetros viene tanto de la arquitectura como de la dieta de datos.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2509.22186"&gt;https://arxiv.org/abs/2509.22186&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/html/2509.22186v2"&gt;https://arxiv.org/html/2509.22186v2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://huggingface.co/papers/2509.22186"&gt;https://huggingface.co/papers/2509.22186&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://huggingface.co/opendatalab/MinerU2.5-2509-1.2B"&gt;https://huggingface.co/opendatalab/MinerU2.5-2509-1.2B&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">3a292b08-95dc-5fd4-939e-3d30eda0382f</guid>
+      <pubDate>Mon, 04 May 2026 08:32:43 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2509.22186</link>
+      <enclosure url="https://arxiv.org/html/2509.22186v2/x1.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Nemotron-Cascade 2: oro en IMO, IOI e ICPC con un MoE de 3B activos</title>
+      <description>&lt;p&gt;&lt;strong&gt;Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation&lt;/strong&gt; (Yang et al., NVIDIA, marzo 2026, &lt;a href="https://arxiv.org/abs/2603.19220"&gt;arXiv:2603.19220&lt;/a&gt;) es uno de los technical reports más densos del año en post-training. La afirmación fuerte: un MoE de 30B parámetros con solo 3B activos consigue medalla de oro en IMO 2025, IOI 2025 e ICPC World Finals 2025, con 20x menos parámetros activos que DeepSeek-V3.2-Speciale-671B-A37B.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;El problema que aborda.&lt;/strong&gt; El post-training de LLMs para razonamiento se ha convertido en una concatenación frágil de etapas (SFT, RLHF, RL verificable, distillation) donde cada etapa tiende a regresar lo que la anterior aprendió. Si subes el reward de matemáticas, baja la calidad conversacional. Si distillas, pierdes diversidad. Y la receta cambia con cada modelo, lo que hace difícil reproducir.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;La idea clave (en una frase).&lt;/strong&gt; Convertir el post-training en una &lt;em&gt;cascada&lt;/em&gt; ordenada de etapas RL por dominio, intercalando &lt;strong&gt;Multi-Domain On-Policy Distillation (MOPD)&lt;/strong&gt; que destila desde checkpoints intermedios &lt;em&gt;específicos del dominio&lt;/em&gt; en lugar de un único maestro fijo.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Método, justo lo necesario.&lt;/strong&gt; El pipeline tiene siete etapas en orden: (1) Instruction-Following RL (180 steps), (2) Multi-domain RL para tool calling/STEM/formato (70 steps), (3) MOPD (52 steps), (4) RLHF (25 steps), (5) Long-context RL (30 steps), (6) Code RL (22 steps), (7) SWE RL agentic. La pieza nueva es MOPD: en cada checkpoint del cascade RL, se identifica el modelo intermedio mejor en cada dominio y se usa como teacher para distillation token-level con reverse-KL e importance weighting truncado para corregir el mismatch train/inference. Los autores afirman que MOPD es &lt;strong&gt;2-3x más sample-efficient que GRPO&lt;/strong&gt; en sus condiciones.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Resultados concretos.&lt;/strong&gt; En IMO 2025 resuelve 5 de 6 problemas (35/42 puntos), evaluado por un medallista de oro IMO 2015. En IOI 2025 saca 439.28/600. ICPC World Finals 2025: 10/12 problemas. En benchmarks puros: ArenaHard v2 83.5 (vs 65.4 de Qwen3.5-35B-A3B), LiveCodeBench v6 87.2 (vs 74.6), AIME 2025 92.4, Codeforces ELO 2320 (percentil 99.6). En long-context, NIAH@1M alcanza 99.0 pero LongBench v2 se queda en 40.3, recordando que el needle-in-haystack ya no mide lo que importa.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Datos de SFT.&lt;/strong&gt; Vale la pena leer la Tabla 2 con calma: 1.8M tool-calling de matemáticas + 2.6M no-tool, 4.2M de code reasoning Python/C++, 1.1M scientific coding, 5.6M de chat general, 234K samples de long-context con media de 128K tokens, 514K SWE (125K agentic + 389K agentless), 490K terminal agent. La proporción habla: el agentic ya pesa más que el chat puro.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Limitaciones reales.&lt;/strong&gt; Primero, los benchmarks de competición tienen contaminación posible y los autores no detallan filtros de decontamination. Segundo, MOPD requiere mantener checkpoints intermedios de calidad por dominio, lo que es caro de orquestar fuera de NVIDIA. Tercero, la comparación con DeepSeek-V3.2-Speciale es sobre un modelo distinto en arquitectura y datos, no un ablation limpio del cascade. Cuarto, no hay análisis de por qué exactamente el orden de las etapas (IF→multi-domain→MOPD→RLHF) es mejor que otras permutaciones, más allá de "así nos funcionó".&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Por qué importa fuera del paper.&lt;/strong&gt; Liberan pesos del modelo, datos SFT y datos RL en Hugging Face, además del stack: NeMo-Skills, Nemo-Gym, Nemo-RL, OpenHands, Terminus 2. Es de lo más reproducible que ha salido de un lab grande este año. Si trabajas en post-training, el aporte práctico no es "otro modelo de razonamiento", sino la arquitectura de pipeline: ordenar etapas RL por dominio con distillation desde teachers domain-specific. Es replicable a escalas más pequeñas.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Qué seguiría yo.&lt;/strong&gt; Probar MOPD con dos dominios (matemáticas + código) sobre un base de 7B y medir si los gains se mantienen. Y comparar contra una baseline simple de GRPO sin distillation, controlando steps y compute. Si MOPD aporta solo cuando hay 7+ etapas, es menos general de lo que parece.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2603.19220"&gt;https://arxiv.org/abs/2603.19220&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://research.nvidia.com/labs/nemotron/nemotron-cascade-2/"&gt;https://research.nvidia.com/labs/nemotron/nemotron-cascade-2/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://huggingface.co/papers/2603.19220"&gt;https://huggingface.co/papers/2603.19220&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://huggingface.co/collections/nvidia/nemotron-cascade-2"&gt;https://huggingface.co/collections/nvidia/nemotron-cascade-2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">62f7e799-b568-5664-85a5-859b236a1ba3</guid>
+      <pubDate>Mon, 04 May 2026 08:33:26 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2603.19220</link>
+      <enclosure url="https://arxiv.org/html/2604.25917v1/x2.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>RecursiveMAS: colaboración multi-agente en espacio latente con 75% menos tokens</title>
+      <description>&lt;p&gt;&lt;strong&gt;Recursive Multi-Agent Systems&lt;/strong&gt; (Yang, Zou, Pan et al., UIUC/Stanford/NVIDIA/MIT, abril 2026, &lt;a href="https://arxiv.org/abs/2604.25917"&gt;arXiv:2604.25917&lt;/a&gt;) propone una pregunta concreta: si los &lt;em&gt;looped language models&lt;/em&gt; (mismos pesos iterando sobre estados latentes) escalan razonamiento, ¿se puede aplicar la misma idea cuando hay &lt;em&gt;varios&lt;/em&gt; agentes colaborando?&lt;/p&gt;&lt;p&gt;&lt;strong&gt;El problema que aborda.&lt;/strong&gt; Los multi-agent systems (MAS) actuales basados en LLMs &amp;mdash;AutoGen, MetaGPT, Mixture-of-Agents, TextGrad&amp;mdash; intercambian información en &lt;strong&gt;texto natural&lt;/strong&gt; entre agentes. Esto tiene tres costes: latencia (cada turno requiere generar y consumir tokens completos), pérdida de información (el estado mental rico del agente se proyecta a una verbalización lossy) y coste explosivo en tokens cuando hay varias rondas de colaboración. La pregunta del paper: ¿y si los agentes se pasan &lt;em&gt;estados latentes&lt;/em&gt; en lugar de texto?&lt;/p&gt;&lt;p&gt;&lt;strong&gt;La idea clave.&lt;/strong&gt; RecursiveMAS introduce un módulo ligero llamado &lt;strong&gt;RecursiveLink&lt;/strong&gt; que conecta agentes heterogéneos como un loop de colaboración, transfiriendo estados latentes entre ellos en vez de tokens. El sistema completo se entrena con un algoritmo inner-outer loop que hace co-optimización del sistema entero mediante credit assignment basado en gradientes compartidos a través de las rondas recursivas.&lt;/p&gt;&lt;figure&gt;&lt;img src="https://arxiv.org/html/2604.25917v1/x2.png" alt="Diagrama de la arquitectura RecursiveMAS" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Arquitectura general: agentes conectados vía RecursiveLink en un loop de colaboración latente.&lt;/figcaption&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;Método, lo justo.&lt;/strong&gt; Cada agente sigue siendo un LLM, pero entre rondas, en vez de emitir texto a un "shared blackboard", emite un latent thought que pasa por RecursiveLink y aterriza como input latente del siguiente agente. Para que estos thoughts no se desvíen de la distribución del modelo (un fallo típico de soft prompts entrenados ad-hoc), entrenan con un objetivo que mantiene los latents &lt;em&gt;in-distribution&lt;/em&gt;. La parte teórica del paper acota la complejidad de runtime y demuestra estabilidad de gradientes en el entrenamiento recursivo.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Cuatro patrones de colaboración instanciados.&lt;/strong&gt; (1) &lt;em&gt;Sequential&lt;/em&gt;: Planner&amp;rarr;Critic&amp;rarr;Solver. (2) &lt;em&gt;Mixture&lt;/em&gt;: agentes especializados (Math, Code, Science) razonando en paralelo y agregando. (3) &lt;em&gt;Distillation&lt;/em&gt;: Expert agent destila a Learner agent más pequeño. (4) &lt;em&gt;Deliberation&lt;/em&gt;: Reflector + Tool-Caller iteran con Python/search APIs.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Resultados concretos.&lt;/strong&gt; Evaluado en 9 benchmarks: MATH500, AIME 2025, AIME 2026, GPQA-Diamond, MedQA, LiveCodeBench-v6, MBPP+, HotpotQA, Bamboogle. Comparado contra Single Agent (LoRA y Full-SFT), Mixture-of-Agents (MoA), TextGrad, LoopLM y un Recursive-TextMAS (versión ablation que recursionaba en texto en vez de latente).&lt;/p&gt;&lt;p&gt;Los números: &lt;strong&gt;+8.3% de accuracy media&lt;/strong&gt; sobre los baselines, &lt;strong&gt;1.2x-2.4x speedup&lt;/strong&gt; end-to-end en inferencia, y &lt;strong&gt;34.6%-75.6% de reducción en uso de tokens&lt;/strong&gt;. El range de tokens es lo más interesante: tareas con muchas rondas (deliberation con tools) son donde la reducción se acerca al 75%, porque cada ida y vuelta entre agentes ya no requiere materializar texto.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Limitaciones reales.&lt;/strong&gt; Primero, todos los agentes deben compartir embedding space compatible: si quieres conectar GPT-5 y Claude vía RecursiveMAS, no se puede &amp;mdash;es un framework que requiere acceso a hidden states, así que en la práctica todos los agentes son del mismo lab/familia. Segundo, los benchmarks elegidos (MATH, AIME, GPQA) son tareas con respuesta corta y verificable; no hay evaluación en escritura larga, planning open-ended, ni en escenarios donde la traza textual &lt;em&gt;es&lt;/em&gt; el output esperado (debugging colaborativo, escritura técnica). Tercero, el speedup de 1.2x-2.4x ya es bonito pero no rompedor &amp;mdash;y depende de cuánto tiempo gasta el baseline en re-tokenizar mensajes largos. Cuarto, la "interpretabilidad" se sacrifica: si todo pasa por latents, debugger un MAS se vuelve más opaco.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Por qué importa.&lt;/strong&gt; Es la primera demostración seria de que la &lt;em&gt;tubería&lt;/em&gt; entre agentes puede ser latente sin perder accuracy. Encaja con la línea de Coconut/COCONUT (Hao et al. 2024) y los &lt;em&gt;looped LMs&lt;/em&gt;, extendiendo la idea de single-model recursion al regimen multi-agente. Si la promesa se sostiene, los frameworks tipo AutoGen tendrán que repensarse: hoy son orquestadores de strings, mañana podrían ser orquestadores de tensores.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Qué seguiría yo.&lt;/strong&gt; Verificar empíricamente la afirmación de in-distribution latents con probing &amp;mdash;fácil de comprobar si has mirado mucho a soft prompts. Y diseñar un benchmark donde la traza textual entre agentes &lt;em&gt;sí&lt;/em&gt; es valiosa (auditoría, debugging humano-en-loop) y medir si RecursiveMAS pierde ahí. Esa es la frontera real de uso.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2604.25917"&gt;https://arxiv.org/abs/2604.25917&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/html/2604.25917"&gt;https://arxiv.org/html/2604.25917&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://recursivemas.github.io/"&gt;https://recursivemas.github.io/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://huggingface.co/papers/2604.25917"&gt;https://huggingface.co/papers/2604.25917&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/RecursiveMAS/RecursiveMAS"&gt;https://github.com/RecursiveMAS/RecursiveMAS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">d72f23a6-eaf1-5db8-871e-53db7afa9dd9</guid>
+      <pubDate>Mon, 04 May 2026 08:34:26 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2604.25917</link>
+      <enclosure url="https://arxiv.org/html/2604.25917v1/x1.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>El razonamiento del LLM es latente, no la chain-of-thought</title>
+      <description>&lt;p&gt;&lt;strong&gt;LLM Reasoning Is Latent, Not the Chain of Thought&lt;/strong&gt; (Wenshuo Wang, abril 2026, &lt;a href="https://arxiv.org/abs/2604.15726"&gt;arXiv:2604.15726&lt;/a&gt;) es un paper teórico-empírico que vale la pena leer despacio. La tesis es incómoda para mucha gente que ha construido infraestructura sobre la asunción de que la chain-of-thought (CoT) &lt;em&gt;es&lt;/em&gt; el razonamiento.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;El problema que aborda.&lt;/strong&gt; Cuando un LLM razona y verbaliza pasos intermedios, ¿el razonamiento ocurre &lt;em&gt;en&lt;/em&gt; esos tokens, o el output verbal es una proyección parcial de un proceso que sucede en los hidden states? La distinción no es filosófica: si el razonamiento es latente, entonces evaluar faithfulness mirando solo la traza textual está midiendo la sombra; los safeguards basados en monitorear CoT pierden potencia; y los gains atribuidos a CoT prompting podrían venir de algo más profundo.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;La idea clave.&lt;/strong&gt; Wang formaliza tres hipótesis competidoras y argumenta que la evidencia actual favorece H1 como working hypothesis por defecto:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;H1 (latente)&lt;/strong&gt;: el razonamiento ocurre en trayectorias de estados latentes; la CoT visible es una interfaz parcial.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;H2 (superficial)&lt;/strong&gt;: el razonamiento sí ocurre en los tokens explícitos.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;H0 (compute-only)&lt;/strong&gt;: lo que importa es el compute serial extra; la forma representacional es secundaria.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Método, justo lo necesario.&lt;/strong&gt; Wang separa tres factores que casi siempre van confundidos en los experimentos publicados: traces superficiales (SS), intervenciones latentes (ZZ) y expansion de compute pareada (BB). Propone un diseño minimal de seis brazos: baseline, surface, surface-control, latent, latent-control, compute-only. Sin separar estos tres factores, dice, los resultados de "CoT mejora N puntos" son ininterpretables.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Evidencia que cita en favor de H1.&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Latent commitment precedence&lt;/strong&gt;: los hidden states codifican corrección de la respuesta &lt;em&gt;antes&lt;/em&gt; de que se verbalice (Zhang et al. 2025), con AUC ~0.70-0.74 en regimen ordinario.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Latent world-states robustos al sesgo&lt;/strong&gt;: incluso cuando el output final está sesgado o injectado, la representación latente del estado del mundo se mantiene fiel (Feng et al. 2024).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Continuous latent reasoning supera CoT&lt;/strong&gt;: Coconut (Hao et al. 2024) muestra que razonar en espacio latente continuo bate al CoT estándar en tareas con backtracking.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Steering causal sin CoT&lt;/strong&gt;: He et al. 2026 mejora accuracy interviniendo features latentes sin generar CoT explícita.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Mediator analysis (Tabla 2 del paper)&lt;/strong&gt;: ablar Z* causa caída de -8.6 a -9.4 puntos; restaurar Z* recupera +6.3 a +7.0; preservar Z* mientras se corrompe SS bate a la inversa por +4.9 a +5.6. Es decir: la traza textual aporta menos al accuracy que el latente.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Cuándo gana H2.&lt;/strong&gt; El paper es honesto: hay regímenes &lt;em&gt;constitutivos&lt;/em&gt; donde la traza textual sí es esencial &amp;mdash;ejecución simbólica, tool-augmented reasoning, tareas donde la estructura visible es el output. Aquí la verbalización no es interfaz, es el cómputo. En su tabla por regímenes: HotpotQA y constitutive controlados ganan H2 con 3/3 modelos.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Cuándo gana H0.&lt;/strong&gt; En tasks search-dominantes (sampling extenso), el compute-only domina. Y el resultado de filler tokens (Pfau et al. 2024) &amp;mdash;razonar bien con basura en lugar de CoT real&amp;mdash; es un golpe duro a H2: si la &lt;em&gt;forma&lt;/em&gt; de la CoT no importa pero el compute sí, entonces la CoT no es el sitio del razonamiento.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Limitaciones reales.&lt;/strong&gt; Primero, no es un paper experimental nuevo: es una &lt;em&gt;reorganización argumentativa&lt;/em&gt; de la literatura existente más "compute-audited worked exemplars". No hay un experimento decisivo propio. Segundo, el dataset de mediator analysis no se publica con el paper, así que la replicación está abierta. Tercero, el autor aparece como solo, sin afiliación clara, lo que recomienda escepticismo &amp;mdash;no porque la tesis sea falsa, sino porque conviene esperar a que un grupo independiente reproduzca el mediator analysis con interventions más rigurosos.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Por qué importa fuera del paper.&lt;/strong&gt; Tres consecuencias prácticas si H1 es correcta. (1) Para &lt;em&gt;safety&lt;/em&gt;: monitorear CoT como mecanismo de detección de deceptive reasoning es insuficiente; un modelo puede tener una traza limpia y un latente comprometido. La línea de "CoT monitorability" que Anthropic, OpenAI y otros han defendido se ve más frágil. (2) Para &lt;em&gt;evaluación&lt;/em&gt;: faithfulness scores basados solo en perturbar tokens del CoT miden mal lo que pretenden medir. (3) Para &lt;em&gt;arquitectura&lt;/em&gt;: si la CoT es interfaz y no cómputo, los modelos que razonan en latente (Coconut, looped LMs, RecursiveMAS) no son curiosidades; son la dirección natural.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Qué seguiría yo.&lt;/strong&gt; Es momento de escribir el experimento canónico de los seis brazos sobre un benchmark con respuesta cerrada (GSM8K, MATH) y otro abierto (HotpotQA), con compute matched de verdad (no "misma cantidad de tokens" sino misma cantidad de FLOPs). Hasta que alguien haga eso, H1 vs H2 sigue siendo una discusión sobre evidencia indirecta. Pero como working hypothesis para diseñar experimentos, Wang tiene razón.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2604.15726"&gt;https://arxiv.org/abs/2604.15726&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/html/2604.15726"&gt;https://arxiv.org/html/2604.15726&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">8c0f3a52-6658-53a4-80ee-23a7432049ed</guid>
+      <pubDate>Mon, 04 May 2026 08:35:35 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2604.15726</link>
+      <enclosure url="https://arxiv.org/html/2604.25917v1/x3.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>The Geometry of Alignment Collapse: por qué el fine-tuning benigno rompe la seguridad con ley cuártica</title>
+      <description>&lt;p&gt;Springer, Lee, Metevier, Castleman, Turbal, Jung, Shen y Korolova (Princeton/UMD, arXiv:2602.15799, feb 2026) atacan un problema incómodo y bien documentado desde 2023: hacer fine-tuning de un modelo alineado sobre datos benignos rompe sus guardrails de seguridad. La novedad del paper no es reportar el fenómeno otra vez, sino explicarlo geométricamente y predecirlo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;El problema en una frase&lt;/strong&gt;: la idea estándar de que basta mantener los updates de fine-tuning ortogonales a las direcciones de seguridad es teóricamente seductora pero estructuralmente inestable bajo descenso de gradiente.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;La idea clave&lt;/strong&gt;: la alineación de seguridad no se distribuye uniformemente por el espacio de parámetros. Se concentra en subespacios de dimensión baja con curvatura aguda. Esto crea una estructura frágil: aunque los primeros pasos de optimización vayan en direcciones aparentemente seguras, la curvatura del loss del fine-tuning genera aceleración de segundo orden que progresivamente empuja la trayectoria hacia regiones sensibles a la alineación. La degradación, en este modelo, no es un accidente — es geométricamente inevitable.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Las tres condiciones&lt;/strong&gt;: los autores formalizan la &lt;em&gt;Alignment Instability Condition&lt;/em&gt;, que identifica cuándo un fine-tuning genérico va a romper la seguridad. Las tres propiedades geométricas que deben darse a la vez son: (1) concentración de la alineación en subespacios de baja dimensión, (2) alineamiento direccional entre los gradientes de la tarea y los gradientes de seguridad, y (3) amplificación de magnitud sobre parámetros críticos para la seguridad.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Resultado central&lt;/strong&gt;: una &lt;strong&gt;ley de escala cuártica&lt;/strong&gt;. La pérdida de alineación crece con la cuarta potencia del tiempo de entrenamiento, modulada por la &lt;em&gt;sharpness&lt;/em&gt; de la geometría de alineación y la fuerza del acoplamiento de curvatura entre la tarea de fine-tuning y los parámetros críticos de seguridad. En castellano: el deterioro no es lineal ni cuadrático — acelera muy rápido pasados los primeros epochs. Los autores derivan esto analíticamente y lo verifican empíricamente sobre modelos abiertos de la familia Llama y Mistral.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lo que NO arregla este paper&lt;/strong&gt;: no propone un método de fine-tuning que evite el colapso. Es deliberadamente un trabajo de diagnóstico: explica por qué fallan los enfoques actuales basados en proyectar updates ortogonalmente a direcciones de seguridad o en regularización L2 sobre pesos críticos. Si la dinámica de optimización tiene aceleración de segundo orden hacia esas regiones, ningún método de primer orden las puede detectar a tiempo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Limitaciones reales&lt;/strong&gt;: el análisis asume que la alineación es identificable como un subespacio bien definido. En la práctica medir esto requiere acceso a un dataset de seguridad y a probes interpretativos de calidad. Los autores muestran que sus condiciones predicen el colapso pero no validan exhaustivamente la magnitud cuántica de la ley cuártica fuera de los modelos testados — falta replicación con MoE y con modelos cerrados.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Por qué importa fuera del paper&lt;/strong&gt;: si la ley cuártica generaliza, dos consecuencias prácticas. Primera: cualquier proyecto que haga fine-tuning serio de un modelo alineado debería medir alignment loss antes y después, no asumir que no pasa nada porque el dataset es benigno. Segunda: los métodos basados en mantener ortogonalidad (popular en LoRA + safety) están atacando el problema con la herramienta equivocada — necesitan al menos información de segundo orden para anticipar dónde aceleran las trayectorias.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué seguiría yo si trabajo en safety fine-tuning&lt;/strong&gt;: combinar el diagnóstico de Springer et al. con métodos de segundo orden tipo K-FAC o curvature-aware optimizers (Sophia, AdaHessian) para detectar y penalizar dinámicamente la entrada en regiones peligrosas. Y replicar la ley cuártica en MoE — que tienen routing dinámico y donde la geometría de alineación puede verse muy distinta. Es exactamente lo que ataca &lt;a href="https://arxiv.org/abs/2602.04448"&gt;RASA (arXiv:2602.04448)&lt;/a&gt; desde otro ángulo.&lt;/p&gt;
+
+&lt;p&gt;Paper: &lt;a href="https://arxiv.org/abs/2602.15799"&gt;arXiv:2602.15799&lt;/a&gt;.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2602.15799"&gt;https://arxiv.org/abs/2602.15799&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/pdf/2602.15799"&gt;https://arxiv.org/pdf/2602.15799&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.researchgate.net/publication/400894456_The_Geometry_of_Alignment_Collapse_When_Fine-Tuning_Breaks_Safety"&gt;https://www.researchgate.net/publication/400894456_The_Geometry_of_Alignment_Collapse_When_Fine-Tuning_Breaks_Safety&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">73fedee6-02f0-5aa8-9cf3-7e3a97266faf</guid>
+      <pubDate>Mon, 04 May 2026 08:37:58 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2602.15799</link>
+      <enclosure url="https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Self-Preference Bias en LLM-as-a-Judge: 20 modelos auditados, mitigación con caída del 31.5%</title>
+      <description>&lt;p&gt;Yang, Qiu, Deng, Jiao y Zhou (arXiv:2604.22891, abr 2026) atacan un agujero metodológico que ha estado escalando en silencio: cuando usamos un LLM como juez para evaluar otros modelos — práctica habitual en AlpacaEval, MT-Bench, Arena-Hard — el juez tiende a favorecer (o disfavorecer) sistemáticamente sus propias generaciones. Y el sesgo no se mide bien con los protocolos actuales.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Idea clave&lt;/strong&gt;: separar la &lt;em&gt;discriminabilidad&lt;/em&gt; del juez (capacidad real de distinguir respuestas buenas de malas) de su &lt;em&gt;propensión al sesgo&lt;/em&gt; (preferencia sistemática hacia su propio estilo). Hasta ahora se mezclaban en una sola métrica, lo que producía conclusiones engañosas sobre qué modelo es mejor juez.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Método&lt;/strong&gt;: los autores construyen un framework totalmente automatizado, sin anotaciones humanas. Genera pares de respuestas de calidad equivalente con diferencias mínimas, y mide la &lt;em&gt;Probabilistic Inclination Ratio&lt;/em&gt; (PIR): la proporción de veces que el juez selecciona su propia respuesta cuando se le presenta como anónima. La métrica final es &lt;strong&gt;SPB = ρᵢ − ρᵢ⁰&lt;/strong&gt;, donde ρᵢ⁰ es la baseline de preferencia del modelo cuando juzga respuestas de terceros. Restando la baseline se aísla el sesgo hacia uno mismo del sesgo general.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Setup&lt;/strong&gt;: 100 tareas single-turn de AlpacaEval estratificadas en siete categorías (text generation 36%, information provision 34%, explanation 16%, etc.). Evaluaron 20 LLMs: Claude-Sonnet-4.5, Mistral-Nemo, Grok-4-Fast, Grok-3-Mini, GLM-4.5-Air, DeepSeek-V3-0324, DeepSeek-V3.2, DeepSeek-R1-0528, Qwen3-235B-A22B-Thinking-2507, Kimi-K2-Thinking, Llama-3.3-70B-Instruct, Gemma-3-27B, LongCat-Flash-Chat y otros.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Resultados que sorprenden&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;LongCat-Flash-Chat&lt;/strong&gt;: el sesgo positivo más alto (β=0.307) — el modelo casi siempre prefiere su propia respuesta.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Claude-Sonnet-4.5&lt;/strong&gt;: el sesgo negativo más fuerte (β=−0.229) — sistemáticamente &lt;em&gt;disfavorece&lt;/em&gt; sus propias respuestas, fenómeno menos discutido pero igual de problemático para evaluación.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Modelos casi imparciales&lt;/strong&gt;: Grok-4-Fast (β=0.035), DeepSeek-V3-0324 (β=0.024), Llama-3.2-3B (β=−0.001).&lt;/li&gt;
+&lt;li&gt;El hallazgo más incómodo: las capacidades avanzadas a menudo &lt;strong&gt;no correlacionan&lt;/strong&gt; — o correlacionan negativamente — con bajo SPB. Que un modelo sea más potente no lo hace mejor juez. Tener un Claude o un Qwen 235B como árbitro no garantiza neutralidad.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Mitigación&lt;/strong&gt;: en lugar de pedir un score puntual o una preferencia binaria, los autores proponen un protocolo de &lt;em&gt;pairwise per-dimension forced-choice&lt;/em&gt; sobre cinco dimensiones (Relevance, Accuracy, Depth, Logic, Clarity). Esto descompone la decisión y reduce la carga cognitiva del juez. Resultado: &lt;strong&gt;reducción media del SPB del 31.5%&lt;/strong&gt;, con casos extremos como LongCat-Flash-Chat bajando 69.9% su sesgo. La idea es elegante: forzar al juez a comprometerse en cada dimensión por separado expone inconsistencias que la evaluación holística enmascara.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Limitaciones reales&lt;/strong&gt;: el protocolo es más caro (5x calls por evaluación) y solo se prueba en single-turn. En conversaciones largas o tareas con código ejecutable la dinámica del sesgo puede ser distinta. Tampoco está claro si la mitigación se sostiene cuando el juez sabe que es un experimento — tipo evaluación adversarial donde el modelo evaluado intenta filtrar pistas estilísticas para que su juez "hermano" lo reconozca.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Por qué importa fuera del paper&lt;/strong&gt;: si vas a publicar un benchmark con LLM-as-judge, este es ahora el estado del arte para reportar honestamente el sesgo de tu setup. Si construyes un sistema de producción con auto-evaluación (RLAIF, self-critique loops, debate setups), saber que Claude-Sonnet-4.5 se penaliza a sí mismo y LongCat se infla cambia el diseño: necesitas jueces externos, o al menos rotación de jueces, no un juez consistente que se evalúa a sí mismo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué seguiría yo&lt;/strong&gt;: replicar el protocolo en multi-turn coding (SWE-bench style) y medir si el sesgo se amplifica con el contexto. Y testar si el protocolo pairwise per-dimension funciona como reward model en RLAIF — la hipótesis es que reduce reward hacking estilístico.&lt;/p&gt;
+
+&lt;p&gt;Paper: &lt;a href="https://arxiv.org/abs/2604.22891"&gt;arXiv:2604.22891&lt;/a&gt;. Código: &lt;a href="https://anonymous.4open.science/r/open_self_bias-0620-0526-0807"&gt;anonymous.4open.science (anónimo)&lt;/a&gt;.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2604.22891"&gt;https://arxiv.org/abs/2604.22891&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/html/2604.22891v2"&gt;https://arxiv.org/html/2604.22891v2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://anonymous.4open.science/r/open_self_bias-0620-0526-0807"&gt;https://anonymous.4open.science/r/open_self_bias-0620-0526-0807&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">47195b51-c54e-589b-9600-ecc8db0d02bd</guid>
+      <pubDate>Mon, 04 May 2026 08:38:42 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2604.22891</link>
+      <enclosure url="https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Cyber Defense Benchmark: los frontier LLMs solo encuentran 3.8% de los eventos maliciosos en threat hunting real</title>
+      <description>&lt;p&gt;Chona, Kozlov y Kumar (arXiv:2604.19533, abr 2026) publican un benchmark que pone a prueba algo que la industria lleva un año vendiendo agresivamente: "agentic SOC", agentes LLM como analistas de seguridad. La conclusión es brutal y bien sustentada — todos los modelos frontier fracasan dramáticamente en la tarea central del threat hunting.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;El problema real&lt;/strong&gt;: dado un dump de Windows event logs de un período de tiempo, identificar los timestamps exactos de actividad maliciosa. Sin pistas, sin preguntas guiadas, sin avisar qué tipo de ataque hay. Es lo que un analista L2 hace a diario — y donde la promesa de "agente que reemplaza al SOC" tiene que ganarse el sueldo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Construcción del benchmark&lt;/strong&gt;: 106 procedimientos de ataque reales del corpus público &lt;strong&gt;OTRF Security-Datasets&lt;/strong&gt;, que cubren 86 sub-técnicas MITRE ATT&amp;amp;CK distribuidas en 12 tácticas, organizadas en 26 campañas. Los autores envuelven todo en un entorno Gymnasium con base SQLite in-memory de 75.000 a 135.000 registros por episodio. Un simulador determinista hace time-shift y ofuscación de entidades para que el agente no pueda memorizar timestamps reales. El agente actúa enviando queries SQL contra la base, y el scoring usa ground-truth derivado de reglas Sigma.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Modelos evaluados&lt;/strong&gt;: Claude Opus 4.6, GPT-5, Gemini 3.1 Pro, Kimi K2.5, Gemini 3 Flash. Es decir, lo que en mayo 2026 hay arriba en cualquier leaderboard agéntico.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Resultados que duelen&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;3.8% de eventos maliciosos correctamente flagueados&lt;/strong&gt; en promedio por el mejor modelo (Claude Opus 4.6). El resto, peor.&lt;/li&gt;
+&lt;li&gt;Ningún modelo alcanzó el threshold mínimo de 50% de recall en ninguna de las 13 categorías de táctica MITRE ATT&amp;amp;CK que los autores definen como necesario para "despliegue SOC sin supervisión".&lt;/li&gt;
+&lt;li&gt;El líder pasó solo &lt;strong&gt;5 de las 13 categorías de táctica&lt;/strong&gt;; los otros cuatro modelos pasaron &lt;strong&gt;cero&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;El benchmark es deliberadamente conservador con la definición de "correcto": acepta margen temporal y reconoce que múltiples queries pueden capturar el mismo evento. No es un fallo de overfitting al ground truth.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Por qué fallan&lt;/strong&gt;: el paper sugiere que el cuello de botella no es razonamiento puro sino exploración estructurada de un espacio de hipótesis. Threat hunting requiere generar hipótesis ("¿hay lateral movement vía SMB?"), traducirlas a queries SQL contra logs heterogéneos, interpretar resultados parciales, y pivotar. Los frontier LLMs hacen bien partes individuales pero pierden estado a lo largo de las decenas de queries necesarias para cubrir el espacio de tácticas. Es el tipo de tarea agéntica de horizonte largo donde Claude/GPT-5 brillan en demos cortas y se descomponen en producción.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Limitaciones reales&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Solo Windows event logs. Threat hunting real combina endpoint, red, cloud, identity. El benchmark mide una rebanada, aunque crítica.&lt;/li&gt;
+&lt;li&gt;El simulador determinista no captura el ruido y la incompletitud de logs reales en empresas grandes (~10⁹ eventos/día).&lt;/li&gt;
+&lt;li&gt;No hay tooling agéntico personalizado — el agente solo tiene SQL. Un sistema real con MCP de threat intel, lookups de IOCs, y reglas de detección preexistentes podría rendir muy distinto. El paper mide razonamiento puro, no SOC-as-a-system.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Por qué importa fuera del paper&lt;/strong&gt;: pone en perspectiva el hype de "agentic SOC" que Microsoft, Google y CrowdStrike llevan empujando desde 2025. Hay un gap enorme entre las demos curadas y la tarea base medida sin pistas. Para un CISO, este benchmark es munición: &lt;em&gt;antes de comprar el producto X, pídeme números en este harness&lt;/em&gt;. Para un investigador, es un reto técnico bien definido — y un buen ground truth para iterar agentes especializados con herramientas, memory, y planning explícito.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué seguiría yo si trabajo en agentes de seguridad&lt;/strong&gt;: tomar este harness, añadir un toolkit MCP con knowledge graph de TTPs y reglas Sigma, y medir cuánto sube el recall. La hipótesis es que el techo de los LLMs raw está cerca del 5-10% pero un agente con tooling y memory bien diseñados puede empujar al 30-40% en las tácticas más comunes. Si eso es cierto, el mensaje no es "los LLMs no sirven para SOC" sino "el LLM sin sistema alrededor no sirve para SOC".&lt;/p&gt;
+
+&lt;p&gt;Paper: &lt;a href="https://arxiv.org/abs/2604.19533"&gt;arXiv:2604.19533&lt;/a&gt; (v3, abril 2026). Licencia CC BY-NC-SA 4.0.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2604.19533"&gt;https://arxiv.org/abs/2604.19533&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/pdf/2604.19533"&gt;https://arxiv.org/pdf/2604.19533&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">c76a00e9-1295-5e04-9dee-ef216878f57d</guid>
+      <pubDate>Mon, 04 May 2026 08:39:26 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2604.19533</link>
+      <enclosure url="https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>QUEST: agentes de deep research open-weight entrenados solo con 8K tareas sintéticas que igualan a los frontier</title>
+      <description>&lt;p&gt;&lt;strong&gt;Paper:&lt;/strong&gt; 'QUEST: Training Frontier Deep Research Agents with Fully Synthetic Tasks', Xie, Lin, Wang et al. (OSU NLP Group + colaboradores), arXiv:2605.24218, mayo 2026.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Problema que aborda.&lt;/strong&gt; Entrenar agentes de deep research — los que navegan, buscan, sintetizan y reportan sobre web abierta con citas — requiere trazas largas, multi-turn, con resultados verificables. La anotación humana es prohibitiva: una sola tarea de calidad lleva horas y los anotadores top cuestan caro. Los enfoques previos o usaban datasets pequeños supervisados (que no generalizan), o RL en entornos demasiado sintéticos para transferir a queries reales. Mientras tanto, OpenAI Deep Research y Gemini Deep Research consolidan la frontera con datos propietarios y miles de anotaciones humanas. QUEST plantea una pregunta directa y arriesgada: ¿puedes entrenar un agente de research competitivo con frontier closed-source usando &lt;em&gt;cero&lt;/em&gt; anotación humana?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Idea clave en una frase.&lt;/strong&gt; Un pipeline de síntesis de datos basado en &lt;strong&gt;rubric trees&lt;/strong&gt;: cada query objetivo se descompone en un árbol de criterios verificables que sirven simultáneamente como reward signal y como check de calidad.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Método.&lt;/strong&gt; Los rubric trees descomponen cada tarea en seis dimensiones: fact correctness, constraints, citations, completeness, readability, insight. Para tareas objetivas se ejecutan checks programáticos (¿la respuesta menciona el dato X verificable contra fuente Y?). Para open-ended se compara contra un reporte de referencia con scoring rubric-level por sub-criterio. Esto da reward signals densos y verificables sin humanos en el loop.&lt;/p&gt;
+
+&lt;p&gt;El pipeline de entrenamiento tiene tres fases: (1) &lt;em&gt;mid-training&lt;/em&gt; sobre corpus relevante de research para ground knowledge, (2) SFT sobre trazas sintéticas con rollouts agentic, (3) RL con &lt;strong&gt;GRPO-style outcome-based tuning&lt;/strong&gt; combinando dos rewards: rubric-tree evaluation y fact-checking verification. Crucialmente, incorporan un mecanismo de context management built-in para los horizontes largos (cientos de pasos de búsqueda). Los modelos van de 2B a 35B parámetros — escalado limpio sin trucos arquitectónicos.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Resultados concretos.&lt;/strong&gt; Evaluados en ocho benchmarks de deep research: BrowseComp, Mind2Web 2, HLE (Humanity's Last Exam), BrowseComp-Plus, WideSearch, GAIA, DeepResearch Bench, LiveResearchBench. Métricas: avg@3 e Item F1 avg@4. QUEST &lt;em&gt;se acerca o supera a frontier closed-source agents&lt;/em&gt; en estos ocho benchmarks usando solo &lt;strong&gt;8.000 tareas sintetizadas&lt;/strong&gt; para training, y &lt;em&gt;logra el mejor rendimiento overall entre agentes open-weight recientes&lt;/em&gt; (Tongyi-DR, DR Tulu, OpenResearcher, REDSearcher). El número de 8K vs los millones de tokens humanos que usan competidores es la headline real.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Limitaciones reales.&lt;/strong&gt; Marcado como 'Work in Progress', cuidado. La comparación con frontier closed-source en el repo no incluye tablas head-to-head contra GPT-5 Deep Research o Claude con web tools — comparan rigurosamente contra los open-weight, y la afirmación de paridad frontier viene de hits en benchmarks individuales que históricamente OpenAI domina. La calidad del rubric tree depende del modelo que lo genera (riesgo de eco si lo genera el mismo LLM que entrenas — overfitting al rubric). Y 8K tareas sintéticas suena poco hasta que ves que cada una requiere agentic rollouts de cientos de pasos: el coste de RL real (GPU-hours) no se reporta en el abstract. Tampoco hay análisis de failure modes — ¿qué tipos de queries rompe?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Por qué importa fuera del paper.&lt;/strong&gt; Es la primera demostración seria de que el bottleneck de deep research no es 'necesitas más datos humanos' sino 'necesitas reward shaping verificable a escala'. Si replica con runs independientes, el playbook (rubric trees + GRPO + context management) se aplica a cualquier agentic task con criterios decomponibles: legal research, scientific literature review, security investigation, due diligence. Conecta directo con el hilo abierto sobre el gap demos-vs-benchmarks que vimos en Cyber Defense Benchmark: allí los frontier LLMs sacaban 3.8% recall en threat hunting real; aquí un open-weight 35B se acerca a frontier con el reward correcto. La hipótesis razonable es que el problema del 3.8% no era capacidad del modelo, era falta de training signal en distribución del task.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué seguiría yo si trabajo en agentes.&lt;/strong&gt; (1) Probar el rubric tree synthesis sobre dominio especializado (threat hunting con MITRE ATTACK, médico con guidelines clínicas) para ver si el rubric tree generalista rompe en taxonomías expertas. (2) Medir si el mecanismo de context management built-in se transfiere fuera del setup de QUEST o requiere co-entrenamiento end-to-end. (3) Auditar si los 8K tasks sintéticos tienen sesgo distribucional vs queries reales de usuarios — qué es el train-test gap real cuando un usuario hace una query que el rubric tree generator no anticipó. (4) Re-derivar el rubric tree con un LLM &lt;em&gt;distinto&lt;/em&gt; al que entrenas para romper el bucle de eco. Código, pesos y datos: &lt;a href='https://github.com/OSU-NLP-Group/QUEST'&gt;github.com/OSU-NLP-Group/QUEST&lt;/a&gt;.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2605.24218"&gt;https://arxiv.org/abs/2605.24218&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://osu-nlp-group.github.io/QUEST/"&gt;https://osu-nlp-group.github.io/QUEST/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/OSU-NLP-Group/QUEST"&gt;https://github.com/OSU-NLP-Group/QUEST&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">14cab1e6-1fa0-5eb0-b3d4-fb526598d134</guid>
+      <pubDate>Tue, 26 May 2026 07:04:28 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2605.24218</link>
+      <enclosure url="https://cdn-avatars.huggingface.co/v1/production/uploads/6477a323dbc2a416f8b852b3/oiPPBo_knuDrz0YN9slKj.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>DVAO: cómo arreglar GRPO cuando tienes múltiples rewards (Pareto frontier con weights adaptativos)</title>
+      <description>&lt;p&gt;&lt;strong&gt;Paper:&lt;/strong&gt; 'DVAO: Dynamic Variance-adaptive Advantage Optimization for Multi-reward Reinforcement Learning', Jiang, Song, Quan, Hao, Liu, Zhang, arXiv:2605.25604, mayo 2026.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Problema que aborda.&lt;/strong&gt; En RL para LLMs casi siempre tienes &lt;em&gt;múltiples&lt;/em&gt; objetivos. Quieres respuestas correctas &lt;em&gt;y&lt;/em&gt; bien formateadas &lt;em&gt;y&lt;/em&gt; de longitud razonable &lt;em&gt;y&lt;/em&gt; que llamen tools válidos. El enfoque estándar es scalarización: &lt;code&gt;R = w₁·accuracy + w₂·format + w₃·length&lt;/code&gt;. Dos problemas serios. Primero, reward combination con weights fijos genera magnitudes de advantage inestables durante training — un reward domina cuando su varianza explota. Segundo, advantage combination usa hyperparams que ignoran la relación entre objetivos: si format ya está al 95%, seguir empujándolo desperdicia capacidad de gradiente. Resultado típico: o aprendes el objetivo dominante y los otros colapsan a basura (format compliance 0%), o sacrificas accuracy por compliance.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Idea clave en una frase.&lt;/strong&gt; Ajustar los pesos de los objetivos &lt;em&gt;dinámicamente&lt;/em&gt; durante el rollout basándote en la varianza empírica de cada reward dentro del group — los objetivos con learning signal fuerte (varianza informativa) reciben más peso, los ruidosos se atenúan.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Método.&lt;/strong&gt; DVAO opera sobre GRPO (Group Relative Policy Optimization). En vez de combinar rewards antes de calcular advantages, calcula advantages per-objetivo y luego los combina con weights que dependen de la varianza de cada reward dentro del group de rollouts (G=16 típico). Añaden garantías matemáticas de magnitud acotada en el advantage final y una regularización self-adaptive cross-objective. Funciona como drop-in replacement de GRPO en el framework &lt;strong&gt;verl&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Resultados concretos.&lt;/strong&gt; Dos setups: razonamiento matemático (Qwen3-4B-Base y Qwen3-8B-Base sobre AIME-2024, AIME-2025, MATH500, OlympiadBench, AMC23) y tool-use (Qwen2.5-3B-Instruct y Qwen2.5-7B-Instruct sobre Berkeley Function Call Leaderboard, BFCL-v4).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Qwen2.5-7B en BFCL-v4:&lt;/strong&gt; GRPO baseline da 52.26% accuracy con &lt;em&gt;0% format compliance&lt;/em&gt; (es decir, los tool calls son sintácticamente inválidos). DVAO sube a 63.00% accuracy con 79.21% format compliance. Es decir, no solo no sacrificas accuracy por format — la mejoras ambas a la vez.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Qwen3-8B math:&lt;/strong&gt; GRPO 52.57% accuracy promedio. DVAO 47.49% con length constraints estrictos, logrando casi-perfect length compliance simultáneamente. Aquí el trade-off existe (caída de ~5 pts accuracy) pero el output es deployable.&lt;/li&gt;
+&lt;li&gt;En el plano Pareto, DVAO domina consistentemente: para cualquier punto de accuracy, da más compliance que GRPO; para cualquier compliance, da más accuracy.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Limitaciones reales.&lt;/strong&gt; Los autores son honestos: la efectividad depende de group size suficiente (G=16 es el standard, con menos pierdes la estadística de varianza). El paper se centra en dual-objective (accuracy + compliance auxiliar) aunque la teoría dice multi-reward; el comportamiento con 4-5 rewards simultáneos no se valida bien. La calidad del reward function subyacente sigue importando — DVAO no rescata rewards mal diseñados, solo los combina mejor. Y la mejora en math (47.49% vs 52.57%) muestra que cuando hay tensión real entre objetivos, DVAO te da un punto Pareto, no un free lunch.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Por qué importa fuera del paper.&lt;/strong&gt; Cualquiera que entrene un agente con tool use ha visto la patología: el modelo aprende a contestar bien pero llama tools con JSON inválido o con argumentos formateados raros. Que GRPO baseline saque &lt;em&gt;0%&lt;/em&gt; format compliance en BFCL no es una métrica obscura — es el escenario diario de production. El insight de adaptar weights por varianza es general y debería transferir a cualquier multi-reward setup: RLHF con helpfulness+harmlessness, agentic RL con success+efficiency, code RL con correctness+style. Conecta con el hilo de Latent-GRPO: aquí no atacamos el espacio de razonamiento sino la estructura del reward, complementarios.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué seguiría yo si entreno con GRPO.&lt;/strong&gt; (1) Pegar el patch DVAO sobre tu pipeline verl actual y medir delta en tu suite multi-objective — probablemente ganas format compliance gratis. (2) Auditar si la varianza empírica del reward correlaciona con learning signal real en tu task o si es solo proxy ruidoso (puede que para algunas categorías de reward la varianza sea engañosa). (3) Replicar el experimento con 4 rewards simultáneos donde el paper se queda corto. (4) Combinar con length penalties tipo cosine: ¿se acumulan beneficios o se cancelan? Pendiente que liberen código limpio — referencian verl pero no hay repo público explícito en el abstract.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2605.25604"&gt;https://arxiv.org/abs/2605.25604&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/html/2605.25604v1"&gt;https://arxiv.org/html/2605.25604v1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">da5c98c0-422a-598b-b881-0cca3fbe2553</guid>
+      <pubDate>Tue, 26 May 2026 07:05:09 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2605.25604</link>
+      <enclosure url="https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Navigating by Old Maps: la interpretabilidad mecánica miente sobre dónde hacer fine-tuning</title>
+      <description>&lt;p&gt;&lt;strong&gt;Paper:&lt;/strong&gt; 'Navigating by Old Maps: The Pitfalls of Static Mechanistic Localization in LLM Post-Training', Chen, Zhu, Chen, Liu, Yang, Wang, arXiv:2605.06076, mayo 2026.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Problema que aborda.&lt;/strong&gt; El paradigma 'Locate-then-Update' se ha vuelto dominante en post-training quirúrgico: usas técnicas de interpretabilidad mecánica (activation patching, causal tracing) para identificar el circuito o las MLPs responsables de un comportamiento, y luego haces fine-tuning solo sobre esos parámetros. ROME, MEMIT, knowledge editing, targeted unlearning — todos asumen lo mismo: &lt;em&gt;el mapa del circuito sacado del modelo actual sigue siendo válido para guiar los updates futuros&lt;/em&gt;. El paper hace la pregunta incómoda: ¿es eso cierto, o estás navegando con mapas viejos mientras el terreno se mueve bajo tus pies?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Idea clave en una frase.&lt;/strong&gt; Los circuitos no son estáticos durante SFT; sufren 'Free Evolution' — migran, se reestructuran y entran en conflicto entre tasks — así que la localización estática &lt;em&gt;solo coincide con random component selection&lt;/em&gt; en la mayoría de skill-centric tasks.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Método.&lt;/strong&gt; Toman dos modelos base (Mistral-7B y LLaMA3-8B) y los fine-tunean sobre 15 datasets divididos en dos categorías: knowledge-centric (OpenBookQA, FEVER, zsRE, WMDP-Bio para unlearning) y skill-centric (Arithmetic, Gender, RTE, IOI, Docstring, SST2, Winogrande, Reverse, Greater Than, Induction, Bool, Syntactic Agreement). Trackean cómo evoluciona el circuito causal en cada checkpoint usando tres métricas nuevas:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Circuit Distance (CD):&lt;/strong&gt; suma de shifts absolutos en effects causales por componente (Manhattan distance sobre el grafo computacional). Mide migración neural.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Circuit Stability (CS):&lt;/strong&gt; correlación Spearman esperada entre circuitos derivados de dos subsets i.i.d. Mide consistencia semántica.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Circuit Conflict (CC):&lt;/strong&gt; extrae minimum unsatisfiable cores de representaciones CNF con SAT solvers. Mide interferencia cross-task.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Resultados concretos.&lt;/strong&gt; Tres hallazgos que rompen el paradigma Locate-then-Update:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Asimetría attention vs MLP.&lt;/strong&gt; Los componentes de attention sufren 'shifts drásticos' en ubicación durante fine-tuning. Los MLP son 'relativamente estables'. Es decir: si tu técnica de localización apuntaba a heads de attention (la mayoría lo hacen), tu mapa caduca rápido.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Los circuitos cambian aunque la accuracy sea alta.&lt;/strong&gt; Task mechanisms sufren cambios estructurales significativos incluso cuando el modelo ya alcanza &amp;gt;85% accuracy. El éxito en la métrica oculta la inestabilidad mecánica subyacente — el modelo 'aprende' pero usando vías neuronales diferentes a las que tu interpretabilidad identificó al inicio.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Localización mecánica = random selection en skill tasks.&lt;/strong&gt; En skill-centric tasks (arithmetic, RTE, etc.), la localización via interpretabilidad da performance &lt;em&gt;equivalente a seleccionar componentes random&lt;/em&gt; para hacer updates. Solo en knowledge-centric tasks como WMDP-Bio unlearning la localización mecánica supera al random. La narrativa de 'localiza y edita con precisión quirúrgica' funciona para conocimiento factual; para habilidades, es teatro.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Limitaciones reales.&lt;/strong&gt; Trabajo de diagnóstico, no propone un método mejor. La conclusión es que necesitas 'foresight' (predecir cómo evolucionará el circuito) pero no entregan ese predictor. Los modelos son 7B-8B; queda abierto si la inestabilidad es peor o mejor en frontier scale (intuitivamente peor: más redundancia, más vías alternativas). Las 15 tareas son representativas pero la cobertura skill-centric es densa en lingüísticas simples; no testean coding tasks ni razonamiento multi-step. Y la asunción de que SFT es el régimen relevante deja fuera RL post-training, que puede comportarse muy diferente.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Por qué importa fuera del paper.&lt;/strong&gt; Si trabajas en knowledge editing, safety steering vectors, o targeted unlearning, este paper te dice que estás operando sobre supuestos frágiles. Concretamente: el éxito reportado en papers como ROME o LEACE en circuitos identificados via causal tracing puede deberse en parte a que el circuito ya se reestructuró durante la propia evaluación. Conecta directo con el hilo abierto sobre Geometry of Alignment Collapse (Springer/Korolova): allí veíamos que el fine-tuning benigno colapsa la alineación con ley cuártica; aquí complementamos diciendo que el problema no es solo geométrico — el circuito mismo que pensabas estabilizar se está moviendo. Las dos piezas juntas pintan un cuadro feo: la interpretabilidad mecánica como método de control de post-training está más rota de lo que admitía el campo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué seguiría yo si trabajo en interpretabilidad.&lt;/strong&gt; (1) Replicar los experimentos en Llama-3-70B o un MoE: ¿la 'Free Evolution' es peor a escala, o el circuito tiene más redundancia y estabiliza? (2) Construir el 'foresight model' que el paper pide — un predictor de circuit drift que tome el circuito actual y el dataset de fine-tuning y prediga qué componentes migrarán. (3) Auditar ROME y MEMIT con estas tres métricas: ¿cuánto del éxito reportado sobrevive 100 steps post-edit? (4) Repetir el experimento bajo RL en vez de SFT — la hipótesis es que la migración de circuitos sea aún más violenta. Código: &lt;a href='https://github.com/Zodiark-ch/MechLocalization'&gt;github.com/Zodiark-ch/MechLocalization&lt;/a&gt;.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2605.06076"&gt;https://arxiv.org/abs/2605.06076&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/html/2605.06076v1"&gt;https://arxiv.org/html/2605.06076v1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/Zodiark-ch/MechLocalization"&gt;https://github.com/Zodiark-ch/MechLocalization&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">368698d1-6876-5aa3-9809-9332f834e5da</guid>
+      <pubDate>Tue, 26 May 2026 07:05:58 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2605.06076</link>
+      <enclosure url="https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png" type="image/jpeg" length="0" />
+    </item>
+  </channel>
+</rss>
