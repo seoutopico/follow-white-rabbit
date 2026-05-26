@@ -217,10 +217,11 @@ if (-not $baseUrl) {
     exit 1
 }
 
-# Genera index.html, opml y páginas HTML legibles por humano
+# Genera index.html, opml, páginas HTML legibles y archivo cronológico
 python feed.py index-html --base-url $baseUrl | Out-Null
 python feed.py opml --base-url $baseUrl | Out-Null
 python feed.py render-html --base-url $baseUrl | ForEach-Object { Log "  $_" }
+python feed.py render-archive --base-url $baseUrl | ForEach-Object { Log "  $_" }
 
 # Lock simple para evitar publishes concurrentes
 $LockDir = Join-Path $ProjectDir ".publish.lock"
