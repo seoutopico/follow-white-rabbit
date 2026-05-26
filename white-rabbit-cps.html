@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ResoluciÃ³n de Problemas Complejos (CPS)</title>
+  <link rel="alternate" type="application/rss+xml" title="ResoluciÃ³n de Problemas Complejos (CPS) RSS" href="https://seoutopico.github.io/follow-white-rabbit/white-rabbit-cps.xml">
+  <style>
+  body { font-family: -apple-system, system-ui, sans-serif; max-width: 760px; margin: 2rem auto; padding: 0 1rem; color: #222; line-height: 1.6; }
+  header { border-bottom: 2px solid #e0e0e0; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+  header h1 { margin: 0 0 0.25rem; }
+  header .nav { font-size: 0.85rem; color: #666; }
+  header .nav a { color: #0066cc; text-decoration: none; }
+  header .nav a:hover { text-decoration: underline; }
+  article { padding: 1.5rem 0; border-bottom: 1px solid #eee; }
+  article:last-child { border-bottom: none; }
+  article h2 { margin: 0 0 0.25rem; font-size: 1.3rem; line-height: 1.3; }
+  article .date { color: #999; font-size: 0.85rem; margin-bottom: 0.75rem; }
+  article .body img, article .body figure img { max-width: 100%; height: auto; border-radius: 4px; margin: 0.5rem 0; }
+  article .body figure { margin: 1rem 0; }
+  article .body figure figcaption { font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.25rem; }
+  article .body a { color: #0066cc; }
+  article .body hr { border: 0; border-top: 1px solid #eee; margin: 1rem 0; }
+  article .body ul { padding-left: 1.2rem; }
+  article .thumb { float: right; max-width: 220px; max-height: 160px; margin: 0 0 0.75rem 1rem; border-radius: 4px; }
+  footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e0e0e0; color: #999; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ResoluciÃ³n de Problemas Complejos (CPS)</h1>
+    <div class="nav"><a href="./">&larr; Volver al inicio</a> &middot; <a href="https://seoutopico.github.io/follow-white-rabbit/white-rabbit-cps.xml">Suscribir RSS</a> &middot; 8 entradas</div>
+    <p style="margin:0.5rem 0 0;color:#666;">Per-topic feed: ResoluciÃ³n de Problemas Complejos (CPS)</p>
+  </header>
+  <article>
+    <h2>Calibracion a la Tetlock: como medir si tus &#x27;estoy 80% seguro&#x27; valen algo</h2>
+    <div class="date">2026-05-26</div>
+    <img class="thumb" src="https://commoncog.com/content/images/size/w600/2019/12/erik-witsoe-mODxn7mOzms-unsplash--1-.jpg" alt="">
+    <div class="body"><p>El problema arquetipo: tu equipo dice cosas como <em>'creo que esta migracion sale bien'</em> o <em>'es muy probable que el cliente firme este mes'</em>. Esas frases no se pueden auditar. Cuando el proyecto descarrila nadie recuerda quien era optimista. Philip Tetlock (Universidad de Pennsylvania) pasó dos decadas estudiando esto en el <strong>Good Judgment Project</strong> y descubrio algo incomodo: los expertos suelen estar peor calibrados que estudiantes entrenados unas horas. La buena noticia es que la calibracion se entrena.</p>
+
+<h3>La idea, en una frase</h3>
+<p>Estas bien calibrado cuando las cosas que predices con 70% de confianza ocurren el 70% de las veces. Ni mas (sobreconfianza), ni menos (timidez). Es medible con el <strong>Brier score</strong>: BrS = (1/N)Σ(p − x)², donde p es tu probabilidad y x es 1 si ocurrio, 0 si no. Cuanto mas bajo, mejor. Si predices 90% de que Tesla quiebra y no quiebra, tu castigo es 0.81. Si te quedas en 60%, el castigo cae a 0.36 — pero tampoco aciertas con conviccion.</p>
+
+<h3>Como entrenarlo en 6 pasos</h3>
+<ol>
+<li><strong>Reformula afirmaciones vagas</strong>. <em>'Tesla esta mal'</em> no se puede evaluar. <em>'Tesla incumplira el proximo pago de deuda antes del 31/12/2026'</em> si.</li>
+<li><strong>Pon un deadline concreto</strong>. Sin fecha no hay forma de cerrar la apuesta.</li>
+<li><strong>Asigna una probabilidad numerica</strong>. No 'probable' — 65%. Distingue entre 55% y 45%: esa diferencia es donde viven los superforecasters de Tetlock.</li>
+<li><strong>Anotalo en un journal de decisiones</strong>. Un Google Sheet basta: prediccion, fecha, probabilidad, razonamiento, outcome, fecha de cierre.</li>
+<li><strong>Revisa por lotes trimestralmente</strong>. Calcula Brier scores y separa <em>calibracion</em> (acertaste con las confianzas que dijiste?) de <em>resolucion</em> (te atreves a ir a los extremos, o todo es 50/50?).</li>
+<li><strong>Practica con preguntas del Good Judgment Open</strong> (gjopen.com). Es gratis y compite contra otros forecasters con feedback automatico.</li>
+</ol>
+
+<h3>Ejemplo real: Cedric Chin en B2B</h3>
+<p>Cedric Chin, autor del blog Commoncog, aplico esto al marketing de una empresa B2B. Tras analizar 20 horas de llamadas de venta empezo a estimar probabilidad de cierre por deal. Sus primeros Brier scores fueron, en sus palabras, <em>'increiblemente malos'</em> — pero el proceso de ponerle numero a la intuicion le hizo ver patrones que el resto del equipo no veia. Acabo escribiendo un documento de hipotesis marcado con confianza explicita ('70% seguro de esto') que se convirtio en el go-to-market framework de la empresa. El valor no fue acertar; fue dejar de auto-engañarse.</p>
+
+<h3>Cuando NO aplica</h3>
+<p>La calibracion necesita <strong>feedback loops cortos y volumen</strong>. Si predices una cosa al año, no aprendes nada. Tampoco compares Brier scores entre dominios: 0.23 prediciendo precio del petroleo es excelente, prediciendo elecciones es mediocre. Y dato incomodo de Tetlock: los ingenieros de software estan sobrerrepresentados entre los superforecasters — probablemente porque ya piensan probabilisticamente. Si tu equipo viene de ventas o marketing puro, espera mas resistencia cultural.</p>
+
+<p><strong>Siguiente paso si quieres profundizar</strong>: lee <em>Superforecasting</em> (Tetlock &amp; Gardner, 2015), abre una cuenta en gjopen.com y predice 10 cosas con deadline este mes. En tres meses tendras datos suficientes para tu primer Brier score real.</p>
+<hr/>
+<p><strong>Sources:</strong></p>
+<ul>
+  <li><a href="https://goodjudgment.com/philip-tetlocks-10-commandments-of-superforecasting/">https://goodjudgment.com/philip-tetlocks-10-commandments-of-superforecasting/</a></li>
+  <li><a href="https://commoncog.com/how-do-you-evaluate-your-own-predictions/">https://commoncog.com/how-do-you-evaluate-your-own-predictions/</a></li>
+  <li><a href="https://www.gjopen.com/training/">https://www.gjopen.com/training/</a></li>
+  <li><a href="https://fs.blog/ten-commandments-for-superforecasters/">https://fs.blog/ten-commandments-for-superforecasters/</a></li>
+</ul></div>
+  </article>
+  <article>
+    <h2>OODA loop aplicado a incident response: la tecnica de John Boyd que ahora vive en tu SOC</h2>
+    <div class="date">2026-05-26</div>
+    <img class="thumb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/OODA.Boyd.svg/500px-OODA.Boyd.svg.png" alt="">
+    <div class="body"><p>El <strong>OODA loop</strong> (Observe, Orient, Decide, Act) lo invento el coronel John Boyd, piloto de caza de la USAF, para explicar por que los F-86 ganaban dogfights contra MiG-15 mejor armados durante la guerra de Corea. Sesenta anos despues, el mismo bucle se ha colado en los runbooks de los SOC (Security Operations Centers) y los equipos de incident response. Es uno de los frameworks mas accionables para el problema arquetipo de <em>'tengo cinco minutos para entender que esta pasando antes de que se ponga peor'</em>.</p>
+
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/OODA.Boyd.svg/500px-OODA.Boyd.svg.png" alt="Diagrama del OODA loop de John Boyd" style="max-width:100%;height:auto;" /><figcaption>El OODA loop original de Boyd: Observe, Orient, Decide, Act, con feedback continuo.</figcaption></figure>
+
+<h3>Como aplicarlo en un incidente</h3>
+<ol>
+<li><strong>Observe</strong>: recolecta telemetria <em>especifica</em>, no mires el dashboard general. Process creation en el endpoint sospechoso, logs de identidad, queries DNS, audit logs del cloud. Pregunta guia: que aspecto tiene la actividad normal aqui?</li>
+<li><strong>Orient</strong>: traduce los eventos crudos a patrones con sentido. Tres lentes: (a) baseline (este arbol de procesos ha aparecido antes?), (b) mapeo a ATT&amp;CK (Office lanzando PowerShell = ejecucion inicial T1059.001), (c) contexto (que criticidad tiene este activo?). Aqui es donde mueren los falsos positivos.</li>
+<li><strong>Decide</strong>: formula una hipotesis falsable y acotada en tiempo. <em>'Si esto es phishing, deberia ver anomalias de identidad en las proximas 24h.'</em> Eso decide en que pivotar a continuacion.</li>
+<li><strong>Act</strong>: ejecuta la query, valida, y <strong>convierte el hallazgo en deteccion permanente</strong>. Sin este ultimo paso, cada hunt se repite desde cero. Vuelve a Observe con lo aprendido.</li>
+</ol>
+
+<h3>Ejemplo real: phishing-driven execution</h3>
+<p>Un analista observa <code>winword.exe</code> lanzando <code>powershell.exe -enc</code> en la maquina de un usuario no tecnico. Orienta: ese usuario nunca ha ejecutado PowerShell, el patron coincide con phishing (T1566). Decide pivotar a datos de identidad en lugar de hacer forensia del endpoint. Actua: confirma MFA fatigue, login desde una ASN nueva y emision de tokens (T1078, T1621), revoca sesiones, y crea una deteccion basada en el comportamiento. Total: minutos, no horas.</p>
+
+<h3>Cuando NO aplica</h3>
+<p>El OODA loop esta diseñado para <strong>contextos adversariales y de alta velocidad</strong>. Si lo usas para decidir la arquitectura de tu nuevo microservicio acabas tomando decisiones precipitadas. Para esos casos, Cynefin te diria que estas en dominio 'complicado' y necesitas analisis, no ciclos rapidos. Otra trampa: la version simplificada del loop que se popularizo omite el detalle de Boyd sobre <em>orient</em> como la fase critica (con cultura, experiencia previa y bias). Si tu equipo no tiene playbooks ni threat intelligence al dia, vuestro Orient es ruido y vuestro Decide es teatro.</p>
+
+<p><strong>Siguiente paso si quieres profundizar</strong>: lee 'A Discourse on Winning and Losing' de Boyd (compilacion gratuita en linea de sus briefings originales) y luego mapea el ultimo incidente que vivio tu equipo a las cuatro fases. Vas a descubrir donde se atasca el bucle, casi siempre en Orient.</p>
+<hr/>
+<p><strong>Sources:</strong></p>
+<ul>
+  <li><a href="https://levelblue.com/blogs/security-essentials/incident-response-methodology-the-ooda-loop">https://levelblue.com/blogs/security-essentials/incident-response-methodology-the-ooda-loop</a></li>
+  <li><a href="https://medium.com/@nimabargestan/applying-the-ooda-loop-to-modern-threat-hunting-7013a4625e0c">https://medium.com/@nimabargestan/applying-the-ooda-loop-to-modern-threat-hunting-7013a4625e0c</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/OODA_loop">https://en.wikipedia.org/wiki/OODA_loop</a></li>
+  <li><a href="https://www.securityweek.com/the-ooda-loop-the-military-model-that-speeds-up-cybersecurity-response/">https://www.securityweek.com/the-ooda-loop-the-military-model-that-speeds-up-cybersecurity-response/</a></li>
+</ul></div>
+  </article>
+  <article>
+    <h2>Post-mortems sin culpables: como Etsy y Google convirtieron los incidentes en aprendizaje</h2>
+    <div class="date">2026-05-04</div>
+    <img class="thumb" src="https://lh3.googleusercontent.com/SeWjihW2BRkQVdMDQ0gs0Tr3jTPXGTdQGRLZbGQB_xQwWlGOQRXc3IM_QtOiQwKdLQ" alt="">
+    <div class="body"><p>El reflejo natural despues de una caida grave es buscar al culpable: quien hizo el deploy, quien aprobo el PR, quien no vio la alerta. Es satisfactorio y profundamente contraproducente. John Allspaw, entonces CTO de Etsy, lo formalizo en 2012 en el ya canonico <a href="https://www.etsy.com/codeascraft/blameless-postmortems"><em>Blameless PostMortems and a Just Culture</em></a>: cuando los ingenieros saben que admitir un error trae consecuencias, esconden detalles, y el sistema no aprende. La <strong>cultura blameless</strong> que Google luego codifica en el <a href="https://sre.google/sre-book/postmortem-culture/">capitulo 15 del SRE Book</a> es una tecnica concreta de resolucion de problemas, no un eslogan de RRHH.</p>
+
+<p>El problema arquetipo: incidente serio en produccion (caida, perdida de datos, brecha de seguridad). El equipo entra en modo blame, alguien escribe un documento defensivo, no se cambia nada estructural, y seis meses despues vuelve a pasar lo mismo con otra variable de entorno mal seteada. La causa raiz organizacional jamas aflora porque nadie quiere ser quien la diga.</p>
+
+<p>Como ejecutar uno, en formato Allspaw + Google SRE:</p>
+
+<ol>
+<li><strong>Convoca dentro de las primeras 48-72h</strong>, mientras los detalles estan frescos. Manda el documento de pre-lectura: timeline, impacto, alertas activadas, acciones tomadas. Sin esa preparacion la sesion se va en reconstruir la historia.</li>
+<li><strong>Establece la regla cardinal</strong> al empezar: asumimos que toda persona actuo con la mejor informacion que tenia en ese momento. Cualquier critica se dirige al sistema (proceso, herramienta, alerta, runbook), no a la persona. Si alguien quiere atacar a un individuo, el facilitador corta.</li>
+<li><strong>Reconstruye el timeline factual</strong> en una pizarra: hora, evento, quien lo vio, que decidio. Sin juicios, solo hechos. Los SREs llaman a esto <em>second story</em>: la historia detras del 'fallo humano' que muestra por que la accion tenia sentido en su contexto.</li>
+<li><strong>Pregunta '<em>como</em> ocurrio', no '<em>por que</em>' ni '<em>quien</em>'</strong>. El por-que invita a justificarse; el como invita a describir. Tecnica relacionada: 5 whys, pero aplicada al sistema no a la persona ('por que la alerta no salto' no 'por que Juan no la vio').</li>
+<li><strong>Lista factores contribuyentes, no causa raiz unica</strong>. Casi ningun incidente complejo tiene una sola causa: hay deriva, condiciones latentes, gatillo proximo. La obsesion con 'la causa raiz' es una de las criticas centrales de Sidney Dekker (<em>The Field Guide to Understanding Human Error</em>).</li>
+<li><strong>Acciones SMART y con due date</strong>: cada accion tiene un dueno, fecha, y se mete en el backlog antes de cerrar la reunion. Sin eso, el documento es ficcion.</li>
+<li><strong>Publica el post-mortem entero</strong> dentro de la organizacion (Etsy lo hace abierto a toda la empresa). El conocimiento que no circula no protege a nadie en otro equipo.</li>
+</ol>
+
+<p>Caso real bien documentado: el <a href="https://sre.google/sre-book/example-postmortem/">post-mortem de ejemplo del SRE Book</a> sobre el outage de 'Shakespeare service' es plantilla viva. Reproduce el formato y notaras que ningun parrafo nombra a una persona como causa.</p>
+
+<p>Cuando NO aplica: incidentes triviales (no necesitan reunion formal), o donde realmente hubo dolo o negligencia repetida. Just Culture distingue 'errores honestos' de 'comportamiento de riesgo consciente'; el segundo si tiene consecuencias para la persona. Confundir ambos casos vacia la tecnica.</p>
+
+<p>Siguiente paso si quieres profundizar: la <a href="https://www.etsy.com/codeascraft/debriefing-facilitation-guide/">Debriefing Facilitation Guide</a> que Etsy publico open source, y los textos de Sidney Dekker y Erik Hollnagel sobre Resilience Engineering aplicada a software. Empieza esta semana: el proximo incidente serio, programa la sesion antes de que alguien diga la palabra 'culpa'.</p>
+
+<hr/>
+<p><strong>Sources:</strong></p>
+<ul>
+  <li><a href="https://www.etsy.com/codeascraft/blameless-postmortems">https://www.etsy.com/codeascraft/blameless-postmortems</a></li>
+  <li><a href="https://sre.google/sre-book/postmortem-culture/">https://sre.google/sre-book/postmortem-culture/</a></li>
+  <li><a href="https://sre.google/sre-book/example-postmortem/">https://sre.google/sre-book/example-postmortem/</a></li>
+  <li><a href="https://www.etsy.com/codeascraft/debriefing-facilitation-guide/">https://www.etsy.com/codeascraft/debriefing-facilitation-guide/</a></li>
+  <li><a href="https://www.kitchensoap.com/2013/09/30/learning-from-failure-at-etsy/">https://www.kitchensoap.com/2013/09/30/learning-from-failure-at-etsy/</a></li>
+</ul></div>
+  </article>
+  <article>
+    <h2>ADRs: convertir las decisiones de arquitectura en una herramienta de pensamiento (no de papeleo)</h2>
+    <div class="date">2026-05-04</div>
+    <img class="thumb" src="https://opengraph.githubassets.com/1/npryce/adr-tools" alt="">
+    <div class="body"><p>Cada equipo veterano tiene la misma cicatriz: alguien preguntando <em>por que en 2022 elegimos Postgres y no DynamoDB</em>, y nadie recuerda. Las opciones consideradas, los trade-offs evaluados, las restricciones del momento todo evaporado. La decision sigue activa, pero su contexto ha muerto. Ahi es donde entra el <strong>Architecture Decision Record (ADR)</strong>, una tecnica popularizada por Michael Nygard en su post de 2011 <a href="https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions"><em>Documenting Architecture Decisions</em></a> y convertida desde entonces en estandar de facto en ThoughtWorks, GDS UK y la mayoria de las staff-eng playbooks.</p>
+
+<p>El problema arquetipo: una decision de arquitectura no trivial elegir base de datos, formato de eventos, mecanismo de auth, libreria de logging. Hay tres o cuatro opciones razonables. Tras dos semanas de discusion eliges una. Tres meses despues entra alguien nuevo, propone otra, y nadie recuerda por que se descarto. Discusion de cero, repetida ad infinitum.</p>
+
+<p>Como aplicarlo el lunes por la manana, en formato Nygard:</p>
+
+<ol>
+<li><strong>Un archivo Markdown por decision</strong>, numerado: <code>doc/adr/0001-record-architecture-decisions.md</code>, <code>0002-use-postgres-for-orders.md</code>. Vive en el repo, junto al codigo. Si el codigo se mueve, la decision se mueve.</li>
+<li><strong>Cinco secciones, ninguna mas</strong>: Title (frase nominal corta), Status (proposed/accepted/deprecated/superseded), Context (las fuerzas en juego restricciones, requisitos, opciones consideradas), Decision (la respuesta), Consequences (que se vuelve mas facil, que se vuelve mas dificil despues de aceptar esto).</li>
+<li><strong>Maximo dos paginas</strong>. Si crece mas, no es un ADR, es un design doc. La brevedad es feature, no bug.</li>
+<li><strong>Inmutable una vez aceptado</strong>. Si la decision cambia, escribes un ADR nuevo que la <em>supersedea</em> y dejas el viejo en su sitio. Borrar historia tiene el mismo efecto que no escribirla.</li>
+<li><strong>Usalo como herramienta de pensamiento, no de comunicacion</strong>. Forzar la seccion Context donde tienes que explicar las opciones rechazadas es lo que captura el insight. Si te sale en cinco minutos, no estabas decidiendo nada importante.</li>
+<li><strong>Automatiza con <a href="https://github.com/npryce/adr-tools">npryce/adr-tools</a></strong>: <code>adr new</code> crea el siguiente numerado, <code>adr link</code> conecta superseded chains. Friction baja, adopcion sube.</li>
+</ol>
+
+<p>Caso real: el equipo de GOV.UK <a href="https://gds-way.digital.cabinet-office.gov.uk/standards/architecture-decisions.html">tiene su practica documentada publicamente</a> usan ADRs para cualquier decision con coste de marcha atras. Will Larson en <em>Staff Engineer</em> los recomienda para cualquier decision que un staff engineer respaldaria publicamente ante el resto de la organizacion.</p>
+
+<p>Cuando NO aplica: decisiones reversibles de bajo coste (que tipo de logger usar en una funcion interna), trabajo experimental que vas a tirar, o equipos donde nadie va a leerlos. Si el ADR se escribe para auditoria y no para la siguiente persona, ya esta corrupto.</p>
+
+<p>Siguiente paso si quieres profundizar: el <a href="https://adr.github.io/">portal adr.github.io</a> con plantillas alternativas (MADR, Y-Statements), y el <a href="https://martinfowler.com/bliki/ArchitectureDecisionRecord.html">bliki de Martin Fowler</a>. Empieza esta semana: numero 0001 puede ser <em>'Use ADRs to record architectural decisions'</em> el ADR que documenta que vais a usar ADRs.</p>
+
+<hr/>
+<p><strong>Sources:</strong></p>
+<ul>
+  <li><a href="https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions">https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions</a></li>
+  <li><a href="https://github.com/npryce/adr-tools">https://github.com/npryce/adr-tools</a></li>
+  <li><a href="https://adr.github.io/">https://adr.github.io/</a></li>
+  <li><a href="https://martinfowler.com/bliki/ArchitectureDecisionRecord.html">https://martinfowler.com/bliki/ArchitectureDecisionRecord.html</a></li>
+  <li><a href="https://gds-way.digital.cabinet-office.gov.uk/standards/architecture-decisions.html">https://gds-way.digital.cabinet-office.gov.uk/standards/architecture-decisions.html</a></li>
+</ul></div>
+  </article>
+  <article>
+    <h2>Decision tables: la herramienta de descomposición que se enseña en 10 minutos y caza bugs que pasarían el code review</h2>
+    <div class="date">2026-05-04</div>
+    <img class="thumb" src="https://www.hillelwayne.com/favicon.ico" alt="">
+    <div class="body"><p>Si te enseñan formal methods, suele empezar por TLA+ o Alloy y la gente huye. Hillel Wayne sostiene que el primer paso debería ser otro mucho más humilde: las <strong>decision tables</strong>. Una tabla de decisión es una representación estructurada de lógica condicional con dos partes: columnas de entrada con valores booleanos, y columnas de salida con el resultado. Nada más. Y, sin embargo, descubre bugs que pasan el code review tranquilamente.</p><p><strong>El ejemplo canónico (FizzBuzz) deja ver la mecánica:</strong></p><ul><li>Entradas: <code>n % 3 == 0</code>, <code>n % 5 == 0</code></li><li>T, T → 'FizzBuzz'</li><li>T, F → 'Fizz'</li><li>F, T → 'Buzz'</li><li>F, F → n</li></ul><p>Cuatro entradas booleanas dan 2^4=16 combinaciones; la tabla te obliga a tener una fila por cada una. Es trivial mientras hay 2 inputs. Cuando hay 5 inputs y 32 combinaciones es donde aparece el valor: <strong>el cerebro humano no es bueno enumerando 32 casos sin ayuda</strong>, y los <em>switch</em> y <em>if</em> anidados encubren combinaciones olvidadas.</p><p><strong>Cómo aplicarlo en 5 pasos (lunes por la mañana):</strong></p><ul><li><strong>Identifica las condiciones reales:</strong> no las funciones que llamas, las propiedades que importan. ¿Es el usuario admin? ¿Es de pago? ¿Está la feature flag activada?</li><li><strong>Lista todas las combinaciones:</strong> 2^n filas. Si te salen más de 32, demasiadas condiciones, descompón.</li><li><strong>Marca las salidas:</strong> qué debería ocurrir en cada combinación. Aquí aparecen los huecos: filas donde nadie sabe qué pasa.</li><li><strong>Compacta con '-' (don't care):</strong> si dos filas tienen la misma salida y solo difieren en una condición, esa condición no importa. Esto es <em>decomposition</em>: descubres que el código de verdad solo depende de 3 inputs, no de 5.</li><li><strong>Codifica desde la tabla, no al revés:</strong> la tabla es la spec. El código se valida contra ella, no contra tu memoria de 'qué quería el PM en la reunión'.</li></ul><p><strong>Caso de uso real que documenta Wayne:</strong> migrar un sistema legacy de audio con TTS donde había seis condiciones cruzadas (tipo de cuenta, idioma, dispositivo, hora, etc.). Sin la tabla, hubieran cubierto los casos 'obvios' y se hubieran comido los <em>edge cases</em>. Con la tabla, encontraron varias filas donde nadie sabía qué debía pasar —que es exactamente el bug que querías encontrar antes de desplegar, no después—.</p><p><strong>Cuándo NO aplica:</strong> lógica con muchos inputs no booleanos (rangos numéricos, strings) explota la tabla; ahí toca <em>property-based testing</em>. Tampoco para algoritmos con estado mutable o concurrencia: la tabla es para reglas puras, no para máquinas de estados (eso ya es TLA+). Y si la lógica es trivial, montar la tabla es overhead innecesario.</p><p><strong>Siguiente paso si quieres profundizar:</strong> los dos posts de Hillel Wayne ('Decision Tables' y 'Decision Table Patterns') y, si te enganchan, su libro <em>Logic for Programmers</em>, que dedica un capítulo entero. La técnica avanzada se llama <em>Parnas Tables</em> (David Parnas la formalizó en los 70 para el software del avión A-7 de la Marina de EE. UU.) y permite generalizar a tablas con condiciones más ricas. Empieza con la versión simple: probablemente cubre el 80% de los condicionales nudo de tu código.</p>
+<hr/>
+<p><strong>Sources:</strong></p>
+<ul>
+  <li><a href="https://www.hillelwayne.com/post/decision-tables/">https://www.hillelwayne.com/post/decision-tables/</a></li>
+  <li><a href="https://www.hillelwayne.com/post/decision-table-patterns/">https://www.hillelwayne.com/post/decision-table-patterns/</a></li>
+  <li><a href="https://leanpub.com/logic">https://leanpub.com/logic</a></li>
+  <li><a href="https://www.hillelwayne.com/tags/decision-tables/">https://www.hillelwayne.com/tags/decision-tables/</a></li>
+  <li><a href="https://news.ycombinator.com/item?id=38821708">https://news.ycombinator.com/item?id=38821708</a></li>
+</ul></div>
+  </article>
+  <article>
+    <h2>Cynefin: clasificar el problema antes de elegir la técnica (y por qué tu incidente de producción no es &#x27;complicado&#x27;, es caótico)</h2>
+    <div class="date">2026-05-04</div>
+    <img class="thumb" src="https://assets-us-01.kc-usercontent.com:443/c6e42f10-0ed4-0062-585c-b740aa1ad46c/82b28ac4-2628-454b-b630-d717439a6933/Cynefin18FEB2021.png" alt="">
+    <div class="body"><p>El framework Cynefin (galés para 'hábitat') lo creó Dave Snowden en IBM en 1999. La idea es preguerra: <strong>antes de elegir una metodología, clasifica el problema</strong>. Aplicar Scrum a un dominio caótico es como traer un mapa al medio de un incendio. Aplicar gestión de crisis a una tarea repetitiva es burocracia inútil. Cynefin te da cinco dominios y, para cada uno, una secuencia distinta de actuación.</p><figure><img src="https://assets-us-01.kc-usercontent.com:443/c6e42f10-0ed4-0062-585c-b740aa1ad46c/82b28ac4-2628-454b-b630-d717439a6933/Cynefin18FEB2021.png" alt="Diagrama del framework Cynefin con sus cinco dominios" style="max-width:100%;height:auto;" /><figcaption>Los cinco dominios de Cynefin (versión 2021).</figcaption></figure><p><strong>Los cinco dominios y su secuencia de actuación:</strong></p><ul><li><strong>Claro / obvio (sense → categorize → respond):</strong> causa-efecto evidente, hay best practice. Ejemplo: aplicar un parche de seguridad ya documentado. Aquí Waterfall y runbooks funcionan bien.</li><li><strong>Complicado (sense → analyze → respond):</strong> hay relación causa-efecto pero requiere experto. Ejemplo: optimizar una query lenta o diagnosticar un memory leak. Aquí entran los SREs senior, perfilado, traces.</li><li><strong>Complejo (probe → sense → respond):</strong> la causa solo se entiende en retrospectiva. Ejemplo: un cambio de UX que afecta retención de forma no obvia. Aquí toca <em>safe-to-fail experiments</em>: feature flags, A/B tests, despliegues canary.</li><li><strong>Caótico (act → sense → respond):</strong> no hay tiempo para analizar, hay que actuar para crear orden. Ejemplo: data breach activo o caída total de producción. Primero contienes (revocas accesos, aíslas), luego sientes qué se ha estabilizado, luego respondes.</li><li><strong>Confusión / desorden:</strong> no sabes en qué dominio estás. Es la situación más peligrosa porque el equipo aplica la técnica que mejor conoce, no la que toca.</li></ul><p><strong>Aplicación concreta a incident response:</strong> casi todos los incidentes mayores empiezan en el dominio caótico —no sabes qué pasa, los dashboards mienten, los clientes escriben—. Sundeep Singh lo describe bien para SRE: el primer movimiento es <em>act</em>, parar el sangrado (rollback, kill switch, traffic shedding), no diagnosticar. Solo cuando hay algo de estabilidad pasas a complejo (probar hipótesis con cambios pequeños) o a complicado (llamar al experto del subsistema).</p><p>El error clásico es saltarse caótico y meterse directo en complicado: convocar una war room de 20 personas y empezar a debatir causas mientras el sistema sigue cayendo. La regla es brutal: <strong>en caótico, las decisiones se toman en segundos por una sola persona</strong> (el incident commander), no por consenso.</p><p><strong>Cuándo NO aplica:</strong> Cynefin es heurística, no algoritmo. Equipos sin experiencia tienden a clasificar todo como 'complicado' (porque suena profesional). Y Snowden mismo ha cambiado el modelo varias veces; la versión que circula en blogs corporativos suele ser de 2007. Si vas a usarlo, usa la versión actualizada con el dominio 'aporético' (problemas que no se resuelven, solo se gestionan).</p><p><strong>Siguiente paso si quieres profundizar:</strong> el paper original de Snowden y Boone en HBR (2007, 'A Leader's Framework for Decision Making') y el ejercicio práctico de coger los últimos 5 incidentes de tu equipo y mapearlos. Sorpresa habitual: lo que llamabais 'incidente complicado' era en realidad caótico mal gestionado.</p>
+<hr/>
+<p><strong>Sources:</strong></p>
+<ul>
+  <li><a href="https://hbr.org/2007/11/a-leaders-framework-for-decision-making">https://hbr.org/2007/11/a-leaders-framework-for-decision-making</a></li>
+  <li><a href="https://thecynefin.co/about-us/about-cynefin-framework/">https://thecynefin.co/about-us/about-cynefin-framework/</a></li>
+  <li><a href="https://medium.com/swlh/using-cynefin-during-major-incident-management-ba00a78842dd">https://medium.com/swlh/using-cynefin-during-major-incident-management-ba00a78842dd</a></li>
+  <li><a href="https://avraam.dev/articles/2024-06-17-cynefin-framework/">https://avraam.dev/articles/2024-06-17-cynefin-framework/</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Cynefin_framework">https://en.wikipedia.org/wiki/Cynefin_framework</a></li>
+</ul></div>
+  </article>
+  <article>
+    <h2>Wardley Mapping: cuando &#x27;construir o comprar&#x27; deja de ser una corazonada</h2>
+    <div class="date">2026-05-04</div>
+    <img class="thumb" src="https://miro.medium.com/v2/resize:fit:1200/1*Ut3J3UO3P6F9tmmycLFuOA.png" alt="">
+    <div class="body"><p>Una de las decisiones mas costosas en cualquier proyecto tecnico es <strong>construir o comprar</strong>. Mal hecha te ata a un vendor que no escala, o te hace mantener un sistema custom cuando ya existe el commodity. La intuicion del lider tecnico falla porque mezcla criterios — coste, riesgo, diferenciacion, madurez — sin separarlos. El Wardley Mapping, creado por Simon Wardley a partir de su experiencia como CEO en los 2000s, es una tecnica visual que fuerza esa separacion.</p>
+
+<p>El problema arquetipo: tu equipo necesita capacidad X (autenticacion, busqueda vectorial, observabilidad, lo que sea). Hay 4 opciones: construir desde cero, usar open source y mantenerlo, comprar SaaS, o externalizar a un proveedor. Cada miembro del equipo defiende una con argumentos plausibles. Sin un mapa, la discusion gira en circulos.</p>
+
+<p>Como aplicarlo, siguiendo la version pragmatica que <a href="https://lethain.com/wardley-mapping/">Will Larson documenta</a> en <em>Irrational Exuberance</em>:</p>
+
+<ol>
+<li><strong>Lista usuarios y necesidades</strong>: quien usa el sistema y que quiere conseguir. No saltes este paso aunque parezca obvio.</li>
+<li><strong>Cadena de valor</strong>: desde la necesidad del usuario, dibuja hacia abajo los componentes que la satisfacen, y de cada uno los suyos. Es un grafo de dependencias.</li>
+<li><strong>Posiciona en el eje horizontal</strong>: cada componente cae en una de cuatro etapas evolutivas — Genesis (novedoso), Custom-Built (a medida), Product (producto/SaaS), Commodity (utility). Esta es la decision clave del ejercicio.</li>
+<li><strong>Aplica la regla simple</strong>: si esta en Genesis o Custom-Built, probablemente construyas. Si esta en Product o Commodity, probablemente compres. Construir un commodity es desperdiciar talento; comprar un genesis es imposible (no existe en el mercado).</li>
+<li><strong>Predice movimiento</strong>: todo componente se desplaza hacia la derecha con el tiempo. Lo que hoy es Custom-Built sera Product en 3 anos. Disena teniendo en cuenta esa migracion futura.</li>
+<li><strong>Comparte el mapa</strong>: un mapa privado vale poco. El valor aparece cuando el equipo lo discute y discrepa sobre donde colocar cada componente — esa discrepancia es el insight.</li>
+</ol>
+
+<p>Ejemplo real reciente (2026): un articulo de David Haberlah aplica Wardley a la pregunta de si un squad de 5 product managers debia comprar Productboard o construir su propia tooling agentica. Las APIs de LLM ya estan en commodity (precios estandarizados, switching cost bajo, multiples proveedores), asi que el path "build" sale mas barato a largo plazo — algo contraintuitivo hace solo dos anos.</p>
+
+<p>Cuando NO aplica: si tu problema es optimizar un funnel existente o iterar sobre algo que ya funciona, Wardley aporta poco — usa metricas y experimentacion. Tampoco sirve para decisiones tacticas de corto plazo; su valor esta en horizontes de 1-3 anos donde la evolucion de componentes importa.</p>
+
+<p>Siguiente paso si quieres profundizar: el libro online gratuito de Wardley (<em>Wardley Maps</em>, en GitHub bajo Creative Commons) y el repositorio <a href="https://github.com/wardley-maps-community/awesome-wardley-maps">awesome-wardley-maps</a> con plantillas y casos.</p>
+<hr/>
+<p><strong>Sources:</strong></p>
+<ul>
+  <li><a href="https://lethain.com/wardley-mapping/">https://lethain.com/wardley-mapping/</a></li>
+  <li><a href="https://medium.com/@haberlah/build-vs-buy-in-2026-using-wardley-mapping-to-navigate-the-agentic-ai-shift-be24d534b054">https://medium.com/@haberlah/build-vs-buy-in-2026-using-wardley-mapping-to-navigate-the-agentic-ai-shift-be24d534b054</a></li>
+  <li><a href="https://thenewstack.io/wardley-mapping-and-strategy-for-software-developers/">https://thenewstack.io/wardley-mapping-and-strategy-for-software-developers/</a></li>
+  <li><a href="https://github.com/wardley-maps-community/awesome-wardley-maps">https://github.com/wardley-maps-community/awesome-wardley-maps</a></li>
+  <li><a href="https://itrevolution.com/articles/how-to-wardley-map/">https://itrevolution.com/articles/how-to-wardley-map/</a></li>
+</ul></div>
+  </article>
+  <article>
+    <h2>El pre-mortem: la tecnica favorita de Kahneman para decidir mejor</h2>
+    <div class="date">2026-05-04</div>
+    <img class="thumb" src="https://fs.blog/wp-content/uploads/2017/04/kahneman-better-decisions.jpg" alt="">
+    <div class="body"><p>Antes de comprometerte con una decision importante, imagina que ya fracaso. No que <em>podria</em> fracasar — que <strong>ya fallo</strong>, espectacularmente, y estamos seis meses en el futuro escribiendo el post-mortem. Esa inversion mental es el pre-mortem, una tecnica desarrollada por el psicologo Gary Klein en 2007 y que Daniel Kahneman califica en <em>Thinking, Fast and Slow</em> como su tecnica favorita para mejorar decisiones.</p>
+
+<p>El problema arquetipo: estas a punto de aprobar un proyecto, contratar a alguien, lanzar un producto, o migrar una arquitectura. El equipo esta entusiasmado. Nadie quiere ser el aguafiestas. La planning fallacy y el sesgo de optimismo hacen que subestimes riesgos sistematicamente. Si pides criticas directas, en muchas organizaciones los esceptros son tratados como desleales — Kahneman lo dice asi de claro.</p>
+
+<p>El procedimiento concreto, en formato de sesion de 90 minutos:</p>
+
+<ol>
+<li><strong>Presenta la decision</strong> al grupo de stakeholders clave (5-10 personas idealmente). El plan ya esta sobre la mesa, supuestamente listo para aprobarse.</li>
+<li><strong>Cambia el marco temporal</strong>: "Estamos a 12 meses de hoy. El proyecto fracaso de manera estrepitosa. Cada uno tiene 20 minutos para escribir, individualmente, la historia de por que fracaso. Sed especificos."</li>
+<li><strong>Trabajo individual primero</strong> — esto es critico. Escribir antes de hablar evita el groupthink y la deferencia al jefe.</li>
+<li><strong>Ronda de lectura</strong>: cada persona lee su historia. Captura cada causa de fracaso en una lista comun.</li>
+<li><strong>Identifica patrones</strong>: las preocupaciones que aparecen en multiples historias son las que importan. Las idiosincraticas suelen ser ruido.</li>
+<li><strong>Convierte en mitigaciones accionables</strong>: para las top 3-5 causas, define quien hace que y cuando para reducir esa probabilidad.</li>
+</ol>
+
+<p>Por que funciona: explota la <strong>distancia psicologica</strong>. Tendemos a evaluar planes ajenos con mas lucidez que los propios. Imaginar el fracaso ya consumado activa la misma objetividad. Ademas, da legitimidad social a la critica — no estas atacando el plan, estas haciendo un ejercicio intelectual sobre un futuro imaginario.</p>
+
+<p>Cuando NO aplica: decisiones reversibles de bajo coste (los famosos <em>two-way doors</em> de Bezos), donde el coste de la sesion supera el coste de equivocarse. Tampoco funciona si el equipo no tiene psicologica seguridad real — si la gente teme represalias por escribir un escenario sombrio, escribiran tibieces. En ese caso el problema es cultural, no metodologico.</p>
+
+<p>Siguiente paso si quieres profundizar: Klein, <em>Streetlights and Shadows</em> (2009), o el articulo original en HBR "Performing a Project Premortem" (septiembre 2007). Para una version aplicada a IA generativa, el analisis 2025 de Brookings Institution explora pre-mortems para anticipar fallos eticos en sistemas autonomos.</p>
+<hr/>
+<p><strong>Sources:</strong></p>
+<ul>
+  <li><a href="https://fs.blog/kahneman-better-decisions/">https://fs.blog/kahneman-better-decisions/</a></li>
+  <li><a href="https://kepner-tregoe.com/blogs/the-premortem-technique-to-de-bias-decisions/">https://kepner-tregoe.com/blogs/the-premortem-technique-to-de-bias-decisions/</a></li>
+  <li><a href="https://www.adb.org/sites/default/files/publication/29658/premortem-technique.pdf">https://www.adb.org/sites/default/files/publication/29658/premortem-technique.pdf</a></li>
+  <li><a href="https://hbr.org/2007/09/performing-a-project-premortem">https://hbr.org/2007/09/performing-a-project-premortem</a></li>
+</ul></div>
+  </article>
+  <footer>Generated by cc-deepfeed &middot; 2026-05-26 07:20 UTC</footer>
+</body>
+</html>
