@@ -38,7 +38,7 @@ You define the topics you care about. Every morning, Claude researches them — 
 
 ```bash
 git clone https://github.com/xingjian-zhang/cc-deepfeed.git
-cd cc-deepfeed && pip install pyyaml
+cd cc-deepfeed && pip install -r requirements.txt
 ```
 
 Then open Claude Code in the project directory and run:
@@ -57,6 +57,31 @@ make init && make run
 Define your topics in `config.yaml` and write a [topic brief](.claude/agents/topics/_template.md) for each. See the [full config reference](docs/config-reference.md).
 
 </details>
+
+### Quick start (Windows, native PowerShell)
+
+If you're on Windows, use `cycle.ps1` instead of the bash scripts (no WSL needed):
+
+```powershell
+# 1. Clone + install
+git clone https://github.com/xingjian-zhang/cc-deepfeed.git
+cd cc-deepfeed
+pip install -r requirements.txt
+
+# 2. Config
+Copy-Item config.example.yaml config.yaml
+notepad config.yaml   # set base_url to https://<youruser>.github.io/<yourrepo>
+
+# 3. Init feeds and test once
+python feed.py init
+.\cycle.ps1           # full cycle: research + publish to gh-pages
+
+# 4. Activate GitHub Pages once (in browser):
+#    https://github.com/<youruser>/<yourrepo>/settings/pages
+#    Source: Deploy from a branch → Branch: gh-pages / (root) → Save
+
+# 5. Schedule the daily 09:00 run (see docs/scheduling.md → Windows section)
+```
 
 See the **[Getting Started Guide](docs/getting-started.md)** for a full walkthrough from clone to first published feed.
 
@@ -84,7 +109,7 @@ See the **[Getting Started Guide](docs/getting-started.md)** for a full walkthro
 - [Getting Started Guide](docs/getting-started.md) — full walkthrough from clone to published feed
 - [Configuration Reference](docs/config-reference.md) — topics, feeds, settings
 - [Publishing Guide](docs/publishing.md) — GitHub Pages, S3, WebSub
-- [Scheduling Guide](docs/scheduling.md) — cron, launchd, systemd
+- [Scheduling Guide](docs/scheduling.md) — cron, launchd, systemd, Windows Task Scheduler
 
 ## Disclaimer
 

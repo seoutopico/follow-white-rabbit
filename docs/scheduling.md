@@ -83,6 +83,93 @@ Add:
 
 This runs daily at 9:07 AM. The script manages its own log rotation — no need for shell redirects.
 
+## Windows: Task Scheduler + cycle.ps1
+
+Windows users should use `cycle.ps1` (native PowerShell orchestrator) instead of the bash scripts. It does both research and publish in one go and works without WSL.
+
+### One-time setup
+
+```powershell
+# 1. Install Python dependency
+pip install -r requirements.txt
+
+# 2. Copy and edit config
+Copy-Item config.example.yaml config.yaml
+notepad config.yaml   # set base_url to https://<youruser>.github.io/<yourrepo>
+
+# 3. Initialise feed XMLs
+python feed.py init
+
+# 4. Run once manually to verify end-to-end (publish included)
+.\cycle.ps1
+```
+
+After the first run, **activate GitHub Pages** in your repo:
+1. Open `https://github.com/<youruser>/<yourrepo>/settings/pages`
+2. Source: **Deploy from a branch** → Branch: `gh-pages` / `/(root)` → Save
+3. Wait 1–2 min and open `https://<youruser>.github.io/<yourrepo>/`
+
+### Register the daily scheduled task
+
+Run this once in PowerShell (as the regular user, not admin):
+
+```powershell
+$repo = "C:\path\to\follow-white-rabbit"
+
+$action = New-ScheduledTaskAction `
+    -Execute "powershell.exe" `
+    -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$repo\cycle.ps1`"" `
+    -WorkingDirectory $repo
+
+$trigger = New-ScheduledTaskTrigger -Daily -At 9:00am
+
+$settings = New-ScheduledTaskSettingsSet `
+    -StartWhenAvailable `
+    -DontStopIfGoingOnBatteries `
+    -AllowStartIfOnBatteries `
+    -ExecutionTimeLimit (New-TimeSpan -Hours 2)
+
+$principal = New-ScheduledTaskPrincipal `
+    -UserId "$env:USERDOMAIN\$env:USERNAME" `
+    -LogonType Interactive `
+    -RunLevel Limited
+
+$task = New-ScheduledTask `
+    -Action $action -Trigger $trigger `
+    -Settings $settings -Principal $principal `
+    -Description "Daily research cycle for follow-white-rabbit"
+
+Register-ScheduledTask -TaskName "follow-white-rabbit-daily" -InputObject $task
+```
+
+Verify next run:
+
+```powershell
+Get-ScheduledTaskInfo -TaskName "follow-white-rabbit-daily" | Select-Object NextRunTime, LastRunTime, LastTaskResult
+```
+
+`StartWhenAvailable` means if the PC was off at 09:00, the task fires when you next log in. The 2 h `ExecutionTimeLimit` is the kill switch in case workers hang.
+
+Disable / re-enable / remove:
+
+```powershell
+Disable-ScheduledTask  -TaskName "follow-white-rabbit-daily"
+Enable-ScheduledTask   -TaskName "follow-white-rabbit-daily"
+Unregister-ScheduledTask -TaskName "follow-white-rabbit-daily" -Confirm:$false
+```
+
+### Logs
+
+`cycle.ps1` writes one log per day to `.logs/research-YYYY-MM-DD.log` and prunes anything older than 7 days. Open the latest after each run to confirm all 5 workers finished and the publish step pushed to `gh-pages`.
+
+### Run options
+
+```powershell
+.\cycle.ps1                  # full cycle (research + publish), default
+.\cycle.ps1 -DryRun          # show what would run, don't spawn workers
+.\cycle.ps1 -SkipPublish     # research only, no push to gh-pages
+```
+
 ## Linux: systemd
 
 Create two files:

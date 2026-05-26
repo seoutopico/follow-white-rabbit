@@ -232,44 +232,91 @@ if (Test-Path $LockDir) {
 New-Item -ItemType Directory -Path $LockDir -Force | Out-Null
 
 try {
+    # Helper: ejecuta un comando git y aborta si exit code != 0
+    function Invoke-GitOrFail {
+        param([string]$Description, [scriptblock]$Cmd)
+        Log "  > $Description"
+        $output = & $Cmd 2>&1
+        $exit = $LASTEXITCODE
+        $output | ForEach-Object { Log "    $_" }
+        if ($exit -ne 0) {
+            throw "git falló en '$Description' (exit $exit). Aborto el publish."
+        }
+    }
+
     $remoteUrl = git remote get-url origin
+    if ($LASTEXITCODE -ne 0 -or -not $remoteUrl) {
+        throw "No pude obtener la URL del remote origin. Aborto el publish."
+    }
+    Log "Remote origin: $remoteUrl"
+
     $workDir = Join-Path ([System.IO.Path]::GetTempPath()) ("ccfeed-pub-" + [Guid]::NewGuid().ToString("N").Substring(0, 8))
     $cloneDir = Join-Path $workDir "repo"
 
-    $hasGhPages = $true
+    # Detecta si gh-pages existe en remoto
     & git ls-remote --exit-code --heads $remoteUrl gh-pages 2>$null | Out-Null
-    if ($LASTEXITCODE -ne 0) { $hasGhPages = $false }
+    $hasGhPages = ($LASTEXITCODE -eq 0)
 
     if ($hasGhPages) {
-        Log "Clonando rama gh-pages existente..."
-        & git clone --depth 1 --single-branch --branch gh-pages $remoteUrl $cloneDir 2>&1 | ForEach-Object { Log "  $_" }
+        Log "Rama gh-pages existe en remoto. Clonando..."
+        Invoke-GitOrFail "git clone --branch gh-pages" {
+            git clone --depth 1 --single-branch --branch gh-pages $remoteUrl $cloneDir
+        }
+        if (-not (Test-Path (Join-Path $cloneDir ".git"))) {
+            throw "Clone aparentemente OK pero $cloneDir/.git no existe. Aborto."
+        }
     } else {
-        Log "Rama gh-pages no existe en remoto. La creo."
+        Log "Rama gh-pages no existe en remoto. Creándola desde cero..."
         New-Item -ItemType Directory -Path $cloneDir -Force | Out-Null
-        & git -C $cloneDir init 2>&1 | Out-Null
-        & git -C $cloneDir remote add origin $remoteUrl
-        & git -C $cloneDir checkout --orphan gh-pages 2>&1 | Out-Null
+        # git init con la rama inicial directamente como gh-pages (Git 2.28+)
+        Invoke-GitOrFail "git init -b gh-pages" {
+            git init -b gh-pages $cloneDir
+        }
+        Invoke-GitOrFail "git remote add origin" {
+            git -C $cloneDir remote add origin $remoteUrl
+        }
+        # Sanity check: confirma que estamos en la rama gh-pages
+        $currentBranch = (& git -C $cloneDir symbolic-ref --short HEAD 2>$null)
+        if ($currentBranch -ne "gh-pages") {
+            throw "Tras git init, esperaba estar en rama 'gh-pages' pero estoy en '$currentBranch'. Aborto."
+        }
+        Log "  OK rama inicial = gh-pages"
     }
 
     # Limpia el clone (excepto .git) y copia los feeds nuevos
-    Get-ChildItem $cloneDir -Force | Where-Object { $_.Name -ne ".git" } |
-        Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+    Log "Limpiando $cloneDir y copiando feeds..."
+    Get-ChildItem $cloneDir -Force -ErrorAction Stop | Where-Object { $_.Name -ne ".git" } |
+        Remove-Item -Recurse -Force -ErrorAction Stop
 
     $FeedsDir = Join-Path $ProjectDir "feeds"
-    Get-ChildItem $FeedsDir -Filter "*.xml" | Copy-Item -Destination $cloneDir -Force
-    Get-ChildItem $FeedsDir -Filter "*.html" | Copy-Item -Destination $cloneDir -Force
-    Get-ChildItem $FeedsDir -Filter "*.png" -ErrorAction SilentlyContinue | Copy-Item -Destination $cloneDir -Force
-    if (Test-Path "$FeedsDir\index.opml") { Copy-Item "$FeedsDir\index.opml" $cloneDir -Force }
+    $copiedCount = 0
+    Get-ChildItem $FeedsDir -Filter "*.xml"  | ForEach-Object { Copy-Item $_.FullName $cloneDir -Force; $copiedCount++ }
+    Get-ChildItem $FeedsDir -Filter "*.html" | ForEach-Object { Copy-Item $_.FullName $cloneDir -Force; $copiedCount++ }
+    Get-ChildItem $FeedsDir -Filter "*.png" -ErrorAction SilentlyContinue | ForEach-Object { Copy-Item $_.FullName $cloneDir -Force; $copiedCount++ }
+    if (Test-Path "$FeedsDir\index.opml") { Copy-Item "$FeedsDir\index.opml" $cloneDir -Force; $copiedCount++ }
+    Log "  Copiados $copiedCount archivos a $cloneDir"
+    if ($copiedCount -eq 0) {
+        throw "No se copió ningún archivo a $cloneDir — algo está mal con $FeedsDir. Aborto."
+    }
 
     Push-Location $cloneDir
     try {
-        & git add -A
-        $diff = & git diff --cached --quiet; $hasChanges = ($LASTEXITCODE -ne 0)
+        Invoke-GitOrFail "git add -A" { git add -A }
+
+        # ¿Hay cambios?
+        & git diff --cached --quiet
+        $hasChanges = ($LASTEXITCODE -ne 0)
+
         if ($hasChanges) {
             $msg = "Update feeds {0}" -f (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
-            & git -c user.name="follow-white-rabbit" -c user.email="bot@seoutopico.local" commit -m $msg 2>&1 | ForEach-Object { Log "  $_" }
-            & git push origin gh-pages 2>&1 | ForEach-Object { Log "  $_" }
-            Log "Publicado a gh-pages."
+            Invoke-GitOrFail "git commit" {
+                git -c user.name="follow-white-rabbit" -c user.email="bot@seoutopico.local" commit -m $msg
+            }
+            # Primer push de la rama nueva necesita -u; los siguientes no, pero -u es idempotente
+            Invoke-GitOrFail "git push origin gh-pages" {
+                git push -u origin gh-pages
+            }
+            Log "OK publicado a gh-pages."
         } else {
             Log "No hay cambios que publicar."
         }
