@@ -4,7 +4,7 @@
     <title>Casos de Uso PrÃ¡cticos de IA</title>
     <description>Per-topic feed: Casos de Uso PrÃ¡cticos de IA</description>
     <link>https://seoutopico.github.io/follow-white-rabbit/white-rabbit-casos-uso-ia.xml</link>
-    <lastBuildDate>Tue, 26 May 2026 07:03:50 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 06:14:55 +0000</lastBuildDate>
     <generator>cc-deepfeed</generator>
     <ns0:link rel="self" href="https://seoutopico.github.io/follow-white-rabbit/white-rabbit-casos-uso-ia.xml" type="application/rss+xml" />
     <item>
@@ -259,6 +259,103 @@
       <category>casos-uso-ia</category>
       <link>https://www.pravinkumar.co/blog/daily-workflow-claude-code-webflow-mcp-2026</link>
       <enclosure url="https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/698f525504b02eec936ac51b_68c469d41149ace562bfd24d_og-claude-product-claude-code.jpeg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Harvey publica LAB: 1.250 tareas reales, 75.000 criterios y "all-pass grading" para medir agentes legales</title>
+      <description>&lt;p&gt;Harvey lanzó el 6 de mayo su &lt;strong&gt;Legal Agent Benchmark&lt;/strong&gt; (LAB), un benchmark open source pensado para medir agentes legales en trabajo de bufete real, no en preguntas tipo test. Lo firman Niko Grupen (head of applied research) junto a Gabe y Julio Pereyra, con soporte de Anthropic, OpenAI, Nvidia, Mistral y Google DeepMind, además de LangChain, Stanford Liftlab y Snorkel.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://www.lawnext.com/wp-content/uploads/2026/05/HarveyLABFeaturedImaged.png" alt="Harvey Legal Agent Benchmark" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;LAB: 1.250 tareas, 24 áreas de práctica, 75.000 criterios de rúbrica.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué hay dentro&lt;/strong&gt;. La primera versión incluye más de 1.250 tareas distribuidas en 24 áreas de práctica (transaccional, advisory, regulatorio, litigios), evaluadas con más de 75.000 criterios de rúbrica escritos por abogados expertos. Cada tarea es una instrucción + un client matter con materiales reales + la exigencia de producir un work product. La idea es replicar el flujo de "asigna trabajo a un associate junior, revísalo".&lt;/p&gt;
+
+&lt;p&gt;El detalle metodológico importante: &lt;strong&gt;all-pass grading&lt;/strong&gt;. Una tarea solo cuenta como completada si pasa todos los criterios. Nada de notas parciales. Refleja cómo se revisa el trabajo legal de verdad: un contrato con una cláusula mal sirve para tirar, no para sacar un 7.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Sin leaderboard, a propósito&lt;/strong&gt;. Harvey publicó el benchmark sin tabla de puntuaciones. Prometen resultados de modelos frontera "en las próximas semanas". Code y parte del dataset están en &lt;a href="https://github.com/harveyai/harvey-labs"&gt;github.com/harveyai/harvey-labs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Las críticas también importan&lt;/strong&gt;. Bob Ambrogi (LawSites) recuerda dos cosas. Primero, LAB lo construye un participante del mercado: la definición de "trabajo bien hecho" embebida en las rúbricas refleja la filosofía de Harvey. Segundo, citando a Houfu Ang (Alt-Counsel), los proyectos open source de vendors legales bien financiados rara vez se convierten en código mantenido por la comunidad. Aun así, marca diferencia respecto a LegalBench o CUAD: aquí se mide trabajo de horizonte largo, multi-paso, con entregable, no razonamiento aislado.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Por qué es replicable como método&lt;/strong&gt;. Aunque no seas un bufete, la mecánica es aplicable a cualquier dominio donde quieras evaluar agentes en tareas reales. La fórmula: (1) define un work product final, (2) escribe la rúbrica con un experto del dominio, no con el ingeniero, (3) graduate solo en all-pass para tareas críticas. Es lo opuesto a "el LLM como juez" con prompt genérico.&lt;/p&gt;
+
+&lt;p&gt;El contexto de mercado pesa: Latham &amp;amp; Watkins desplegó Harvey a sus 3.600+ abogados, Harvey tiene 25.000 custom agents en producción entre clientes y la mayoría del AmLaw 100 ya los usa. LAB es también una forma de fijar el listón que tendrán que superar los competidores.&lt;/p&gt;
+
+&lt;p&gt;Yo probaría empezar por escribir 20 rúbricas all-pass de tu propio dominio antes de comparar modelos. La sorpresa es ver cuántos casos tu "agente que funciona" suspende cuando exiges que pase todos los criterios, no solo la mayoría.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark"&gt;https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.artificiallawyer.com/2026/05/06/harvey-launches-legal-agent-bench/"&gt;https://www.artificiallawyer.com/2026/05/06/harvey-launches-legal-agent-bench/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.lawnext.com/2026/05/some-thoughts-on-harveys-launch-of-lab-an-open-source-long-horizon-benchmark-for-legal-ai-agents.html"&gt;https://www.lawnext.com/2026/05/some-thoughts-on-harveys-launch-of-lab-an-open-source-long-horizon-benchmark-for-legal-ai-agents.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/harveyai/harvey-labs"&gt;https://github.com/harveyai/harvey-labs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">a4f1cd9f-0cca-5527-b541-d9efba2e0ba7</guid>
+      <pubDate>Wed, 27 May 2026 06:13:38 +0000</pubDate>
+      <category>casos-uso-ia</category>
+      <link>https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark</link>
+      <enclosure url="https://www.lawnext.com/wp-content/uploads/2026/05/HarveyLABFeaturedImaged.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Claude for Small Business: 11 workflows con cifras reales para chasing de facturas y cierre mensual</title>
+      <description>&lt;p&gt;Anthropic lanzó &lt;strong&gt;Claude for Small Business&lt;/strong&gt; el 13 de mayo. No es un producto nuevo: es un empaquetado de Claude con 15 workflows agénticos listos para usar, 15 skills reutilizables y conectores nativos a las herramientas que ya tienen contratadas las pymes: QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace y Microsoft 365. Sin coste adicional sobre el plan Pro (0/mes) o Max (00-00/mes).&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/8b8b97e4751b8167a04ce6c7fb7ad8d240c44ccf-1000x1000.svg" alt="Claude for Small Business" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Conectores nativos a QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace y Microsoft 365.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;El workflow estrella: invoice chaser&lt;/strong&gt;. Claude lee las facturas abiertas en QuickBooks, cruza con los settlements de PayPal para ver qué se ha cobrado y qué no, redacta mensajes de seguimiento personalizados por cliente y los deja en cola esperando aprobación del owner antes de enviar. Ahorro real estimado: 2-4 horas a la semana para un negocio con 20+ facturas abiertas en cualquier momento.&lt;/p&gt;
+
+&lt;p&gt;Es el caso de entrada perfecto: alta frecuencia, ahorro obvio en la primera semana, y el peor error posible (un email de seguimiento algo torpe) es recuperable. Si arrancas con este y funciona, justificas el resto.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Los otros 10 workflows nombrados explícitamente&lt;/strong&gt;: planning payroll (forecast a 30 días cruzando QuickBooks + PayPal), closing the month (concilia libros, marca discrepancias, genera P&amp;amp;L en lenguaje plano), business pulse, campaigns, margin analyzer, month-end prepper, tax-season organizer, contract reviewer, lead triager, content strategist. Los 4 restantes no están detallados en el anuncio.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Patrón clave: human-in-the-loop por defecto&lt;/strong&gt;. Cada workflow lo dispara el dueño y nada se envía, publica ni paga sin aprobación explícita. Anthropic no entrena con datos del cliente en Team ni Enterprise. Es la lección aprendida de los incidentes catastróficos del año pasado: los agentes en SMB tocan dinero y clientes reales, no se puede dar autonomía total.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Casos con nombre y apellido&lt;/strong&gt;. Brian Ludviksen, COO de Purity Coffee (un tostador): "no solo resolvió problemas, me enseñó problemas que no sabía que tenía". Mike Beckham, CEO de Simple Modern: "lo que pensábamos que eran restricciones, ya no lo son". Ryan Olson, de MidCentral Energy: liberó trabajo clerical para tareas con valor. Sin números duros aún (el producto lleva dos semanas), pero ningún testimonio dice "despedí a nadie". El patrón es propietarios que dejan de hacer trabajo administrativo a las 11 de la noche, no recortes.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Por qué importa para alguien técnico&lt;/strong&gt;. Si trabajas con pymes como freelance o tienes una propia, esto cambia el cálculo de qué automatizar. Antes el coste de integrar QuickBooks con cualquier cosa era prohibitivo para un negocio de 5-10 personas; ahora el conector ya está y solo hay que diseñar el workflow encima. Las consultoras de "transformación digital" para pymes acaban de perder gran parte del trabajo de plumbing.&lt;/p&gt;
+
+&lt;p&gt;Yo probaría empezar por el invoice chaser con tu propia cuenta de QuickBooks: una semana de uso te dice si el ROI es real para tu tamaño, sin meterte en migraciones ni promesas a tres meses.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.anthropic.com/news/claude-for-small-business"&gt;https://www.anthropic.com/news/claude-for-small-business&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://qz.com/anthropic-claude-small-business-quickbooks-paypal-051326"&gt;https://qz.com/anthropic-claude-small-business-quickbooks-paypal-051326&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.axios.com/2026/05/13/anthropic-claude-small-business-smb"&gt;https://www.axios.com/2026/05/13/anthropic-claude-small-business-smb&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://the-decoder.com/anthropic-launches-claude-for-small-business-to-embed-ai-into-the-tools-you-forgot-you-pay-for/"&gt;https://the-decoder.com/anthropic-launches-claude-for-small-business-to-embed-ai-into-the-tools-you-forgot-you-pay-for/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">3740a6eb-2151-52cd-ba61-429f90129ead</guid>
+      <pubDate>Wed, 27 May 2026 06:14:17 +0000</pubDate>
+      <category>casos-uso-ia</category>
+      <link>https://www.anthropic.com/news/claude-for-small-business</link>
+      <enclosure url="https://www-cdn.anthropic.com/images/4zrzovbb/website/8b8b97e4751b8167a04ce6c7fb7ad8d240c44ccf-1000x1000.svg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Hackensack Meridian despliega Ekam: una enfermera de oncología, Vertex AI y 7.000 clínicos resumiendo notas en 45 segundos</title>
+      <description>&lt;p&gt;Hackensack Meridian Health, red de 18 hospitales y más de 500 centros clínicos en Nueva Jersey, es el primer sistema sanitario que despliega a escala un agente sobre Gemini para resumir notas clínicas. El producto se llama &lt;strong&gt;Ekam&lt;/strong&gt; (sánscrito: "una sola fuente de verdad") y lo usan ya más de 7.000 clínicos. Desde que arrancó en junio de 2025, 1.200 de ellos han generado más de 17.000 resúmenes y el uso sigue creciendo.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://njbiz.com/files/2026/02/brat-2_feature_PROVIDED-BY-HACKENSACK-MERIDIAN-HEALTH.jpg" alt="Margia Fonseca, enfermera de oncología, lidera el despliegue de Ekam" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Margia Fonseca, enfermera del John Theurer Cancer Center, lidera el rollout con un "Ekam Tour" hospital por hospital.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué hace exactamente&lt;/strong&gt;. Ekam lee y sintetiza notas clínicas del historial de un paciente en unos 45 segundos. Se activa con un botón dentro del chart. La clave: produce resúmenes &lt;strong&gt;específicos por especialidad&lt;/strong&gt; sobre más de 12 disciplinas. El oncólogo ve un resumen distinto al que ve el urólogo para el mismo paciente, porque la información relevante cambia. Eso es lo que separa Ekam de un wrapper genérico de "resume este texto".&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Construido, no comprado&lt;/strong&gt;. Hackensack decidió construirlo internamente sobre Vertex AI en lugar de licenciar Epic Cosmos u otro producto similar. La razón pública: control sobre la personalización por especialidad y sobre cómo se integra con su semantic data layer. Sameer Sethi (Chief AI Officer) y Aashima Gupta (Google Cloud Healthcare) firman el caso conjunto.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Despliegue raro: una enfermera con un tour&lt;/strong&gt;. Aquí está la parte replicable. El rollout no lo lidera IT ni un comité de gobernanza: lo lidera Margia Fonseca, enfermera de oncología del John Theurer Cancer Center, que hace un "Ekam Tour" recorriendo hospitales con identidad visual verde fluor inspirada en pop culture. Su frase resume el principio: "tienen que tenernos en el paso uno". Adopción clínica genuina porque la cara visible es una enfermera, no un VP.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;El número que importa&lt;/strong&gt;. Reducción de "pajama time", el tiempo que los médicos dedican a documentación fuera del horario laboral. No hay cifra exacta pública todavía, pero el modelo de medición es ese: no productividad, sino horas que el clínico recupera para dormir o ver a su familia.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué hace replicable este caso&lt;/strong&gt;. Tres cosas concretas. Primero, &lt;strong&gt;vertical, no horizontal&lt;/strong&gt;: resúmenes por especialidad, no "asistente clínico para todo". Segundo, build vs buy con criterio: si la diferenciación está en la personalización fina, construir tiene sentido; si es commodity, comprar. Tercero, embajadores clínicos antes que mandatos top-down. En cualquier organización con resistencia a IA, la persona que evangeliza importa más que la herramienta.&lt;/p&gt;
+
+&lt;p&gt;Yo probaría empezar por mapear, en tu propio dominio, qué es "oncólogo vs urólogo": qué subconjunto de la información cambia según el rol del usuario. Si la respuesta es "todo el mundo necesita lo mismo", probablemente no necesitas un agente, necesitas una mejor búsqueda.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.googlecloudpresscorner.com/2025-10-16-Hackensack-Meridian-Health-Transforms-Patient-Care-with-AI-Agents-Built-with-Google-Cloud-Technology"&gt;https://www.googlecloudpresscorner.com/2025-10-16-Hackensack-Meridian-Health-Transforms-Patient-Care-with-AI-Agents-Built-with-Google-Cloud-Technology&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://njbiz.com/hackensack-meridian-ekam-ai-google-cloud-nurses/"&gt;https://njbiz.com/hackensack-meridian-ekam-ai-google-cloud-nurses/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://theridgewoodblog.net/say-goodbye-to-clinical-burnout-how-hackensack-meridians-new-ai-ekam-is-saving-the-patient-story/"&gt;https://theridgewoodblog.net/say-goodbye-to-clinical-burnout-how-hackensack-meridians-new-ai-ekam-is-saving-the-patient-story/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.healthcaredive.com/news/google-cloud-ai-agent-partnerships-hackensack-meridian-iks-health/802980/"&gt;https://www.healthcaredive.com/news/google-cloud-ai-agent-partnerships-hackensack-meridian-iks-health/802980/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">b90a76ff-7fb3-5053-aee8-68b710dc20c7</guid>
+      <pubDate>Wed, 27 May 2026 06:14:55 +0000</pubDate>
+      <category>casos-uso-ia</category>
+      <link>https://www.googlecloudpresscorner.com/2025-10-16-Hackensack-Meridian-Health-Transforms-Patient-Care-with-AI-Agents-Built-with-Google-Cloud-Technology</link>
+      <enclosure url="https://njbiz.com/files/2026/02/brat-2_feature_PROVIDED-BY-HACKENSACK-MERIDIAN-HEALTH.jpg" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>

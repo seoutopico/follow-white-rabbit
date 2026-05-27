@@ -4,7 +4,7 @@
     <title>Claude Code y Sistemas de Agentes</title>
     <description>Per-topic feed: Claude Code y Sistemas de Agentes</description>
     <link>https://seoutopico.github.io/follow-white-rabbit/white-rabbit-claude-code.xml</link>
-    <lastBuildDate>Tue, 26 May 2026 07:04:58 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 06:15:27 +0000</lastBuildDate>
     <generator>cc-deepfeed</generator>
     <ns0:link rel="self" href="https://seoutopico.github.io/follow-white-rabbit/white-rabbit-claude-code.xml" type="application/rss+xml" />
     <item>
@@ -713,6 +713,205 @@ Resume este PR en 3 bullets...&lt;/code&gt;&lt;/pre&gt;
       <category>claude-code</category>
       <link>https://dev.classmethod.jp/en/articles/20260524-claude-code-updates-v2-1-150/</link>
       <enclosure url="https://docs.anthropic.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fclaude-code-hero.png&amp;w=1920&amp;q=75" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Claude Code 2.1.139: agent view, /goal y los hooks aprenden a no romper el turno</title>
+      <description>&lt;p&gt;El 11 de mayo Anthropic publicó &lt;strong&gt;Claude Code 2.1.139&lt;/strong&gt;, una de las releases con más cambios estructurales del trimestre. Tres novedades merecen atención inmediata porque cambian cómo se opera con varias sesiones a la vez, cómo se delega trabajo largo, y cómo se escriben hooks que no aborten el turno por error.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://firebasestorage.googleapis.com/v0/b/joinnextdev.firebasestorage.app/o/blogImages%2FH7beqx1tXc1d0eWPAtRP%2Fclaude-code-21139-agent-view-changes-everything-hero.png?alt=media&amp;amp;token=6c185390-358d-4ce5-aba4-c1db6d05150f" alt="Claude Code 2.1.139 agent view" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Vista agent view en 2.1.139.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;h3&gt;Agent view: una pantalla para todas las sesiones&lt;/h3&gt;
+
+&lt;p&gt;Hasta ahora cada sesión de Claude Code vivía en su propio terminal o worktree. Si tenías cuatro tareas largas en paralelo, necesitabas cuatro ventanas y memoria propia para saber cuál estaba bloqueada esperando tu input. La nueva &lt;code&gt;claude agents&lt;/code&gt; (research preview) abre una lista única con todas las sesiones agrupadas por estado: corriendo, esperando aprobación tuya, o terminadas. Reemplaza el típico &lt;em&gt;tmux con cuatro paneles&lt;/em&gt; por una vista canónica que el propio binario mantiene.&lt;/p&gt;
+
+&lt;p&gt;El cambio importa porque la unidad operativa real de Claude Code en equipos serios ya no es la sesión individual sino el portfolio de sesiones simultáneas. Antes había que construir esa vista a mano con scripts. Ahora viene de fábrica.&lt;/p&gt;
+
+&lt;h3&gt;/goal: condición de salida en vez de turno único&lt;/h3&gt;
+
+&lt;p&gt;El comando &lt;code&gt;/goal&lt;/code&gt; redefine lo que significa &amp;laquo;terminar&amp;raquo;. En lugar de iterar turno a turno hasta que tú decidas parar, declaras la condición que debe cumplirse y Claude trabaja autónomo hasta lograrla o quedarse atascado. Ejemplo concreto:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/goal All TypeScript errors resolved, tests passing, no ESLint warnings&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Funciona en modo interactivo, con &lt;code&gt;-p&lt;/code&gt; para scripts, y en Remote Control. Un overlay vivo muestra tiempo transcurrido, número de turns y tokens consumidos acumulados. La regla práctica que sale de la documentación: el goal tiene que ser verificable. &lt;em&gt;&amp;laquo;Mejora el código&amp;raquo;&lt;/em&gt; no es un goal, es una conversación. &lt;em&gt;&amp;laquo;Lighthouse performance &amp;gt;90 en /checkout&amp;raquo;&lt;/em&gt; sí lo es.&lt;/p&gt;
+
+&lt;p&gt;Avisos claros: no lo uses para tareas creativas abiertas, monitoriza los primeros goals para estimar coste, y ten un plan B si la condición no se cumple en N turns. El overlay con tokens existe precisamente para que veas la factura crecer en tiempo real antes de que te explote.&lt;/p&gt;
+
+&lt;h3&gt;Hooks con args y continueOnBlock&lt;/h3&gt;
+
+&lt;p&gt;Dos mejoras al sistema de hooks que llevaban tiempo pidiendo a gritos.&lt;/p&gt;
+
+&lt;p&gt;La primera es el campo &lt;code&gt;args: string[]&lt;/code&gt;: hasta ahora los hooks tipo &lt;code&gt;command&lt;/code&gt; pasaban por shell, lo que obligaba a comillar rutas con espacios y dejaba la puerta abierta a bugs de inyección. Con &lt;code&gt;args&lt;/code&gt; el binario se llama directo, sin shell:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  "type": "command",
+  "args": ["python3", "/.claude/hooks/validate.py", "--strict"],
+  "timeout": 60
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;La guía oficial: usa &lt;code&gt;command&lt;/code&gt; cuando necesites pipes, redirección, &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; o expansiones; usa &lt;code&gt;args&lt;/code&gt; cuando llamas a un binario con parámetros. Lo segundo es lo más seguro y debería ser el default en hooks nuevos.&lt;/p&gt;
+
+&lt;p&gt;La segunda es &lt;code&gt;continueOnBlock&lt;/code&gt; para PostToolUse. Hasta 2.1.138, si un hook devolvía &lt;code&gt;"decision": "block"&lt;/code&gt; el turno se abortaba en seco. Con &lt;code&gt;continueOnBlock: true&lt;/code&gt; el motivo del bloqueo se devuelve a Claude como un &lt;code&gt;tool_result&lt;/code&gt;, y el modelo puede leer la queja y reintentar con otra estrategia:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  "hooks": {
+    "PostToolUse": [{
+      "matcher": "Write|Edit",
+      "hooks": [{
+        "type": "command",
+        "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/policy-check.py",
+        "continueOnBlock": true
+      }]
+    }]
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;El criterio: activa &lt;code&gt;continueOnBlock&lt;/code&gt; cuando el motivo del bloqueo es algo accionable (&lt;em&gt;&amp;laquo;ese fichero es read-only, escribe en otro&amp;raquo;&lt;/em&gt;); déjalo desactivado cuando el bloqueo debe parar el turno completo (compliance, seguridad). Hasta ahora muchos hooks de policy actuaban como minas: bloqueaban sin dar contexto y forzaban al usuario a relanzar. Esto convierte el hook en una conversación.&lt;/p&gt;
+
+&lt;h3&gt;Detalles que también van dentro&lt;/h3&gt;
+
+&lt;p&gt;MCP stdio servers reciben ahora &lt;code&gt;CLAUDE_PROJECT_DIR&lt;/code&gt; en su entorno, llegando a paridad con hooks. Plugin configs aceptan &lt;code&gt;${CLAUDE_PROJECT_DIR}&lt;/code&gt; en command definitions. Transcript navigation suma atajos: &lt;code&gt;?&lt;/code&gt; lista shortcuts, &lt;code&gt;{&lt;/code&gt; y &lt;code&gt;}&lt;/code&gt; saltan entre prompts del usuario, &lt;code&gt;v&lt;/code&gt; alterna el panel. &lt;code&gt;claude plugin details &amp;lt;name&amp;gt;&lt;/code&gt; muestra inventario de componentes del plugin y coste de tokens proyectado por sesión, útil antes de instalar un plugin gordo. Las requests de subagent ahora llevan headers y span attributes OTEL propios, lo que cierra el tema de trazado distribuido que vimos en 2.1.121.&lt;/p&gt;
+
+&lt;p&gt;Próxima pregunta abierta: ¿agent view sale de research preview en 2.1.155, o se queda como flag durante semanas? El patrón de Anthropic con features grandes ha sido tres a cuatro releases en preview antes de promocionar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://claude-world.com/articles/claude-code-21139-release/"&gt;https://claude-world.com/articles/claude-code-21139-release/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://explainx.ai/blog/claude-code-goal-command-long-running-agents-2026"&gt;https://explainx.ai/blog/claude-code-goal-command-long-running-agents-2026&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.lukerenton.com/matins/2026-05-12"&gt;https://www.lukerenton.com/matins/2026-05-12&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://x.com/ClaudeCodeLog/status/2053913638197416198"&gt;https://x.com/ClaudeCodeLog/status/2053913638197416198&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">7dcca36a-f220-5bd5-92bd-84c7aeb4ef00</guid>
+      <pubDate>Wed, 27 May 2026 06:13:41 +0000</pubDate>
+      <category>claude-code</category>
+      <link>https://claude-world.com/articles/claude-code-21139-release/</link>
+      <enclosure url="https://firebasestorage.googleapis.com/v0/b/joinnextdev.firebasestorage.app/o/blogImages%2FH7beqx1tXc1d0eWPAtRP%2Fclaude-code-21139-agent-view-changes-everything-hero.png?alt=media&amp;token=6c185390-358d-4ce5-aba4-c1db6d05150f" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>MCP 2026-07-28 release candidate: el protocolo se queda sin sesiones y se vuelve plano detrás de un load balancer</title>
+      <description>&lt;p&gt;El 21 de mayo se cerró el lock del nuevo &lt;strong&gt;MCP 2026-07-28 release candidate&lt;/strong&gt;, la primera revisión mayor de la spec desde noviembre. Hasta el 28 de julio (fecha de publicación final) los SDK maintainers y client implementers tienen diez semanas para validar contra cargas reales. El cambio gordo: &lt;em&gt;MCP es ahora stateless a nivel de protocolo&lt;/em&gt;. Lo demás se deriva de esa decisión.&lt;/p&gt;
+
+&lt;h3&gt;Adiós initialize, adiós Mcp-Session-Id&lt;/h3&gt;
+
+&lt;p&gt;Hasta la spec 2025-11-25 todo cliente tenía que hacer un handshake &lt;code&gt;initialize&lt;/code&gt; y recibía un header &lt;code&gt;Mcp-Session-Id&lt;/code&gt; que lo pegaba a una instancia concreta del servidor. Eso obligaba a infra de producción a montar sticky sessions, un store compartido, o deep packet inspection en el gateway para enrutar bien. Un servidor MCP remoto serio era un dolor operacional.&lt;/p&gt;
+
+&lt;p&gt;El RC elimina ambos mecanismos. La información del cliente y la versión del protocolo viajan en &lt;code&gt;_meta&lt;/code&gt; en cada request. Si el cliente necesita saber capacidades, llama a un método nuevo &lt;code&gt;server/discover&lt;/code&gt;. Cualquier instancia del servidor puede responder a cualquier request. Cita textual de la spec: &lt;em&gt;&amp;laquo;un servidor MCP remoto que antes necesitaba sticky sessions, store compartido y deep packet inspection en el gateway puede ahora correr detrás de un round-robin plano&amp;raquo;&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Tres headers que hacen la vida de la infra mucho más fácil&lt;/h3&gt;
+
+&lt;p&gt;Routable, cacheable, traceable. Tres mejoras que cambian cómo despliegas MCP en una empresa de verdad.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Mcp-Method y Mcp-Name headers&lt;/strong&gt;: load balancers y gateways pueden rutear sin parsear el body. Esto significa que un L7 estándar tipo HAProxy o Envoy hace su trabajo sin reglas custom.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cache control&lt;/strong&gt;: list y resource reads devuelven &lt;code&gt;ttlMs&lt;/code&gt; y &lt;code&gt;cacheScope&lt;/code&gt;, modelados sobre HTTP &lt;code&gt;Cache-Control&lt;/code&gt;. El cliente entiende ventanas de frescura y límites de compartición seguros sin inventar convenciones.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Distributed tracing&lt;/strong&gt;: propagación de W3C Trace Context vía &lt;code&gt;traceparent&lt;/code&gt;, &lt;code&gt;tracestate&lt;/code&gt; y &lt;code&gt;baggage&lt;/code&gt;. Sigue el hilo que llevamos abierto desde mayo sobre trazado distribuido en Agent SDK; ahora también está en MCP a nivel de spec.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Multi-round-trip sin SSE&lt;/h3&gt;
+
+&lt;p&gt;Una de las partes feas del MCP viejo: si el servidor necesitaba más input del usuario a mitad de una llamada, mantenía un stream SSE abierto. En un mundo stateless eso ya no encaja. La nueva forma: el servidor devuelve un &lt;code&gt;InputRequiredResult&lt;/code&gt; con el prompt; el cliente recoge la respuesta y vuelve a llamar con &lt;code&gt;inputResponses&lt;/code&gt; y un &lt;code&gt;requestState&lt;/code&gt; echoed. Cualquier instancia puede continuar. Sin streams pegados a una conexión TCP.&lt;/p&gt;
+
+&lt;h3&gt;Extensions framework: MCP Apps y Tasks salen del core&lt;/h3&gt;
+
+&lt;p&gt;Las extensiones ganan governance formal: identificadores reverse-DNS, repos separados, versiones independientes y track propio en el proceso SEP. Dos extensiones oficiales arrancan el día uno:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;MCP Apps&lt;/strong&gt; (que veíamos en research preview desde el SEP-1865 en marzo) entra como extensión oficial. Servers entregan HTML interactivo renderizado en iframes sandboxed; las tools declaran UI templates para prefetch y revisión de seguridad. La UI renderizada se comunica con el servidor vía el mismo JSON-RPC, así que los logs de auditoría no tienen huecos.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt; gradúa de experimental a extensión. Modelo de ciclo de vida reformulado sobre statelessness: el servidor responde a &lt;code&gt;tools/call&lt;/code&gt; con un task handle; el cliente conduce el progreso vía &lt;code&gt;tasks/get&lt;/code&gt;, &lt;code&gt;tasks/update&lt;/code&gt; y &lt;code&gt;tasks/cancel&lt;/code&gt;. &lt;em&gt;Server-directed creation&lt;/em&gt;: el servidor decide cuándo una llamada se convierte en task. Detalle importante: &lt;code&gt;tasks/list&lt;/code&gt; desaparece porque sin sesiones no hay scoping natural.&lt;/p&gt;
+
+&lt;h3&gt;OAuth con más rigor&lt;/h3&gt;
+
+&lt;p&gt;Seis SEPs aprietan la alineación con OAuth 2.0 y OpenID Connect. Lo que va a tocar a quien escriba clientes: validar el parámetro &lt;code&gt;iss&lt;/code&gt; por RFC 9207; Dynamic Client Registration ahora exige declarar &lt;code&gt;application_type&lt;/code&gt;; las credenciales se vinculan al servidor que las emitió y hay que re-registrar al migrar; flujos OpenID Connect refresh token documentados; &lt;code&gt;.well-known&lt;/code&gt; discovery clarificado. No es revolucionario pero es lo que distingue un cliente que pasa una auditoría de uno que no.&lt;/p&gt;
+
+&lt;h3&gt;Deprecaciones anunciadas&lt;/h3&gt;
+
+&lt;p&gt;Tres features entran en deprecación con política formal de doce meses mínimo antes de borrar:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Roots&lt;/strong&gt; &amp;rarr; parámetros de tool, URIs de resource o config del servidor.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sampling&lt;/strong&gt; &amp;rarr; integración directa con la API del proveedor de LLM.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Logging&lt;/strong&gt; &amp;rarr; stderr o OpenTelemetry.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Son cambios &lt;em&gt;annotation-only&lt;/em&gt;: los métodos siguen funcionando durante un año mínimo, eliminarlos requiere un SEP separado. La política de doce meses fija expectativas claras para SDK maintainers.&lt;/p&gt;
+
+&lt;h3&gt;Schema y errores&lt;/h3&gt;
+
+&lt;p&gt;Tool schemas soportan JSON Schema 2020-12 completo: &lt;code&gt;oneOf&lt;/code&gt;, &lt;code&gt;anyOf&lt;/code&gt;, &lt;code&gt;allOf&lt;/code&gt;, conditionals, referencias. Output schemas son ilimitados; &lt;code&gt;structuredContent&lt;/code&gt; acepta cualquier JSON value. Aviso de seguridad: &lt;code&gt;&lt;/code&gt; externos no deberían auto-resolverse, hay que limitar profundidad y tiempo de validación. Cambio menor pero relevante: el código de error para recurso no encontrado pasa del custom &lt;code&gt;-32002&lt;/code&gt; al JSON-RPC estándar &lt;code&gt;-32602 Invalid Params&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Qué vigilar las próximas diez semanas&lt;/h3&gt;
+
+&lt;p&gt;El draft está en &lt;code&gt;modelcontextprotocol.io/specification/draft&lt;/code&gt;. La expectativa es que los SDK Tier 1 (Python, TypeScript, Go) soporten la spec dentro del periodo. Para quien tenga un servidor MCP en producción: revisa si dependes de Mcp-Session-Id explícito o de Sampling/Roots/Logging. Para quien construya clientes nuevos: empieza por la spec draft, no por la 2025-11-25; la fecha de salida del RC al final es 28 de julio.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/"&gt;https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://thenewstack.io/model-context-protocol-roadmap-2026/"&gt;https://thenewstack.io/model-context-protocol-roadmap-2026/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://modelcontextprotocol.io/specification/draft"&gt;https://modelcontextprotocol.io/specification/draft&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">6fc2c420-c352-525a-86cd-be46b6c6ae3e</guid>
+      <pubDate>Wed, 27 May 2026 06:14:33 +0000</pubDate>
+      <category>claude-code</category>
+      <link>https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/</link>
+      <enclosure url="https://avatars.githubusercontent.com/u/182288589" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>AWS MCP Server llega a GA con run_script sandboxed y 20+ skills que tu agente no usará sin el rules file</title>
+      <description>&lt;p&gt;El 6 de mayo AWS anunció la disponibilidad general del &lt;strong&gt;AWS MCP Server&lt;/strong&gt;, un servidor MCP gestionado que da a los coding agents acceso autenticado a cualquier API de AWS con IAM como guardarraíl. La pregunta que recogen del propio equipo del producto: &lt;em&gt;&amp;laquo;¿cómo le das a un agente acceso real autenticado a AWS sin entregarle las llaves del reino?&amp;raquo;&lt;/em&gt;. La respuesta GA tiene tres piezas que vale la pena examinar de cerca, más una trampa que te puede dejar el agente sin usar nada de esto.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2026/04/23/2026-04-23_09-59-16-1024x813.png" alt="Claude Code respondiendo con AWS MCP Server sobre S3 Vectors" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Claude Code usando el AWS MCP Server: respuesta con documentación al día sobre S3 Vectors.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;h3&gt;Instalación y modelo de auth&lt;/h3&gt;
+
+&lt;p&gt;Para Claude Code, el comando es directo (requiere &lt;code&gt;uv&lt;/code&gt; instalado previamente):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;claude mcp add-json aws-mcp --scope user   '{"command":"uvx","args":["mcp-proxy-for-aws@latest","https://aws-mcp.us-east-1.api.aws/mcp","--metadata","AWS_REGION=us-west-2"]}'&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;El truco: el servidor MCP soporta solo OAuth 2.1, pero AWS sigue siendo IAM + SigV4. La pieza &lt;code&gt;mcp-proxy-for-aws&lt;/code&gt; corre local y traduce credenciales IAM en requests OAuth-compatibles. Lo importante operativamente: no hace falta un permiso IAM extra para &lt;em&gt;usar&lt;/em&gt; el servidor; se pagan solo los recursos que el agente cree. El audit trail completo cae en CloudTrail y las métricas del servidor en CloudWatch bajo namespace &lt;code&gt;AWS-MCP&lt;/code&gt;, separadas del uso humano. Esa separación es lo que permite a un equipo de plataforma decir &amp;laquo;esto lo ha hecho el agente, no Aina&amp;raquo; con evidencia.&lt;/p&gt;
+
+&lt;p&gt;Regiones day-one: us-east-1 (N. Virginia) y eu-central-1 (Frankfurt). Solo dos. Para una empresa que tiene producción en ap-southeast o sa-east, eso significa esperar.&lt;/p&gt;
+
+&lt;h3&gt;run_script: el sandboxed Python que cierra el round-trip&lt;/h3&gt;
+
+&lt;p&gt;La novedad operativa más interesante respecto al preview es &lt;code&gt;run_script&lt;/code&gt;. Permite al agente escribir scripts Python cortos que se ejecutan server-side en un entorno aislado. Características clave:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hereda los permisos IAM del usuario; no añade superficie.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cero acceso de red&lt;/strong&gt; fuera del propio entorno AWS.&lt;/li&gt;
+&lt;li&gt;Sin acceso al filesystem local ni al shell.&lt;/li&gt;
+&lt;li&gt;Permite encadenar múltiples llamadas a APIs de AWS en un solo round-trip.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;El cambio cualitativo: antes el agente describía cinco pasos (&lt;em&gt;&amp;laquo;lista los buckets, filtra los que tienen versioning, suma sus tamaños...&amp;raquo;&lt;/em&gt;) y cada paso era un tool_use con su latencia y su token cost. Ahora escribe diez líneas de Python que hacen las cinco cosas en una sola llamada. Reduce tokens y reduce ventanas de fallo.&lt;/p&gt;
+
+&lt;h3&gt;Agent skills: 20+ procedimientos validados (con trampa)&lt;/h3&gt;
+
+&lt;p&gt;AWS reemplaza el viejo concepto de &lt;em&gt;Agent SOPs&lt;/em&gt; (volcados de texto frágiles) por &lt;strong&gt;skills&lt;/strong&gt;: procedimientos curados y mantenidos por los service teams. Más de 20 skills día uno cubren patrones como elegir entre HTTP API y REST API en API Gateway, configurar permissions Lambda correctamente, o decidir entre S3 Vectors y OpenSearch. El agente las carga bajo demanda con &lt;code&gt;retrieve_skill&lt;/code&gt;, evitando reventar la ventana de contexto.&lt;/p&gt;
+
+&lt;p&gt;Hay un detalle silencioso que cuesta el caso de uso entero: &lt;strong&gt;el agente no las usa proactivamente sin un rules file&lt;/strong&gt;. El repo del Agent Toolkit incluye un fichero de 17 líneas en &lt;code&gt;rules/&lt;/code&gt; que instruye al agente a preferir el MCP server sobre su conocimiento entrenado, a comprobar skills antes de empezar tareas, y a usar &lt;code&gt;retrieve_skill&lt;/code&gt; cuando hay duda. Sin ese fichero, un agente discutiendo arquitectura serverless devuelve tres opciones genéricas. Con él, llega a recomendaciones concretas (HTTP API sobre REST API, con la razón arquitectónica). El gap entre &lt;em&gt;tener herramientas&lt;/em&gt; y &lt;em&gt;usarlas&lt;/em&gt; requiere instrucción explícita.&lt;/p&gt;
+
+&lt;h3&gt;Lo que conecta con lo que ya sabíamos&lt;/h3&gt;
+
+&lt;p&gt;En el briefing del 26 de mayo apuntábamos que AWS &lt;em&gt;no era provider day-one&lt;/em&gt; de los self-hosted sandboxes que Anthropic anunció en Code with Claude London. Esto no contradice ese punto: el AWS MCP Server es una pieza distinta, no un sandbox para correr agentes. Es la capa de acceso autenticado &lt;em&gt;desde&lt;/em&gt; el agente &lt;em&gt;hacia&lt;/em&gt; AWS, sin sustituir el harness donde el agente vive. Quien necesite ambas cosas en AWS sigue esperando.&lt;/p&gt;
+
+&lt;h3&gt;Qué probar esta semana&lt;/h3&gt;
+
+&lt;p&gt;Si trabajas en AWS y usas Claude Code, son cuatro pasos: instala &lt;code&gt;uv&lt;/code&gt;, añade el MCP con el comando de arriba, clona el rules file del Agent Toolkit en &lt;code&gt;.claude/&lt;/code&gt;, y comprueba con un prompt como &lt;em&gt;&amp;laquo;dame opciones de arquitectura serverless para procesar 10k eventos/segundo&amp;raquo;&lt;/em&gt;. La diferencia entre antes y después de cargar el rules file es la prueba más sencilla de que el setup funciona. CloudWatch debería empezar a mostrar invocaciones bajo &lt;code&gt;AWS-MCP&lt;/code&gt; en cuestión de minutos.&lt;/p&gt;
+
+&lt;p&gt;Pregunta abierta: AWS dice que la decisión de qué skill cargar la toma el agente. ¿Llegará un equivalente al &lt;code&gt;alwaysLoad&lt;/code&gt; de Claude Code para forzar skills críticas (compliance, security) en todas las sesiones, en lugar de fiarlo al juicio del modelo?&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/"&gt;https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://aws.amazon.com/about-aws/whats-new/2026/05/aws-mcp-server/"&gt;https://aws.amazon.com/about-aws/whats-new/2026/05/aws-mcp-server/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.infoq.com/news/2026/05/aws-mcp-ga/"&gt;https://www.infoq.com/news/2026/05/aws-mcp-ga/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://dev.to/aws/the-new-agent-toolkit-for-aws-includes-20-agent-skills-but-your-agent-might-never-load-them-1p6d"&gt;https://dev.to/aws/the-new-agent-toolkit-for-aws-includes-20-agent-skills-but-your-agent-might-never-load-them-1p6d&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/aws/agent-toolkit-for-aws"&gt;https://github.com/aws/agent-toolkit-for-aws&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">83c800d7-914a-5e30-a3d9-e4a30a38b4d8</guid>
+      <pubDate>Wed, 27 May 2026 06:15:27 +0000</pubDate>
+      <category>claude-code</category>
+      <link>https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/</link>
+      <enclosure url="https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2026/04/23/2026-04-23_09-59-16-1024x813.png" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>

@@ -4,411 +4,9 @@
     <title>Follow the White Rabbit</title>
     <description>Briefings diarios de IA generativa, Claude Code, papers, CPS y casos de uso prÃ¡cticos.</description>
     <link>https://seoutopico.github.io/follow-white-rabbit/white-rabbit.xml</link>
-    <lastBuildDate>Tue, 26 May 2026 07:05:58 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 06:15:27 +0000</lastBuildDate>
     <generator>cc-deepfeed</generator>
     <ns0:link rel="self" href="https://seoutopico.github.io/follow-white-rabbit/white-rabbit.xml" type="application/rss+xml" />
-    <item>
-      <title>Wardley Mapping: cuando 'construir o comprar' deja de ser una corazonada</title>
-      <description>&lt;p&gt;Una de las decisiones mas costosas en cualquier proyecto tecnico es &lt;strong&gt;construir o comprar&lt;/strong&gt;. Mal hecha te ata a un vendor que no escala, o te hace mantener un sistema custom cuando ya existe el commodity. La intuicion del lider tecnico falla porque mezcla criterios — coste, riesgo, diferenciacion, madurez — sin separarlos. El Wardley Mapping, creado por Simon Wardley a partir de su experiencia como CEO en los 2000s, es una tecnica visual que fuerza esa separacion.&lt;/p&gt;
-
-&lt;p&gt;El problema arquetipo: tu equipo necesita capacidad X (autenticacion, busqueda vectorial, observabilidad, lo que sea). Hay 4 opciones: construir desde cero, usar open source y mantenerlo, comprar SaaS, o externalizar a un proveedor. Cada miembro del equipo defiende una con argumentos plausibles. Sin un mapa, la discusion gira en circulos.&lt;/p&gt;
-
-&lt;p&gt;Como aplicarlo, siguiendo la version pragmatica que &lt;a href="https://lethain.com/wardley-mapping/"&gt;Will Larson documenta&lt;/a&gt; en &lt;em&gt;Irrational Exuberance&lt;/em&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Lista usuarios y necesidades&lt;/strong&gt;: quien usa el sistema y que quiere conseguir. No saltes este paso aunque parezca obvio.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Cadena de valor&lt;/strong&gt;: desde la necesidad del usuario, dibuja hacia abajo los componentes que la satisfacen, y de cada uno los suyos. Es un grafo de dependencias.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Posiciona en el eje horizontal&lt;/strong&gt;: cada componente cae en una de cuatro etapas evolutivas — Genesis (novedoso), Custom-Built (a medida), Product (producto/SaaS), Commodity (utility). Esta es la decision clave del ejercicio.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Aplica la regla simple&lt;/strong&gt;: si esta en Genesis o Custom-Built, probablemente construyas. Si esta en Product o Commodity, probablemente compres. Construir un commodity es desperdiciar talento; comprar un genesis es imposible (no existe en el mercado).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Predice movimiento&lt;/strong&gt;: todo componente se desplaza hacia la derecha con el tiempo. Lo que hoy es Custom-Built sera Product en 3 anos. Disena teniendo en cuenta esa migracion futura.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Comparte el mapa&lt;/strong&gt;: un mapa privado vale poco. El valor aparece cuando el equipo lo discute y discrepa sobre donde colocar cada componente — esa discrepancia es el insight.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Ejemplo real reciente (2026): un articulo de David Haberlah aplica Wardley a la pregunta de si un squad de 5 product managers debia comprar Productboard o construir su propia tooling agentica. Las APIs de LLM ya estan en commodity (precios estandarizados, switching cost bajo, multiples proveedores), asi que el path "build" sale mas barato a largo plazo — algo contraintuitivo hace solo dos anos.&lt;/p&gt;
-
-&lt;p&gt;Cuando NO aplica: si tu problema es optimizar un funnel existente o iterar sobre algo que ya funciona, Wardley aporta poco — usa metricas y experimentacion. Tampoco sirve para decisiones tacticas de corto plazo; su valor esta en horizontes de 1-3 anos donde la evolucion de componentes importa.&lt;/p&gt;
-
-&lt;p&gt;Siguiente paso si quieres profundizar: el libro online gratuito de Wardley (&lt;em&gt;Wardley Maps&lt;/em&gt;, en GitHub bajo Creative Commons) y el repositorio &lt;a href="https://github.com/wardley-maps-community/awesome-wardley-maps"&gt;awesome-wardley-maps&lt;/a&gt; con plantillas y casos.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://lethain.com/wardley-mapping/"&gt;https://lethain.com/wardley-mapping/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/@haberlah/build-vs-buy-in-2026-using-wardley-mapping-to-navigate-the-agentic-ai-shift-be24d534b054"&gt;https://medium.com/@haberlah/build-vs-buy-in-2026-using-wardley-mapping-to-navigate-the-agentic-ai-shift-be24d534b054&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://thenewstack.io/wardley-mapping-and-strategy-for-software-developers/"&gt;https://thenewstack.io/wardley-mapping-and-strategy-for-software-developers/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/wardley-maps-community/awesome-wardley-maps"&gt;https://github.com/wardley-maps-community/awesome-wardley-maps&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://itrevolution.com/articles/how-to-wardley-map/"&gt;https://itrevolution.com/articles/how-to-wardley-map/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">13c75dac-62df-54a6-bcac-1de95b958976</guid>
-      <pubDate>Mon, 04 May 2026 08:31:19 +0000</pubDate>
-      <category>cps</category>
-      <link>https://lethain.com/wardley-mapping/</link>
-      <enclosure url="https://miro.medium.com/v2/resize:fit:1200/1*Ut3J3UO3P6F9tmmycLFuOA.png" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>Shopify Autoresearch: agentes que se obsesionan con un solo numero hasta bajarlo un 53%</title>
-      <description>&lt;p&gt;Shopify publico en su blog de ingenieria los detalles de &lt;strong&gt;Autoresearch&lt;/strong&gt;, un patron simple pero poco explorado: poner un agente de IA en un bucle apuntando a una sola metrica y dejarlo iterar durante dias. La idea es de Andrej Karpathy; Shopify la ha generalizado a tareas que nadie pondria en un sprint.&lt;/p&gt;&lt;figure&gt;&lt;img src="https://cdn.shopify.com/b/shopify-brochure2-assets/331f25179ec567de096ab4fd7153830e.jpg?originalWidth=1848&amp;amp;originalHeight=782" alt="Diagrama del bucle de Autoresearch en Shopify" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;El bucle: hipotesis, prueba, mide, descarta lo que empeora.&lt;/figcaption&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;Como esta montado.&lt;/strong&gt; El stack es publico: el harness se llama &lt;em&gt;Pi&lt;/em&gt; (3.600 estrellas en GitHub, 200+ forks). Le das una metrica medible (tiempo de build, allocations, latencia de un test) y un comando que la calcula. El agente genera una hipotesis, modifica el codigo, ejecuta benchmarks, y si la metrica baja conserva el cambio. Si no, lo descarta y prueba otra cosa. Los engineers de Shopify lo dejan corriendo en background mientras hacen otras cosas.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Resultados reales en su monorepo.&lt;/strong&gt; En el codebase de Liquid (su lenguaje de plantillas), 53% mas rapido el parse+render combinado y 61% menos object allocations. En el pipeline VRT, builds 65% mas rapidos. Tests unitarios concretos corriendo &lt;strong&gt;300 veces&lt;/strong&gt; mas rapido tras una sesion. Mounting de componentes React, 20% mas rapido. En total, mas de 40 metricas movidas en distintos equipos.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Por que importa.&lt;/strong&gt; El argumento clave del post: antes los agentes hacian el mismo trabajo que un humano, solo que mas rapido. Esto es distinto. Nadie planificaria gastar tres meses bajando un 30% el tiempo de build, aunque todos esten de acuerdo en que vale la pena. Vive en las grietas. Un agente que lo intenta cien veces durante una noche, con cien hipotesis distintas, encuentra mejoras que ningun ser humano se sentaria a buscar.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Que necesitarias para replicarlo.&lt;/strong&gt; Un repo con metricas reproducibles (un script que tarde 30 segundos en escupir un numero), el harness Pi instalado, y presupuesto de tokens — los runs largos consumen porque el agente itera muchas veces. Cuesta empezar bajo: cualquier proyecto tiene un test lento, un build inflado, una funcion caliente. Pones el bucle a correr esta noche, mañana revisas los diffs.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Cuando no merece la pena.&lt;/strong&gt; Si tu metrica no es estable (varia mucho run a run), el agente perseguira ruido. Si optimizar implica reescrituras grandes que requieren juicio arquitectonico, tampoco — Autoresearch brilla en optimizaciones locales y mecanicas, no en rediseños.&lt;/p&gt;&lt;p&gt;Yo probaria empezar por el test mas lento de tu suite. Define la metrica como segundos de wall-clock, deja a Pi correr una noche, y revisa por la mañana que diffs propuso. Si baja un 20%, ya has pagado el experimento.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://shopify.engineering/autoresearch"&gt;https://shopify.engineering/autoresearch&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.bvp.com/atlas/inside-shopifys-ai-first-engineering-playbook"&gt;https://www.bvp.com/atlas/inside-shopifys-ai-first-engineering-playbook&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">be0b6a56-a858-589a-8896-5f69c02b563e</guid>
-      <pubDate>Mon, 04 May 2026 08:31:21 +0000</pubDate>
-      <category>casos-uso-ia</category>
-      <link>https://shopify.engineering/autoresearch</link>
-      <enclosure url="https://cdn.shopify.com/b/shopify-brochure2-assets/331f25179ec567de096ab4fd7153830e.jpg?originalWidth=1848&amp;originalHeight=782" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>Claude Opus 4.7: salto en SWE-bench y trampa en el pricing supuestamente igual</title>
-      <description>&lt;p&gt;Anthropic publicó &lt;strong&gt;Claude Opus 4.7&lt;/strong&gt; el 16 de abril como modelo generalmente disponible, manteniendo nominalmente el pricing de Opus 4.6 (5 USD por millón de tokens de entrada, 25 USD de salida) pero con saltos serios en coding y vision. Es el primero de los tres lanzamientos frontier que sacudieron el panorama en menos de dos semanas — los otros dos son GPT-5.5 (23 de abril) y DeepSeek V4 (24 de abril).&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Los números que importan:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;SWE-bench Verified: 87.6% (vs 80.8% de Opus 4.6, vs 80.6% de Gemini 3.1 Pro)&lt;/li&gt;&lt;li&gt;SWE-bench Pro (multi-lenguaje, sin saturar): 64.3% (vs 53.4% de 4.6, vs 57.7% de GPT-5.4, vs 58.6% de GPT-5.5)&lt;/li&gt;&lt;li&gt;OSWorld-Verified (computer use): 78.0% (vs 72.7% de 4.6, vs 75.0% de GPT-5.4)&lt;/li&gt;&lt;li&gt;Terminal-Bench 2.0: 69.4%&lt;/li&gt;&lt;li&gt;GPQA Diamond: 94.2%&lt;/li&gt;&lt;li&gt;MCP-Atlas (tool use): 77.3%, primer puesto en modelos disponibles&lt;/li&gt;&lt;li&gt;Finance Agent v1.1: 64.4% (state of the art)&lt;/li&gt;&lt;li&gt;CharXiv visual reasoning sin tools: 82.1% (vs 69.1% de 4.6)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;El salto en SWE-bench Verified de casi 7 puntos en un release minor es atípico — sugiere mejoras estructurales en cómo el modelo verifica su propio trabajo antes de reportar resultados, no solo más datos de entrenamiento. Anthropic lo describe como un modelo que &amp;quot;idea formas de verificar sus propios outputs antes de reportar&amp;quot;. En la práctica esto se nota en tareas largas donde antes había que volver a pedir &amp;quot;revisa lo que hiciste&amp;quot;. Para coding agents que corren sin supervisión humana inmediata, este es el cambio más relevante del año.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Lo nuevo más allá de los benchmarks:&lt;/strong&gt; resolución de imagen subida a 2.576 píxeles en lado largo (~3.75 megapíxeles, 3x respecto a 4.6), lo que hace que vision deje de ser una demo y se vuelva usable en documentos densos como papers, screenshots de dashboards o diagramas técnicos. La diferencia en CharXiv (13 puntos) se siente al leer figuras científicas con números pequeños. También aparece un nivel de esfuerzo &amp;quot;xhigh&amp;quot; y task budgets en beta pública, que permiten poner un tope explícito de tokens o tiempo a una tarea agéntica.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Trampa del pricing &amp;quot;igual&amp;quot;:&lt;/strong&gt; Opus 4.7 trae un tokenizer actualizado que aumenta el conteo de tokens entre 1.0x y 1.35x según el tipo de contenido (más en código, menos en prosa en inglés). El precio por token es el mismo, pero el costo real por tarea sube hasta un 35% en algunos casos. Esto compensa parte del ahorro que viene de que el modelo usa menos output en general — Anthropic no publica el equivalente exacto pero los testers independientes reportan reducciones del 20-30% en output tokens en tareas tipo Codex. El resultado neto: para mucha gente el costo por tarea queda parecido, pero conviene medirlo antes de asumir que &amp;quot;mismo precio&amp;quot; significa &amp;quot;misma factura&amp;quot;.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Una regresión:&lt;/strong&gt; BrowseComp baja de 83.7% en 4.6 a 79.3% en 4.7. No es catastrófico pero indica que las mejoras no son uniformes — si tu workflow depende de browsing autónomo extendido, vale validar antes de migrar. Es la primera vez en varios releases que Anthropic muestra una regresión pública en un benchmark.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;El detalle Mythos:&lt;/strong&gt; Anthropic admitió públicamente que Opus 4.7 va por detrás de su modelo interno Mythos Preview, lanzado el 7 de abril en preview restringido para investigación de ciberseguridad (Project Glasswing). Es la primera vez que Anthropic reconoce de forma explícita que el mejor modelo no es el comercial. Indica una estrategia de release escalonada por riesgo, no por capacidad — y deja abierta la pregunta de qué tanto de la capacidad real de los labs frontier queda fuera del API.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Disponibilidad:&lt;/strong&gt; Claude API, Amazon Bedrock, Google Cloud Vertex AI, Microsoft Foundry. Sin waitlist. También llegó a Claude Code, donde el cambio de comportamiento en sesiones largas es perceptible incluso sin medir benchmarks.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Qué validar tú mismo si lo vas a usar:&lt;/strong&gt; mide el costo real con tu prompt típico (no el nominal por token), corre tu propio eval en SWE-bench Pro o equivalente porque la diferencia entre 4.6 y 4.7 puede no aparecer en tareas cortas, y si haces browsing agéntico revisa BrowseComp antes de migrar. &lt;strong&gt;Qué dejar pasar:&lt;/strong&gt; el marketing sobre &amp;quot;verificación&amp;quot; como capacidad nueva — es real pero ya estaba presente parcialmente en 4.6, no es un cambio cualitativo, solo más confiable.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://www.anthropic.com/news/claude-opus-4-7"&gt;https://www.anthropic.com/news/claude-opus-4-7&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.vellum.ai/blog/claude-opus-4-7-benchmarks-explained"&gt;https://www.vellum.ai/blog/claude-opus-4-7-benchmarks-explained&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.blog/changelog/2026-04-16-claude-opus-4-7-is-generally-available/"&gt;https://github.blog/changelog/2026-04-16-claude-opus-4-7-is-generally-available/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.finout.io/blog/claude-opus-4.7-pricing-the-real-cost-story-behind-the-unchanged-price-tag"&gt;https://www.finout.io/blog/claude-opus-4.7-pricing-the-real-cost-story-behind-the-unchanged-price-tag&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.cnbc.com/2026/04/16/anthropic-claude-opus-4-7-model-mythos.html"&gt;https://www.cnbc.com/2026/04/16/anthropic-claude-opus-4-7-model-mythos.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">28a0d938-ac89-532a-a522-f157856171c6</guid>
-      <pubDate>Mon, 04 May 2026 08:31:22 +0000</pubDate>
-      <category>ia-generativa</category>
-      <link>https://www.anthropic.com/news/claude-opus-4-7</link>
-      <enclosure url="https://www-cdn.anthropic.com/images/4zrzovbb/website/claude-opus-4-7-hero.png" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>MCP Apps (SEP-1865): tus servers MCP ahora pueden devolver UI interactiva, no solo texto</title>
-      <description>&lt;p&gt;Hasta ahora un MCP server era una caja que escupia texto: invocas &lt;code&gt;visualize_data&lt;/code&gt; y recibes una tabla en markdown que el modelo describe. La extension oficial &lt;strong&gt;MCP Apps&lt;/strong&gt;, formalizada como SEP-1865 y ya en produccion, cambia eso: el server puede devolver un dashboard React, un formulario, una grafica interactiva, y el host (Claude, Claude Desktop, ChatGPT, VS Code Insiders, Goose) lo renderiza dentro de un iframe sandboxed en la conversacion. Y la UI puede llamar de vuelta a otras tools del server.&lt;/p&gt;
-
-&lt;figure&gt;&lt;img src="https://blog.modelcontextprotocol.io/posts/images/inline-chat-app.png" alt="Ejemplo de chat con UI interactiva embebida via MCP Apps" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Ejemplo oficial: una UI de gestion de permisos renderizada inline en el chat, servida por un MCP server.&lt;/figcaption&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;El mecanismo es deliberadamente simple.&lt;/strong&gt; Una tool declara que tiene UI asociada via metadata:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-  name: "visualize_data",
-  description: "Visualize data as an interactive chart",
-  inputSchema: { /* ... */ },
-  _meta: {
-    ui: {
-      resourceUri: "ui://charts/interactive"
-    }
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Cuando el modelo invoca la tool, el host detecta el campo &lt;code&gt;_meta.ui.resourceUri&lt;/code&gt;, hace fetch del recurso bajo el esquema &lt;code&gt;ui://&lt;/code&gt; (que sirve HTML/JS bundleado desde el propio server) y lo monta en un iframe restringido. La UI no es estatica: usa el SDK &lt;code&gt;@modelcontextprotocol/ext-apps&lt;/code&gt; para hablar con el host via JSON-RPC sobre &lt;code&gt;postMessage&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import { App } from "@modelcontextprotocol/ext-apps";
-
-const app = new App();
-await app.connect();
-
-// La UI puede llamar tools del server a traves del host
-const response = await app.callServerTool({
-  name: "fetch_details",
-  arguments: { id: "123" },
-});
-
-// Y puede inyectar contexto de vuelta al modelo
-await app.updateModelContext({
-  content: [{ type: "text", text: "User selected option B" }],
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;El segundo metodo es el interesante para sistemas de agentes: &lt;code&gt;updateModelContext&lt;/code&gt; permite que la interaccion del usuario con la UI se convierta en contexto que el modelo ve en el siguiente turn. El usuario aprieta un boton, marca opciones, ajusta sliders; eso entra al contexto como mensaje y el agente sigue trabajando con esa informacion. Es la diferencia entre &lt;em&gt;renderizar&lt;/em&gt; y &lt;em&gt;conversar&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Por que importa para quienes construyen agentes.&lt;/strong&gt; Hasta ahora habia dos opciones malas para meter UI en un flujo de agente: (1) renderizar markdown limitado dentro del chat, (2) abrir una webapp aparte y romper el flujo. MCP Apps abre una tercera via: el server expone tanto la logica (tools) como la presentacion (UI) bajo el mismo protocolo, y el host se encarga del sandbox y de la comunicacion. Para casos como wizards de configuracion, dashboards de monitoring, formularios de aprobacion en pipelines, exploracion de datos paso a paso, esto cierra una brecha real.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Modelo de seguridad.&lt;/strong&gt; Todo el HTML corre en iframes con permisos restringidos (sin acceso al DOM padre, sin acceso a APIs sensibles del navegador). Los templates UI deben pre-declararse para que el host los pueda revisar antes de renderizar. Cada llamada JSON-RPC desde la UI al host es auditable. Y los hosts pueden requerir aprobacion explicita del usuario para tool calls iniciados desde la UI, no solo desde el modelo. Es razonable como diseno por defecto, pero si vas a publicar un MCP App al publico conviene leer el threat model completo antes: el iframe no es Chrome sandbox, hay vectores conocidos en cualquier UI que mezcla privilegios.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Quien lo soporta hoy.&lt;/strong&gt; Claude (web y desktop), VS Code Insiders, Goose, Postman, MCPJam, y ChatGPT segun el anuncio de noviembre. Es la primera extension oficial del protocolo MCP y se desarrollo conjuntamente entre los maintainers core de Anthropic y OpenAI con el grupo MCP-UI. Esto es importante: las dos compañias mas grandes del ecosistema acordaron un standard antes de fragmentar (OpenAI tenia su propio Apps SDK; ahora confluyen).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Que probar la semana proxima.&lt;/strong&gt; Si ya mantienes un MCP server con FastMCP 3.0 (release de enero), añadir una tool con UI es ~50 lineas: una tool con metadata &lt;code&gt;_meta.ui&lt;/code&gt;, un endpoint que sirva el bundle bajo &lt;code&gt;ui://&lt;/code&gt;, y la UI minima conectada al SDK. Casos donde el ROI es alto: tools que hoy generan tablas largas que el modelo describe mal, formularios de input estructurado donde escribir JSON a mano es infierno, y aprobaciones humanas en pipelines de agentes (mostrar diff, esperar click). El ecosistema todavia es joven (tres meses desde la formalizacion), asi que es buen momento para publicar algo y aprender.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://blog.modelcontextprotocol.io/posts/2025-11-21-mcp-apps/"&gt;https://blog.modelcontextprotocol.io/posts/2025-11-21-mcp-apps/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1865"&gt;https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1865&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/modelcontextprotocol/ext-apps"&gt;https://github.com/modelcontextprotocol/ext-apps&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://modelcontextprotocol.io/extensions/apps/overview"&gt;https://modelcontextprotocol.io/extensions/apps/overview&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">153fba52-e490-5ac1-9d13-9445b3222d5c</guid>
-      <pubDate>Mon, 04 May 2026 08:31:36 +0000</pubDate>
-      <category>claude-code</category>
-      <link>https://blog.modelcontextprotocol.io/posts/2025-11-21-mcp-apps/</link>
-      <enclosure url="https://blog.modelcontextprotocol.io/posts/images/inline-chat-app.png" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>Latent-GRPO: por qué hacer RL sobre razonamiento latente rompe GRPO y cómo arreglarlo</title>
-      <description>&lt;p&gt;&lt;strong&gt;Paper:&lt;/strong&gt; &lt;em&gt;Latent-GRPO: Group Relative Policy Optimization for Latent Reasoning&lt;/em&gt;, Jingcheng Deng, Zihao Wei, Liang Pang et al., arXiv:2604.27998, abril 2026.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;El problema.&lt;/strong&gt; El razonamiento latente — comprimir Chain-of-Thought en vectores continuos en lugar de tokens explícitos — promete cadenas de razonamiento 3-4× más cortas y, por tanto, mucha menos latencia y coste. Pero entrenarlo con RL no es trivial. Si coges GRPO (la receta de DeepSeek-R1) y la aplicas tal cual a representaciones latentes, el entrenamiento explota o converge a algo peor que el modelo de partida. Este paper diagnostica exactamente por qué.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;La idea clave.&lt;/strong&gt; Tres patologías específicas de RL en espacio latente que no existen en RL sobre tokens: (1) las muestras se salen del manifold latente válido, (2) la perturbación de exploración (Gumbel) puede mover la masa de probabilidad en la dirección contraria al reward, y (3) reforzar dos caminos correctos a la vez puede producir una mezcla latente que &lt;em&gt;no&lt;/em&gt; es válida. Latent-GRPO añade tres parches específicos para cada una.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Método.&lt;/strong&gt; Tres modificaciones a GRPO:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Invalid-sample advantage masking.&lt;/strong&gt; Las trayectorias que se vuelven non-terminating (porque el latente se fue del manifold) se descartan del cómputo de advantage en vez de penalizarse. Penalizarlas envía gradiente sobre estados que ya están corruptos.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;One-sided noise sampling.&lt;/strong&gt; En lugar de Gumbel simétrico, se restringe la perturbación a ser positiva. Esto garantiza que la dirección del update siempre tenga el signo correcto respecto al advantage. Suena tonto, pero es lo que estabiliza el entrenamiento.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Optimal correct-path first-token selection.&lt;/strong&gt; Cuando varios rollouts llegan a la respuesta correcta por caminos distintos, no se promedian sus latentes (porque el promedio puede no ser válido). Se elige el primer token del camino con mayor probabilidad y se entrena solo sobre ese.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Resultados concretos.&lt;/strong&gt; Sobre ocho benchmarks de matemáticas (cuatro low-difficulty tipo GSM8K-Aug y cuatro high-difficulty incluyendo AIME), Latent-GRPO mejora &lt;strong&gt;+7.86 puntos Pass@1&lt;/strong&gt; en las fáciles y &lt;strong&gt;+14.77 puntos&lt;/strong&gt; en las difíciles sobre la inicialización latente. Más interesante: &lt;strong&gt;+4.27 puntos sobre GRPO explícito&lt;/strong&gt; en las difíciles, con cadenas de razonamiento &lt;strong&gt;3-4× más cortas&lt;/strong&gt;. Es decir, no es solo "más barato a costa de calidad" — es estrictamente mejor en hard math.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Limitaciones reales.&lt;/strong&gt; Lo que el paper reconoce abiertamente: es trabajo en desarrollo activo, los autores anuncian futuras revisiones del arXiv. Lo que se ve leyendo entre líneas: todos los benchmarks son de matemáticas. No hay evaluación en code generation, multi-hop QA ni tareas de agentes. El razonamiento latente comprime bien cuando el espacio de soluciones es estructuralmente similar (resolver ecuaciones), pero no está claro que comprima razonamiento heterogéneo (un agente que mezcla búsqueda, código y planificación). Tampoco hay ablation contra modelos mucho mayores — los resultados son sobre tamaños modestos.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Por qué importa fuera del paper.&lt;/strong&gt; Si el razonamiento latente acaba siendo viable a escala, cambia la economía de los reasoning models tipo o1 / R1. Hoy, parte importante del coste de inference es el throughput de tokens del CoT explícito; si puedes recortar 3-4× la longitud sin perder calidad, los reasoning models dejan de ser un lujo de inference. Pero la lección más importante del paper no es el resultado, es el diagnóstico: muestra que GRPO (y por extensión PPO) tienen supuestos discretos que se rompen sutilmente en continuo. Cualquiera que intente hacer RL sobre representaciones continuas (world models, latent action spaces en robótica) debería leer la sección de las tres patologías antes de empezar.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Qué seguiría yo.&lt;/strong&gt; Replicar el método en una tarea no-matemática para ver si la compresión 3-4× se sostiene fuera de problemas con estructura algorítmica clara. Y mirar de cerca si el one-sided noise sampling es generalizable como técnica para cualquier RL con perturbación Gumbel — me huele a que es una corrección útil mucho más allá de latent reasoning. El código no aparece todavía referenciado en la página del arXiv; conviene esperar a la siguiente versión antes de invertir tiempo en reimplementarlo.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2604.27998"&gt;https://arxiv.org/abs/2604.27998&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://arxiv.org/html/2604.27998"&gt;https://arxiv.org/html/2604.27998&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">5374551f-3f60-52b4-bf30-5d86b1059c60</guid>
-      <pubDate>Mon, 04 May 2026 08:31:42 +0000</pubDate>
-      <category>papers-ia</category>
-      <link>https://arxiv.org/abs/2604.27998</link>
-      <enclosure url="https://arxiv.org/html/2604.27998/x1.png" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>El benchmark de Stripe: cuando un agente de IA tiene que construir una integracion de pagos de verdad</title>
-      <description>&lt;p&gt;La pregunta del marketing de 2026 es si un agente de IA puede ya construir solo una integracion completa con un servicio externo, sin supervision humana. Stripe decidio responderla con datos en lugar de slogans: monto un benchmark con &lt;strong&gt;11 entornos full-stack&lt;/strong&gt; donde el agente tiene que hacer trabajo real — backend, frontend, llamadas a API, y verificar que la compra termina con un pago de prueba.&lt;/p&gt;&lt;figure&gt;&lt;img src="https://images.stripeassets.com/fzn2n1nzq965/2Z5qdnsq51cqhw9y4Phhdn/4858812d03d790643384f23185d68c13/Index_2x.png?w=1616&amp;amp;q=80" alt="Resultados del benchmark de Stripe sobre agentes de IA" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Resultados por categoria: backend, full-stack y problemas de gym especificos.&lt;/figcaption&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;El montaje.&lt;/strong&gt; Cada entorno tiene codigo, base de datos, scripts y claves de prueba de la API de Stripe. El agente accede via un harness basado en Goose con un servidor MCP (Model Context Protocol) que le da terminal, navegador y la herramienta de busqueda interna de Stripe. Los graders son deterministas: validacion de la API, tests automatizados y verificacion en navegador de que la transaccion se completa de extremo a extremo.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Las tareas no son de juguete.&lt;/strong&gt; Una pide migrar una integracion antigua del Card Element legacy a Checkout y autoverificar el cambio completando una compra de prueba. Otra exige reverse-engineering de una configuracion compleja de Checkout Session — averiguar que parametros tiene activos un comercio mirando solo su comportamiento. Otras son upgrades de version de API y migraciones de datos.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Los numeros.&lt;/strong&gt; Claude Opus 4.5 saco un 92% de media en las 4 tareas full-stack, las mas exigentes. GPT-5.2 hizo un 73% en los 2 problemas de gym (ejercicios mas acotados sobre Checkout y subscriptions). Los runs ganadores promediaron &lt;strong&gt;63 turnos&lt;/strong&gt; de interaccion — no es one-shot, son conversaciones largas con muchos errores intermedios. En reverse-engineering de configuraciones, los agentes acertaron mas del 80% de los parametros.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Por que es interesante mas alla del marketing.&lt;/strong&gt; El paper es de los primeros benchmarks publicos donde una empresa de pagos pone a un agente a tocar dinero real (de prueba) en condiciones realistas y publica los numeros. La conclusion implicita: los agentes ya pueden hacer integraciones reales, pero no en cero turnos — necesitan iteracion, retries, y un harness con herramientas serias. No es vibe coding, es trabajo metodico y largo.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Que puedes sacar tu de aqui.&lt;/strong&gt; Si vas a usar un agente para una integracion no trivial, no lo midas con prompts unicos. Construye un grader determinista (un test que diga si funciono) y dejalo iterar varias decenas de turnos con acceso a terminal y navegador. El patron Goose+MCP es replicable con herramientas open source.&lt;/p&gt;&lt;p&gt;Yo probaria empezar por una integracion simple que ya tengas pendiente, escribir el grader primero (¿que test prueba que funciona?) y dejar al agente con MCP haciendo turnos hasta que pase. Si necesita 60 turnos, no es fracaso — es como funciona ahora.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://stripe.com/blog/can-ai-agents-build-real-stripe-integrations"&gt;https://stripe.com/blog/can-ai-agents-build-real-stripe-integrations&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/stripe/ai"&gt;https://github.com/stripe/ai&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">a5cff661-3dd8-5c2e-928d-3d27ce351817</guid>
-      <pubDate>Mon, 04 May 2026 08:32:08 +0000</pubDate>
-      <category>casos-uso-ia</category>
-      <link>https://stripe.com/blog/can-ai-agents-build-real-stripe-integrations</link>
-      <enclosure url="https://images.stripeassets.com/fzn2n1nzq965/2Z5qdnsq51cqhw9y4Phhdn/4858812d03d790643384f23185d68c13/Index_2x.png?w=1616&amp;q=80" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>GPT-5.5 sale con mejor SWE-bench Verified que Opus 4.7 — pero al doble de precio</title>
-      <description>&lt;p&gt;OpenAI lanzó &lt;strong&gt;GPT-5.5&lt;/strong&gt; el 23 de abril, una semana después de Claude Opus 4.7 y un día antes de DeepSeek V4. La elección del timing no parece casual: OpenAI necesitaba mostrar liderazgo en SWE-bench Verified mientras competidores cerraban la brecha. El número aislado (88.7% en SWE-bench Verified vs 87.6% de Opus 4.7) sirve para ese fin, pero el panorama completo es más matizado.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Los benchmarks:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;SWE-bench Verified: 88.7% (vs 87.6% de Opus 4.7, vs 87.6% de GPT-5.4 — apenas un punto sobre la versión anterior)&lt;/li&gt;&lt;li&gt;SWE-bench Pro: 58.6% (vs 64.3% de Opus 4.7, brecha de 5.7 puntos a favor de Anthropic)&lt;/li&gt;&lt;li&gt;Terminal-Bench 2.0: 82.7% (state of the art, vs 69.4% de Opus 4.7 — diferencia grande a favor de OpenAI)&lt;/li&gt;&lt;li&gt;Expert-SWE: 73.1% (eval interna de OpenAI sobre tareas de coding de ~20 horas humanas)&lt;/li&gt;&lt;li&gt;MMLU: 92.4%&lt;/li&gt;&lt;li&gt;Reducción de 60% en tasa de alucinación vs GPT-5.4&lt;/li&gt;&lt;li&gt;40% menos tokens de output en tareas de Codex vs GPT-5.4&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;El patrón importa: GPT-5.5 gana SWE-bench Verified (saturado, dominio Python) y arrasa en Terminal-Bench 2.0; Opus 4.7 gana SWE-bench Pro (multi-lenguaje, sin saturar) y MCP-Atlas. Quien diga que un modelo &amp;quot;es mejor en coding&amp;quot; sin especificar qué tipo de coding está vendiendo simplificación. Para refactor de monorepos Python con tests existentes, GPT-5.5. Para coding poliglota con tool use complejo y verificación, Opus 4.7. La distancia operativa entre ambos es probablemente menor que el ruido de variabilidad entre runs.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;El precio es el problema:&lt;/strong&gt; OpenAI dobló el pricing respecto a GPT-5.4. Input pasa de 2.50 USD a 5 USD por millón de tokens. Output pasa de 15 USD a 30 USD. Es decir, GPT-5.5 cuesta exactamente lo mismo que Claude Opus 4.7 en input, pero un 20% más en output. Compensación parcial: GPT-5.5 usa 40% menos tokens de output en tareas tipo Codex. Cálculo neto en una tarea de coding promedio: el costo total sube ~50% respecto a GPT-5.4. Si venías de GPT-5.4 con presupuesto ajustado, este lanzamiento te cambia los números.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;La narrativa &amp;quot;super app&amp;quot;:&lt;/strong&gt; OpenAI lo posicionó como modelo agéntico para usar computadoras, investigar online, analizar datos, crear documentos y hojas de cálculo, y operar software hasta terminar tareas. La arquitectura es nativamente omnimodal (texto, imagen, audio, video en un mismo modelo, no pipeline de modelos separados). En la práctica, el cambio agéntico se nota más en sesiones largas con muchas tools — Terminal-Bench 2.0 a 82.7% es la métrica honesta de esto.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Lo que NO está claro todavía:&lt;/strong&gt; OpenAI no publicó (a fecha de este briefing) un system card detallado con evals comparables a las que sí publica Anthropic. Las cifras vienen del anuncio y de evals de terceros. Esto es relevante porque GPT-5.4 tuvo un patrón de degradación silenciosa post-launch que solo apareció en evals comunitarias semanas después. Recomendable validar antes de migrar workloads críticos.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Disponibilidad:&lt;/strong&gt; ChatGPT Plus, Pro, Business y Enterprise desde el 23 de abril. API el 24 de abril (gpt-5.5 y gpt-5.5-pro). Codex incluye GPT-5.5 por defecto.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;El contexto competitivo:&lt;/strong&gt; con Opus 4.7, GPT-5.5 y DeepSeek V4 saliendo en 8 días, el equilibrio cambió. SWE-bench Verified (87-89%) está saturándose y dejará de ser una métrica útil dentro de meses. Las decisiones de modelo van a depender cada vez más de SWE-bench Pro, OSWorld, MCP-Atlas y costos reales por tarea — no del benchmark del titular.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Qué validar:&lt;/strong&gt; el costo total con tu workload típico (no por token), comportamiento agéntico en tareas largas con tu stack de tools, y latencia (GPT-5.5 reportes mixtos sobre tiempo de respuesta vs 5.4 según contexto). &lt;strong&gt;Qué dejar pasar:&lt;/strong&gt; la comparación de un solo número en SWE-bench Verified contra Opus 4.7. La diferencia de 1.1 puntos no decide nada operativo.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://openai.com/index/introducing-gpt-5-5/"&gt;https://openai.com/index/introducing-gpt-5-5/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.cnbc.com/2026/04/23/openai-announces-latest-artificial-intelligence-model.html"&gt;https://www.cnbc.com/2026/04/23/openai-announces-latest-artificial-intelligence-model.html&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://techcrunch.com/2026/04/23/openai-chatgpt-gpt-5-5-ai-model-superapp/"&gt;https://techcrunch.com/2026/04/23/openai-chatgpt-gpt-5-5-ai-model-superapp/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://tokenmix.ai/blog/gpt-5-5-spud-review-88-swe-bench-2026"&gt;https://tokenmix.ai/blog/gpt-5-5-spud-review-88-swe-bench-2026&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://decrypt.co/365333/openai-gpt-5-5-release-agentic-coding-benchmarks"&gt;https://decrypt.co/365333/openai-gpt-5-5-release-agentic-coding-benchmarks&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">14394092-d89b-52d0-8eea-e3a158ce6584</guid>
-      <pubDate>Mon, 04 May 2026 08:32:16 +0000</pubDate>
-      <category>ia-generativa</category>
-      <link>https://openai.com/index/introducing-gpt-5-5/</link>
-      <enclosure url="https://images.openai.com/blob/gpt-5-5-hero.png" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>Claude Managed Agents en beta publica: el harness gestionado para correr Claude como agente autonomo</title>
-      <description>&lt;p&gt;El 8 de abril Anthropic publico en beta &lt;strong&gt;Claude Managed Agents&lt;/strong&gt;, un harness completamente gestionado para correr Claude como agente autonomo dentro de contenedores en su infraestructura. La idea: en vez de que tu construyas el agent loop, el sandbox y la capa de ejecucion de tools, defines el agente y mandas sesiones por API. Claude orquesta el bucle, ejecuta bash y operaciones de archivo en el container, y te devuelve eventos por SSE.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Donde encaja esto en el ecosistema.&lt;/strong&gt; Hasta ahora habia dos formas de construir agentes con Claude: (1) la Messages API directa, donde tu escribes el loop completo y manejas tool execution, sandboxing, compaction y cache; (2) Claude Code, que es un harness optimizado para coding pero atado al CLI y al editor. Managed Agents es una tercera via, pensada para tareas largas (minutos u horas), asincronas, que queres correr como servicio sin montar Kubernetes. La diferencia clave con Claude Code: Managed Agents corre en infra de Anthropic y se factura como API, no como suscripcion.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Cuatro conceptos.&lt;/strong&gt; El modelo mental cabe en una tabla:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Agent&lt;/strong&gt;: la definicion (modelo, system prompt, tools, MCP servers, skills). Se crea una vez y se referencia por ID.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Environment&lt;/strong&gt;: un template de container con paquetes preinstalados, reglas de red y archivos montados.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Session&lt;/strong&gt;: una instancia corriendo del agente dentro de un environment, ejecutando una tarea concreta.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Events&lt;/strong&gt;: los mensajes intercambiados (user.message, agent.message, agent.tool_use, session.status_idle).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;El flujo en codigo.&lt;/strong&gt; Tres llamadas y un stream:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;from anthropic import Anthropic
-client = Anthropic()
-
-agent = client.beta.agents.create(
-    name="Coding Assistant",
-    model="claude-opus-4-7",
-    system="You are a helpful coding assistant.",
-    tools=[{"type": "agent_toolset_20260401"}],
-)
-
-environment = client.beta.environments.create(
-    name="quickstart-env",
-    config={"type": "cloud", "networking": {"type": "unrestricted"}},
-)
-
-session = client.beta.sessions.create(
-    agent=agent.id,
-    environment_id=environment.id,
-    title="Quickstart session",
-)
-
-with client.beta.sessions.events.stream(session.id) as stream:
-    client.beta.sessions.events.send(session.id, events=[{
-        "type": "user.message",
-        "content": [{"type": "text", "text": "Genera los primeros 20 Fibonacci en fibonacci.txt"}],
-    }])
-    for event in stream:
-        match event.type:
-            case "agent.message": print(event.content[0].text, end="")
-            case "agent.tool_use": print(f"\n[Using tool: {event.name}]")
-            case "session.status_idle": break
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;El tool type &lt;code&gt;agent_toolset_20260401&lt;/code&gt; habilita el set completo: bash, file ops (read/write/edit/glob/grep), web search, web fetch, MCP servers. Se puede restringir por tool individualmente. Todas las llamadas requieren el header beta &lt;code&gt;managed-agents-2026-04-01&lt;/code&gt; (los SDK lo ponen automatico).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;El detalle interesante: steering en vivo.&lt;/strong&gt; Una sesion no es fire-and-forget. Mientras el agente trabaja podes mandar eventos &lt;code&gt;user.message&lt;/code&gt; adicionales que se inyectan en el contexto, o un evento de interrupcion para cambiar la direccion mid-execution. Esto resuelve el problema clasico de que el agente se vaya por las ramas sin que puedas detenerlo: ahora podes corregir el rumbo sin matar la sesion ni perder el estado del filesystem. La transcripcion completa queda persistida server-side y se puede pedir entera por API.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Lo que NO es esto.&lt;/strong&gt; No es una alternativa a Claude Code para coding interactivo: el branding guidelines de Anthropic prohibe explicitamente llamarlo "Claude Code" o "Claude Code Agent" si lo integras en tu producto. La intencion es clara: Managed Agents es la primitiva para construir productos con tu propia marca encima, no un IDE. Tampoco es un reemplazo de la Messages API: si necesitas control fino sobre el loop, custom tool execution, o latencia ultra-baja para chat sincrono, sigue siendo Messages API.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Pricing y rate limits.&lt;/strong&gt; Se factura por tokens segun el modelo elegido (claude-opus-4-7, etc.) mas el tiempo de container. Rate limits per organization: 300 req/min para endpoints de creacion (agents, sessions, environments), 600 req/min para reads (retrieve, list, stream). Los limites de spend de cuenta tambien aplican. Memory para Managed Agents tambien entro en beta publica el mismo dia: persistencia entre sesiones del mismo agente.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Casos donde tiene sentido.&lt;/strong&gt; Pipelines de data engineering que corren horas, agentes de research autonomos que iteran sobre fuentes, jobs nocturnos de auditoria de codigo, asistentes de soporte que abren tickets internos. Cualquier cosa que hoy resuelves con una EC2 corriendo un script con Anthropic SDK + tu propio sandbox + un sidecar de logs es candidata a migrar. Lo que vigilar las proximas semanas: outcomes y multi-agent estan en research preview (hay que solicitar acceso), y el header beta sugiere que la API puede cambiar entre releases. No lo metas en producto critico hasta que salga de beta.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://platform.claude.com/docs/en/managed-agents/overview"&gt;https://platform.claude.com/docs/en/managed-agents/overview&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://platform.claude.com/docs/en/managed-agents/quickstart"&gt;https://platform.claude.com/docs/en/managed-agents/quickstart&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://releasebot.io/updates/anthropic/claude"&gt;https://releasebot.io/updates/anthropic/claude&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">341a90c3-0a99-5e15-b04e-28ee374b4368</guid>
-      <pubDate>Mon, 04 May 2026 08:32:41 +0000</pubDate>
-      <category>claude-code</category>
-      <link>https://platform.claude.com/docs/en/managed-agents/overview</link>
-      <enclosure url="https://platform.claude.com/docs/og?locale=en&amp;amp;path=managed-agents/overview" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>MinerU2.5: parsing de documentos a 4 páginas/segundo con un VLM de 1.2B parámetros</title>
-      <description>&lt;p&gt;&lt;strong&gt;Paper:&lt;/strong&gt; &lt;em&gt;MinerU2.5: A Decoupled Vision-Language Model for Efficient High-Resolution Document Parsing&lt;/em&gt;, Junbo Niu, Zheng Liu, Zhuangcheng Gu, Bin Wang et al. (OpenDataLab), arXiv:2509.22186, septiembre 2025 (v2 actualizada).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;El problema.&lt;/strong&gt; Parsear PDFs complejos — tablas, fórmulas matemáticas, layouts a dos columnas, papers científicos — sigue siendo un cuello de botella feo en cualquier pipeline de RAG o de ingestion para training data. Los modelos generalistas tipo Qwen2.5-VL-72B funcionan razonablemente pero son carísimos por página. Los modelos especializados tipo dots.ocr o MonkeyOCR son más eficientes pero pierden precisión en formato denso. La pregunta práctica: ¿se puede tener calidad SOTA sin pagar el coste de un VLM gigante?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;La idea clave.&lt;/strong&gt; Desacoplar layout analysis y content recognition en dos pasadas, con resoluciones diferentes en cada una. Layout en imagen downsampleada (rápido), content en crops a resolución nativa (preciso). El modelo es uno solo de 1.2B parámetros, pero se invoca dos veces con prompts distintos.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Método.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Stage 1 — Layout analysis.&lt;/strong&gt; Imagen downsampleada se mete al VLM, que identifica regiones (texto, tabla, fórmula, figura) con bounding boxes y reading order. Como el input es pequeño, esta pasada es muy rápida.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Stage 2 — Content recognition.&lt;/strong&gt; Para cada región detectada, se extrae el crop a resolución nativa de la imagen original y se pasa al mismo VLM con un prompt específico ("reconoce esta tabla", "reconoce esta fórmula", etc.). Cada crop es pequeño, así que el coste de atención escala linealmente con número de regiones, no cuadráticamente con el tamaño total de la página.&lt;/li&gt;
-  &lt;li&gt;El truco está en que &lt;strong&gt;la atención nunca opera sobre la imagen completa a alta resolución&lt;/strong&gt; — que es donde se va el compute en VLMs naive de documentos.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure&gt;&lt;img src="https://arxiv.org/html/2509.22186v2/x1.png" alt="Performance highlights de MinerU2.5 vs otros modelos OCR" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Figura 1 del paper: MinerU2.5 alcanza SOTA en cuatro métricas (texto, fórmulas, tablas, reading order) con un orden de magnitud menos de cómputo que Qwen2.5-VL-72B.&lt;/figcaption&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Resultados concretos.&lt;/strong&gt; Sobre OmniDocBench (1.355 páginas):&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Score global: 90.67&lt;/strong&gt; (state-of-the-art)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Text edit distance: 0.047&lt;/strong&gt; vs 0.094 de Qwen2.5-VL-72B (el modelo es 60× más pequeño)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Tabla TEDS: 88.22&lt;/strong&gt; (el mejor del benchmark, supera a dots.ocr 86.78 y a Qwen2.5-VL-72B 82.15)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Fórmulas CDM: 88.46&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Throughput: 4.47 páginas/segundo en H200&lt;/strong&gt;, 2.12 páginas/segundo en A100. Esto es &lt;strong&gt;~7× más rápido que dots.ocr&lt;/strong&gt; y ~4× más rápido que MonkeyOCR-pro-3B en deployment optimizado con vLLM.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Limitaciones reales.&lt;/strong&gt; El paper se vende muy bien pero hay matices. Primero, OmniDocBench es un benchmark dominado por papers científicos en inglés y chino — no está claro cómo se comporta en documentos manuscritos, formularios oficiales con sellos, o PDFs degradados típicos de archivos legales. Segundo, el throughput reportado es con batch optimizado y vLLM; en single-document inference la ventaja se reduce. Tercero, el desacoplamiento layout/content depende de que la primera pasada acierte la segmentación: si el layout analysis falla en una región, ningún content recognition la rescata. No hay reportado un análisis de propagación de errores entre stages.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Por qué importa fuera del paper.&lt;/strong&gt; Es el primer modelo open-source de parsing de documentos donde la calidad/coste compite seriamente con APIs cerradas tipo Mistral OCR o Reducto. Los pesos están en Hugging Face (opendatalab/MinerU2.5-2509-1.2B), licencia clara, y el throughput es lo bastante alto como para procesar un corpus de millones de PDFs en horas, no semanas. Para cualquier equipo construyendo RAG sobre documentos no triviales — papers, reports financieros, manuales técnicos — esto cambia el cálculo de make-vs-buy.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Qué seguiría yo.&lt;/strong&gt; Probarlo contra un corpus interno propio antes que confiar en OmniDocBench, especialmente si los documentos no son papers académicos. La arquitectura de dos stages es replicable conceptualmente con cualquier VLM base — sería interesante ver si la receta funciona aplicándola sobre Qwen3-VL o sobre modelos más pequeños tipo Qwen2-VL-2B. También vale la pena estudiar el data engine (ellos generaron corpora sintéticos masivos) — esa parte del paper es más interesante de lo que parece, porque la calidad SOTA con 1.2B parámetros viene tanto de la arquitectura como de la dieta de datos.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2509.22186"&gt;https://arxiv.org/abs/2509.22186&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://arxiv.org/html/2509.22186v2"&gt;https://arxiv.org/html/2509.22186v2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://huggingface.co/papers/2509.22186"&gt;https://huggingface.co/papers/2509.22186&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://huggingface.co/opendatalab/MinerU2.5-2509-1.2B"&gt;https://huggingface.co/opendatalab/MinerU2.5-2509-1.2B&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">3a292b08-95dc-5fd4-939e-3d30eda0382f</guid>
-      <pubDate>Mon, 04 May 2026 08:32:43 +0000</pubDate>
-      <category>papers-ia</category>
-      <link>https://arxiv.org/abs/2509.22186</link>
-      <enclosure url="https://arxiv.org/html/2509.22186v2/x1.png" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>Cuando marketing escribe sus propios agentes: el flujo de generacion de anuncios de Anthropic</title>
-      <description>&lt;p&gt;El caso mas replicable del informe interno de Anthropic sobre como sus equipos usan Claude Code no viene de ingenieria, sino del equipo de Growth Marketing. Han montado un workflow agentico que &lt;strong&gt;genera cientos de anuncios en minutos&lt;/strong&gt;, y que cualquier equipo de marketing con acceso a Claude Code puede copiar.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;El problema concreto.&lt;/strong&gt; Quien hace ads en Google, LinkedIn o Meta sabe el ritual: tienes una hoja de calculo con anuncios existentes y sus metricas (CTR, CVR, gasto), identificas los que rinden mal, y escribes variaciones nuevas respetando limites estrictos de caracteres — 30 para titulares, 90 para descripciones. Es trabajo creativo en superficie y burocratico en el fondo: cuentas caracteres a mano, generas decenas de variantes, las pegas en formato CSV.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Como esta montado.&lt;/strong&gt; Dos sub-agentes especializados. El primero ingiere el CSV de anuncios con sus metricas e identifica los underperformers segun un umbral definido por el equipo. El segundo recibe esos anuncios fallidos y genera variaciones nuevas que respetan los limites de caracteres. Encadenados, producen cientos de anuncios listos para subir. Encima han montado un plugin de Figma que crea hasta 100 variaciones visuales intercambiando titulares y descripciones automaticamente — el tiempo manual cae a &lt;strong&gt;medio segundo por batch&lt;/strong&gt;, segun su informe interno.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Por que la arquitectura de sub-agentes importa.&lt;/strong&gt; No es un prompt gigante. Cada agente tiene un trabajo acotado: identificar o generar. Eso permite testear cada paso por separado, reusar el agente generador para campañas distintas, y reemplazar uno sin tocar el otro. Es el patron que describe el reciente reporte interno de Anthropic: equipos no tecnicos construyen pequeñas pipelines en Claude Code en lugar de pedir tickets a ingenieria.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Que necesitarias para replicarlo.&lt;/strong&gt; Acceso a Claude Code, un CSV de anuncios con metricas (lo que ya exporta cualquier ads manager), y una tarde para escribir los dos prompts de los sub-agentes. Coste de tokens razonable: una sesion completa procesando 500 anuncios y generando 1.500 variantes ronda los pocos dolares. Si rentabilizas un solo ad mejor convertido, la matematica funciona enseguida.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Cuando no aplica.&lt;/strong&gt; Si tu volumen es bajo (10 anuncios al mes), el overhead de montar los agentes no compensa frente a hacerlo a mano. Si dependes mucho del juicio creativo o cultural local, el agente generara variaciones plausibles pero genericas — sirven como punto de partida, no como output final.&lt;/p&gt;&lt;p&gt;Yo probaria empezar por exportar tus 50 anuncios actuales con metricas a CSV, y escribir un solo agente que genere 5 variaciones para los 10 peores. Si el primer batch te da una variante que mejora el CTR, ya tienes excusa para montar el flujo entero.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://codingscape.com/blog/how-anthropic-engineering-teams-use-claude-code-every-day"&gt;https://codingscape.com/blog/how-anthropic-engineering-teams-use-claude-code-every-day&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www-cdn.anthropic.com/58284b19e702b49db9302d5b6f135ad8871e7658.pdf"&gt;https://www-cdn.anthropic.com/58284b19e702b49db9302d5b6f135ad8871e7658.pdf&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic"&gt;https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">67978422-35df-599a-8f04-573066496b37</guid>
-      <pubDate>Mon, 04 May 2026 08:32:52 +0000</pubDate>
-      <category>casos-uso-ia</category>
-      <link>https://codingscape.com/blog/how-anthropic-engineering-teams-use-claude-code-every-day</link>
-      <enclosure url="https://codingscape.com/hubfs/anthropic-claude-code-banner.png" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>Shopify monta un proxy LLM interno para 4.000 ingenieros: el caso replicable de gobernanza de IA</title>
-      <description>&lt;p&gt;Shopify acaba de publicar (vía Bessemer y Pragmatic Engineer) los detalles de su &lt;strong&gt;playbook de ingeniería con IA&lt;/strong&gt;, y a diferencia del 90% de los blogs corporativos, este sí trae arquitectura, números y reglas concretas. Caso útil para cualquier equipo que pase de 50 ingenieros y empiece a ver facturas serias de OpenAI/Anthropic.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Cómo está montado.&lt;/strong&gt; En lugar de dar API keys directamente a cada equipo, Shopify construyó un &lt;em&gt;proxy LLM centralizado&lt;/em&gt;: todas las peticiones de Cursor, Claude Code, Copilot y herramientas internas pasan por una capa única antes de llegar a OpenAI, Anthropic o Google. La capa hace tres cosas concretas: compra tokens al por mayor (descuento por volumen), monitoriza uso por equipo/proyecto/persona, y permite cambiar de modelo sin tocar las herramientas. Encima del proxy: 24+ servidores MCP conectando wiki interna, Salesforce, GSD (gestión de producto) y data warehouse, respetando los permisos existentes de cada usuario.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;La regla de coste que cualquiera puede copiar.&lt;/strong&gt; Si un ingeniero gasta más de &lt;strong&gt;50/día&lt;/strong&gt; en tokens, salta una alerta y se investiga. No es un límite duro — Shopify tiene política de "sin tope de tokens" — sino una señal de que algo raro pasa (un loop infinito de agente, un script mal hecho). Es la regla más replicable de todo el playbook.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Resultados reales.&lt;/strong&gt; Farhan Thawar, VP de Ingeniería, estima un 20% de mejora de productividad medida no por líneas de código sino por &lt;em&gt;demos semanales de velocidad tangible&lt;/em&gt;. La tasa de reverts de PRs se mantiene estable pese al aumento de volumen, lo que sugiere que la calidad no se ha degradado. Dato interesante: en Shopify, equipos de Finanzas, Ventas y Soporte usan Cursor &lt;em&gt;más&lt;/em&gt; que los propios ingenieros.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Qué necesitarías para replicarlo.&lt;/strong&gt; Para un equipo de 20-100 personas: un proxy con LiteLLM o Portkey (open source, ~1 día de trabajo), un dashboard de gasto por usuario en Grafana o similar, y una política escrita que diga "alerta a partir de X". Lo costoso no es la infra, es la disciplina de medir uso real y correlacionarlo con impacto en reviews de performance — Shopify ya lo hace.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Cuándo no merece la pena.&lt;/strong&gt; Si tu equipo son 5 personas y el gasto mensual en LLMs es menor a 00, montar todo esto es overengineering. Una hoja de Excel y revisar facturas mensuales basta. El proxy empieza a tener sentido cuando tienes más de 20 personas usando IA o gastas k+/mes.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Yo probaría empezar por&lt;/strong&gt; instalar LiteLLM como proxy local con cache habilitado, apuntar Cursor o Claude Code hacia él, y ver cuánto cambian los costes solo con el cache de respuestas repetidas — suele ser un 15-30% de ahorro "gratis" en una semana.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://www.bvp.com/atlas/inside-shopifys-ai-first-engineering-playbook"&gt;https://www.bvp.com/atlas/inside-shopifys-ai-first-engineering-playbook&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://newsletter.pragmaticengineer.com/p/how-ai-is-changing-software-engineering"&gt;https://newsletter.pragmaticengineer.com/p/how-ai-is-changing-software-engineering&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://engineeredintelligence.substack.com/p/shopifys-ai-first-engineering-culture"&gt;https://engineeredintelligence.substack.com/p/shopifys-ai-first-engineering-culture&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">745f2ffe-a4cb-5c99-b2ab-fe0f5598d512</guid>
-      <pubDate>Mon, 04 May 2026 08:33:07 +0000</pubDate>
-      <category>casos-uso-ia</category>
-      <link>https://www.bvp.com/atlas/inside-shopifys-ai-first-engineering-playbook</link>
-      <enclosure url="https://www.bvp.com/assets/uploads/2026/04/AI-engineering_shopify_building_differently_Farhan_atlas_graphic-1.png" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>DeepSeek V4 Pro: 1.6T parámetros open-weight, 1M de contexto y precios que rompen la curva</title>
-      <description>&lt;p&gt;DeepSeek lanzó &lt;strong&gt;V4 en preview&lt;/strong&gt; el 24 de abril, cerrando la trilogía frontier de la semana (Opus 4.7 el 16, GPT-5.5 el 23, V4 el 24). Es el lanzamiento más interesante técnicamente de los tres por dos razones: peso abierto en la frontera y arquitectura de atención nueva que cambia la economía del long context.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Las dos variantes:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;V4 Flash:&lt;/strong&gt; 284B parámetros totales, 13B activos (MoE). Contexto 1M tokens. 0.14 USD input / 0.28 USD output por millón. Solo texto.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;V4 Pro:&lt;/strong&gt; 1.6T parámetros totales, 49B activos (MoE). Contexto 1M tokens. 0.145 USD input / 3.48 USD output por millón. Solo texto. Open-weight más grande disponible públicamente.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Para entender el shock de precio: Opus 4.7 cuesta 5/25 USD, GPT-5.5 cuesta 5/30 USD. V4 Pro cuesta 0.145/3.48 USD. Es decir, en input es &lt;strong&gt;34 veces más barato que Opus 4.7&lt;/strong&gt;, en output ~7 veces más barato. V4 Flash (la versión &amp;quot;chica&amp;quot;, que aún tiene 284B params) baja a 0.14/0.28 — competitivo con GPT-5.4 Nano y Claude Haiku 4.5 pero con calidad sustancialmente más alta según los benchmarks de DeepSeek.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Los benchmarks de V4 Pro:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;SWE-bench Verified: 80.6% (vs 87.6% de Opus 4.7, vs 88.7% de GPT-5.5 — a 7-8 puntos de la frontera)&lt;/li&gt;&lt;li&gt;LiveCodeBench: 93.5%&lt;/li&gt;&lt;li&gt;Reasoning benchmarks: &amp;quot;casi cerrando la brecha&amp;quot; con frontier según DeepSeek; evaluadores externos lo sitúan ~3-6 meses detrás del state of the art&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;NIST CAISI publicó una evaluación independiente de V4 Pro a principios de mayo donde queda detrás de modelos US en pruebas de conocimiento, pero competitivo en código y razonamiento. Es decir: no es el mejor modelo del mundo, pero es el mejor open-weight del mundo y está a 3-6 meses de la frontera cerrada.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;La arquitectura — esto es lo que importa:&lt;/strong&gt; V4 introduce &lt;strong&gt;Hybrid Attention Architecture&lt;/strong&gt;, combinación de Compressed Sparse Attention (CSA) y Heavily Compressed Attention (HCA). El truco: a 1M tokens de contexto, V4 Pro requiere solo el 27% de FLOPs de inferencia por token y el 10% del KV cache comparado con DeepSeek V3.2. La integración de DeepSeek Sparse Attention reduce FLOPs por token un 73% y memoria de KV cache un 90% vs V3.2.&lt;/p&gt;&lt;p&gt;Esto importa porque es la primera demostración pública convincente de que el long context puede dejar de ser un lujo. Hasta ahora, 1M de contexto en frontier closed-source (Gemini, Claude beta) era caro porque la atención escala cuadráticamente. V4 demuestra que con sparse attention bien diseñada se puede tener 1M de contexto a precio cercano a 32K. Si los números reproducen en evaluaciones independientes, esto cambia los patrones viables de aplicación: codebases enteros como prompt, agents con memoria persistente real, document QA sobre miles de páginas sin RAG.&lt;/p&gt;&lt;p&gt;V4 también incluye &lt;strong&gt;Manifold-Constrained Hyper-Connections (mHC)&lt;/strong&gt;, una técnica para fortalecer las conexiones residuales y mejorar la propagación de señal a través de capas profundas en arquitecturas MoE muy grandes. Es el tipo de detalle estructural que normalmente queda dentro de labs cerrados — DeepSeek lo publica.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;El factor open-weight:&lt;/strong&gt; V4 Pro y Flash están disponibles en Hugging Face para descargar y modificar. Para self-hosting con 1.6T params (49B activos) hace falta hardware serio (~8x H200 o equivalente para Pro), pero V4 Flash con 13B activos corre en hardware más razonable. Para investigadores y empresas con datos sensibles que no pueden ir a APIs cerradas, V4 cambia lo que es posible.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Limitaciones reales:&lt;/strong&gt; solo texto (no vision, no audio, no tools nativos). En benchmarks agénticos no figura entre los líderes. Sin pricing predecible para enterprise (la API es preview). El gobierno de EE.UU. (CAISI) ya publicó un eval con sesgo competitivo, lo que indica que el contexto regulatorio US-China va a seguir afectando el adoption.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Qué validar:&lt;/strong&gt; latencia real a 1M de contexto (los números de FLOPs no se traducen 1:1 en wall time), reproducibilidad de los benchmarks de coding fuera del setup de DeepSeek, y compatibilidad con tu stack si quieres self-host. &lt;strong&gt;Qué dejar pasar:&lt;/strong&gt; el discurso de &amp;quot;David vs Goliat&amp;quot;. V4 es excelente como open-weight pero no es frontier en capacidades; es frontier en economía y arquitectura.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/"&gt;https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/"&gt;https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://api-docs.deepseek.com/news/news260424"&gt;https://api-docs.deepseek.com/news/news260424&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro"&gt;https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"&gt;https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://dasroot.net/posts/2026/04/deepseek-v4-hybrid-attention-massive-contexts/"&gt;https://dasroot.net/posts/2026/04/deepseek-v4-hybrid-attention-massive-contexts/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">e3b95dc2-2492-50dd-ad03-65575349e5e6</guid>
-      <pubDate>Mon, 04 May 2026 08:33:13 +0000</pubDate>
-      <category>ia-generativa</category>
-      <link>https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/</link>
-      <enclosure url="https://wp.technologyreview.com/wp-content/uploads/2026/04/deepseek-v4-hero.jpg" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>Nemotron-Cascade 2: oro en IMO, IOI e ICPC con un MoE de 3B activos</title>
-      <description>&lt;p&gt;&lt;strong&gt;Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation&lt;/strong&gt; (Yang et al., NVIDIA, marzo 2026, &lt;a href="https://arxiv.org/abs/2603.19220"&gt;arXiv:2603.19220&lt;/a&gt;) es uno de los technical reports más densos del año en post-training. La afirmación fuerte: un MoE de 30B parámetros con solo 3B activos consigue medalla de oro en IMO 2025, IOI 2025 e ICPC World Finals 2025, con 20x menos parámetros activos que DeepSeek-V3.2-Speciale-671B-A37B.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;El problema que aborda.&lt;/strong&gt; El post-training de LLMs para razonamiento se ha convertido en una concatenación frágil de etapas (SFT, RLHF, RL verificable, distillation) donde cada etapa tiende a regresar lo que la anterior aprendió. Si subes el reward de matemáticas, baja la calidad conversacional. Si distillas, pierdes diversidad. Y la receta cambia con cada modelo, lo que hace difícil reproducir.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;La idea clave (en una frase).&lt;/strong&gt; Convertir el post-training en una &lt;em&gt;cascada&lt;/em&gt; ordenada de etapas RL por dominio, intercalando &lt;strong&gt;Multi-Domain On-Policy Distillation (MOPD)&lt;/strong&gt; que destila desde checkpoints intermedios &lt;em&gt;específicos del dominio&lt;/em&gt; en lugar de un único maestro fijo.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Método, justo lo necesario.&lt;/strong&gt; El pipeline tiene siete etapas en orden: (1) Instruction-Following RL (180 steps), (2) Multi-domain RL para tool calling/STEM/formato (70 steps), (3) MOPD (52 steps), (4) RLHF (25 steps), (5) Long-context RL (30 steps), (6) Code RL (22 steps), (7) SWE RL agentic. La pieza nueva es MOPD: en cada checkpoint del cascade RL, se identifica el modelo intermedio mejor en cada dominio y se usa como teacher para distillation token-level con reverse-KL e importance weighting truncado para corregir el mismatch train/inference. Los autores afirman que MOPD es &lt;strong&gt;2-3x más sample-efficient que GRPO&lt;/strong&gt; en sus condiciones.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Resultados concretos.&lt;/strong&gt; En IMO 2025 resuelve 5 de 6 problemas (35/42 puntos), evaluado por un medallista de oro IMO 2015. En IOI 2025 saca 439.28/600. ICPC World Finals 2025: 10/12 problemas. En benchmarks puros: ArenaHard v2 83.5 (vs 65.4 de Qwen3.5-35B-A3B), LiveCodeBench v6 87.2 (vs 74.6), AIME 2025 92.4, Codeforces ELO 2320 (percentil 99.6). En long-context, NIAH@1M alcanza 99.0 pero LongBench v2 se queda en 40.3, recordando que el needle-in-haystack ya no mide lo que importa.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Datos de SFT.&lt;/strong&gt; Vale la pena leer la Tabla 2 con calma: 1.8M tool-calling de matemáticas + 2.6M no-tool, 4.2M de code reasoning Python/C++, 1.1M scientific coding, 5.6M de chat general, 234K samples de long-context con media de 128K tokens, 514K SWE (125K agentic + 389K agentless), 490K terminal agent. La proporción habla: el agentic ya pesa más que el chat puro.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Limitaciones reales.&lt;/strong&gt; Primero, los benchmarks de competición tienen contaminación posible y los autores no detallan filtros de decontamination. Segundo, MOPD requiere mantener checkpoints intermedios de calidad por dominio, lo que es caro de orquestar fuera de NVIDIA. Tercero, la comparación con DeepSeek-V3.2-Speciale es sobre un modelo distinto en arquitectura y datos, no un ablation limpio del cascade. Cuarto, no hay análisis de por qué exactamente el orden de las etapas (IF→multi-domain→MOPD→RLHF) es mejor que otras permutaciones, más allá de "así nos funcionó".&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Por qué importa fuera del paper.&lt;/strong&gt; Liberan pesos del modelo, datos SFT y datos RL en Hugging Face, además del stack: NeMo-Skills, Nemo-Gym, Nemo-RL, OpenHands, Terminus 2. Es de lo más reproducible que ha salido de un lab grande este año. Si trabajas en post-training, el aporte práctico no es "otro modelo de razonamiento", sino la arquitectura de pipeline: ordenar etapas RL por dominio con distillation desde teachers domain-specific. Es replicable a escalas más pequeñas.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Qué seguiría yo.&lt;/strong&gt; Probar MOPD con dos dominios (matemáticas + código) sobre un base de 7B y medir si los gains se mantienen. Y comparar contra una baseline simple de GRPO sin distillation, controlando steps y compute. Si MOPD aporta solo cuando hay 7+ etapas, es menos general de lo que parece.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2603.19220"&gt;https://arxiv.org/abs/2603.19220&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://research.nvidia.com/labs/nemotron/nemotron-cascade-2/"&gt;https://research.nvidia.com/labs/nemotron/nemotron-cascade-2/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://huggingface.co/papers/2603.19220"&gt;https://huggingface.co/papers/2603.19220&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://huggingface.co/collections/nvidia/nemotron-cascade-2"&gt;https://huggingface.co/collections/nvidia/nemotron-cascade-2&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">62f7e799-b568-5664-85a5-859b236a1ba3</guid>
-      <pubDate>Mon, 04 May 2026 08:33:26 +0000</pubDate>
-      <category>papers-ia</category>
-      <link>https://arxiv.org/abs/2603.19220</link>
-      <enclosure url="https://arxiv.org/html/2604.25917v1/x2.png" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>Notion pasa de 3 a 30 incidencias resueltas al día con evals automáticas: anatomía de un cambio de proceso</title>
-      <description>&lt;p&gt;Notion lleva meses publicando detalles operativos de cómo entrena y mejora sus features de IA, y el caso recién documentado por &lt;strong&gt;Braintrust&lt;/strong&gt; es de los más concretos que han salido en 2026. La promesa: pasar de triar y arreglar 3 incidencias al día a hacer 30. Lo interesante no es el 10x — esos titulares son sospechosos por defecto — sino qué cambió en el proceso y por qué es replicable.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;El antes.&lt;/strong&gt; El equipo de IA de Notion (unos 70 ingenieros alineados en evals) gestionaba la calidad del feature de Q&amp;A con un workflow artesanal: los datasets de prueba vivían en archivos JSONL, evaluadores humanos puntuaban manualmente las respuestas, y cada cambio en un prompt obligaba a una revisión cuidadosa porque no había forma rápida de saber si habías mejorado o introducido una regresión. Resultado: 3 incidencias resueltas al día. No por falta de capacidad, sino porque la fricción de validar cualquier cambio era altísima.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;El después.&lt;/strong&gt; Migraron las evals a Braintrust (plataforma SaaS de evaluación de LLMs) y reestructuraron el loop: &lt;em&gt;regression evals&lt;/em&gt; que detectan si una mejora de un caso rompe otro, &lt;em&gt;frontier evals&lt;/em&gt; que comparan modelos nuevos contra el actual, y trazas de producción que se convierten automáticamente en casos de prueba. El 80% del trabajo del equipo de IA pasa ahora por revisar feedback y trazas en Braintrust. Otro dato: pueden desplegar un modelo frontier nuevo en menos de 24 horas porque las evals validan compatibilidad de forma automatizada.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Caso de uso concreto que ilustra el método.&lt;/strong&gt; Detectaron que el Q&amp;A fallaba en workspaces multilingües — un usuario japonés preguntaba en japonés y el modelo respondía en inglés. Crearon datasets específicos para japonés, coreano e inglés mezclados en el mismo workspace, y lo convirtieron en una eval recurrente. El fix se priorizó como "top improvement" para clientes APAC. Sin el dataset, ese bug habría seguido invisible para el equipo, que es anglófono.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Qué necesitas para replicarlo.&lt;/strong&gt; No tienes que pagar Braintrust — la idea se replica con &lt;a href="https://github.com/openai/evals"&gt;OpenAI Evals&lt;/a&gt;, &lt;a href="https://github.com/promptfoo/promptfoo"&gt;promptfoo&lt;/a&gt; o &lt;a href="https://github.com/confident-ai/deepeval"&gt;deepeval&lt;/a&gt;, todos open source. El trabajo real es construir el dataset: sacar 50-200 ejemplos representativos de tus casos reales (no inventados), definir un "juez" — otra LLM o regla determinista — que diga si la respuesta es buena, y meter eso en CI para que cada cambio de prompt corra las evals antes de mergear.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Cuándo no merece la pena.&lt;/strong&gt; Si tu feature de IA tiene un solo prompt sin agentes, sin RAG y con menos de 100 usuarios, montar evals es prematuro. Empieza cuando notes que cada cambio te da miedo desplegarlo.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Yo probaría empezar por&lt;/strong&gt; exportar 50 conversaciones reales de tu producto, escribir 5 criterios de calidad ("¿responde en el idioma del usuario?", "¿usa la herramienta correcta?"), montarlo en promptfoo y correrlo cada vez que toques un prompt. Antes de tres semanas tendrás claro qué cambios mejoran y cuáles no.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://www.braintrust.dev/blog/notion"&gt;https://www.braintrust.dev/blog/notion&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.zenml.io/llmops-database/building-a-scalable-ai-feature-evaluation-system"&gt;https://www.zenml.io/llmops-database/building-a-scalable-ai-feature-evaluation-system&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">323d0172-3397-5314-9756-5872fff0dae2</guid>
-      <pubDate>Mon, 04 May 2026 08:34:01 +0000</pubDate>
-      <category>casos-uso-ia</category>
-      <link>https://www.braintrust.dev/blog/notion</link>
-      <enclosure url="https://www.braintrust.dev/customers/stories/notion/enterprise-search.jpg" type="image/jpeg" length="0" />
-    </item>
     <item>
       <title>RecursiveMAS: colaboración multi-agente en espacio latente con 75% menos tokens</title>
       <description>&lt;p&gt;&lt;strong&gt;Recursive Multi-Agent Systems&lt;/strong&gt; (Yang, Zou, Pan et al., UIUC/Stanford/NVIDIA/MIT, abril 2026, &lt;a href="https://arxiv.org/abs/2604.25917"&gt;arXiv:2604.25917&lt;/a&gt;) propone una pregunta concreta: si los &lt;em&gt;looped language models&lt;/em&gt; (mismos pesos iterando sobre estados latentes) escalan razonamiento, ¿se puede aplicar la misma idea cuando hay &lt;em&gt;varios&lt;/em&gt; agentes colaborando?&lt;/p&gt;&lt;p&gt;&lt;strong&gt;El problema que aborda.&lt;/strong&gt; Los multi-agent systems (MAS) actuales basados en LLMs &amp;mdash;AutoGen, MetaGPT, Mixture-of-Agents, TextGrad&amp;mdash; intercambian información en &lt;strong&gt;texto natural&lt;/strong&gt; entre agentes. Esto tiene tres costes: latencia (cada turno requiere generar y consumir tokens completos), pérdida de información (el estado mental rico del agente se proyecta a una verbalización lossy) y coste explosivo en tokens cuando hay varias rondas de colaboración. La pregunta del paper: ¿y si los agentes se pasan &lt;em&gt;estados latentes&lt;/em&gt; en lugar de texto?&lt;/p&gt;&lt;p&gt;&lt;strong&gt;La idea clave.&lt;/strong&gt; RecursiveMAS introduce un módulo ligero llamado &lt;strong&gt;RecursiveLink&lt;/strong&gt; que conecta agentes heterogéneos como un loop de colaboración, transfiriendo estados latentes entre ellos en vez de tokens. El sistema completo se entrena con un algoritmo inner-outer loop que hace co-optimización del sistema entero mediante credit assignment basado en gradientes compartidos a través de las rondas recursivas.&lt;/p&gt;&lt;figure&gt;&lt;img src="https://arxiv.org/html/2604.25917v1/x2.png" alt="Diagrama de la arquitectura RecursiveMAS" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Arquitectura general: agentes conectados vía RecursiveLink en un loop de colaboración latente.&lt;/figcaption&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;Método, lo justo.&lt;/strong&gt; Cada agente sigue siendo un LLM, pero entre rondas, en vez de emitir texto a un "shared blackboard", emite un latent thought que pasa por RecursiveLink y aterriza como input latente del siguiente agente. Para que estos thoughts no se desvíen de la distribución del modelo (un fallo típico de soft prompts entrenados ad-hoc), entrenan con un objetivo que mantiene los latents &lt;em&gt;in-distribution&lt;/em&gt;. La parte teórica del paper acota la complejidad de runtime y demuestra estabilidad de gradientes en el entrenamiento recursivo.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Cuatro patrones de colaboración instanciados.&lt;/strong&gt; (1) &lt;em&gt;Sequential&lt;/em&gt;: Planner&amp;rarr;Critic&amp;rarr;Solver. (2) &lt;em&gt;Mixture&lt;/em&gt;: agentes especializados (Math, Code, Science) razonando en paralelo y agregando. (3) &lt;em&gt;Distillation&lt;/em&gt;: Expert agent destila a Learner agent más pequeño. (4) &lt;em&gt;Deliberation&lt;/em&gt;: Reflector + Tool-Caller iteran con Python/search APIs.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Resultados concretos.&lt;/strong&gt; Evaluado en 9 benchmarks: MATH500, AIME 2025, AIME 2026, GPQA-Diamond, MedQA, LiveCodeBench-v6, MBPP+, HotpotQA, Bamboogle. Comparado contra Single Agent (LoRA y Full-SFT), Mixture-of-Agents (MoA), TextGrad, LoopLM y un Recursive-TextMAS (versión ablation que recursionaba en texto en vez de latente).&lt;/p&gt;&lt;p&gt;Los números: &lt;strong&gt;+8.3% de accuracy media&lt;/strong&gt; sobre los baselines, &lt;strong&gt;1.2x-2.4x speedup&lt;/strong&gt; end-to-end en inferencia, y &lt;strong&gt;34.6%-75.6% de reducción en uso de tokens&lt;/strong&gt;. El range de tokens es lo más interesante: tareas con muchas rondas (deliberation con tools) son donde la reducción se acerca al 75%, porque cada ida y vuelta entre agentes ya no requiere materializar texto.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Limitaciones reales.&lt;/strong&gt; Primero, todos los agentes deben compartir embedding space compatible: si quieres conectar GPT-5 y Claude vía RecursiveMAS, no se puede &amp;mdash;es un framework que requiere acceso a hidden states, así que en la práctica todos los agentes son del mismo lab/familia. Segundo, los benchmarks elegidos (MATH, AIME, GPQA) son tareas con respuesta corta y verificable; no hay evaluación en escritura larga, planning open-ended, ni en escenarios donde la traza textual &lt;em&gt;es&lt;/em&gt; el output esperado (debugging colaborativo, escritura técnica). Tercero, el speedup de 1.2x-2.4x ya es bonito pero no rompedor &amp;mdash;y depende de cuánto tiempo gasta el baseline en re-tokenizar mensajes largos. Cuarto, la "interpretabilidad" se sacrifica: si todo pasa por latents, debugger un MAS se vuelve más opaco.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Por qué importa.&lt;/strong&gt; Es la primera demostración seria de que la &lt;em&gt;tubería&lt;/em&gt; entre agentes puede ser latente sin perder accuracy. Encaja con la línea de Coconut/COCONUT (Hao et al. 2024) y los &lt;em&gt;looped LMs&lt;/em&gt;, extendiendo la idea de single-model recursion al regimen multi-agente. Si la promesa se sostiene, los frameworks tipo AutoGen tendrán que repensarse: hoy son orquestadores de strings, mañana podrían ser orquestadores de tensores.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Qué seguiría yo.&lt;/strong&gt; Verificar empíricamente la afirmación de in-distribution latents con probing &amp;mdash;fácil de comprobar si has mirado mucho a soft prompts. Y diseñar un benchmark donde la traza textual entre agentes &lt;em&gt;sí&lt;/em&gt; es valiosa (auditoría, debugging humano-en-loop) y medir si RecursiveMAS pierde ahí. Esa es la frontera real de uso.&lt;/p&gt;
@@ -1713,6 +1311,478 @@ Resume este PR en 3 bullets...&lt;/code&gt;&lt;/pre&gt;
       <category>papers-ia</category>
       <link>https://arxiv.org/abs/2605.06076</link>
       <enclosure url="https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Estimacion Fermi para system design: como decidir si tu arquitectura aguantara 10x trafico sin escribir codigo</title>
+      <description>&lt;p&gt;Problema arquetipo: el product manager te pregunta si la nueva feature aguantara el pico de Black Friday. Tienes dos opciones malas — decir &lt;em&gt;si&lt;/em&gt; y rezar, o pedirte dos semanas para hacer un load test. Hay una tercera, que se ensena en treinta minutos y se aplica en cinco: &lt;strong&gt;estimacion Fermi&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;La tecnica viene del fisico Enrico Fermi, que estimaba la potencia de la bomba de Trinity dejando caer trozos de papel cuando paso la onda expansiva. La traduccion a software es directa: descompon el problema en factores multiplicativos, redondea agresivamente a potencias de 10, y acepta que el resultado es valido si esta dentro de un orden de magnitud del real.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Como aplicarla el lunes por la manana:&lt;/strong&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;strong&gt;Define la metrica&lt;/strong&gt; que importa: QPS pico, almacenamiento por dia, ancho de banda salida.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Descompon en factores&lt;/strong&gt;: usuarios activos x acciones por usuario x bytes por accion. Cada factor debe ser estimable de cabeza.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Memoriza las cifras base&lt;/strong&gt; de Jeff Dean (Google): L1 cache 0.5 ns, RAM 100 ns, round-trip dentro del datacenter 500 us, disk seek 10 ms, CA-Holanda-CA 150 ms. Y la tabla de potencias de dos: 2^10 = 1 KB, 2^20 = 1 MB, 2^30 = 1 GB, 2^40 = 1 TB.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Multiplica con rounding agresivo&lt;/strong&gt;. Trafico pico = trafico medio x 2-10 segun el patron de uso (10x si es retail, 2-3x si es SaaS B2B).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Compara contra capacidad conocida&lt;/strong&gt;: una instancia EC2 mediana sirve ~10K QPS de lectura simple, Postgres single-node aguanta ~5K writes/s con tuning.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Documenta los supuestos&lt;/strong&gt;. La cifra final es secundaria; lo importante es que dentro de un mes puedas auditar que asumiste mal.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;strong&gt;Ejemplo real:&lt;/strong&gt; el sizing canonico de Twitter de los libros de Alex Xu. 500 M usuarios activos diarios, 10% tuitea una vez al dia = 50 M writes/dia = 580 writes/s de media, ~5,800 writes/s en pico. Cada usuario lee 50 tuits/dia = 25 B reads/dia = 289 K reads/s, ~2.9 M en pico. Con esos numeros decides si Kafka aguanta (si), si necesitas sharding de timelines (si), y si Redis basta para el cache caliente (calcula tu).&lt;/p&gt;&lt;p&gt;Jason Cohen (fundador de WP Engine) defiende la misma idea aplicada a decisiones de negocio en su &lt;em&gt;ROI rubric&lt;/em&gt;: usar escalas de potencias de 10 en lugar de numeros pseudo-precisos. Su argumento es que un score de 7.3 vs 6.8 es ruido — si tu metodo no distingue entre 1, 10 y 100, tu metodo no esta midiendo nada.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Cuando NO aplica:&lt;/strong&gt; sistemas con colas no lineales (lo que aguanta el 95% rompe el 99%), problemas dominados por contencion de locks o por GC pauses, y cualquier cosa donde la varianza importa mas que la media. Para esos casos, Fermi te da un primer filtro — pero el load test sigue siendo obligatorio.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Siguiente paso si quieres profundizar:&lt;/strong&gt; lee los capitulos de back-of-the-envelope de &lt;em&gt;System Design Interview&lt;/em&gt; de Alex Xu y memoriza la tabla de Dean. Despues, cada vez que disenes algo, escribe la estimacion antes de tocar codigo y comparala con la realidad cuando despliegues. En seis meses tu calibracion ha mejorado mas que con cualquier curso.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://brenocon.com/dean_perf.html"&gt;https://brenocon.com/dean_perf.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://bytebytego.com/courses/system-design-interview/back-of-the-envelope-estimation"&gt;https://bytebytego.com/courses/system-design-interview/back-of-the-envelope-estimation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://longform.asmartbear.com/roi-rubric/"&gt;https://longform.asmartbear.com/roi-rubric/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://systemdesignschool.io/fundamentals/back-of-envelope-calculation-real-world-examples"&gt;https://systemdesignschool.io/fundamentals/back-of-envelope-calculation-real-world-examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">2e4b33f3-69bb-5efb-83f1-10e619567a3e</guid>
+      <pubDate>Wed, 27 May 2026 06:13:09 +0000</pubDate>
+      <category>cps</category>
+      <link>https://brenocon.com/dean_perf.html</link>
+    </item>
+    <item>
+      <title>ReasonMaxxer: 1000x más barato que RL y empata o supera en razonamiento matemático</title>
+      <description>&lt;p&gt;El paper &lt;em&gt;Rethinking RL for LLM Reasoning: It's Sparse Policy Selection, Not Capability Learning&lt;/em&gt; (Akgül, Kannan, Neiswanger, Prasanna; arXiv:2605.06241) cuestiona la pieza central del post-training moderno: el RL no enseña capacidades nuevas, solo selecciona soluciones que el modelo base ya genera. Y si eso es cierto, la maquinaria entera del RLVR a escala es overkill.&lt;/p&gt;&lt;p&gt;El análisis arranca a nivel de token. Los autores comparan el modelo base contra su versión post-RL en tres familias (Qwen2.5, Qwen3, DeepSeek-R1-Distill) y seis tamaños. El hallazgo: solo entre &lt;strong&gt;el 1 y el 4 por ciento de las posiciones de token&lt;/strong&gt; cambian con RL, los tokens promovidos están casi siempre en el top-5 del modelo base (rank medio: 2) y las ediciones se concentran en puntos de alta entropía, donde el modelo dudaba entre dos ramas de razonamiento. RL no escribe nuevo conocimiento. Empuja al modelo a elegir mejor entre opciones que ya tenía.&lt;/p&gt;&lt;p&gt;De ahí sale ReasonMaxxer: un método sin rollouts online, sin reward model, sin GRPO. Toma 50 problemas con tasas de éxito mixtas, genera 20 rollouts por problema con el modelo base (1.000 secuencias totales), identifica las posiciones de alta entropía donde rollouts correctos e incorrectos divergen, y aplica una pérdida contrastiva ahí. Solo ahí. Entrena un adaptador LoRA rank-32 sobre las proyecciones de atención: 0.27-0.49 por ciento de los parámetros del modelo base.&lt;/p&gt;&lt;p&gt;Los resultados en MATH-500 son los que te hacen levantar la ceja. Qwen2.5-1.5B pasa de 29.8 por ciento (base) a 50.2 por ciento con ReasonMaxxer, frente a 49.6 por ciento con RL completo. Coste: 4 dólares vs 200. Qwen2.5-7B sube de 58.6 a 70.6 (ReasonMaxxer) frente a 65.6 (RL). Coste: 5 dólares vs 600. El caso más extremo es DeepSeek-R1-Distill-1.5B: base 43.6 por ciento, ReasonMaxxer 66.2, RL 50.2. Cuatro dólares contra 4.500. Tres órdenes de magnitud menos compute, y el método sin RL gana.&lt;/p&gt;&lt;p&gt;El paper también dispara contra una tesis recurrente: que el RL induce &lt;em&gt;emergent reasoning&lt;/em&gt;. Si las ediciones se concentran al 1 por ciento de tokens y están todas dentro del top-5 base, la noción de capacidad emergente se queda muy fina. Lo que emerge es un sesgo de selección. Útil, sí, pero categorialmente distinto de aprender algo nuevo. Encaja además con lo que veíamos en la línea de Latent-GRPO (entrada del 4 de mayo): si el razonamiento útil ya vive latente en el modelo base, RL es una forma cara de hacerlo explícito.&lt;/p&gt;&lt;p&gt;Limitaciones honestas. Todo el experimento vive en matemáticas (MATH-500, AIME, AMC, OlympiadBench). En tareas con razonamiento más abierto (agentes, código con múltiples archivos, razonamiento multi-hop sobre documentos) la sparsity podría no aguantar: ahí los puntos de decisión no son tan localizables. Los autores no lo prueban. Tampoco discuten qué pasa con modelos que arrancan con base muy débil — si el top-5 base no contiene la solución correcta, ReasonMaxxer no tiene de dónde tirar. Y el método depende de poder etiquetar rollouts como correctos/incorrectos: vuelves a necesitar reward verifiable, igual que en RLVR.&lt;/p&gt;&lt;p&gt;Conexión con el resto del paisaje. Junto con DVAO (entrada del 26 de mayo, multi-reward RL) y QUEST (mismo día, agentes deep research con 8K tareas sintéticas), este paper completa un patrón: la frontera de progreso en post-training de 2026 no está en hacer más RL, está en entender qué hace RL exactamente y atacarlo con cirugía. DVAO arregla GRPO cuando hay múltiples objetivos. QUEST muestra que el cuello de botella es reward shaping verificable, no datos humanos. ReasonMaxxer plantea la pregunta más radical: ¿y si para una clase entera de tareas, GRPO sobra?&lt;/p&gt;&lt;p&gt;Qué seguiría yo si trabajo en post-training. Primero, replicar el análisis de sparsity en tareas no matemáticas. Si el 1-4 por ciento se mantiene en razonamiento sobre documentos largos o tool use, ReasonMaxxer escala. Si se rompe, ya sabemos dónde RL sí aporta algo distinto a selección. Segundo, combinar ReasonMaxxer con DVAO para multi-reward sin RL: la pérdida contrastiva por dimensión es trivial. Tercero, auditar tu pipeline de RL midiendo el rank medio del token promovido. Si está en top-3 del base la mayoría de veces, estás pagando GPU para hacer selección.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2605.06241"&gt;https://arxiv.org/abs/2605.06241&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/html/2605.06241"&gt;https://arxiv.org/html/2605.06241&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/pdf/2605.06241"&gt;https://arxiv.org/pdf/2605.06241&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">da4c89d7-4ba7-5e35-a7fd-3fa12b9e8ec0</guid>
+      <pubDate>Wed, 27 May 2026 06:13:15 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2605.06241</link>
+      <enclosure url="https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Project Glasswing publica cifras: Claude Mythos encuentra 10.000 vulnerabilidades críticas en un mes y Anthropic admite que no sabe contenerlo</title>
+      <description>&lt;p&gt;Anthropic publicó el 22 de mayo el primer balance cuantitativo de Project Glasswing, el programa que da acceso restringido a Claude Mythos Preview — el modelo no comercializado que descubre zero-days de forma autónoma — a una docena de socios entre los que están AWS, Apple, Cisco, CrowdStrike, Google, JPMorganChase, Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks y Broadcom.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://www.anthropic.com/images/4zrzovbb/website/9f76163fe710723283a55b9f60d5caca6697dffd-1920x1080.jpg" alt="Project Glasswing initial update" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Project Glasswing: balance inicial publicado el 22 de mayo de 2026.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;Los números del primer mes son los siguientes. Más de 10.000 vulnerabilidades de severidad alta o crítica identificadas en software de infraestructura. En el subconjunto open source, Mythos escaneó más de 1.000 proyectos y reportó 23.019 issues, de los cuales 6.202 quedaron clasificados como high/critical. La tasa de validación, evaluada por Anthropic y seis firmas de seguridad independientes sobre una muestra de 1.752 hallazgos, fue del 90,6%. Cloudflare reportó 2.000 bugs (400 críticos) con una tasa de falsos positivos mejor que la de sus pentesters humanos. Mozilla integró 271 fixes en Firefox 150 — diez veces más que cualquier auditoría previa con modelos Claude. En un banco socio, Mythos detectó y bloqueó una transferencia fraudulenta de 1,5 millones de dólares.&lt;/p&gt;
+
+&lt;p&gt;El caso más comentado técnicamente es &lt;strong&gt;WolfSSL&lt;/strong&gt; (CVE-2026-5194): Mythos identificó un fallo en la librería criptográfica usada por miles de millones de dispositivos IoT que permitiría falsificar certificados para phishing bancario. Ya está parcheado. Más impactante en el plano de capacidad: en la evaluación interna ExploitGym, Mythos resolvió 157 de 898 vulnerabilidades reales (frente a 0 de GPT-5.5 y 0 de Opus 4.7 en condiciones equivalentes); sobre un set de 41 CVEs combinando los modos Baseline y Nudged consiguió ejecución arbitraria de código (ACE) en 21 — ningún otro modelo conseguió ni uno. Sobre 100 CVEs del kernel Linux de 2024-2025, filtró 40 como potencialmente explotables y escribió exploits de escalada de privilegios; más de la mitad funcionaron. El AI Security Institute del Reino Unido confirmó que es el primer modelo que resuelve sus simulaciones de ataque corporativo end-to-end, completando 22 de 32 pasos en promedio y logrando compromiso total en el 30% de los intentos.&lt;/p&gt;
+
+&lt;p&gt;La parte incómoda está en el comunicado: &lt;em&gt;«la facilidad relativa de encontrar vulnerabilidades comparada con la dificultad de arreglarlas supone un desafío mayor para la ciberseguridad»&lt;/em&gt;. Y la frase que importa: &lt;em&gt;«hoy ninguna empresa — Anthropic incluida — ha desarrollado salvaguardas suficientes para impedir que estos modelos sean mal utilizados y causen daño severo»&lt;/em&gt;. Por eso Mythos no se comercializa. Va por invitación, dentro de Project Glasswing, y los pesos no se publicarán. Las protecciones se desarrollarán contra un próximo modelo Opus que &lt;em&gt;no tenga el mismo nivel de riesgo&lt;/em&gt;, y solo entonces se considerará un GA.&lt;/p&gt;
+
+&lt;p&gt;La pregunta práctica para quien construye sobre LLMs: el gap entre lo que Mythos hace y lo que tienes en producción (Opus 4.7, GPT-5.5, Gemini 3.5 Pro) es de un orden de magnitud en seguridad ofensiva. Eso significa dos cosas. Una, que un modelo equivalente filtrado o reimplementado por un actor estatal cambia el coste marginal del descubrimiento de zero-days a casi cero. Dos, que la economía del bug bounty cambia: si tu programa paga 50.000 por un RCE en navegador y un competidor con acceso a un modelo similar los produce a velocidad industrial, el mercado se rompe. Cloudflare ya publicó su análisis paralelo describiendo los hallazgos como &lt;em&gt;«cyber frontier models»&lt;/em&gt;, equiparándolos al estatus que tienen los modelos de doble uso biológico.&lt;/p&gt;
+
+&lt;p&gt;Si tienes infraestructura crítica expuesta: asume que el inventario de vulnerabilidades públicamente conocidas de tus dependencias va a crecer un orden de magnitud en los próximos seis meses. Prioriza parcheo automatizado, supply chain hardening y monitoring por comportamiento, no por firma. Claude Security (beta pública desde el 22 de mayo para clientes Enterprise, basado en Opus 4.7) es el primer producto comercial defensivo que sale de este ciclo — usa el hermano pequeño de Mythos para escanear repos y proponer fixes. Es el patrón que veremos repetirse: Anthropic vende la defensa con el modelo accesible, mantiene el ofensivo encerrado.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.anthropic.com/research/glasswing-initial-update"&gt;https://www.anthropic.com/research/glasswing-initial-update&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://red.anthropic.com/2026/mythos-preview/"&gt;https://red.anthropic.com/2026/mythos-preview/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.helpnetsecurity.com/2026/05/26/anthropic-project-glasswing-update/"&gt;https://www.helpnetsecurity.com/2026/05/26/anthropic-project-glasswing-update/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://cybersecuritynews.com/claude-mythos-271-zero-days/"&gt;https://cybersecuritynews.com/claude-mythos-271-zero-days/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blog.cloudflare.com/cyber-frontier-models/"&gt;https://blog.cloudflare.com/cyber-frontier-models/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">607aa239-6d5e-5d4e-91ac-5b24ac9e9f4d</guid>
+      <pubDate>Wed, 27 May 2026 06:13:34 +0000</pubDate>
+      <category>ia-generativa</category>
+      <link>https://www.anthropic.com/research/glasswing-initial-update</link>
+      <enclosure url="https://www.anthropic.com/images/4zrzovbb/website/9f76163fe710723283a55b9f60d5caca6697dffd-1920x1080.jpg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Harvey publica LAB: 1.250 tareas reales, 75.000 criterios y "all-pass grading" para medir agentes legales</title>
+      <description>&lt;p&gt;Harvey lanzó el 6 de mayo su &lt;strong&gt;Legal Agent Benchmark&lt;/strong&gt; (LAB), un benchmark open source pensado para medir agentes legales en trabajo de bufete real, no en preguntas tipo test. Lo firman Niko Grupen (head of applied research) junto a Gabe y Julio Pereyra, con soporte de Anthropic, OpenAI, Nvidia, Mistral y Google DeepMind, además de LangChain, Stanford Liftlab y Snorkel.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://www.lawnext.com/wp-content/uploads/2026/05/HarveyLABFeaturedImaged.png" alt="Harvey Legal Agent Benchmark" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;LAB: 1.250 tareas, 24 áreas de práctica, 75.000 criterios de rúbrica.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué hay dentro&lt;/strong&gt;. La primera versión incluye más de 1.250 tareas distribuidas en 24 áreas de práctica (transaccional, advisory, regulatorio, litigios), evaluadas con más de 75.000 criterios de rúbrica escritos por abogados expertos. Cada tarea es una instrucción + un client matter con materiales reales + la exigencia de producir un work product. La idea es replicar el flujo de "asigna trabajo a un associate junior, revísalo".&lt;/p&gt;
+
+&lt;p&gt;El detalle metodológico importante: &lt;strong&gt;all-pass grading&lt;/strong&gt;. Una tarea solo cuenta como completada si pasa todos los criterios. Nada de notas parciales. Refleja cómo se revisa el trabajo legal de verdad: un contrato con una cláusula mal sirve para tirar, no para sacar un 7.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Sin leaderboard, a propósito&lt;/strong&gt;. Harvey publicó el benchmark sin tabla de puntuaciones. Prometen resultados de modelos frontera "en las próximas semanas". Code y parte del dataset están en &lt;a href="https://github.com/harveyai/harvey-labs"&gt;github.com/harveyai/harvey-labs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Las críticas también importan&lt;/strong&gt;. Bob Ambrogi (LawSites) recuerda dos cosas. Primero, LAB lo construye un participante del mercado: la definición de "trabajo bien hecho" embebida en las rúbricas refleja la filosofía de Harvey. Segundo, citando a Houfu Ang (Alt-Counsel), los proyectos open source de vendors legales bien financiados rara vez se convierten en código mantenido por la comunidad. Aun así, marca diferencia respecto a LegalBench o CUAD: aquí se mide trabajo de horizonte largo, multi-paso, con entregable, no razonamiento aislado.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Por qué es replicable como método&lt;/strong&gt;. Aunque no seas un bufete, la mecánica es aplicable a cualquier dominio donde quieras evaluar agentes en tareas reales. La fórmula: (1) define un work product final, (2) escribe la rúbrica con un experto del dominio, no con el ingeniero, (3) graduate solo en all-pass para tareas críticas. Es lo opuesto a "el LLM como juez" con prompt genérico.&lt;/p&gt;
+
+&lt;p&gt;El contexto de mercado pesa: Latham &amp;amp; Watkins desplegó Harvey a sus 3.600+ abogados, Harvey tiene 25.000 custom agents en producción entre clientes y la mayoría del AmLaw 100 ya los usa. LAB es también una forma de fijar el listón que tendrán que superar los competidores.&lt;/p&gt;
+
+&lt;p&gt;Yo probaría empezar por escribir 20 rúbricas all-pass de tu propio dominio antes de comparar modelos. La sorpresa es ver cuántos casos tu "agente que funciona" suspende cuando exiges que pase todos los criterios, no solo la mayoría.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark"&gt;https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.artificiallawyer.com/2026/05/06/harvey-launches-legal-agent-bench/"&gt;https://www.artificiallawyer.com/2026/05/06/harvey-launches-legal-agent-bench/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.lawnext.com/2026/05/some-thoughts-on-harveys-launch-of-lab-an-open-source-long-horizon-benchmark-for-legal-ai-agents.html"&gt;https://www.lawnext.com/2026/05/some-thoughts-on-harveys-launch-of-lab-an-open-source-long-horizon-benchmark-for-legal-ai-agents.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/harveyai/harvey-labs"&gt;https://github.com/harveyai/harvey-labs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">a4f1cd9f-0cca-5527-b541-d9efba2e0ba7</guid>
+      <pubDate>Wed, 27 May 2026 06:13:38 +0000</pubDate>
+      <category>casos-uso-ia</category>
+      <link>https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark</link>
+      <enclosure url="https://www.lawnext.com/wp-content/uploads/2026/05/HarveyLABFeaturedImaged.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Claude Code 2.1.139: agent view, /goal y los hooks aprenden a no romper el turno</title>
+      <description>&lt;p&gt;El 11 de mayo Anthropic publicó &lt;strong&gt;Claude Code 2.1.139&lt;/strong&gt;, una de las releases con más cambios estructurales del trimestre. Tres novedades merecen atención inmediata porque cambian cómo se opera con varias sesiones a la vez, cómo se delega trabajo largo, y cómo se escriben hooks que no aborten el turno por error.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://firebasestorage.googleapis.com/v0/b/joinnextdev.firebasestorage.app/o/blogImages%2FH7beqx1tXc1d0eWPAtRP%2Fclaude-code-21139-agent-view-changes-everything-hero.png?alt=media&amp;amp;token=6c185390-358d-4ce5-aba4-c1db6d05150f" alt="Claude Code 2.1.139 agent view" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Vista agent view en 2.1.139.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;h3&gt;Agent view: una pantalla para todas las sesiones&lt;/h3&gt;
+
+&lt;p&gt;Hasta ahora cada sesión de Claude Code vivía en su propio terminal o worktree. Si tenías cuatro tareas largas en paralelo, necesitabas cuatro ventanas y memoria propia para saber cuál estaba bloqueada esperando tu input. La nueva &lt;code&gt;claude agents&lt;/code&gt; (research preview) abre una lista única con todas las sesiones agrupadas por estado: corriendo, esperando aprobación tuya, o terminadas. Reemplaza el típico &lt;em&gt;tmux con cuatro paneles&lt;/em&gt; por una vista canónica que el propio binario mantiene.&lt;/p&gt;
+
+&lt;p&gt;El cambio importa porque la unidad operativa real de Claude Code en equipos serios ya no es la sesión individual sino el portfolio de sesiones simultáneas. Antes había que construir esa vista a mano con scripts. Ahora viene de fábrica.&lt;/p&gt;
+
+&lt;h3&gt;/goal: condición de salida en vez de turno único&lt;/h3&gt;
+
+&lt;p&gt;El comando &lt;code&gt;/goal&lt;/code&gt; redefine lo que significa &amp;laquo;terminar&amp;raquo;. En lugar de iterar turno a turno hasta que tú decidas parar, declaras la condición que debe cumplirse y Claude trabaja autónomo hasta lograrla o quedarse atascado. Ejemplo concreto:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/goal All TypeScript errors resolved, tests passing, no ESLint warnings&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Funciona en modo interactivo, con &lt;code&gt;-p&lt;/code&gt; para scripts, y en Remote Control. Un overlay vivo muestra tiempo transcurrido, número de turns y tokens consumidos acumulados. La regla práctica que sale de la documentación: el goal tiene que ser verificable. &lt;em&gt;&amp;laquo;Mejora el código&amp;raquo;&lt;/em&gt; no es un goal, es una conversación. &lt;em&gt;&amp;laquo;Lighthouse performance &amp;gt;90 en /checkout&amp;raquo;&lt;/em&gt; sí lo es.&lt;/p&gt;
+
+&lt;p&gt;Avisos claros: no lo uses para tareas creativas abiertas, monitoriza los primeros goals para estimar coste, y ten un plan B si la condición no se cumple en N turns. El overlay con tokens existe precisamente para que veas la factura crecer en tiempo real antes de que te explote.&lt;/p&gt;
+
+&lt;h3&gt;Hooks con args y continueOnBlock&lt;/h3&gt;
+
+&lt;p&gt;Dos mejoras al sistema de hooks que llevaban tiempo pidiendo a gritos.&lt;/p&gt;
+
+&lt;p&gt;La primera es el campo &lt;code&gt;args: string[]&lt;/code&gt;: hasta ahora los hooks tipo &lt;code&gt;command&lt;/code&gt; pasaban por shell, lo que obligaba a comillar rutas con espacios y dejaba la puerta abierta a bugs de inyección. Con &lt;code&gt;args&lt;/code&gt; el binario se llama directo, sin shell:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  "type": "command",
+  "args": ["python3", "/.claude/hooks/validate.py", "--strict"],
+  "timeout": 60
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;La guía oficial: usa &lt;code&gt;command&lt;/code&gt; cuando necesites pipes, redirección, &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; o expansiones; usa &lt;code&gt;args&lt;/code&gt; cuando llamas a un binario con parámetros. Lo segundo es lo más seguro y debería ser el default en hooks nuevos.&lt;/p&gt;
+
+&lt;p&gt;La segunda es &lt;code&gt;continueOnBlock&lt;/code&gt; para PostToolUse. Hasta 2.1.138, si un hook devolvía &lt;code&gt;"decision": "block"&lt;/code&gt; el turno se abortaba en seco. Con &lt;code&gt;continueOnBlock: true&lt;/code&gt; el motivo del bloqueo se devuelve a Claude como un &lt;code&gt;tool_result&lt;/code&gt;, y el modelo puede leer la queja y reintentar con otra estrategia:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  "hooks": {
+    "PostToolUse": [{
+      "matcher": "Write|Edit",
+      "hooks": [{
+        "type": "command",
+        "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/policy-check.py",
+        "continueOnBlock": true
+      }]
+    }]
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;El criterio: activa &lt;code&gt;continueOnBlock&lt;/code&gt; cuando el motivo del bloqueo es algo accionable (&lt;em&gt;&amp;laquo;ese fichero es read-only, escribe en otro&amp;raquo;&lt;/em&gt;); déjalo desactivado cuando el bloqueo debe parar el turno completo (compliance, seguridad). Hasta ahora muchos hooks de policy actuaban como minas: bloqueaban sin dar contexto y forzaban al usuario a relanzar. Esto convierte el hook en una conversación.&lt;/p&gt;
+
+&lt;h3&gt;Detalles que también van dentro&lt;/h3&gt;
+
+&lt;p&gt;MCP stdio servers reciben ahora &lt;code&gt;CLAUDE_PROJECT_DIR&lt;/code&gt; en su entorno, llegando a paridad con hooks. Plugin configs aceptan &lt;code&gt;${CLAUDE_PROJECT_DIR}&lt;/code&gt; en command definitions. Transcript navigation suma atajos: &lt;code&gt;?&lt;/code&gt; lista shortcuts, &lt;code&gt;{&lt;/code&gt; y &lt;code&gt;}&lt;/code&gt; saltan entre prompts del usuario, &lt;code&gt;v&lt;/code&gt; alterna el panel. &lt;code&gt;claude plugin details &amp;lt;name&amp;gt;&lt;/code&gt; muestra inventario de componentes del plugin y coste de tokens proyectado por sesión, útil antes de instalar un plugin gordo. Las requests de subagent ahora llevan headers y span attributes OTEL propios, lo que cierra el tema de trazado distribuido que vimos en 2.1.121.&lt;/p&gt;
+
+&lt;p&gt;Próxima pregunta abierta: ¿agent view sale de research preview en 2.1.155, o se queda como flag durante semanas? El patrón de Anthropic con features grandes ha sido tres a cuatro releases en preview antes de promocionar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://claude-world.com/articles/claude-code-21139-release/"&gt;https://claude-world.com/articles/claude-code-21139-release/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://explainx.ai/blog/claude-code-goal-command-long-running-agents-2026"&gt;https://explainx.ai/blog/claude-code-goal-command-long-running-agents-2026&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.lukerenton.com/matins/2026-05-12"&gt;https://www.lukerenton.com/matins/2026-05-12&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://x.com/ClaudeCodeLog/status/2053913638197416198"&gt;https://x.com/ClaudeCodeLog/status/2053913638197416198&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">7dcca36a-f220-5bd5-92bd-84c7aeb4ef00</guid>
+      <pubDate>Wed, 27 May 2026 06:13:41 +0000</pubDate>
+      <category>claude-code</category>
+      <link>https://claude-world.com/articles/claude-code-21139-release/</link>
+      <enclosure url="https://firebasestorage.googleapis.com/v0/b/joinnextdev.firebasestorage.app/o/blogImages%2FH7beqx1tXc1d0eWPAtRP%2Fclaude-code-21139-agent-view-changes-everything-hero.png?alt=media&amp;token=6c185390-358d-4ce5-aba4-c1db6d05150f" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Causal Loop Diagrams para post-mortems: dibujar el bucle que tumbo DynamoDB en 2015</title>
+      <description>&lt;p&gt;Problema arquetipo: un incidente de produccion que escalo de un fallo menor a una caida total en quince minutos. En el post-mortem todo el mundo apunta a la causa raiz como si fuese un solo evento. Pero los outages serios casi nunca son una causa — son un &lt;strong&gt;bucle de retroalimentacion&lt;/strong&gt; que se autoamplifica hasta romper el sistema.&lt;/p&gt;&lt;p&gt;La herramienta para verlo se llama &lt;em&gt;Causal Loop Diagram&lt;/em&gt; (CLD), viene de la system dynamics de Jay Forrester y Donella Meadows, y Laura Nolan (Slack, ex-Google SRE) la trasladó a incident response en su articulo de InfoQ &lt;em&gt;Anatomy of a Cascading Failure&lt;/em&gt;. La idea es simple: dibujar variables conectadas por flechas etiquetadas con &lt;strong&gt;+&lt;/strong&gt; (mismo sentido) o &lt;strong&gt;−&lt;/strong&gt; (sentido opuesto), y buscar ciclos cerrados. Un ciclo con numero par de signos negativos es &lt;em&gt;reforzador&lt;/em&gt; (amplifica). Con numero impar, &lt;em&gt;balanceador&lt;/em&gt; (estabiliza). Los outages graves son siempre reforzadores fuera de control.&lt;/p&gt;&lt;figure&gt;&lt;img src="https://imgopt.infoq.com/fit-in/3000x4000/filters:quality(85)/filters:no_upscale()/articles/anatomy-cascading-failure/en/resources/1Anatomy-of-cascading-failure-2-1581673057928.jpg" alt="Causal loop diagram de un fallo en cascada" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Bucle reforzador clasico de cascading failure (Laura Nolan, InfoQ).&lt;/figcaption&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;Como aplicarla en un post-mortem:&lt;/strong&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;strong&gt;Lista las variables&lt;/strong&gt; que cambiaron durante el incidente: latencia, errores, retries de cliente, conexiones abiertas, CPU, profundidad de cola.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Dibuja flechas causales&lt;/strong&gt; entre ellas. Mas latencia → mas timeouts del cliente → mas retries → mas carga → mas latencia. Eso es un bucle reforzador.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Identifica los bucles cerrados&lt;/strong&gt; y marcalos con R (reforzador) o B (balanceador).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Busca donde se rompio un balanceador&lt;/strong&gt;. Los sistemas sanos tienen rate limiters, circuit breakers, autoscaling — bucles negativos que contienen al positivo. El outage casi siempre empieza cuando uno de esos falla o se satura.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Disena la intervencion sobre el bucle, no sobre el evento&lt;/strong&gt;. Si el retry de cliente es el motor del bucle, no basta con arreglar el bug que disparo el incidente — hay que meter exponential backoff con jitter o circuit breakers.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Documenta el diagrama en el post-mortem&lt;/strong&gt; junto al timeline. El diagrama ensena a los nuevos a reconocer el patron la proxima vez.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;strong&gt;Ejemplo real — DynamoDB, septiembre 2015:&lt;/strong&gt; un blip de red impidio que los storage servers recibieran sus asignaciones de particion. Se retiraron de servicio y empezaron a pedir reasignacion en bucle. Los metadata servers se saturaron respondiendo, lo que provocaba mas timeouts en los storage servers, que pedian mas reasignaciones. US-East-1 estuvo caido cuatro horas. El bucle: storage server sin asignacion → request a metadata → metadata saturado → timeout → storage server sigue sin asignacion. Reforzador puro.&lt;/p&gt;&lt;p&gt;Casos analogos documentados: &lt;strong&gt;Square (marzo 2017)&lt;/strong&gt;, donde una caida de Redis disparo codigo que reintentaba transacciones hasta 500 veces consecutivas; &lt;strong&gt;Parsely&lt;/strong&gt; en EC2, donde el limite de red en un broker de Kafka tumbo el cluster entero al desplazarse la carga. Mismo patron en los tres.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Cuando NO aplica:&lt;/strong&gt; incidentes de un solo evento sin amplificacion (un deploy roto que se revierte en cinco minutos), bugs de logica pura sin componente sistemico, o fallos hardware aislados. Para esos, los &lt;em&gt;5 whys&lt;/em&gt; clasicos van mas rapido.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Siguiente paso si quieres profundizar:&lt;/strong&gt; lee el articulo de Nolan en InfoQ, y despues &lt;em&gt;Thinking in Systems&lt;/em&gt; de Donella Meadows — el capitulo sobre los doce puntos de apalancamiento es directamente aplicable a donde meter un circuit breaker en tu arquitectura.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.infoq.com/articles/anatomy-cascading-failure/"&gt;https://www.infoq.com/articles/anatomy-cascading-failure/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://encore.dev/blog/thundering-herd-problem"&gt;https://encore.dev/blog/thundering-herd-problem&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://sre.google/sre-book/example-postmortem/"&gt;https://sre.google/sre-book/example-postmortem/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/"&gt;https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">3d43696b-505d-571c-b771-1c448ea0230c</guid>
+      <pubDate>Wed, 27 May 2026 06:13:50 +0000</pubDate>
+      <category>cps</category>
+      <link>https://www.infoq.com/articles/anatomy-cascading-failure/</link>
+      <enclosure url="https://imgopt.infoq.com/fit-in/3000x4000/filters:quality(85)/filters:no_upscale()/articles/anatomy-cascading-failure/en/resources/2Anatomy-of-cascading-failure-1-1581675001504.jpg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Gated DeltaNet-2: NVIDIA separa borrar y escribir en atención lineal y bate a Mamba-3</title>
+      <description>&lt;p&gt;El paper &lt;em&gt;Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention&lt;/em&gt; (Hatamizadeh, Choi, Kautz; NVIDIA; arXiv:2605.22791) es el típico cambio de arquitectura que parece minúsculo y mueve los benchmarks de manera incómoda. Las variantes recurrentes de delta-rule (Gated DeltaNet, KDA, Mamba-3) usaban un único escalar para regular dos cosas distintas: cuánto borrar del estado de memoria y cuánto escribir nuevo. NVIDIA argumenta que esa atadura es artificial y la rompe con dos puertas channel-wise independientes.&lt;/p&gt;&lt;p&gt;La idea técnica en una frase: la regla de update pasa a S_t = (I − k_t (b_t ⊙ k_t)^T) D_t S_{t-1} + k_t (w_t ⊙ v_t)^T, donde b_t es la puerta de borrado sobre el eje key y w_t la puerta de escritura sobre el eje value. Cada canal decide por separado cuánto olvida y cuánto graba. Antes era un grifo único; ahora son dos válvulas.&lt;/p&gt;&lt;p&gt;Los resultados a 1.3B parámetros entrenados con 100B tokens de FineWeb-Edu hablan claro. En modelado de lenguaje y razonamiento, Gated DeltaNet-2 promedia &lt;strong&gt;53.11 en setting recurrente puro&lt;/strong&gt;, contra 52.39 de Mamba-3 MIMO y 52.28 de KDA. En setting híbrido (mezclando con attention full), GDN-2 sube a 53.97 frente a 52.72 de Mamba-3. Las diferencias parecen pequeñas hasta que miras los benchmarks de retrieval long-context, donde el método estaba sufriendo de verdad.&lt;/p&gt;&lt;p&gt;RULER es el termómetro. S-NIAH-3 a 2K tokens: KDA marca 63.2; GDN-2 sube a 89.8. Veintiséis puntos en una tarea single-needle. S-NIAH-2 a 4K: 89.0 vs 93.0. MK-NIAH-1 a 4K: 28.0 vs 37.8. En la media de retrieval real-world, recurrente puro pasa de 28.67 (KDA) a 29.88; híbrido de 40.14 a 42.28. El patrón es consistente: GDN-2 gana donde los modelos lineales se rompen, que es precisamente recuperación a contexto medio-largo.&lt;/p&gt;&lt;p&gt;¿Por qué importa este desacoplamiento? La intuición es física. Cuando un nuevo token llega, el estado lineal tiene que decidir dos cosas simultáneamente: dejar espacio (borrar) y meter información nueva (escribir). Si las controla la misma puerta, escribir mucho implica borrar mucho, y borrar poco implica escribir poco. Esto fuerza al modelo a comprometer entre memoria a largo plazo y actualización fina. Con puertas separadas por canal, ciertos canales pueden ser conservadores (borran poco, escriben poco: memoria estable de largo plazo) y otros agresivos (borran mucho, escriben mucho: registro fresco). Por eso S-NIAH-3 pega un salto: encontrar una aguja a 2K tokens requiere precisamente eso, canales con perfil de memoria larga sin contaminarse con el ruido reciente.&lt;/p&gt;&lt;p&gt;Coste de la fiesta. El throughput baja de 38.0 Kt/s a 36.1 Kt/s en la configuración medida. Cinco por ciento de hit en velocidad por dos puertas extra. A nivel de hardware, NVIDIA libera kernels Triton optimizados en PyTorch (NVlabs/GatedDeltaNet-2 en GitHub). El paper no afirma haber probado a escalas mayores que 1.3B; los autores dicen explícitamente que la extensión a 7B+ está pendiente. Esto es la advertencia importante: hasta ahora, varias arquitecturas alternativas a transformer ganaban a 1B y se quedaban planas o caían a 7B. KDA es un ejemplo. Habrá que esperar el experimento a escala antes de declarar victoria.&lt;/p&gt;&lt;p&gt;Limitaciones que no aparecen pero importan. El paper no compara contra MoE-Mamba ni contra los híbridos recientes de Jamba. Tampoco hay análisis de qué pasa cuando metes GDN-2 dentro de una arquitectura con expert routing. La hibridación que evalúan es la clásica (alternar capas lineales con capas full-attention), que ya es relativamente vieja.&lt;/p&gt;&lt;p&gt;Conexión con el resto del paisaje. Junto con la otra entrada de hoy sobre &lt;em&gt;Full Attention Strikes Back&lt;/em&gt;, este paper marca el momento en que 2026 mete dos pinzas simultáneas al transformer denso: por un lado, atención lineal mejorada (GDN-2) que aspira a sustituir attention full; por otro, sparsification post-hoc (RTPurbo) que conserva attention full y la convierte en sparse a posteriori. Las dos rutas atacan el mismo problema —el coste cuadrático— por extremos opuestos.&lt;/p&gt;&lt;p&gt;Qué seguiría yo si trabajo en arquitecturas. Primero, el experimento que NVIDIA no hizo: GDN-2 a 7B y 13B con MoE. Si aguanta, es candidato serio para reemplazar Mamba-3 en pipelines de producción. Segundo, medir la sensibilidad de las puertas channel-wise a la inicialización. Si requieren tuning fino para no colapsar a comportamiento equivalente a la puerta única, parte del beneficio se evapora en hyperparameter search. Tercero, retomar la pregunta de si la separación erase/write tiene un análogo en attention full: ¿podría una variante de attention con dos head types (write-heavy vs erase-heavy) capturar el mismo beneficio sin abandonar el régimen cuadrático?&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2605.22791"&gt;https://arxiv.org/abs/2605.22791&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/html/2605.22791v1"&gt;https://arxiv.org/html/2605.22791v1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/NVlabs/GatedDeltaNet-2"&gt;https://github.com/NVlabs/GatedDeltaNet-2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.marktechpost.com/2026/05/24/nvidia-ai-releases-gated-deltanet-2-a-linear-attention-layer-that-decouples-erase-and-write-in-the-delta-rule/"&gt;https://www.marktechpost.com/2026/05/24/nvidia-ai-releases-gated-deltanet-2-a-linear-attention-layer-that-decouples-erase-and-write-in-the-delta-rule/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">025329a8-f31f-5182-b0a6-55011736bfae</guid>
+      <pubDate>Wed, 27 May 2026 06:14:07 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2605.22791</link>
+      <enclosure url="https://cdn-chilj.nitrocdn.com/gYFaTcLxknXlucWgXPjHDdhAuyobJjHx/assets/images/optimized/rev-c91401d/winbuzzer.com/wp-content/uploads/2025/07/Nvidia-1068x601-1067x.jpg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Claude for Small Business: 11 workflows con cifras reales para chasing de facturas y cierre mensual</title>
+      <description>&lt;p&gt;Anthropic lanzó &lt;strong&gt;Claude for Small Business&lt;/strong&gt; el 13 de mayo. No es un producto nuevo: es un empaquetado de Claude con 15 workflows agénticos listos para usar, 15 skills reutilizables y conectores nativos a las herramientas que ya tienen contratadas las pymes: QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace y Microsoft 365. Sin coste adicional sobre el plan Pro (0/mes) o Max (00-00/mes).&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/8b8b97e4751b8167a04ce6c7fb7ad8d240c44ccf-1000x1000.svg" alt="Claude for Small Business" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Conectores nativos a QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace y Microsoft 365.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;El workflow estrella: invoice chaser&lt;/strong&gt;. Claude lee las facturas abiertas en QuickBooks, cruza con los settlements de PayPal para ver qué se ha cobrado y qué no, redacta mensajes de seguimiento personalizados por cliente y los deja en cola esperando aprobación del owner antes de enviar. Ahorro real estimado: 2-4 horas a la semana para un negocio con 20+ facturas abiertas en cualquier momento.&lt;/p&gt;
+
+&lt;p&gt;Es el caso de entrada perfecto: alta frecuencia, ahorro obvio en la primera semana, y el peor error posible (un email de seguimiento algo torpe) es recuperable. Si arrancas con este y funciona, justificas el resto.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Los otros 10 workflows nombrados explícitamente&lt;/strong&gt;: planning payroll (forecast a 30 días cruzando QuickBooks + PayPal), closing the month (concilia libros, marca discrepancias, genera P&amp;amp;L en lenguaje plano), business pulse, campaigns, margin analyzer, month-end prepper, tax-season organizer, contract reviewer, lead triager, content strategist. Los 4 restantes no están detallados en el anuncio.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Patrón clave: human-in-the-loop por defecto&lt;/strong&gt;. Cada workflow lo dispara el dueño y nada se envía, publica ni paga sin aprobación explícita. Anthropic no entrena con datos del cliente en Team ni Enterprise. Es la lección aprendida de los incidentes catastróficos del año pasado: los agentes en SMB tocan dinero y clientes reales, no se puede dar autonomía total.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Casos con nombre y apellido&lt;/strong&gt;. Brian Ludviksen, COO de Purity Coffee (un tostador): "no solo resolvió problemas, me enseñó problemas que no sabía que tenía". Mike Beckham, CEO de Simple Modern: "lo que pensábamos que eran restricciones, ya no lo son". Ryan Olson, de MidCentral Energy: liberó trabajo clerical para tareas con valor. Sin números duros aún (el producto lleva dos semanas), pero ningún testimonio dice "despedí a nadie". El patrón es propietarios que dejan de hacer trabajo administrativo a las 11 de la noche, no recortes.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Por qué importa para alguien técnico&lt;/strong&gt;. Si trabajas con pymes como freelance o tienes una propia, esto cambia el cálculo de qué automatizar. Antes el coste de integrar QuickBooks con cualquier cosa era prohibitivo para un negocio de 5-10 personas; ahora el conector ya está y solo hay que diseñar el workflow encima. Las consultoras de "transformación digital" para pymes acaban de perder gran parte del trabajo de plumbing.&lt;/p&gt;
+
+&lt;p&gt;Yo probaría empezar por el invoice chaser con tu propia cuenta de QuickBooks: una semana de uso te dice si el ROI es real para tu tamaño, sin meterte en migraciones ni promesas a tres meses.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.anthropic.com/news/claude-for-small-business"&gt;https://www.anthropic.com/news/claude-for-small-business&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://qz.com/anthropic-claude-small-business-quickbooks-paypal-051326"&gt;https://qz.com/anthropic-claude-small-business-quickbooks-paypal-051326&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.axios.com/2026/05/13/anthropic-claude-small-business-smb"&gt;https://www.axios.com/2026/05/13/anthropic-claude-small-business-smb&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://the-decoder.com/anthropic-launches-claude-for-small-business-to-embed-ai-into-the-tools-you-forgot-you-pay-for/"&gt;https://the-decoder.com/anthropic-launches-claude-for-small-business-to-embed-ai-into-the-tools-you-forgot-you-pay-for/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">3740a6eb-2151-52cd-ba61-429f90129ead</guid>
+      <pubDate>Wed, 27 May 2026 06:14:17 +0000</pubDate>
+      <category>casos-uso-ia</category>
+      <link>https://www.anthropic.com/news/claude-for-small-business</link>
+      <enclosure url="https://www-cdn.anthropic.com/images/4zrzovbb/website/8b8b97e4751b8167a04ce6c7fb7ad8d240c44ccf-1000x1000.svg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>GPT-5.5 Instant entra como default de ChatGPT con menos alucinaciones que su hermano de pago — pero el AA-Omniscience deja a OpenAI en evidencia</title>
+      <description>&lt;p&gt;El 5 de mayo OpenAI sustituyó GPT-5.3 Instant por &lt;strong&gt;GPT-5.5 Instant&lt;/strong&gt; como modelo por defecto de ChatGPT, primero para Plus y Pro en web y en las semanas siguientes para Free, Go, Business y Enterprise. En API se expone como alias &lt;code&gt;chat-latest&lt;/code&gt;; GPT-5.3 sigue disponible para clientes API durante tres meses como ventana de migración.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://techcrunch.com/wp-content/uploads/2026/05/Memory-update.jpeg?w=1024" alt="GPT-5.5 Instant memoria personalizada" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;GPT-5.5 Instant llega con memoria que puede consultar conversaciones pasadas, archivos y Gmail.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;Los números que OpenAI puso encima de la mesa. AIME 2025: 81,2 frente a 65,4 del Instant anterior. MMMU-Pro: 76 frente a 69,2. Y el headline marketing: &lt;em&gt;52,5% menos alucinaciones&lt;/em&gt; en prompts de alto riesgo (medicina, derecho, finanzas) y &lt;em&gt;37,3% menos imprecisiones&lt;/em&gt; en conversaciones que usuarios habían marcado previamente como erróneas. Todo medido contra GPT-5.3 Instant y, como reconoce el propio post, en evaluaciones internas. La feature paralela: el modelo puede consultar conversaciones pasadas, archivos subidos y Gmail conectado para responder con contexto personalizado. La memoria es visible y editable desde ajustes — no es persistencia opaca, es un store curado.&lt;/p&gt;
+
+&lt;p&gt;Hasta aquí, una versión menor con mejoras de calibración honestas. El problema aparece cuando se cruza con la evaluación que Artificial Analysis publicó la semana siguiente sobre GPT-5.5 (el modelo de razonamiento completo, no la variante Instant). En el benchmark &lt;strong&gt;AA-Omniscience&lt;/strong&gt; — 6.000 preguntas en 42 dominios económicamente relevantes, diseñado para penalizar respuestas confiadas equivocadas y premiar el &lt;em&gt;no sé&lt;/em&gt; — GPT-5.5 (xhigh) obtiene la mayor precisión jamás registrada: 57%. Y a la vez una tasa de alucinación del 86%. Para contexto: Claude Opus 4.7 alucina al 36%, Gemini 3.1 Pro Preview al 50%.&lt;/p&gt;
+
+&lt;p&gt;Esto requiere desempaquetarse, porque parece contradictorio. AA-Omniscience mide dos cosas a la vez. La tasa de acierto (qué fracción de preguntas responde correctamente) y la calibración (cuántas veces responde con confianza algo falso en lugar de abstenerse). GPT-5.5 acierta más que cualquier otro modelo cuando sabe la respuesta — de ahí el 57% líder. Pero cuando no sabe, casi nunca se abstiene: contesta, y contesta mal. El 86% es el porcentaje de respuestas incorrectas que el modelo entrega con seguridad, en lugar de decir &lt;em&gt;no tengo información suficiente&lt;/em&gt;. Opus 4.7 prefiere callarse; GPT-5.5 prefiere inventar. Es una elección de entrenamiento, no un bug parcheable.&lt;/p&gt;
+
+&lt;p&gt;La incoherencia entre los dos comunicados es la noticia. OpenAI vende GPT-5.5 Instant como &lt;em&gt;52,5% menos alucinaciones&lt;/em&gt; mientras el modelo flagship de la misma familia rompe el récord histórico de alucinación en el benchmark más serio del momento. Lo que probablemente ocurre — el post oficial no lo explica — es que &lt;em&gt;52,5%&lt;/em&gt; se mide en un set propio de prompts adversariales que OpenAI eligió, no en una distribución representativa, y la métrica de Artificial Analysis cubre dominios mucho más amplios donde el modelo nunca fue afinado para abstenerse.&lt;/p&gt;
+
+&lt;p&gt;El pricing tampoco ayuda. GPT-5.5 (no Instant) sube a /0 por millón de tokens input/output, doblando el precio nominal por token. La defensa de OpenAI es que con la nueva tokenización el coste real solo sube ~20%, y que en el ladder de precio-rendimiento la versión xhigh sale ~30% más barata que Opus 4.7 al máximo. Es cierto en benchmarks de razonamiento; no es cierto si vas a hacer RAG o agente con knowledge grounding, donde la calibración importa más que el techo.&lt;/p&gt;
+
+&lt;p&gt;Qué validar tú si lo vas a usar. Para chat conversacional y asistente personal, GPT-5.5 Instant es upgrade neto: mejor en matemáticas, multimodal y conversación, con memoria útil. Para pipelines donde un modelo responde sobre hechos (citaciones, finanzas regulatorias, documentación médica, legal drafting), &lt;strong&gt;no migres por defecto&lt;/strong&gt;. Mide tu propia tasa de alucinación con queries representativas y compáralo con Opus 4.7 antes de cambiar nada. La elección de OpenAI de optimizar acierto sobre calibración puede ser correcta para chat masivo y desastrosa para uso profesional.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://openai.com/index/gpt-5-5-instant/"&gt;https://openai.com/index/gpt-5-5-instant/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/"&gt;https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://artificialanalysis.ai/articles/openai-gpt5-5-is-the-new-leading-AI-model"&gt;https://artificialanalysis.ai/articles/openai-gpt5-5-is-the-new-leading-AI-model&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://artificialanalysis.ai/evaluations/omniscience"&gt;https://artificialanalysis.ai/evaluations/omniscience&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://the-decoder.com/gpt-5-5-tops-benchmarks-but-still-hallucinates-frequently-at-a-20-percent-higher-api-cost/"&gt;https://the-decoder.com/gpt-5-5-tops-benchmarks-but-still-hallucinates-frequently-at-a-20-percent-higher-api-cost/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">9ee258ed-4d22-514e-898d-e399cbbc6b11</guid>
+      <pubDate>Wed, 27 May 2026 06:14:20 +0000</pubDate>
+      <category>ia-generativa</category>
+      <link>https://openai.com/index/gpt-5-5-instant/</link>
+      <enclosure url="https://techcrunch.com/wp-content/uploads/2026/05/Memory-update.jpeg?w=1024" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>MCP 2026-07-28 release candidate: el protocolo se queda sin sesiones y se vuelve plano detrás de un load balancer</title>
+      <description>&lt;p&gt;El 21 de mayo se cerró el lock del nuevo &lt;strong&gt;MCP 2026-07-28 release candidate&lt;/strong&gt;, la primera revisión mayor de la spec desde noviembre. Hasta el 28 de julio (fecha de publicación final) los SDK maintainers y client implementers tienen diez semanas para validar contra cargas reales. El cambio gordo: &lt;em&gt;MCP es ahora stateless a nivel de protocolo&lt;/em&gt;. Lo demás se deriva de esa decisión.&lt;/p&gt;
+
+&lt;h3&gt;Adiós initialize, adiós Mcp-Session-Id&lt;/h3&gt;
+
+&lt;p&gt;Hasta la spec 2025-11-25 todo cliente tenía que hacer un handshake &lt;code&gt;initialize&lt;/code&gt; y recibía un header &lt;code&gt;Mcp-Session-Id&lt;/code&gt; que lo pegaba a una instancia concreta del servidor. Eso obligaba a infra de producción a montar sticky sessions, un store compartido, o deep packet inspection en el gateway para enrutar bien. Un servidor MCP remoto serio era un dolor operacional.&lt;/p&gt;
+
+&lt;p&gt;El RC elimina ambos mecanismos. La información del cliente y la versión del protocolo viajan en &lt;code&gt;_meta&lt;/code&gt; en cada request. Si el cliente necesita saber capacidades, llama a un método nuevo &lt;code&gt;server/discover&lt;/code&gt;. Cualquier instancia del servidor puede responder a cualquier request. Cita textual de la spec: &lt;em&gt;&amp;laquo;un servidor MCP remoto que antes necesitaba sticky sessions, store compartido y deep packet inspection en el gateway puede ahora correr detrás de un round-robin plano&amp;raquo;&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Tres headers que hacen la vida de la infra mucho más fácil&lt;/h3&gt;
+
+&lt;p&gt;Routable, cacheable, traceable. Tres mejoras que cambian cómo despliegas MCP en una empresa de verdad.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Mcp-Method y Mcp-Name headers&lt;/strong&gt;: load balancers y gateways pueden rutear sin parsear el body. Esto significa que un L7 estándar tipo HAProxy o Envoy hace su trabajo sin reglas custom.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cache control&lt;/strong&gt;: list y resource reads devuelven &lt;code&gt;ttlMs&lt;/code&gt; y &lt;code&gt;cacheScope&lt;/code&gt;, modelados sobre HTTP &lt;code&gt;Cache-Control&lt;/code&gt;. El cliente entiende ventanas de frescura y límites de compartición seguros sin inventar convenciones.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Distributed tracing&lt;/strong&gt;: propagación de W3C Trace Context vía &lt;code&gt;traceparent&lt;/code&gt;, &lt;code&gt;tracestate&lt;/code&gt; y &lt;code&gt;baggage&lt;/code&gt;. Sigue el hilo que llevamos abierto desde mayo sobre trazado distribuido en Agent SDK; ahora también está en MCP a nivel de spec.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Multi-round-trip sin SSE&lt;/h3&gt;
+
+&lt;p&gt;Una de las partes feas del MCP viejo: si el servidor necesitaba más input del usuario a mitad de una llamada, mantenía un stream SSE abierto. En un mundo stateless eso ya no encaja. La nueva forma: el servidor devuelve un &lt;code&gt;InputRequiredResult&lt;/code&gt; con el prompt; el cliente recoge la respuesta y vuelve a llamar con &lt;code&gt;inputResponses&lt;/code&gt; y un &lt;code&gt;requestState&lt;/code&gt; echoed. Cualquier instancia puede continuar. Sin streams pegados a una conexión TCP.&lt;/p&gt;
+
+&lt;h3&gt;Extensions framework: MCP Apps y Tasks salen del core&lt;/h3&gt;
+
+&lt;p&gt;Las extensiones ganan governance formal: identificadores reverse-DNS, repos separados, versiones independientes y track propio en el proceso SEP. Dos extensiones oficiales arrancan el día uno:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;MCP Apps&lt;/strong&gt; (que veíamos en research preview desde el SEP-1865 en marzo) entra como extensión oficial. Servers entregan HTML interactivo renderizado en iframes sandboxed; las tools declaran UI templates para prefetch y revisión de seguridad. La UI renderizada se comunica con el servidor vía el mismo JSON-RPC, así que los logs de auditoría no tienen huecos.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tasks&lt;/strong&gt; gradúa de experimental a extensión. Modelo de ciclo de vida reformulado sobre statelessness: el servidor responde a &lt;code&gt;tools/call&lt;/code&gt; con un task handle; el cliente conduce el progreso vía &lt;code&gt;tasks/get&lt;/code&gt;, &lt;code&gt;tasks/update&lt;/code&gt; y &lt;code&gt;tasks/cancel&lt;/code&gt;. &lt;em&gt;Server-directed creation&lt;/em&gt;: el servidor decide cuándo una llamada se convierte en task. Detalle importante: &lt;code&gt;tasks/list&lt;/code&gt; desaparece porque sin sesiones no hay scoping natural.&lt;/p&gt;
+
+&lt;h3&gt;OAuth con más rigor&lt;/h3&gt;
+
+&lt;p&gt;Seis SEPs aprietan la alineación con OAuth 2.0 y OpenID Connect. Lo que va a tocar a quien escriba clientes: validar el parámetro &lt;code&gt;iss&lt;/code&gt; por RFC 9207; Dynamic Client Registration ahora exige declarar &lt;code&gt;application_type&lt;/code&gt;; las credenciales se vinculan al servidor que las emitió y hay que re-registrar al migrar; flujos OpenID Connect refresh token documentados; &lt;code&gt;.well-known&lt;/code&gt; discovery clarificado. No es revolucionario pero es lo que distingue un cliente que pasa una auditoría de uno que no.&lt;/p&gt;
+
+&lt;h3&gt;Deprecaciones anunciadas&lt;/h3&gt;
+
+&lt;p&gt;Tres features entran en deprecación con política formal de doce meses mínimo antes de borrar:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Roots&lt;/strong&gt; &amp;rarr; parámetros de tool, URIs de resource o config del servidor.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sampling&lt;/strong&gt; &amp;rarr; integración directa con la API del proveedor de LLM.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Logging&lt;/strong&gt; &amp;rarr; stderr o OpenTelemetry.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Son cambios &lt;em&gt;annotation-only&lt;/em&gt;: los métodos siguen funcionando durante un año mínimo, eliminarlos requiere un SEP separado. La política de doce meses fija expectativas claras para SDK maintainers.&lt;/p&gt;
+
+&lt;h3&gt;Schema y errores&lt;/h3&gt;
+
+&lt;p&gt;Tool schemas soportan JSON Schema 2020-12 completo: &lt;code&gt;oneOf&lt;/code&gt;, &lt;code&gt;anyOf&lt;/code&gt;, &lt;code&gt;allOf&lt;/code&gt;, conditionals, referencias. Output schemas son ilimitados; &lt;code&gt;structuredContent&lt;/code&gt; acepta cualquier JSON value. Aviso de seguridad: &lt;code&gt;&lt;/code&gt; externos no deberían auto-resolverse, hay que limitar profundidad y tiempo de validación. Cambio menor pero relevante: el código de error para recurso no encontrado pasa del custom &lt;code&gt;-32002&lt;/code&gt; al JSON-RPC estándar &lt;code&gt;-32602 Invalid Params&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Qué vigilar las próximas diez semanas&lt;/h3&gt;
+
+&lt;p&gt;El draft está en &lt;code&gt;modelcontextprotocol.io/specification/draft&lt;/code&gt;. La expectativa es que los SDK Tier 1 (Python, TypeScript, Go) soporten la spec dentro del periodo. Para quien tenga un servidor MCP en producción: revisa si dependes de Mcp-Session-Id explícito o de Sampling/Roots/Logging. Para quien construya clientes nuevos: empieza por la spec draft, no por la 2025-11-25; la fecha de salida del RC al final es 28 de julio.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/"&gt;https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://thenewstack.io/model-context-protocol-roadmap-2026/"&gt;https://thenewstack.io/model-context-protocol-roadmap-2026/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://modelcontextprotocol.io/specification/draft"&gt;https://modelcontextprotocol.io/specification/draft&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">6fc2c420-c352-525a-86cd-be46b6c6ae3e</guid>
+      <pubDate>Wed, 27 May 2026 06:14:33 +0000</pubDate>
+      <category>claude-code</category>
+      <link>https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/</link>
+      <enclosure url="https://avatars.githubusercontent.com/u/182288589" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>RTPurbo: convertir attention full en sparse con 600 pasos y 9x de speedup a 1M tokens</title>
+      <description>&lt;p&gt;El paper &lt;em&gt;Full Attention Strikes Back: Transferring Full Attention into Sparse within Hundred Training Steps&lt;/em&gt; (Zhou, Li, Tang et al., Nanjing University + Alibaba; arXiv:2605.16928) parte de una observación incómoda para el campo del sparse attention: los LLMs entrenados con full attention ya son intrínsecamente sparse. No hace falta entrenar desde cero un modelo sparse — basta con descubrir esa sparsity latente y aprovecharla.&lt;/p&gt;&lt;p&gt;Tres observaciones empíricas sostienen el método. Primero, solo un subconjunto de attention heads necesita procesar contexto largo completo; el resto opera bien con una ventana local. Segundo, la recuperación de tokens relevantes a larga distancia vive en un subespacio de baja dimensionalidad — los autores muestran que un indexer de &lt;strong&gt;16 dimensiones&lt;/strong&gt; basta para identificar los tokens que importan. Tercero, el presupuesto útil de tokens depende fuertemente de la query: top-k fijo desperdicia compute o pierde información dependiendo del caso. Top-p dinámico (umbral de masa de atención) se ajusta mejor.&lt;/p&gt;&lt;p&gt;De ahí sale RTPurbo. Mantiene KV cache completo solo para los retrieval heads identificados y reemplaza la atención del resto por un mecanismo sparse guiado por un indexer de 16 dimensiones. El indexer se entrena con un pipeline de dos etapas que suma aproximadamente &lt;strong&gt;600 pasos de entrenamiento&lt;/strong&gt; (~1M tokens de etiqueta en la segunda etapa). Comparado con las decenas de miles de pasos de los métodos sparse-from-scratch, es un orden de magnitud distinto.&lt;/p&gt;&lt;p&gt;Los números son agresivos. Speedup de prefill de hasta &lt;strong&gt;9.36x a 1M de contexto&lt;/strong&gt;; 2.83x a 32K. Decode 2.01x más rápido. En LongBench (16 tareas) RTPurbo promedia 54.24 por ciento frente a 53.80 de full attention. No es típo, no es error: la versión sparse supera marginalmente al baseline denso. Frente a competidores: RazorAttn 52.98, Minference 48.39, SnapKV 50.74.&lt;/p&gt;&lt;p&gt;En RULER a 64K, RTPurbo marca 85.49 contra 86.23 de full attention. Pierde 0.74 puntos. Frente a baselines: SnapKV 75.81, FlexPrefill 77.77, Quest 70.60. Quince puntos sobre el siguiente mejor. La métrica que realmente expone los métodos sparse es razonamiento largo: AIME24/AIME25. RTPurbo iguala exactamente a full attention en 86.67 por ciento de accuracy. Los otros baselines se hunden: Quest baja a 46.67, SnapKV a 43.33. Mitad de accuracy. El razonamiento es donde los métodos sparse heurísticos se rompen — pierden tokens que parecían poco relevantes en el momento pero eran críticos pasos después. RTPurbo no.&lt;/p&gt;&lt;p&gt;A 64K, RTPurbo opera con 89.2 por ciento de sparsity (solo el 10.8 por ciento de pares query-key se computan) preservando más del 93 por ciento de la masa de atención total. A 512K, la sparsity sube a 97.1 por ciento sin colapso de accuracy. El método no es sutilmente sparse: es agresivamente sparse y aun así no rompe nada.&lt;/p&gt;&lt;p&gt;Limitaciones reales. El paper no reporta evaluación en agentes con tool use, donde la dependencia secuencial entre tokens distantes (output del tool, vuelta al modelo, output del siguiente tool) es más compleja que en QA o math. Tampoco mide qué pasa con prompt caching: la mayoría de inferencia productiva reutiliza prefix, y la interacción de un KV cache parcial con prefix caching no se explora. La identificación de retrieval heads se hace con un proceso de scoring offline; si cambias el modelo o la distribución de tareas, hay que repetirlo. No es magic, hay que pagar el setup.&lt;/p&gt;&lt;p&gt;Conexión con la otra entrada de hoy sobre Gated DeltaNet-2. Las dos atacan el coste cuadrático de attention pero desde extremos opuestos: GDN-2 reemplaza attention por atención lineal con puertas separadas (cambio arquitectural profundo, requiere reentrenar); RTPurbo conserva attention full y la sparsifica en 600 pasos sobre un checkpoint existente. En producción esto es relevante: si tienes un LLM ya en producción y necesitas long-context cheap, RTPurbo es la ruta de friction baja. Si estás diseñando un modelo nuevo, GDN-2 compite por el slot arquitectural.&lt;/p&gt;&lt;p&gt;También conecta con el thread abierto desde mayo sobre &lt;em&gt;long-context inference paradigms beyond context window scaling&lt;/em&gt; (RLM, MIT, dic 2025). RLM resuelve el problema externalizando el prompt al REPL. RTPurbo lo resuelve internamente, conservando el modelo como caja única. Coexisten: RLM es para casos donde el contexto crece más allá de cualquier ventana razonable; RTPurbo es para hacer la ventana razonable más barata.&lt;/p&gt;&lt;p&gt;Qué seguiría yo si trabajo en serving. Primero, replicar RTPurbo sobre un modelo de producción a 32K-128K y medir el speedup real con prefix caching activo. Si el caching no degrada el speedup, es desplegable. Segundo, comparar con vLLM-style PagedAttention para ver si las dos optimizaciones se componen multiplicativamente o se solapan. Tercero, evaluar en agentes con tool use a contexto largo. Si AIME no se rompe pero los agentes con 20 turnos sí, la heurística de retrieval heads no captura bien la dependencia secuencial.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/abs/2605.16928"&gt;https://arxiv.org/abs/2605.16928&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/html/2605.16928v1"&gt;https://arxiv.org/html/2605.16928v1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://arxiv.org/pdf/2605.16928"&gt;https://arxiv.org/pdf/2605.16928&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.themoonlight.io/en/review/full-attention-strikes-back-transferring-full-attention-into-sparse-within-hundred-training-steps"&gt;https://www.themoonlight.io/en/review/full-attention-strikes-back-transferring-full-attention-into-sparse-within-hundred-training-steps&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">0bfe1074-8192-5fbd-af1b-d73039c518e1</guid>
+      <pubDate>Wed, 27 May 2026 06:14:52 +0000</pubDate>
+      <category>papers-ia</category>
+      <link>https://arxiv.org/abs/2605.16928</link>
+      <enclosure url="https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Hackensack Meridian despliega Ekam: una enfermera de oncología, Vertex AI y 7.000 clínicos resumiendo notas en 45 segundos</title>
+      <description>&lt;p&gt;Hackensack Meridian Health, red de 18 hospitales y más de 500 centros clínicos en Nueva Jersey, es el primer sistema sanitario que despliega a escala un agente sobre Gemini para resumir notas clínicas. El producto se llama &lt;strong&gt;Ekam&lt;/strong&gt; (sánscrito: "una sola fuente de verdad") y lo usan ya más de 7.000 clínicos. Desde que arrancó en junio de 2025, 1.200 de ellos han generado más de 17.000 resúmenes y el uso sigue creciendo.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://njbiz.com/files/2026/02/brat-2_feature_PROVIDED-BY-HACKENSACK-MERIDIAN-HEALTH.jpg" alt="Margia Fonseca, enfermera de oncología, lidera el despliegue de Ekam" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Margia Fonseca, enfermera del John Theurer Cancer Center, lidera el rollout con un "Ekam Tour" hospital por hospital.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué hace exactamente&lt;/strong&gt;. Ekam lee y sintetiza notas clínicas del historial de un paciente en unos 45 segundos. Se activa con un botón dentro del chart. La clave: produce resúmenes &lt;strong&gt;específicos por especialidad&lt;/strong&gt; sobre más de 12 disciplinas. El oncólogo ve un resumen distinto al que ve el urólogo para el mismo paciente, porque la información relevante cambia. Eso es lo que separa Ekam de un wrapper genérico de "resume este texto".&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Construido, no comprado&lt;/strong&gt;. Hackensack decidió construirlo internamente sobre Vertex AI en lugar de licenciar Epic Cosmos u otro producto similar. La razón pública: control sobre la personalización por especialidad y sobre cómo se integra con su semantic data layer. Sameer Sethi (Chief AI Officer) y Aashima Gupta (Google Cloud Healthcare) firman el caso conjunto.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Despliegue raro: una enfermera con un tour&lt;/strong&gt;. Aquí está la parte replicable. El rollout no lo lidera IT ni un comité de gobernanza: lo lidera Margia Fonseca, enfermera de oncología del John Theurer Cancer Center, que hace un "Ekam Tour" recorriendo hospitales con identidad visual verde fluor inspirada en pop culture. Su frase resume el principio: "tienen que tenernos en el paso uno". Adopción clínica genuina porque la cara visible es una enfermera, no un VP.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;El número que importa&lt;/strong&gt;. Reducción de "pajama time", el tiempo que los médicos dedican a documentación fuera del horario laboral. No hay cifra exacta pública todavía, pero el modelo de medición es ese: no productividad, sino horas que el clínico recupera para dormir o ver a su familia.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Qué hace replicable este caso&lt;/strong&gt;. Tres cosas concretas. Primero, &lt;strong&gt;vertical, no horizontal&lt;/strong&gt;: resúmenes por especialidad, no "asistente clínico para todo". Segundo, build vs buy con criterio: si la diferenciación está en la personalización fina, construir tiene sentido; si es commodity, comprar. Tercero, embajadores clínicos antes que mandatos top-down. En cualquier organización con resistencia a IA, la persona que evangeliza importa más que la herramienta.&lt;/p&gt;
+
+&lt;p&gt;Yo probaría empezar por mapear, en tu propio dominio, qué es "oncólogo vs urólogo": qué subconjunto de la información cambia según el rol del usuario. Si la respuesta es "todo el mundo necesita lo mismo", probablemente no necesitas un agente, necesitas una mejor búsqueda.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.googlecloudpresscorner.com/2025-10-16-Hackensack-Meridian-Health-Transforms-Patient-Care-with-AI-Agents-Built-with-Google-Cloud-Technology"&gt;https://www.googlecloudpresscorner.com/2025-10-16-Hackensack-Meridian-Health-Transforms-Patient-Care-with-AI-Agents-Built-with-Google-Cloud-Technology&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://njbiz.com/hackensack-meridian-ekam-ai-google-cloud-nurses/"&gt;https://njbiz.com/hackensack-meridian-ekam-ai-google-cloud-nurses/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://theridgewoodblog.net/say-goodbye-to-clinical-burnout-how-hackensack-meridians-new-ai-ekam-is-saving-the-patient-story/"&gt;https://theridgewoodblog.net/say-goodbye-to-clinical-burnout-how-hackensack-meridians-new-ai-ekam-is-saving-the-patient-story/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.healthcaredive.com/news/google-cloud-ai-agent-partnerships-hackensack-meridian-iks-health/802980/"&gt;https://www.healthcaredive.com/news/google-cloud-ai-agent-partnerships-hackensack-meridian-iks-health/802980/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">b90a76ff-7fb3-5053-aee8-68b710dc20c7</guid>
+      <pubDate>Wed, 27 May 2026 06:14:55 +0000</pubDate>
+      <category>casos-uso-ia</category>
+      <link>https://www.googlecloudpresscorner.com/2025-10-16-Hackensack-Meridian-Health-Transforms-Patient-Care-with-AI-Agents-Built-with-Google-Cloud-Technology</link>
+      <enclosure url="https://njbiz.com/files/2026/02/brat-2_feature_PROVIDED-BY-HACKENSACK-MERIDIAN-HEALTH.jpg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Anthropic abre Dreams en Managed Agents: el modelo reorganiza su propia memoria por lotes y el caso Harvey reporta 6x en task completion</title>
+      <description>&lt;p&gt;El 6 de mayo, durante Code with Claude, Anthropic presentó &lt;strong&gt;Dreams&lt;/strong&gt; como research preview dentro de la API de Managed Agents. La idea es operativamente simple y conceptualmente importante: un dream es un job asíncrono que toma un memory store existente más un lote de hasta 100 transcripciones de sesiones pasadas, y produce un memory store nuevo, reorganizado. El input nunca se modifica; el output va a otra ID, así que puedes inspeccionarlo y descartarlo si no convence.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://i.mscdn.ai/70cbb1ad-08d7-4fdc-ab31-e343780966a6/generated-images/a8de9352-d00a-4fa2-b38d-081eee7ef8f8.png?fm=auto&amp;w=1200&amp;fit=cover" alt="Claude Dreaming consolida memoria de agentes" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Claude Dreaming: el agente revisa sesiones pasadas y reescribe su propia memoria.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;Qué hace Claude durante el dream: deduplica entradas equivalentes, reemplaza facts contradichos con el valor más reciente, convierte fechas relativas (&lt;em&gt;«ayer decidimos usar Redis»&lt;/em&gt;) en absolutas (&lt;em&gt;«el 2026-03-15 decidimos usar Redis»&lt;/em&gt;), borra notas obsoletas (debugging de archivos eliminados) y consolida entradas solapadas. La motivación es el problema que tiene cualquiera que haya construido un agente con memoria persistente: las escrituras incrementales acumulan ruido, contradicciones y duplicados que degradan el contexto disponible y empeoran las decisiones del modelo a lo largo del tiempo.&lt;/p&gt;
+
+&lt;p&gt;La API es deliberadamente austera. Necesitas dos beta headers (&lt;code&gt;managed-agents-2026-04-01&lt;/code&gt; y &lt;code&gt;dreaming-2026-04-21&lt;/code&gt;), eliges modelo (&lt;code&gt;claude-opus-4-7&lt;/code&gt; o &lt;code&gt;claude-sonnet-4-6&lt;/code&gt; durante el preview), pasas el memory store y los session IDs, y opcionalmente das &lt;code&gt;instructions&lt;/code&gt; de hasta 4.096 caracteres para guiar el criterio (&lt;em&gt;«enfócate en preferencias de estilo de código; ignora notas de debugging puntual»&lt;/em&gt;). El job pasa por &lt;code&gt;pending → running → completed&lt;/code&gt;; mientras corre, expone un &lt;code&gt;session_id&lt;/code&gt; que puedes streamear con la API de events para ver en tiempo real qué está leyendo y escribiendo. Tarda &lt;em&gt;minutos a decenas de minutos&lt;/em&gt; según el volumen de input. Se factura a tarifa estándar de tokens del modelo elegido — sin pricing especial.&lt;/p&gt;
+
+&lt;p&gt;El número que viene circulando: &lt;strong&gt;Harvey, el asistente legal, reportó un salto de ~6x en task completion rate&lt;/strong&gt; tras activar Dreaming en sus workflows de redacción de contratos. La cifra hay que tomarla con la cautela habitual de los testimonios de partner — Anthropic no la incluye en la documentación oficial, viene de coverage secundario — pero el dato técnico que sí se puede medir es éste: en un proyecto de Claude Code abierto, una corrida Auto Dream consolidó la memoria de 913 sesiones en 8-9 minutos.&lt;/p&gt;
+
+&lt;p&gt;El mecanismo importa porque resuelve un problema real de arquitectura. Hasta ahora, los agentes con memoria persistente tenían dos opciones malas: (a) acumular todo y dejar que el contexto se hinche hasta degradar el modelo, o (b) compactar agresivamente y perder señal. Dreams introduce una tercera vía: separar la &lt;em&gt;fase operativa&lt;/em&gt; (escritura rápida, no estructurada, durante sesiones) de la &lt;em&gt;fase reflexiva&lt;/em&gt; (lectura larga, estructurada, en background), análoga al patrón append-only log + compaction de bases de datos. Y a nivel cognitivo, copia explícitamente la metáfora neurocientífica del sueño REM: durante el sueño el cerebro replay-ea experiencias, consolida patrones y mueve información de memoria de trabajo a largo plazo.&lt;/p&gt;
+
+&lt;p&gt;Limitaciones que conviene conocer antes de planificar adopción. Acceso por waitlist; tienes que rellenar el formulario de Managed Agents. Máximo 100 sesiones por dream. Si archivas o borras un input mid-run, el dream falla con &lt;code&gt;input_memory_store_unavailable&lt;/code&gt; o &lt;code&gt;input_session_unavailable&lt;/code&gt;. Mientras un dream esté pending/running, no puedes archivar el store de output. Y aunque la documentación describe limpieza y deduplicación, no garantiza preservación semántica: si el lote de sesiones contiene una decisión técnica importante que aparece pocas veces, podría perderse en la consolidación. Estrategia razonable: empezar con lotes pequeños (5-10 sesiones), revisar el store de salida en consola antes de adoptarlo, y guardar siempre los inputs originales hasta validar varios ciclos.&lt;/p&gt;
+
+&lt;p&gt;Qué validar tú. Si construyes agentes en Managed Agents con memoria persistente, mide tu propia tasa de degradación de contexto (longitud media del memory store por sesión, número de entradas contradictorias) durante dos semanas sin Dreams. Activa Dreams con lotes pequeños y mide el delta en cobertura de hechos relevantes y en métricas de tarea downstream. Si el cliente del agente expone outputs auditables (legal, finanzas, soporte regulado), añade un paso humano de revisión del output store antes de promoverlo. El 6x de Harvey es plausible para workflows donde el ruido era el cuello de botella; para casos donde el bottleneck era razonamiento o tool use, el upside será menor.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://platform.claude.com/docs/en/managed-agents/dreams"&gt;https://platform.claude.com/docs/en/managed-agents/dreams&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.mindstudio.ai/blog/claude-dreaming-feature-self-improving-agent-memory"&gt;https://www.mindstudio.ai/blog/claude-dreaming-feature-self-improving-agent-memory&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://claudefa.st/blog/guide/mechanics/auto-dream"&gt;https://claudefa.st/blog/guide/mechanics/auto-dream&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.infoq.com/news/2026/05/code-with-claude/"&gt;https://www.infoq.com/news/2026/05/code-with-claude/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">1d528713-d424-5222-9ce1-eb052675ffb2</guid>
+      <pubDate>Wed, 27 May 2026 06:15:15 +0000</pubDate>
+      <category>ia-generativa</category>
+      <link>https://platform.claude.com/docs/en/managed-agents/dreams</link>
+      <enclosure url="https://i.mscdn.ai/70cbb1ad-08d7-4fdc-ab31-e343780966a6/generated-images/a8de9352-d00a-4fa2-b38d-081eee7ef8f8.png?fm=auto&amp;w=1200&amp;fit=cover" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>AWS MCP Server llega a GA con run_script sandboxed y 20+ skills que tu agente no usará sin el rules file</title>
+      <description>&lt;p&gt;El 6 de mayo AWS anunció la disponibilidad general del &lt;strong&gt;AWS MCP Server&lt;/strong&gt;, un servidor MCP gestionado que da a los coding agents acceso autenticado a cualquier API de AWS con IAM como guardarraíl. La pregunta que recogen del propio equipo del producto: &lt;em&gt;&amp;laquo;¿cómo le das a un agente acceso real autenticado a AWS sin entregarle las llaves del reino?&amp;raquo;&lt;/em&gt;. La respuesta GA tiene tres piezas que vale la pena examinar de cerca, más una trampa que te puede dejar el agente sin usar nada de esto.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2026/04/23/2026-04-23_09-59-16-1024x813.png" alt="Claude Code respondiendo con AWS MCP Server sobre S3 Vectors" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Claude Code usando el AWS MCP Server: respuesta con documentación al día sobre S3 Vectors.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;h3&gt;Instalación y modelo de auth&lt;/h3&gt;
+
+&lt;p&gt;Para Claude Code, el comando es directo (requiere &lt;code&gt;uv&lt;/code&gt; instalado previamente):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;claude mcp add-json aws-mcp --scope user   '{"command":"uvx","args":["mcp-proxy-for-aws@latest","https://aws-mcp.us-east-1.api.aws/mcp","--metadata","AWS_REGION=us-west-2"]}'&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;El truco: el servidor MCP soporta solo OAuth 2.1, pero AWS sigue siendo IAM + SigV4. La pieza &lt;code&gt;mcp-proxy-for-aws&lt;/code&gt; corre local y traduce credenciales IAM en requests OAuth-compatibles. Lo importante operativamente: no hace falta un permiso IAM extra para &lt;em&gt;usar&lt;/em&gt; el servidor; se pagan solo los recursos que el agente cree. El audit trail completo cae en CloudTrail y las métricas del servidor en CloudWatch bajo namespace &lt;code&gt;AWS-MCP&lt;/code&gt;, separadas del uso humano. Esa separación es lo que permite a un equipo de plataforma decir &amp;laquo;esto lo ha hecho el agente, no Aina&amp;raquo; con evidencia.&lt;/p&gt;
+
+&lt;p&gt;Regiones day-one: us-east-1 (N. Virginia) y eu-central-1 (Frankfurt). Solo dos. Para una empresa que tiene producción en ap-southeast o sa-east, eso significa esperar.&lt;/p&gt;
+
+&lt;h3&gt;run_script: el sandboxed Python que cierra el round-trip&lt;/h3&gt;
+
+&lt;p&gt;La novedad operativa más interesante respecto al preview es &lt;code&gt;run_script&lt;/code&gt;. Permite al agente escribir scripts Python cortos que se ejecutan server-side en un entorno aislado. Características clave:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hereda los permisos IAM del usuario; no añade superficie.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cero acceso de red&lt;/strong&gt; fuera del propio entorno AWS.&lt;/li&gt;
+&lt;li&gt;Sin acceso al filesystem local ni al shell.&lt;/li&gt;
+&lt;li&gt;Permite encadenar múltiples llamadas a APIs de AWS en un solo round-trip.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;El cambio cualitativo: antes el agente describía cinco pasos (&lt;em&gt;&amp;laquo;lista los buckets, filtra los que tienen versioning, suma sus tamaños...&amp;raquo;&lt;/em&gt;) y cada paso era un tool_use con su latencia y su token cost. Ahora escribe diez líneas de Python que hacen las cinco cosas en una sola llamada. Reduce tokens y reduce ventanas de fallo.&lt;/p&gt;
+
+&lt;h3&gt;Agent skills: 20+ procedimientos validados (con trampa)&lt;/h3&gt;
+
+&lt;p&gt;AWS reemplaza el viejo concepto de &lt;em&gt;Agent SOPs&lt;/em&gt; (volcados de texto frágiles) por &lt;strong&gt;skills&lt;/strong&gt;: procedimientos curados y mantenidos por los service teams. Más de 20 skills día uno cubren patrones como elegir entre HTTP API y REST API en API Gateway, configurar permissions Lambda correctamente, o decidir entre S3 Vectors y OpenSearch. El agente las carga bajo demanda con &lt;code&gt;retrieve_skill&lt;/code&gt;, evitando reventar la ventana de contexto.&lt;/p&gt;
+
+&lt;p&gt;Hay un detalle silencioso que cuesta el caso de uso entero: &lt;strong&gt;el agente no las usa proactivamente sin un rules file&lt;/strong&gt;. El repo del Agent Toolkit incluye un fichero de 17 líneas en &lt;code&gt;rules/&lt;/code&gt; que instruye al agente a preferir el MCP server sobre su conocimiento entrenado, a comprobar skills antes de empezar tareas, y a usar &lt;code&gt;retrieve_skill&lt;/code&gt; cuando hay duda. Sin ese fichero, un agente discutiendo arquitectura serverless devuelve tres opciones genéricas. Con él, llega a recomendaciones concretas (HTTP API sobre REST API, con la razón arquitectónica). El gap entre &lt;em&gt;tener herramientas&lt;/em&gt; y &lt;em&gt;usarlas&lt;/em&gt; requiere instrucción explícita.&lt;/p&gt;
+
+&lt;h3&gt;Lo que conecta con lo que ya sabíamos&lt;/h3&gt;
+
+&lt;p&gt;En el briefing del 26 de mayo apuntábamos que AWS &lt;em&gt;no era provider day-one&lt;/em&gt; de los self-hosted sandboxes que Anthropic anunció en Code with Claude London. Esto no contradice ese punto: el AWS MCP Server es una pieza distinta, no un sandbox para correr agentes. Es la capa de acceso autenticado &lt;em&gt;desde&lt;/em&gt; el agente &lt;em&gt;hacia&lt;/em&gt; AWS, sin sustituir el harness donde el agente vive. Quien necesite ambas cosas en AWS sigue esperando.&lt;/p&gt;
+
+&lt;h3&gt;Qué probar esta semana&lt;/h3&gt;
+
+&lt;p&gt;Si trabajas en AWS y usas Claude Code, son cuatro pasos: instala &lt;code&gt;uv&lt;/code&gt;, añade el MCP con el comando de arriba, clona el rules file del Agent Toolkit en &lt;code&gt;.claude/&lt;/code&gt;, y comprueba con un prompt como &lt;em&gt;&amp;laquo;dame opciones de arquitectura serverless para procesar 10k eventos/segundo&amp;raquo;&lt;/em&gt;. La diferencia entre antes y después de cargar el rules file es la prueba más sencilla de que el setup funciona. CloudWatch debería empezar a mostrar invocaciones bajo &lt;code&gt;AWS-MCP&lt;/code&gt; en cuestión de minutos.&lt;/p&gt;
+
+&lt;p&gt;Pregunta abierta: AWS dice que la decisión de qué skill cargar la toma el agente. ¿Llegará un equivalente al &lt;code&gt;alwaysLoad&lt;/code&gt; de Claude Code para forzar skills críticas (compliance, security) en todas las sesiones, en lugar de fiarlo al juicio del modelo?&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/"&gt;https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://aws.amazon.com/about-aws/whats-new/2026/05/aws-mcp-server/"&gt;https://aws.amazon.com/about-aws/whats-new/2026/05/aws-mcp-server/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.infoq.com/news/2026/05/aws-mcp-ga/"&gt;https://www.infoq.com/news/2026/05/aws-mcp-ga/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://dev.to/aws/the-new-agent-toolkit-for-aws-includes-20-agent-skills-but-your-agent-might-never-load-them-1p6d"&gt;https://dev.to/aws/the-new-agent-toolkit-for-aws-includes-20-agent-skills-but-your-agent-might-never-load-them-1p6d&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/aws/agent-toolkit-for-aws"&gt;https://github.com/aws/agent-toolkit-for-aws&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">83c800d7-914a-5e30-a3d9-e4a30a38b4d8</guid>
+      <pubDate>Wed, 27 May 2026 06:15:27 +0000</pubDate>
+      <category>claude-code</category>
+      <link>https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/</link>
+      <enclosure url="https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2026/04/23/2026-04-23_09-59-16-1024x813.png" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>

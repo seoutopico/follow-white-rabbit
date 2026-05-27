@@ -4,7 +4,7 @@
     <title>IA Generativa</title>
     <description>Per-topic feed: IA Generativa</description>
     <link>https://seoutopico.github.io/follow-white-rabbit/white-rabbit-ia-generativa.xml</link>
-    <lastBuildDate>Tue, 26 May 2026 07:05:02 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 06:15:15 +0000</lastBuildDate>
     <generator>cc-deepfeed</generator>
     <ns0:link rel="self" href="https://seoutopico.github.io/follow-white-rabbit/white-rabbit-ia-generativa.xml" type="application/rss+xml" />
     <item>
@@ -223,6 +223,99 @@
       <category>ia-generativa</category>
       <link>https://github.com/vllm-project/vllm/releases/tag/v0.21.0</link>
       <enclosure url="https://raw.githubusercontent.com/vllm-project/vllm/main/docs/source/assets/logos/vllm-logo-text-light.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Project Glasswing publica cifras: Claude Mythos encuentra 10.000 vulnerabilidades críticas en un mes y Anthropic admite que no sabe contenerlo</title>
+      <description>&lt;p&gt;Anthropic publicó el 22 de mayo el primer balance cuantitativo de Project Glasswing, el programa que da acceso restringido a Claude Mythos Preview — el modelo no comercializado que descubre zero-days de forma autónoma — a una docena de socios entre los que están AWS, Apple, Cisco, CrowdStrike, Google, JPMorganChase, Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks y Broadcom.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://www.anthropic.com/images/4zrzovbb/website/9f76163fe710723283a55b9f60d5caca6697dffd-1920x1080.jpg" alt="Project Glasswing initial update" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Project Glasswing: balance inicial publicado el 22 de mayo de 2026.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;Los números del primer mes son los siguientes. Más de 10.000 vulnerabilidades de severidad alta o crítica identificadas en software de infraestructura. En el subconjunto open source, Mythos escaneó más de 1.000 proyectos y reportó 23.019 issues, de los cuales 6.202 quedaron clasificados como high/critical. La tasa de validación, evaluada por Anthropic y seis firmas de seguridad independientes sobre una muestra de 1.752 hallazgos, fue del 90,6%. Cloudflare reportó 2.000 bugs (400 críticos) con una tasa de falsos positivos mejor que la de sus pentesters humanos. Mozilla integró 271 fixes en Firefox 150 — diez veces más que cualquier auditoría previa con modelos Claude. En un banco socio, Mythos detectó y bloqueó una transferencia fraudulenta de 1,5 millones de dólares.&lt;/p&gt;
+
+&lt;p&gt;El caso más comentado técnicamente es &lt;strong&gt;WolfSSL&lt;/strong&gt; (CVE-2026-5194): Mythos identificó un fallo en la librería criptográfica usada por miles de millones de dispositivos IoT que permitiría falsificar certificados para phishing bancario. Ya está parcheado. Más impactante en el plano de capacidad: en la evaluación interna ExploitGym, Mythos resolvió 157 de 898 vulnerabilidades reales (frente a 0 de GPT-5.5 y 0 de Opus 4.7 en condiciones equivalentes); sobre un set de 41 CVEs combinando los modos Baseline y Nudged consiguió ejecución arbitraria de código (ACE) en 21 — ningún otro modelo conseguió ni uno. Sobre 100 CVEs del kernel Linux de 2024-2025, filtró 40 como potencialmente explotables y escribió exploits de escalada de privilegios; más de la mitad funcionaron. El AI Security Institute del Reino Unido confirmó que es el primer modelo que resuelve sus simulaciones de ataque corporativo end-to-end, completando 22 de 32 pasos en promedio y logrando compromiso total en el 30% de los intentos.&lt;/p&gt;
+
+&lt;p&gt;La parte incómoda está en el comunicado: &lt;em&gt;«la facilidad relativa de encontrar vulnerabilidades comparada con la dificultad de arreglarlas supone un desafío mayor para la ciberseguridad»&lt;/em&gt;. Y la frase que importa: &lt;em&gt;«hoy ninguna empresa — Anthropic incluida — ha desarrollado salvaguardas suficientes para impedir que estos modelos sean mal utilizados y causen daño severo»&lt;/em&gt;. Por eso Mythos no se comercializa. Va por invitación, dentro de Project Glasswing, y los pesos no se publicarán. Las protecciones se desarrollarán contra un próximo modelo Opus que &lt;em&gt;no tenga el mismo nivel de riesgo&lt;/em&gt;, y solo entonces se considerará un GA.&lt;/p&gt;
+
+&lt;p&gt;La pregunta práctica para quien construye sobre LLMs: el gap entre lo que Mythos hace y lo que tienes en producción (Opus 4.7, GPT-5.5, Gemini 3.5 Pro) es de un orden de magnitud en seguridad ofensiva. Eso significa dos cosas. Una, que un modelo equivalente filtrado o reimplementado por un actor estatal cambia el coste marginal del descubrimiento de zero-days a casi cero. Dos, que la economía del bug bounty cambia: si tu programa paga 50.000 por un RCE en navegador y un competidor con acceso a un modelo similar los produce a velocidad industrial, el mercado se rompe. Cloudflare ya publicó su análisis paralelo describiendo los hallazgos como &lt;em&gt;«cyber frontier models»&lt;/em&gt;, equiparándolos al estatus que tienen los modelos de doble uso biológico.&lt;/p&gt;
+
+&lt;p&gt;Si tienes infraestructura crítica expuesta: asume que el inventario de vulnerabilidades públicamente conocidas de tus dependencias va a crecer un orden de magnitud en los próximos seis meses. Prioriza parcheo automatizado, supply chain hardening y monitoring por comportamiento, no por firma. Claude Security (beta pública desde el 22 de mayo para clientes Enterprise, basado en Opus 4.7) es el primer producto comercial defensivo que sale de este ciclo — usa el hermano pequeño de Mythos para escanear repos y proponer fixes. Es el patrón que veremos repetirse: Anthropic vende la defensa con el modelo accesible, mantiene el ofensivo encerrado.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.anthropic.com/research/glasswing-initial-update"&gt;https://www.anthropic.com/research/glasswing-initial-update&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://red.anthropic.com/2026/mythos-preview/"&gt;https://red.anthropic.com/2026/mythos-preview/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.helpnetsecurity.com/2026/05/26/anthropic-project-glasswing-update/"&gt;https://www.helpnetsecurity.com/2026/05/26/anthropic-project-glasswing-update/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://cybersecuritynews.com/claude-mythos-271-zero-days/"&gt;https://cybersecuritynews.com/claude-mythos-271-zero-days/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blog.cloudflare.com/cyber-frontier-models/"&gt;https://blog.cloudflare.com/cyber-frontier-models/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">607aa239-6d5e-5d4e-91ac-5b24ac9e9f4d</guid>
+      <pubDate>Wed, 27 May 2026 06:13:34 +0000</pubDate>
+      <category>ia-generativa</category>
+      <link>https://www.anthropic.com/research/glasswing-initial-update</link>
+      <enclosure url="https://www.anthropic.com/images/4zrzovbb/website/9f76163fe710723283a55b9f60d5caca6697dffd-1920x1080.jpg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>GPT-5.5 Instant entra como default de ChatGPT con menos alucinaciones que su hermano de pago — pero el AA-Omniscience deja a OpenAI en evidencia</title>
+      <description>&lt;p&gt;El 5 de mayo OpenAI sustituyó GPT-5.3 Instant por &lt;strong&gt;GPT-5.5 Instant&lt;/strong&gt; como modelo por defecto de ChatGPT, primero para Plus y Pro en web y en las semanas siguientes para Free, Go, Business y Enterprise. En API se expone como alias &lt;code&gt;chat-latest&lt;/code&gt;; GPT-5.3 sigue disponible para clientes API durante tres meses como ventana de migración.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://techcrunch.com/wp-content/uploads/2026/05/Memory-update.jpeg?w=1024" alt="GPT-5.5 Instant memoria personalizada" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;GPT-5.5 Instant llega con memoria que puede consultar conversaciones pasadas, archivos y Gmail.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;Los números que OpenAI puso encima de la mesa. AIME 2025: 81,2 frente a 65,4 del Instant anterior. MMMU-Pro: 76 frente a 69,2. Y el headline marketing: &lt;em&gt;52,5% menos alucinaciones&lt;/em&gt; en prompts de alto riesgo (medicina, derecho, finanzas) y &lt;em&gt;37,3% menos imprecisiones&lt;/em&gt; en conversaciones que usuarios habían marcado previamente como erróneas. Todo medido contra GPT-5.3 Instant y, como reconoce el propio post, en evaluaciones internas. La feature paralela: el modelo puede consultar conversaciones pasadas, archivos subidos y Gmail conectado para responder con contexto personalizado. La memoria es visible y editable desde ajustes — no es persistencia opaca, es un store curado.&lt;/p&gt;
+
+&lt;p&gt;Hasta aquí, una versión menor con mejoras de calibración honestas. El problema aparece cuando se cruza con la evaluación que Artificial Analysis publicó la semana siguiente sobre GPT-5.5 (el modelo de razonamiento completo, no la variante Instant). En el benchmark &lt;strong&gt;AA-Omniscience&lt;/strong&gt; — 6.000 preguntas en 42 dominios económicamente relevantes, diseñado para penalizar respuestas confiadas equivocadas y premiar el &lt;em&gt;no sé&lt;/em&gt; — GPT-5.5 (xhigh) obtiene la mayor precisión jamás registrada: 57%. Y a la vez una tasa de alucinación del 86%. Para contexto: Claude Opus 4.7 alucina al 36%, Gemini 3.1 Pro Preview al 50%.&lt;/p&gt;
+
+&lt;p&gt;Esto requiere desempaquetarse, porque parece contradictorio. AA-Omniscience mide dos cosas a la vez. La tasa de acierto (qué fracción de preguntas responde correctamente) y la calibración (cuántas veces responde con confianza algo falso en lugar de abstenerse). GPT-5.5 acierta más que cualquier otro modelo cuando sabe la respuesta — de ahí el 57% líder. Pero cuando no sabe, casi nunca se abstiene: contesta, y contesta mal. El 86% es el porcentaje de respuestas incorrectas que el modelo entrega con seguridad, en lugar de decir &lt;em&gt;no tengo información suficiente&lt;/em&gt;. Opus 4.7 prefiere callarse; GPT-5.5 prefiere inventar. Es una elección de entrenamiento, no un bug parcheable.&lt;/p&gt;
+
+&lt;p&gt;La incoherencia entre los dos comunicados es la noticia. OpenAI vende GPT-5.5 Instant como &lt;em&gt;52,5% menos alucinaciones&lt;/em&gt; mientras el modelo flagship de la misma familia rompe el récord histórico de alucinación en el benchmark más serio del momento. Lo que probablemente ocurre — el post oficial no lo explica — es que &lt;em&gt;52,5%&lt;/em&gt; se mide en un set propio de prompts adversariales que OpenAI eligió, no en una distribución representativa, y la métrica de Artificial Analysis cubre dominios mucho más amplios donde el modelo nunca fue afinado para abstenerse.&lt;/p&gt;
+
+&lt;p&gt;El pricing tampoco ayuda. GPT-5.5 (no Instant) sube a /0 por millón de tokens input/output, doblando el precio nominal por token. La defensa de OpenAI es que con la nueva tokenización el coste real solo sube ~20%, y que en el ladder de precio-rendimiento la versión xhigh sale ~30% más barata que Opus 4.7 al máximo. Es cierto en benchmarks de razonamiento; no es cierto si vas a hacer RAG o agente con knowledge grounding, donde la calibración importa más que el techo.&lt;/p&gt;
+
+&lt;p&gt;Qué validar tú si lo vas a usar. Para chat conversacional y asistente personal, GPT-5.5 Instant es upgrade neto: mejor en matemáticas, multimodal y conversación, con memoria útil. Para pipelines donde un modelo responde sobre hechos (citaciones, finanzas regulatorias, documentación médica, legal drafting), &lt;strong&gt;no migres por defecto&lt;/strong&gt;. Mide tu propia tasa de alucinación con queries representativas y compáralo con Opus 4.7 antes de cambiar nada. La elección de OpenAI de optimizar acierto sobre calibración puede ser correcta para chat masivo y desastrosa para uso profesional.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://openai.com/index/gpt-5-5-instant/"&gt;https://openai.com/index/gpt-5-5-instant/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/"&gt;https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://artificialanalysis.ai/articles/openai-gpt5-5-is-the-new-leading-AI-model"&gt;https://artificialanalysis.ai/articles/openai-gpt5-5-is-the-new-leading-AI-model&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://artificialanalysis.ai/evaluations/omniscience"&gt;https://artificialanalysis.ai/evaluations/omniscience&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://the-decoder.com/gpt-5-5-tops-benchmarks-but-still-hallucinates-frequently-at-a-20-percent-higher-api-cost/"&gt;https://the-decoder.com/gpt-5-5-tops-benchmarks-but-still-hallucinates-frequently-at-a-20-percent-higher-api-cost/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">9ee258ed-4d22-514e-898d-e399cbbc6b11</guid>
+      <pubDate>Wed, 27 May 2026 06:14:20 +0000</pubDate>
+      <category>ia-generativa</category>
+      <link>https://openai.com/index/gpt-5-5-instant/</link>
+      <enclosure url="https://techcrunch.com/wp-content/uploads/2026/05/Memory-update.jpeg?w=1024" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Anthropic abre Dreams en Managed Agents: el modelo reorganiza su propia memoria por lotes y el caso Harvey reporta 6x en task completion</title>
+      <description>&lt;p&gt;El 6 de mayo, durante Code with Claude, Anthropic presentó &lt;strong&gt;Dreams&lt;/strong&gt; como research preview dentro de la API de Managed Agents. La idea es operativamente simple y conceptualmente importante: un dream es un job asíncrono que toma un memory store existente más un lote de hasta 100 transcripciones de sesiones pasadas, y produce un memory store nuevo, reorganizado. El input nunca se modifica; el output va a otra ID, así que puedes inspeccionarlo y descartarlo si no convence.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src="https://i.mscdn.ai/70cbb1ad-08d7-4fdc-ab31-e343780966a6/generated-images/a8de9352-d00a-4fa2-b38d-081eee7ef8f8.png?fm=auto&amp;w=1200&amp;fit=cover" alt="Claude Dreaming consolida memoria de agentes" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Claude Dreaming: el agente revisa sesiones pasadas y reescribe su propia memoria.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;Qué hace Claude durante el dream: deduplica entradas equivalentes, reemplaza facts contradichos con el valor más reciente, convierte fechas relativas (&lt;em&gt;«ayer decidimos usar Redis»&lt;/em&gt;) en absolutas (&lt;em&gt;«el 2026-03-15 decidimos usar Redis»&lt;/em&gt;), borra notas obsoletas (debugging de archivos eliminados) y consolida entradas solapadas. La motivación es el problema que tiene cualquiera que haya construido un agente con memoria persistente: las escrituras incrementales acumulan ruido, contradicciones y duplicados que degradan el contexto disponible y empeoran las decisiones del modelo a lo largo del tiempo.&lt;/p&gt;
+
+&lt;p&gt;La API es deliberadamente austera. Necesitas dos beta headers (&lt;code&gt;managed-agents-2026-04-01&lt;/code&gt; y &lt;code&gt;dreaming-2026-04-21&lt;/code&gt;), eliges modelo (&lt;code&gt;claude-opus-4-7&lt;/code&gt; o &lt;code&gt;claude-sonnet-4-6&lt;/code&gt; durante el preview), pasas el memory store y los session IDs, y opcionalmente das &lt;code&gt;instructions&lt;/code&gt; de hasta 4.096 caracteres para guiar el criterio (&lt;em&gt;«enfócate en preferencias de estilo de código; ignora notas de debugging puntual»&lt;/em&gt;). El job pasa por &lt;code&gt;pending → running → completed&lt;/code&gt;; mientras corre, expone un &lt;code&gt;session_id&lt;/code&gt; que puedes streamear con la API de events para ver en tiempo real qué está leyendo y escribiendo. Tarda &lt;em&gt;minutos a decenas de minutos&lt;/em&gt; según el volumen de input. Se factura a tarifa estándar de tokens del modelo elegido — sin pricing especial.&lt;/p&gt;
+
+&lt;p&gt;El número que viene circulando: &lt;strong&gt;Harvey, el asistente legal, reportó un salto de ~6x en task completion rate&lt;/strong&gt; tras activar Dreaming en sus workflows de redacción de contratos. La cifra hay que tomarla con la cautela habitual de los testimonios de partner — Anthropic no la incluye en la documentación oficial, viene de coverage secundario — pero el dato técnico que sí se puede medir es éste: en un proyecto de Claude Code abierto, una corrida Auto Dream consolidó la memoria de 913 sesiones en 8-9 minutos.&lt;/p&gt;
+
+&lt;p&gt;El mecanismo importa porque resuelve un problema real de arquitectura. Hasta ahora, los agentes con memoria persistente tenían dos opciones malas: (a) acumular todo y dejar que el contexto se hinche hasta degradar el modelo, o (b) compactar agresivamente y perder señal. Dreams introduce una tercera vía: separar la &lt;em&gt;fase operativa&lt;/em&gt; (escritura rápida, no estructurada, durante sesiones) de la &lt;em&gt;fase reflexiva&lt;/em&gt; (lectura larga, estructurada, en background), análoga al patrón append-only log + compaction de bases de datos. Y a nivel cognitivo, copia explícitamente la metáfora neurocientífica del sueño REM: durante el sueño el cerebro replay-ea experiencias, consolida patrones y mueve información de memoria de trabajo a largo plazo.&lt;/p&gt;
+
+&lt;p&gt;Limitaciones que conviene conocer antes de planificar adopción. Acceso por waitlist; tienes que rellenar el formulario de Managed Agents. Máximo 100 sesiones por dream. Si archivas o borras un input mid-run, el dream falla con &lt;code&gt;input_memory_store_unavailable&lt;/code&gt; o &lt;code&gt;input_session_unavailable&lt;/code&gt;. Mientras un dream esté pending/running, no puedes archivar el store de output. Y aunque la documentación describe limpieza y deduplicación, no garantiza preservación semántica: si el lote de sesiones contiene una decisión técnica importante que aparece pocas veces, podría perderse en la consolidación. Estrategia razonable: empezar con lotes pequeños (5-10 sesiones), revisar el store de salida en consola antes de adoptarlo, y guardar siempre los inputs originales hasta validar varios ciclos.&lt;/p&gt;
+
+&lt;p&gt;Qué validar tú. Si construyes agentes en Managed Agents con memoria persistente, mide tu propia tasa de degradación de contexto (longitud media del memory store por sesión, número de entradas contradictorias) durante dos semanas sin Dreams. Activa Dreams con lotes pequeños y mide el delta en cobertura de hechos relevantes y en métricas de tarea downstream. Si el cliente del agente expone outputs auditables (legal, finanzas, soporte regulado), añade un paso humano de revisión del output store antes de promoverlo. El 6x de Harvey es plausible para workflows donde el ruido era el cuello de botella; para casos donde el bottleneck era razonamiento o tool use, el upside será menor.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://platform.claude.com/docs/en/managed-agents/dreams"&gt;https://platform.claude.com/docs/en/managed-agents/dreams&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.mindstudio.ai/blog/claude-dreaming-feature-self-improving-agent-memory"&gt;https://www.mindstudio.ai/blog/claude-dreaming-feature-self-improving-agent-memory&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://claudefa.st/blog/guide/mechanics/auto-dream"&gt;https://claudefa.st/blog/guide/mechanics/auto-dream&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.infoq.com/news/2026/05/code-with-claude/"&gt;https://www.infoq.com/news/2026/05/code-with-claude/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">1d528713-d424-5222-9ce1-eb052675ffb2</guid>
+      <pubDate>Wed, 27 May 2026 06:15:15 +0000</pubDate>
+      <category>ia-generativa</category>
+      <link>https://platform.claude.com/docs/en/managed-agents/dreams</link>
+      <enclosure url="https://i.mscdn.ai/70cbb1ad-08d7-4fdc-ab31-e343780966a6/generated-images/a8de9352-d00a-4fa2-b38d-081eee7ef8f8.png?fm=auto&amp;w=1200&amp;fit=cover" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>
