@@ -12,10 +12,11 @@
   header .nav { font-size: 0.85rem; color: #666; }
   header .nav a { color: #0066cc; text-decoration: none; }
   header .nav a:hover { text-decoration: underline; }
-  article { padding: 1.5rem 0; border-bottom: 1px solid #eee; }
+  h3.day { margin: 2.5rem 0 0.5rem; padding-bottom: 0.4rem; border-bottom: 2px solid #e0e0e0; color: #444; font-size: 1.05rem; font-weight: 600; text-transform: lowercase; letter-spacing: 0.02em; }
+  h3.day:first-of-type { margin-top: 1rem; }
+  article { padding: 1.25rem 0; border-bottom: 1px solid #eee; }
   article:last-child { border-bottom: none; }
   article h2 { margin: 0 0 0.25rem; font-size: 1.3rem; line-height: 1.3; }
-  article .date { color: #999; font-size: 0.85rem; margin-bottom: 0.75rem; }
   article .body img, article .body figure img { max-width: 100%; height: auto; border-radius: 4px; margin: 0.5rem 0; }
   article .body figure { margin: 1rem 0; }
   article .body figure figcaption { font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.25rem; }
@@ -29,12 +30,12 @@
 <body>
   <header>
     <h1>Claude Code y Sistemas de Agentes</h1>
-    <div class="nav"><a href="./">&larr; Volver al inicio</a> &middot; <a href="https://seoutopico.github.io/follow-white-rabbit/white-rabbit-claude-code.xml">Suscribir RSS</a> &middot; 16 entradas</div>
+    <div class="nav"><a href="../">&larr; Inicio</a> &middot; <a href="../archive/">Archivo</a> &middot; <a href="https://seoutopico.github.io/follow-white-rabbit/white-rabbit-claude-code.xml">Suscribir RSS</a> &middot; 16 entradas</div>
     <p style="margin:0.5rem 0 0;color:#666;">Per-topic feed: Claude Code y Sistemas de Agentes</p>
   </header>
+  <h3 class="day">27 de mayo de 2026</h3>
   <article>
     <h2>AWS MCP Server llega a GA con run_script sandboxed y 20+ skills que tu agente no usará sin el rules file</h2>
-    <div class="date">2026-05-27</div>
     <img class="thumb" src="https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2026/04/23/2026-04-23_09-59-16-1024x813.png" alt="">
     <div class="body"><p>El 6 de mayo AWS anunció la disponibilidad general del <strong>AWS MCP Server</strong>, un servidor MCP gestionado que da a los coding agents acceso autenticado a cualquier API de AWS con IAM como guardarraíl. La pregunta que recogen del propio equipo del producto: <em>&laquo;¿cómo le das a un agente acceso real autenticado a AWS sin entregarle las llaves del reino?&raquo;</em>. La respuesta GA tiene tres piezas que vale la pena examinar de cerca, más una trampa que te puede dejar el agente sin usar nada de esto.</p>
 
@@ -90,7 +91,6 @@
   </article>
   <article>
     <h2>MCP 2026-07-28 release candidate: el protocolo se queda sin sesiones y se vuelve plano detrás de un load balancer</h2>
-    <div class="date">2026-05-27</div>
     <img class="thumb" src="https://avatars.githubusercontent.com/u/182288589" alt="">
     <div class="body"><p>El 21 de mayo se cerró el lock del nuevo <strong>MCP 2026-07-28 release candidate</strong>, la primera revisión mayor de la spec desde noviembre. Hasta el 28 de julio (fecha de publicación final) los SDK maintainers y client implementers tienen diez semanas para validar contra cargas reales. El cambio gordo: <em>MCP es ahora stateless a nivel de protocolo</em>. Lo demás se deriva de esa decisión.</p>
 
@@ -155,7 +155,6 @@
   </article>
   <article>
     <h2>Claude Code 2.1.139: agent view, /goal y los hooks aprenden a no romper el turno</h2>
-    <div class="date">2026-05-27</div>
     <img class="thumb" src="https://firebasestorage.googleapis.com/v0/b/joinnextdev.firebasestorage.app/o/blogImages%2FH7beqx1tXc1d0eWPAtRP%2Fclaude-code-21139-agent-view-changes-everything-hero.png?alt=media&amp;token=6c185390-358d-4ce5-aba4-c1db6d05150f" alt="">
     <div class="body"><p>El 11 de mayo Anthropic publicó <strong>Claude Code 2.1.139</strong>, una de las releases con más cambios estructurales del trimestre. Tres novedades merecen atención inmediata porque cambian cómo se opera con varias sesiones a la vez, cómo se delega trabajo largo, y cómo se escriben hooks que no aborten el turno por error.</p>
 
@@ -222,9 +221,9 @@
   <li><a href="https://x.com/ClaudeCodeLog/status/2053913638197416198">https://x.com/ClaudeCodeLog/status/2053913638197416198</a></li>
 </ul></div>
   </article>
+  <h3 class="day">26 de mayo de 2026</h3>
   <article>
     <h2>Claude Code 2.1.149: /usage por categoria y el PowerShell cd que saltaba el sandbox sin que te enteraras</h2>
-    <div class="date">2026-05-26</div>
     <img class="thumb" src="https://docs.anthropic.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fclaude-code-hero.png&amp;w=1920&amp;q=75" alt="">
     <div class="body"><p>La 2.1.149 (22 de mayo) trae dos cosas que vale la pena entender bien: un upgrade al comando <code>/usage</code> que por fin te dice donde se va el presupuesto, y un fix de seguridad en la PowerShell tool que llevaba meses permitiendo escapes silenciosos del workspace.</p>
 
@@ -273,7 +272,6 @@
   </article>
   <article>
     <h2>MCP tunnels y sandboxes self-hosted: Anthropic mueve los agentes dentro del perimetro del cliente</h2>
-    <div class="date">2026-05-26</div>
     <img class="thumb" src="https://storage.ghost.io/c/2a/1b/2a1b1782-8506-4d7d-bf53-ad3fb52e2a0f/content/images/size/w2000/2026/05/claude.com-claude-managed-agents-updates.png" alt="">
     <div class="body"><p>El 19 de mayo en Code with Claude London, Anthropic anuncio dos cambios estructurales para Claude Managed Agents que merecen lectura cuidadosa si construyes agentes para empresa: <strong>self-hosted sandboxes</strong> en beta publica y <strong>MCP tunnels</strong> en research preview. La idea de fondo es trasladar la ejecucion de tools y el acceso a datos privados al lado del cliente, dejando solo la orquestacion en infraestructura de Anthropic.</p>
 
@@ -317,7 +315,6 @@
   </article>
   <article>
     <h2>Claude Code 2.1.129: el bug silencioso que cobraba cache de 1 hora y entregaba 5 minutos</h2>
-    <div class="date">2026-05-26</div>
     <img class="thumb" src="https://docs.anthropic.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fclaude-code-hero.png&amp;w=1920&amp;q=75" alt="">
     <div class="body"><p>Resumen rapido para quien no abrio el changelog estas dos semanas: entre el 4 y el 6 de mayo, Anthropic publico 64 cambios sobre Claude Code en tres releases (2.1.128, 2.1.129, 2.1.131). El mas costoso en sentido literal es un bug de cache que llevaba semanas activo y nadie habia visto.</p>
 
@@ -353,9 +350,9 @@
   <li><a href="https://github.com/anthropics/claude-code/releases">https://github.com/anthropics/claude-code/releases</a></li>
 </ul></div>
   </article>
+  <h3 class="day">4 de mayo de 2026</h3>
   <article>
     <h2>Anatomia de un SKILL.md production-ready: por que tu descripcion importa mas que el contenido</h2>
-    <div class="date">2026-05-04</div>
     <img class="thumb" src="https://cdn.sanity.io/images/4zrzovbb/website/59d8193a6b567be2517480da4d60484a7fb64f21-1788x1024.jpg" alt="">
     <div class="body"><p>El error mas comun cuando empiezas con skills en Claude Code es escribir el SKILL.md como si fuera un README: descripcion bonita arriba, instrucciones detalladas abajo. Y luego te encuentras con que Claude nunca lo invoca solo, o lo invoca cuando no toca, o se le olvida a mitad de sesion. Casi siempre es un problema de como esta escrita la metadata, no del contenido. Aqui van los detalles que la documentacion oficial sepulta a mitad de pagina y que separan un skill que funciona de uno que no.</p>
 
@@ -437,7 +434,6 @@ Resume este PR en 3 bullets...</code></pre>
   </article>
   <article>
     <h2>Claude Code en Windows ya no necesita Git Bash: el viaje de la PowerShell tool en tres releases</h2>
-    <div class="date">2026-05-04</div>
     <img class="thumb" src="https://cdn.sanity.io/images/4zrzovbb/website/59d8193a6b567be2517480da4d60484a7fb64f21-1788x1024.jpg" alt="">
     <div class="body"><p>Si trabajas en Windows con Claude Code, probablemente arrastras alguna cicatriz: paths con barras mezcladas que ningun parser entiende, comandos que pasan por Git Bash y se rompen al tocar el registro, scripts <code>.ps1</code> que fallan por la politica de ejecucion, o el clasico "command not found" cuando el cmdlet existe pero estaba en pwsh y Claude lo intento ejecutar en bash. La <strong>PowerShell tool</strong> nacio para arreglar todo eso, y se ha consolidado en tres releases consecutivos. Hoy ya esta lista para ser tu shell primario.</p>
 
@@ -499,7 +495,6 @@ Resume este PR en 3 bullets...</code></pre>
   </article>
   <article>
     <h2>Cuando usar xhigh en Claude Code: el nuevo nivel de effort de Opus 4.7 y por que es el sweet spot</h2>
-    <div class="date">2026-05-04</div>
     <img class="thumb" src="https://www-cdn.anthropic.com/images/4zrzovbb/website/96ea2509a90e527642c822303e56296a07bcfce4-1920x1080.png" alt="">
     <div class="body"><p>Opus 4.7 trajo un nivel de effort nuevo, <strong>xhigh</strong>, encajado entre <code>high</code> y <code>max</code>. Sobre el papel parece un detalle de configuracion. En la practica es la primera vez en bastante tiempo que Claude Code te da un mando claro para decidir cuanto razonamiento quemar en una tarea concreta — y los numeros publicados sugieren que es el sweet spot para casi todo trabajo agentico serio.</p>
 
@@ -571,7 +566,6 @@ Si CLAUDE_EFFORT es xhigh o max, ademas:
   </article>
   <article>
     <h2>wshobson/agents: 185 subagentes, 80 plugins y una estrategia tri-modelo que vale la pena estudiar</h2>
-    <div class="date">2026-05-04</div>
     <img class="thumb" src="https://opengraph.githubassets.com/1/wshobson/agents" alt="">
     <div class="body"><p>Si estas armando tu propio set de subagentes y te falta inspiracion sobre como organizarlo a escala, vale la pena estudiar <a href="https://github.com/wshobson/agents">wshobson/agents</a>. No es el unico repo de la categoria — VoltAgent y 0xfurai tienen colecciones similares de 100+ subagentes — pero wshobson tomo decisiones arquitectonicas concretas que merecen comentario, especialmente la <strong>estrategia tri-modelo</strong>.</p>
 
@@ -625,7 +619,6 @@ You are a senior backend architect...
   </article>
   <article>
     <h2>Trazado distribuido en Claude Agent SDK: como meter cada subagente y cada Bash en el mismo W3C trace</h2>
-    <div class="date">2026-05-04</div>
     <img class="thumb" src="https://signoz.io/img/blog/2025/11/claude-code-blog-cover.webp" alt="">
     <div class="body"><p>Si llevas tiempo construyendo agentes con el Claude Agent SDK y ya empezaste a tener pipelines reales, tarde o temprano llega la pregunta: <em>¿por que esta sesion concreta tardo 47 segundos?</em> ¿Fue el modelo pensando? ¿Un MCP server lento? ¿Un subagente que se atasco esperando IO? La respuesta era manual: añadir prints, correlacionar timestamps, mirar mal. Eso cambio.</p>
 
@@ -667,7 +660,6 @@ export OTEL_EXPORTER_OTLP_PROTOCOL=grpc</code></pre>
   </article>
   <article>
     <h2>Claude Code 2.1.121: alwaysLoad para MCP, plugin prune y PostToolUse que reescribe el output de cualquier tool</h2>
-    <div class="date">2026-05-04</div>
     <img class="thumb" src="https://github.com/anthropics/claude-code/raw/main/demo.gif" alt="">
     <div class="body"><p>El release del 28 de abril de 2026 venia disfrazado de release de estabilidad — y lo es: cuatro fixes de memory leak importantes, incluyendo un caso donde <code>/usage</code> filtraba hasta 2GB en maquinas con transcripts grandes. Pero debajo del barniz de bugfixes hay tres features de calado para cualquiera que tenga un setup serio con MCP, plugins o hooks.</p>
 
@@ -716,7 +708,6 @@ export OTEL_EXPORTER_OTLP_PROTOCOL=grpc</code></pre>
   </article>
   <article>
     <h2>Claude Managed Agents en beta publica: el harness gestionado para correr Claude como agente autonomo</h2>
-    <div class="date">2026-05-04</div>
     <img class="thumb" src="https://platform.claude.com/docs/og?locale=en&amp;amp;path=managed-agents/overview" alt="">
     <div class="body"><p>El 8 de abril Anthropic publico en beta <strong>Claude Managed Agents</strong>, un harness completamente gestionado para correr Claude como agente autonomo dentro de contenedores en su infraestructura. La idea: en vez de que tu construyas el agent loop, el sandbox y la capa de ejecucion de tools, defines el agente y mandas sesiones por API. Claude orquesta el bucle, ejecuta bash y operaciones de archivo en el container, y te devuelve eventos por SSE.</p>
 
@@ -785,7 +776,6 @@ with client.beta.sessions.events.stream(session.id) as stream:
   </article>
   <article>
     <h2>MCP Apps (SEP-1865): tus servers MCP ahora pueden devolver UI interactiva, no solo texto</h2>
-    <div class="date">2026-05-04</div>
     <img class="thumb" src="https://blog.modelcontextprotocol.io/posts/images/inline-chat-app.png" alt="">
     <div class="body"><p>Hasta ahora un MCP server era una caja que escupia texto: invocas <code>visualize_data</code> y recibes una tabla en markdown que el modelo describe. La extension oficial <strong>MCP Apps</strong>, formalizada como SEP-1865 y ya en produccion, cambia eso: el server puede devolver un dashboard React, un formulario, una grafica interactiva, y el host (Claude, Claude Desktop, ChatGPT, VS Code Insiders, Goose) lo renderiza dentro de un iframe sandboxed en la conversacion. Y la UI puede llamar de vuelta a otras tools del server.</p>
 
@@ -844,7 +834,6 @@ await app.updateModelContext({
   </article>
   <article>
     <h2>Claude Code 2.1.126: arregla las sesiones que morian al dormir el Mac y OAuth sobre SSH</h2>
-    <div class="date">2026-05-04</div>
     <img class="thumb" src="https://blog.modelcontextprotocol.io/posts/images/inline-chat-app.png" alt="">
     <div class="body"><p>El release del 1 de mayo trae 33 cambios concentrados en hardening, no en features brillantes. Si trabajas con Claude Code en remoto, en WSL2 o en un Mac que usas a diario, hay tres arreglos que probablemente justifican actualizar hoy mismo.</p>
 
@@ -879,7 +868,6 @@ claude project purge --all       # borra todos los proyectos
   </article>
   <article>
     <h2>Forked subagents en Claude Code 2.1.117: heredar contexto sin pagar el prompt dos veces</h2>
-    <div class="date">2026-05-04</div>
     <img class="thumb" src="https://anthropic.com/favicon.ico" alt="">
     <div class="body"><p>Si has construido algo con el Claude Agent SDK, conoces el dilema de los subagentes: aíslan contexto (genial), pero arrancan con la conversación en blanco. Cada vez que lanzas tres en paralelo para revisar un PR desde ángulos distintos, los tres pagan el mismo prompt de sistema, las mismas instrucciones del CLAUDE.md, los mismos archivos previos. A 50k tokens compartidos, son 150k tokens facturados a precio completo solo para llegar al primer turno útil.</p><p>La versión <strong>v2.1.117</strong> de Claude Code introdujo una alternativa: los <em>forked subagents</em>. La feature ya estaba en el código pero <em>dead-code-eliminated</em> en releases públicos hasta que se activó este abril. Se habilita con una sola variable de entorno:</p><pre><code>export CLAUDE_CODE_FORK_SUBAGENT=1</code></pre><p>Con eso activo, cuando llamas al Agent tool sin especificar <code>subagent_type</code>, el hijo no nace fresco: hereda <strong>byte por byte</strong> el system prompt del padre (vía <code>override.systemPrompt</code> desde <code>toolUseContext.renderedSystemPrompt</code>), su array de tools (con <code>useExactTools: true</code>, saltándose <code>resolveAgentTools()</code>), y todo el historial de mensajes hasta el momento del fork. Los tool-use blocks del padre se reemplazan por un placeholder constante (<code>FORK_PLACEHOLDER_RESULT</code>) para no contaminar la traza.</p><h3>La economía: cache sharing</h3><p>Lo interesante no es solo la herencia, sino que el fork comparte el prompt cache con la sesión madre. Como esos tokens ya están cacheados, el primer turno del hijo se factura cerca de la tarifa <em>cache-read</em>, alrededor del 10% del precio de input normal en Sonnet. Los números del análisis de Build This Now con 48.500 tokens de prefijo compartido:</p><ul><li>Sin fork, cinco hijos en paralelo: 243.500 tokens facturados (cada uno reconstruye el prefijo)</li><li>Con fork, cinco hijos en paralelo: 68.900 tokens facturados (solo el primer hijo paga retail; los siguientes leen del cache)</li></ul><p>Reducción aproximada de 10x por hijo adicional. No es marketing, es aritmética del cache de Anthropic aplicada al patrón de fan-out que cualquiera con tres subagentes en paralelo ya estaba usando.</p><h3>Cuándo tiene sentido (y cuándo no)</h3><p>El fork rompe el aislamiento de input que era el argumento original de los subagentes. Eso lo hace ideal para:</p><ul><li>Explorar varias soluciones al mismo problema en paralelo desde el mismo punto de partida</li><li>Tareas auxiliares que necesitarían demasiado briefing si arrancaran limpias (revisa este PR teniendo en cuenta los cinco archivos que ya analizamos)</li><li>Workflows donde el padre ya cargó contexto caro (CLAUDE.md grandes, MCP servers con mucho output)</li></ul><p>Pero conviene vigilar varias cosas. Los forks <strong>no pueden anidar</strong>: hay un guard de dos capas que detecta si <code>querySource === 'agent:builtin:fork'</code> o si el historial contiene el tag XML que declara que el agente ES el fork y no debe spawnear sub-agents. Tampoco son compatibles con <code>--print</code> ni con coordinator mode (un coordinador forkeado intenta orquestar en vez de ejecutar). Y el contexto del hijo escala con la longitud de la sesión madre: si tu sesión principal va por 180k tokens, cada fork arranca con 180k tokens en memoria, aunque la mayoría sean cache reads baratos.</p><h3>Encaja con el resume de subagentes</h3><p>Esto se complementa con otra mejora reciente del SDK que muchos pasaron por alto: los subagentes ahora se pueden <strong>reanudar</strong>. La docs oficial muestra el patrón: capturas el <code>session_id</code> del <code>ResultMessage</code>, parseas el <code>agentId</code> del contenido (aparece como <code>agentId: &lt;uuid&gt;</code> en el resultado del Agent tool) y en una segunda <code>query()</code> pasas <code>resume: sessionId</code> con un prompt tipo Resume agent X. El subagente recupera su transcripción completa, no la memoria del padre, su propia historia.</p><p>Combinado, el patrón emergente para sistemas multi-agente serios en el SDK es: <em>fork</em> para fan-out barato cuando los hijos necesitan el contexto del padre, <em>subagentes nombrados con tools restringidos</em> para tareas con límites estrictos de seguridad, y <em>resume</em> para workflows de larga duración donde un revisor especializado vuelve días después.</p><h3>Qué probar y qué vigilar</h3><p>Lo más útil de cara a las próximas semanas: medir cuánto baja realmente la factura de un workflow que ya use Agent SDK con varios hijos en paralelo. La estimación teórica de 10x asume que el prompt cache hace su trabajo, y el cache de Anthropic tiene ventana de 5 minutos por defecto. Si tus subagentes tardan más en arrancar (esperando aprobaciones, locks, etc.), el ahorro se evapora. La feature sigue marcada como experimental en el código, así que <code>v2.1.118</code> en adelante puede cambiar comportamiento. Vale la pena leer las release notes cada semana hasta que salga del flag.</p>
 <hr/>
@@ -890,6 +878,6 @@ claude project purge --all       # borra todos los proyectos
   <li><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md</a></li>
 </ul></div>
   </article>
-  <footer>Generated by <a href="https://ainalluna.com/">ainalluna.com</a> &middot; 2026-05-27 06:18 UTC</footer>
+  <footer>Generated by <a href="https://ainalluna.com/">ainalluna.com</a> &middot; powered by <a href="https://github.com/seoutopico/follow-white-rabbit-plugin">follow-white-rabbit-plugin</a> &middot; 2026-05-27 06:44 UTC</footer>
 </body>
 </html>

@@ -11,10 +11,11 @@
   header .nav { font-size: 0.85rem; color: #666; }
   header .nav a { color: #0066cc; text-decoration: none; }
   header .nav a:hover { text-decoration: underline; }
-  article { padding: 1.5rem 0; border-bottom: 1px solid #eee; }
+  h3.day { margin: 2.5rem 0 0.5rem; padding-bottom: 0.4rem; border-bottom: 2px solid #e0e0e0; color: #444; font-size: 1.05rem; font-weight: 600; text-transform: lowercase; letter-spacing: 0.02em; }
+  h3.day:first-of-type { margin-top: 1rem; }
+  article { padding: 1.25rem 0; border-bottom: 1px solid #eee; }
   article:last-child { border-bottom: none; }
   article h2 { margin: 0 0 0.25rem; font-size: 1.3rem; line-height: 1.3; }
-  article .date { color: #999; font-size: 0.85rem; margin-bottom: 0.75rem; }
   article .body img, article .body figure img { max-width: 100%; height: auto; border-radius: 4px; margin: 0.5rem 0; }
   article .body figure { margin: 1rem 0; }
   article .body figure figcaption { font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.25rem; }
@@ -29,9 +30,9 @@
 <body>
   <header>
     <h1>27 de mayo de 2026</h1>
-    <div class="nav"><a href="archive.html">&larr; Archivo</a> &middot; <a href="./">Inicio</a> &middot; 14 entradas</div>
+    <div class="nav"><a href="./">&larr; Archivo</a> &middot; <a href="../">Inicio</a> &middot; 14 entradas</div>
   </header>
-  <h3 class="topic">Casos de Uso PrÃ¡cticos de IA <span style="color:#999;font-weight:normal;">(3)</span></h3>
+  <h3 class="topic">Casos de Uso Prácticos de IA <span style="color:#999;font-weight:normal;">(3)</span></h3>
   <article>
     <h2>Claude for Small Business: 11 workflows con cifras reales para chasing de facturas y cierre mensual</h2>
     <img class="thumb" src="https://www-cdn.anthropic.com/images/4zrzovbb/website/8b8b97e4751b8167a04ce6c7fb7ad8d240c44ccf-1000x1000.svg" alt="">
@@ -426,7 +427,7 @@
   <li><a href="https://arxiv.org/pdf/2605.06241">https://arxiv.org/pdf/2605.06241</a></li>
 </ul></div>
   </article>
-  <h3 class="topic">ResoluciÃ³n de Problemas Complejos (CPS) <span style="color:#999;font-weight:normal;">(2)</span></h3>
+  <h3 class="topic">Resolución de Problemas Complejos (CPS) <span style="color:#999;font-weight:normal;">(2)</span></h3>
   <article>
     <h2>Estimacion Fermi para system design: como decidir si tu arquitectura aguantara 10x trafico sin escribir codigo</h2>
     <div class="body"><p>Problema arquetipo: el product manager te pregunta si la nueva feature aguantara el pico de Black Friday. Tienes dos opciones malas — decir <em>si</em> y rezar, o pedirte dos semanas para hacer un load test. Hay una tercera, que se ensena en treinta minutos y se aplica en cinco: <strong>estimacion Fermi</strong>.</p><p>La tecnica viene del fisico Enrico Fermi, que estimaba la potencia de la bomba de Trinity dejando caer trozos de papel cuando paso la onda expansiva. La traduccion a software es directa: descompon el problema en factores multiplicativos, redondea agresivamente a potencias de 10, y acepta que el resultado es valido si esta dentro de un orden de magnitud del real.</p><p><strong>Como aplicarla el lunes por la manana:</strong></p><ol><li><strong>Define la metrica</strong> que importa: QPS pico, almacenamiento por dia, ancho de banda salida.</li><li><strong>Descompon en factores</strong>: usuarios activos x acciones por usuario x bytes por accion. Cada factor debe ser estimable de cabeza.</li><li><strong>Memoriza las cifras base</strong> de Jeff Dean (Google): L1 cache 0.5 ns, RAM 100 ns, round-trip dentro del datacenter 500 us, disk seek 10 ms, CA-Holanda-CA 150 ms. Y la tabla de potencias de dos: 2^10 = 1 KB, 2^20 = 1 MB, 2^30 = 1 GB, 2^40 = 1 TB.</li><li><strong>Multiplica con rounding agresivo</strong>. Trafico pico = trafico medio x 2-10 segun el patron de uso (10x si es retail, 2-3x si es SaaS B2B).</li><li><strong>Compara contra capacidad conocida</strong>: una instancia EC2 mediana sirve ~10K QPS de lectura simple, Postgres single-node aguanta ~5K writes/s con tuning.</li><li><strong>Documenta los supuestos</strong>. La cifra final es secundaria; lo importante es que dentro de un mes puedas auditar que asumiste mal.</li></ol><p><strong>Ejemplo real:</strong> el sizing canonico de Twitter de los libros de Alex Xu. 500 M usuarios activos diarios, 10% tuitea una vez al dia = 50 M writes/dia = 580 writes/s de media, ~5,800 writes/s en pico. Cada usuario lee 50 tuits/dia = 25 B reads/dia = 289 K reads/s, ~2.9 M en pico. Con esos numeros decides si Kafka aguanta (si), si necesitas sharding de timelines (si), y si Redis basta para el cache caliente (calcula tu).</p><p>Jason Cohen (fundador de WP Engine) defiende la misma idea aplicada a decisiones de negocio en su <em>ROI rubric</em>: usar escalas de potencias de 10 en lugar de numeros pseudo-precisos. Su argumento es que un score de 7.3 vs 6.8 es ruido — si tu metodo no distingue entre 1, 10 y 100, tu metodo no esta midiendo nada.</p><p><strong>Cuando NO aplica:</strong> sistemas con colas no lineales (lo que aguanta el 95% rompe el 99%), problemas dominados por contencion de locks o por GC pauses, y cualquier cosa donde la varianza importa mas que la media. Para esos casos, Fermi te da un primer filtro — pero el load test sigue siendo obligatorio.</p><p><strong>Siguiente paso si quieres profundizar:</strong> lee los capitulos de back-of-the-envelope de <em>System Design Interview</em> de Alex Xu y memoriza la tabla de Dean. Despues, cada vez que disenes algo, escribe la estimacion antes de tocar codigo y comparala con la realidad cuando despliegues. En seis meses tu calibracion ha mejorado mas que con cualquier curso.</p>
@@ -452,6 +453,6 @@
   <li><a href="https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/">https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/</a></li>
 </ul></div>
   </article>
-  <footer>Generated by <a href="https://ainalluna.com/">ainalluna.com</a> &middot; 2026-05-27 06:18 UTC</footer>
+  <footer>Generated by <a href="https://ainalluna.com/">ainalluna.com</a> &middot; powered by <a href="https://github.com/seoutopico/follow-white-rabbit-plugin">follow-white-rabbit-plugin</a> &middot; 2026-05-27 06:44 UTC</footer>
 </body>
 </html>
