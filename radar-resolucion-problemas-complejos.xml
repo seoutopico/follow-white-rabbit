@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:ns0="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Resolución de Problemas Complejos (CPS)</title>
+    <description>Per-topic feed: Resolución de Problemas Complejos (CPS)</description>
+    <link>https://seoutopico.github.io/follow-white-rabbit/radar-resolucion-problemas-complejos.xml</link>
+    <lastBuildDate>Fri, 29 May 2026 07:53:17 +0000</lastBuildDate>
+    <generator>follow-white-rabbit</generator>
+    <ns0:link rel="self" href="https://seoutopico.github.io/follow-white-rabbit/radar-resolucion-problemas-complejos.xml" type="application/rss+xml" />
+    <item>
+      <title>Deloitte 2026: el 60% de los ejecutivos ya decide con IA, pero solo el 5% lo gestiona bien</title>
+      <description>&lt;p&gt;El informe &lt;strong&gt;Global Human Capital Trends 2026&lt;/strong&gt; de Deloitte, construido sobre las respuestas de 9.000 líderes en 89 países, deja una foto incómoda: el 60% de los ejecutivos usa IA de forma habitual para apoyar sus decisiones, pero solo el 5% de las organizaciones dice gestionar bien ese proceso. Tener el modelo no es lo mismo que decidir mejor.&lt;/p&gt;
+&lt;p&gt;Las cifras dibujan la brecha con precisión. El 57% de las organizaciones opera con una madurez decisional baja y el 72% reconoce que no confía lo suficiente en sus propios datos para decidir. Por si fuera poco, el 85% de los líderes admite haber cuestionado o lamentado decisiones pasadas. La IA, lejos de cerrar esa herida, la amplifica cuando se inyecta en procesos que nunca fueron diseñados de forma explícita.&lt;/p&gt;
+&lt;p&gt;La propuesta de Deloitte es tratar la toma de decisiones como una disciplina estratégica, no como un acto implícito que ocurre en los pasillos. ¿Cómo? Clasificando las decisiones al estilo Amazon —puertas de un solo sentido, irreversibles, frente a puertas de doble sentido, reversibles— y pre-asignando a cada tipo sus propietarios, sus datos y sus guardarraíles. Una decisión reversible puede delegarse en un agente; una irreversible necesita criterio humano y gobernanza desde el consejo.&lt;/p&gt;
+&lt;p&gt;El dato que más interpela: solo el 40% de las organizaciones diseña la IA pensando también en resultados humanos, no únicamente de negocio. Y la confianza pesa: los trabajadores que confían en los agentes de IA tienen diez veces más probabilidades de verlos como generadores de valor. La adopción técnica sin trabajo de confianza se queda a medias.&lt;/p&gt;
+&lt;p&gt;El horizonte presiona. Gartner proyecta que para 2027 la mitad de las decisiones de negocio estarán aumentadas o automatizadas por agentes de IA. Eso convierte el marco de madurez decisional en algo urgente, no aspiracional.&lt;/p&gt;
+&lt;p&gt;¿Qué aplicar ya? Antes de automatizar nada, mapea tus decisiones recurrentes y sepáralas por reversibilidad. Dinamiza los modelos RACI para que reflejen quién decide y con qué datos, y lleva la gobernanza de IA a la agenda del consejo. El framework es directamente accionable en organizaciones medianas y grandes: no exige más tecnología, exige decidir cómo se decide.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.deloitte.com/us/en/insights/topics/talent/human-capital-trends/2026/decision-making-with-ai.html"&gt;https://www.deloitte.com/us/en/insights/topics/talent/human-capital-trends/2026/decision-making-with-ai.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">252eccd5-0402-5eb9-8c7c-b7d37d3ec12b</guid>
+      <pubDate>Fri, 29 May 2026 07:52:38 +0000</pubDate>
+      <category>resolucion-problemas-complejos</category>
+      <link>https://www.deloitte.com/us/en/insights/topics/talent/human-capital-trends/2026/decision-making-with-ai.html</link>
+      <enclosure url="https://media.deloitte.com/is/image/null:1200-x-627" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Cuatro paradigmas para decidir con IA: el mapa que faltaba en la colaboración humano-máquina</title>
+      <description>&lt;p&gt;Una revisión sistemática publicada en 2026 en &lt;em&gt;Group Decision and Negotiation&lt;/em&gt; (Springer Nature) hace lo que pocos trabajos sobre IA y decisiones se atreven a hacer: ordenar el campo. Tras analizar 627 artículos académicos sobre colaboración humano-IA en la toma de decisiones, sus autores proponen un marco integrador con cuatro paradigmas. El diagnóstico de partida es honesto: la literatura está avanzada pero fragmentada, y apenas existen modelos que expliquen cómo la interacción continua entre persona y máquina moldea el resultado.&lt;/p&gt;
+&lt;p&gt;Los cuatro paradigmas se ordenan según dos ejes: el tipo de decisión y la dinámica de la colaboración. Están las decisiones &lt;strong&gt;adaptativas-intuitivas&lt;/strong&gt;, las algorítmicas-programadas, las analíticas-interpretativas y las híbridas-integradoras. No es una taxonomía decorativa: cada cuadrante implica un reparto distinto de quién aporta qué. En las programadas, el algoritmo lleva el peso; en las intuitivas, el juicio humano manda y la IA acompaña.&lt;/p&gt;
+&lt;p&gt;La idea más fina del trabajo es que la comprensión del problema y la formación del juicio no salen de la IA en solitario, sino que emergen de ese ida y vuelta sostenido entre humano y sistema. Decidir bien con IA no es elegir entre confiar o no confiar en el modelo; es diseñar la conversación entre ambos según el problema que tienes delante.&lt;/p&gt;
+&lt;p&gt;¿Por qué le importa esto a un equipo real? Porque ofrece el primer marco riguroso que supera el binario «usar IA o no usarla» y obliga a una pregunta más útil: qué tipo de decisión tengo entre manos y qué forma de colaboración le encaja. Un equipo que automatiza una decisión analítica como si fuera programada se llevará sorpresas; uno que somete una decisión intuitiva a un algoritmo rígido, también.&lt;/p&gt;
+&lt;p&gt;El marco enlaza de forma natural con las recomendaciones prácticas de Deloitte sobre madurez decisional que recogíamos hoy mismo: antes de automatizar una decisión, primero clasifícala. La revisión académica aporta la teoría que sostiene ese consejo. Para equipos que quieren diseñar sus procesos con IA de forma deliberada, y no reactiva, es un punto de partida sólido: sitúa cada decisión en su cuadrante antes de repartir el trabajo entre las personas y los modelos.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://link.springer.com/article/10.1007/s10726-026-09980-1"&gt;https://link.springer.com/article/10.1007/s10726-026-09980-1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">2b9e14a5-672c-555a-beef-1497469749d2</guid>
+      <pubDate>Fri, 29 May 2026 07:53:06 +0000</pubDate>
+      <category>resolucion-problemas-complejos</category>
+      <link>https://link.springer.com/article/10.1007/s10726-026-09980-1</link>
+    </item>
+    <item>
+      <title>Soft Systems Methodology: el framework de los 80 que vuelve para problemas sin solución única</title>
+      <description>&lt;p&gt;No todos los problemas complejos son técnicos. Algunos son «blandos»: humanos, políticos, ambiguos, con actores que ven la misma situación de formas irreconciliables. Para esos, un método de los años 70 y 80 vive una segunda juventud en 2026. La &lt;strong&gt;Soft Systems Methodology&lt;/strong&gt; (SSM) de Peter Checkland vuelve a la conversación sobre &lt;em&gt;wicked problems&lt;/em&gt;, esos retos donde no hay una solución correcta esperando a ser encontrada.&lt;/p&gt;
+&lt;p&gt;Un artículo publicado en febrero de 2026 en el blog de la Society for Research into Higher Education documenta su aplicación en entornos académicos y organizacionales. La premisa de SSM es casi una declaración de humildad: cuando hay múltiples actores en juego, no existe una solución única para todos. En lugar de saltar a la solución, el método estructura el problema en siete etapas y obliga a mirarlo desde las perspectivas de todos los implicados.&lt;/p&gt;
+&lt;p&gt;Su herramienta más reconocible es la &lt;em&gt;rich picture&lt;/em&gt;: un mapa visual de la situación donde se dibujan actores, relaciones de poder, tensiones e intereses antes de proponer nada. Suena sencillo, y ahí está la gracia. Cualquier equipo bloqueado por visiones contradictorias puede empezar hoy mismo con una pizarra y unos rotuladores. El método contrasta después el mundo real con modelos ideales para abrir el debate, no para cerrarlo de un martillazo.&lt;/p&gt;
+&lt;p&gt;El alcance es amplio. SSM se ha aplicado a vivienda para refugiados, reforma educativa, integración sanitaria y planificación corporativa en contextos de alta incertidumbre. Una revisión de 2025 en Springer documenta su expansión hacia nuevos dominios: tecnologías de la era de la información, sector público, análisis de políticas y turismo.&lt;/p&gt;
+&lt;p&gt;¿Por qué resurge justo ahora? Porque mientras muchas organizaciones buscan en la IA o en las herramientas digitales la respuesta a sus problemas complejos, SSM recuerda algo incómodo: la complejidad organizacional supera a menudo lo que un algoritmo puede resolver solo. Cuando el bloqueo no es de datos sino de perspectivas enfrentadas, ningún modelo lo desatasca por ti. La buena noticia es que SSM no pide presupuesto ni infraestructura: pide tiempo, honestidad sobre quién quiere qué, y una rich picture bien hecha antes de pasar a las soluciones.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://srheblog.com/2026/02/24/what-how-and-why-can-we-understand-complex-ambiguous-problems-through-the-lens-of-soft-systems-methodology/"&gt;https://srheblog.com/2026/02/24/what-how-and-why-can-we-understand-complex-ambiguous-problems-through-the-lens-of-soft-systems-methodology/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">40e3cf52-1aca-5f26-bc3c-a10dead32f69</guid>
+      <pubDate>Fri, 29 May 2026 07:53:17 +0000</pubDate>
+      <category>resolucion-problemas-complejos</category>
+      <link>https://srheblog.com/2026/02/24/what-how-and-why-can-we-understand-complex-ambiguous-problems-through-the-lens-of-soft-systems-methodology/</link>
+    </item>
+  </channel>
+</rss>

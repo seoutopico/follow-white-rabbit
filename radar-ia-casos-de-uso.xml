@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:ns0="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Casos de uso de IA</title>
+    <description>Per-topic feed: Casos de uso de IA</description>
+    <link>https://seoutopico.github.io/follow-white-rabbit/radar-ia-casos-de-uso.xml</link>
+    <lastBuildDate>Fri, 29 May 2026 07:52:01 +0000</lastBuildDate>
+    <generator>follow-white-rabbit</generator>
+    <ns0:link rel="self" href="https://seoutopico.github.io/follow-white-rabbit/radar-ia-casos-de-uso.xml" type="application/rss+xml" />
+    <item>
+      <title>KPMG integra Claude en Digital Gateway para sus 276.000 empleados</title>
+      <description>&lt;p&gt;El 19 de mayo de 2026, KPMG y Anthropic firmaron una alianza estratégica que pone a Claude en manos de los &lt;strong&gt;276.000 empleados&lt;/strong&gt; de la consultora en 138 países. No es un piloto ni una herramienta opcional: Claude se integra en Digital Gateway, la plataforma sobre la que cada profesional de KPMG ya gestiona sus encargos de cliente. Eso cambia la naturaleza del despliegue, porque la IA deja de ser una app aparte para vivir dentro del flujo de trabajo diario.&lt;/p&gt;
+
+&lt;p&gt;La integración trae dos piezas concretas: Claude Cowork y los Managed Agents, embebidos directamente en los procesos de cliente. El primer resultado cuantificado del comunicado es revelador: construir un agente capaz de ajustar la fiscalidad a regulaciones cambiantes pasó de &lt;strong&gt;semanas a minutos&lt;/strong&gt;. Ahí está el valor real, en acelerar el trabajo experto y complejo, no en automatizar tareas repetitivas. Los casos de uso iniciales se concentran en cuatro áreas: fiscalidad, private equity, legal y ciberseguridad.&lt;/p&gt;
+
+&lt;p&gt;KPMG queda además designada como partner preferente de Anthropic para despliegues en private equity, una señal de hacia dónde apuntan ambas compañías. La implementación completa sobre Azure está prevista para septiembre de 2026, así que durante los próximos meses conviven la fase de adopción y la de integración técnica.&lt;/p&gt;
+
+&lt;p&gt;¿Por qué importa más allá del titular? Por volumen y por contexto competitivo. Es uno de los mayores despliegues de un modelo generativo medido en usuarios corporativos reales. Con este movimiento, tres de las cuatro Big Four —KPMG, Deloitte y PwC— operan ya con Claude dentro de su maquinaria. La consultoría, un sector que vende horas de conocimiento experto, se está reorganizando alrededor de agentes que comprimen ese conocimiento en minutos.&lt;/p&gt;
+
+&lt;p&gt;Lo que conviene vigilar: el comunicado solo ofrece un dato medible, el del agente fiscal. El resto son intenciones de despliegue. La prueba real llegará cuando se publiquen métricas de adopción entre esos 276.000 profesionales y de impacto en los encargos, no solo cifras de disponibilidad de la herramienta.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.anthropic.com/news/anthropic-kpmg"&gt;https://www.anthropic.com/news/anthropic-kpmg&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://kpmg.com/xx/en/media/press-releases/2026/05/kpmg-and-anthropic-sign-global-alliance-and-launch-digital-gateway-powered-by-claude.html"&gt;https://kpmg.com/xx/en/media/press-releases/2026/05/kpmg-and-anthropic-sign-global-alliance-and-launch-digital-gateway-powered-by-claude.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://letsdatascience.com/news/kpmg-deploys-claude-ai-across-global-digital-gateway-0a92a4cc"&gt;https://letsdatascience.com/news/kpmg-deploys-claude-ai-across-global-digital-gateway-0a92a4cc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">d0ee33d1-59e8-54a2-b0fc-62fa2b7f1750</guid>
+      <pubDate>Fri, 29 May 2026 07:51:18 +0000</pubDate>
+      <category>ia-casos-de-uso</category>
+      <link>https://www.anthropic.com/news/anthropic-kpmg</link>
+      <enclosure url="https://www-cdn.anthropic.com/images/4zrzovbb/website/6905c83d0735e1bc430025fdd1748d1406079036-1000x1000.svg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>IA que cobra mejor que el call center: el caso de Colektia con Santander</title>
+      <description>&lt;p&gt;El recobro de deuda temprana —esos primeros días tras un impago— ha sido siempre territorio del call center: llamadas, recordatorios y mucha capacidad humana fija. Colektia decidió automatizar esa ventana, los días 0 a 15, con un agente de IA, y lo midió contra el método tradicional en un piloto con Banco Santander.&lt;/p&gt;
+
+&lt;p&gt;El diseño del agente es lo interesante. No se limita a enviar recordatorios: percibe el historial crediticio de cada cuenta, decide el canal de contacto más adecuado y ejecuta las comunicaciones &lt;strong&gt;sin intervención humana&lt;/strong&gt;. Opera 24/7 y gestiona miles de cuentas en paralelo, frente a la capacidad limitada y por turnos de un equipo de cobranza.&lt;/p&gt;
+
+&lt;p&gt;Los resultados del piloto —12.000 cuentas durante tres meses— son los que elevan este caso por encima del marketing habitual. El agente logró una &lt;strong&gt;tasa de contención del 78%, frente al 75% del equipo humano&lt;/strong&gt;, y a un coste de gestión 3,6 veces menor. Durante la prueba sumó más de 25.000 dólares en recuperación adicional. La implementación tardó unas tres semanas y los resultados empezaron a ser medibles desde la semana ocho.&lt;/p&gt;
+
+&lt;p&gt;El detalle que importa no es que el agente sea eficiente, sino que supera a las personas en una tarea de decisión —no solo de ejecución— y validado contra un grupo de control. Decidir qué canal usar, qué mensaje y cuándo contactar son juicios que tradicionalmente requerían experiencia humana. Aquí los toma el sistema, y con mejor tasa de éxito.&lt;/p&gt;
+
+&lt;p&gt;La cautela razonable: un piloto de 12.000 cuentas en un único banco no es producción a escala, y la contención temprana es el tramo más fácil del recobro. Lo que sí deja este caso es algo poco común en las historias de IA empresarial: un experimento con grupo de control y cifras comparables. Habrá que seguir si esos números aguantan cuando el agente pase de las primeras quincenas a la deuda más antigua y difícil.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://colektia.com/blog/agente-ia-servicios-financieros"&gt;https://colektia.com/blog/agente-ia-servicios-financieros&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://virtualworkforce.ai/es/agentes-de-ia-para-servicios-financieros/"&gt;https://virtualworkforce.ai/es/agentes-de-ia-para-servicios-financieros/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://ecosistemastartup.com/ia-en-finanzas-2026-68-de-empresas-ya-la-adoptan/"&gt;https://ecosistemastartup.com/ia-en-finanzas-2026-68-de-empresas-ya-la-adoptan/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">8e0feaa7-94f0-58a8-bffe-e0f3765458a7</guid>
+      <pubDate>Fri, 29 May 2026 07:52:00 +0000</pubDate>
+      <category>ia-casos-de-uso</category>
+      <link>https://colektia.com/blog/agente-ia-servicios-financieros</link>
+      <enclosure url="https://cdn.prod.website-files.com/5e67f74a495c76eb16065e0a/689b7976ae8d5275077f3428_Frame%201000003553.png" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>El 93% de devs usa IA pero la productividad de equipo solo sube un 10%</title>
+      <description>&lt;p&gt;El 93% de los desarrolladores profesionales ya usa asistentes de codificación con IA. Y, sin embargo, la productividad real de sus equipos solo ha subido alrededor de un 10%. Ese desajuste, presentado en el Pragmatic Summit, es la nueva paradoja de la productividad del software.&lt;/p&gt;
+
+&lt;p&gt;Los datos de adopción no dejan dudas sobre la difusión de la herramienta: GitHub Copilot alcanzó &lt;strong&gt;4,7 millones de suscriptores de pago&lt;/strong&gt; en enero de 2026, un crecimiento cercano al 75% interanual, y aproximadamente el 27% del código que llega a producción lo genera una IA. A nivel individual el efecto es enorme: completar una tarea concreta es hasta un 55% más rápido.&lt;/p&gt;
+
+&lt;p&gt;El problema es que esa ganancia individual no se traslada al equipo. ¿Por qué se evapora por el camino? Porque la IA amplifica lo que ya existe. Un equipo con deuda técnica acumulada o procesos deficientes no se cura escribiendo código más rápido: produce más código mediocre en menos tiempo, y la propia deuda técnica que genera el código de IA se cita como una de las causas del estancamiento.&lt;/p&gt;
+
+&lt;p&gt;Quien haya vivido otras oleadas tecnológicas reconocerá el patrón. Es la paradoja de Solow de los años noventa —vemos ordenadores por todas partes menos en las estadísticas de productividad— repetida con la IA generativa. La tecnología se difunde rápido; los indicadores agregados tardan en moverse, si es que se mueven.&lt;/p&gt;
+
+&lt;p&gt;La lección práctica es para cualquier empresa que esté midiendo el retorno de sus herramientas de IA. Medir la adopción —cuántos developers tienen Copilot— no dice nada sobre el resultado de negocio. Acelerar la escritura de código sobre un proceso roto no arregla el proceso: lo escala. Antes de celebrar el 93% de adopción, la pregunta útil es si el cuello de botella del equipo estaba en teclear código o en revisarlo, integrarlo y mantenerlo.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://ecosistemastartup.com/93-de-desarrolladores-usan-ia-pero-productividad-sube-solo-10/"&gt;https://ecosistemastartup.com/93-de-desarrolladores-usan-ia-pero-productividad-sube-solo-10/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://shiftmag.dev/this-cto-says-93-of-developers-use-ai-but-productivity-is-still-10-8013/"&gt;https://shiftmag.dev/this-cto-says-93-of-developers-use-ai-but-productivity-is-still-10-8013/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://almcorp.com/blog/ai-in-software-development/"&gt;https://almcorp.com/blog/ai-in-software-development/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">276c0a43-1740-5d60-b2b2-5ae12278c4f3</guid>
+      <pubDate>Fri, 29 May 2026 07:52:01 +0000</pubDate>
+      <category>ia-casos-de-uso</category>
+      <link>https://ecosistemastartup.com/93-de-desarrolladores-usan-ia-pero-productividad-sube-solo-10/</link>
+      <enclosure url="https://ecosistemastartup.com/wp-content/uploads/2026/02/93-porciento-desarrolladores-ia-productividad-baja-scaled.jpg" type="image/jpeg" length="0" />
+    </item>
+  </channel>
+</rss>

@@ -2,16 +2,14 @@
 <opml version="2.0">
   <head>
     <title>RSS Research Feeds</title>
-    <dateCreated>Wed, 27 May 2026 06:44:07 +0000</dateCreated>
+    <dateCreated>Fri, 29 May 2026 08:04:10 +0000</dateCreated>
   </head>
   <body>
-    <outline text="Follow the White Rabbit" title="Follow the White Rabbit">
-      <outline type="rss" text="Follow the White Rabbit (All)" title="Follow the White Rabbit (All)" xmlUrl="https://seoutopico.github.io/follow-white-rabbit/white-rabbit.xml" htmlUrl="https://seoutopico.github.io/follow-white-rabbit" />
-      <outline type="rss" text="Claude Code y Sistemas de Agentes" title="Claude Code y Sistemas de Agentes" xmlUrl="https://seoutopico.github.io/follow-white-rabbit/white-rabbit-claude-code.xml" htmlUrl="https://seoutopico.github.io/follow-white-rabbit" />
-      <outline type="rss" text="IA Generativa" title="IA Generativa" xmlUrl="https://seoutopico.github.io/follow-white-rabbit/white-rabbit-ia-generativa.xml" htmlUrl="https://seoutopico.github.io/follow-white-rabbit" />
-      <outline type="rss" text="Papers Importantes de IA" title="Papers Importantes de IA" xmlUrl="https://seoutopico.github.io/follow-white-rabbit/white-rabbit-papers-ia.xml" htmlUrl="https://seoutopico.github.io/follow-white-rabbit" />
-      <outline type="rss" text="Resolución de Problemas Complejos (CPS)" title="Resolución de Problemas Complejos (CPS)" xmlUrl="https://seoutopico.github.io/follow-white-rabbit/white-rabbit-cps.xml" htmlUrl="https://seoutopico.github.io/follow-white-rabbit" />
-      <outline type="rss" text="Casos de Uso Prácticos de IA" title="Casos de Uso Prácticos de IA" xmlUrl="https://seoutopico.github.io/follow-white-rabbit/white-rabbit-casos-uso-ia.xml" htmlUrl="https://seoutopico.github.io/follow-white-rabbit" />
+    <outline text="Radar" title="Radar">
+      <outline type="rss" text="Radar (All)" title="Radar (All)" xmlUrl="https://seoutopico.github.io/follow-white-rabbit/radar.xml" htmlUrl="https://seoutopico.github.io/follow-white-rabbit" />
+      <outline type="rss" text="SEO y ranking de Google en la era de los LLMs" title="SEO y ranking de Google en la era de los LLMs" xmlUrl="https://seoutopico.github.io/follow-white-rabbit/radar-seo-llm-ranking.xml" htmlUrl="https://seoutopico.github.io/follow-white-rabbit" />
+      <outline type="rss" text="Resolución de Problemas Complejos (CPS)" title="Resolución de Problemas Complejos (CPS)" xmlUrl="https://seoutopico.github.io/follow-white-rabbit/radar-resolucion-problemas-complejos.xml" htmlUrl="https://seoutopico.github.io/follow-white-rabbit" />
+      <outline type="rss" text="Casos de uso de IA" title="Casos de uso de IA" xmlUrl="https://seoutopico.github.io/follow-white-rabbit/radar-ia-casos-de-uso.xml" htmlUrl="https://seoutopico.github.io/follow-white-rabbit" />
     </outline>
   </body>
 </opml>

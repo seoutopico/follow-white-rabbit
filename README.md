@@ -1,6 +1,6 @@
 # Feeds publicados por follow-white-rabbit
 
-Briefings diarios de investigación generados automáticamente y publicados en este repositorio (rama `gh-pages`). Última generación: **2026-05-27 06:44 UTC**.
+Briefings diarios de investigación generados automáticamente y publicados en este repositorio (rama `gh-pages`). Última generación: **2026-05-29 08:04 UTC**.
 
 **Web pública:** <https://seoutopico.github.io/follow-white-rabbit/>
 **Archivo histórico:** <https://seoutopico.github.io/follow-white-rabbit/archive/>
@@ -11,17 +11,13 @@ Pega cualquiera de estas URLs en tu lector de RSS (Feedly, Inoreader, Reeder, Ne
 
 - **OPML (importar todo)**: <https://seoutopico.github.io/follow-white-rabbit/index.opml>
 
-### Follow the White Rabbit
+### Radar
 
-Briefings diarios de IA generativa, Claude Code, papers, CPS y casos de uso prácticos.
-
-- **Feed combinado (todos los topics)**: <https://seoutopico.github.io/follow-white-rabbit/white-rabbit.xml> — [versión web](https://seoutopico.github.io/follow-white-rabbit/topics/white-rabbit.html)
+- **Feed combinado (todos los topics)**: <https://seoutopico.github.io/follow-white-rabbit/radar.xml> — [versión web](https://seoutopico.github.io/follow-white-rabbit/topics/radar.html)
 - **Feeds por topic:**
-    - Claude Code y Sistemas de Agentes: <https://seoutopico.github.io/follow-white-rabbit/white-rabbit-claude-code.xml> — [web](https://seoutopico.github.io/follow-white-rabbit/topics/white-rabbit-claude-code.html)
-    - IA Generativa: <https://seoutopico.github.io/follow-white-rabbit/white-rabbit-ia-generativa.xml> — [web](https://seoutopico.github.io/follow-white-rabbit/topics/white-rabbit-ia-generativa.html)
-    - Papers Importantes de IA: <https://seoutopico.github.io/follow-white-rabbit/white-rabbit-papers-ia.xml> — [web](https://seoutopico.github.io/follow-white-rabbit/topics/white-rabbit-papers-ia.html)
-    - Resolución de Problemas Complejos (CPS): <https://seoutopico.github.io/follow-white-rabbit/white-rabbit-cps.xml> — [web](https://seoutopico.github.io/follow-white-rabbit/topics/white-rabbit-cps.html)
-    - Casos de Uso Prácticos de IA: <https://seoutopico.github.io/follow-white-rabbit/white-rabbit-casos-uso-ia.xml> — [web](https://seoutopico.github.io/follow-white-rabbit/topics/white-rabbit-casos-uso-ia.html)
+    - SEO y ranking de Google en la era de los LLMs: <https://seoutopico.github.io/follow-white-rabbit/radar-seo-llm-ranking.xml> — [web](https://seoutopico.github.io/follow-white-rabbit/topics/radar-seo-llm-ranking.html)
+    - Resolución de Problemas Complejos (CPS): <https://seoutopico.github.io/follow-white-rabbit/radar-resolucion-problemas-complejos.xml> — [web](https://seoutopico.github.io/follow-white-rabbit/topics/radar-resolucion-problemas-complejos.html)
+    - Casos de uso de IA: <https://seoutopico.github.io/follow-white-rabbit/radar-ia-casos-de-uso.xml> — [web](https://seoutopico.github.io/follow-white-rabbit/topics/radar-ia-casos-de-uso.html)
 
 ## Cómo se genera esto
 

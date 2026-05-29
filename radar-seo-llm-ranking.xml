@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:ns0="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>SEO y ranking de Google en la era de los LLMs</title>
+    <description>Per-topic feed: SEO y ranking de Google en la era de los LLMs</description>
+    <link>https://seoutopico.github.io/follow-white-rabbit/radar-seo-llm-ranking.xml</link>
+    <lastBuildDate>Fri, 29 May 2026 07:52:25 +0000</lastBuildDate>
+    <generator>follow-white-rabbit</generator>
+    <ns0:link rel="self" href="https://seoutopico.github.io/follow-white-rabbit/radar-seo-llm-ranking.xml" type="application/rss+xml" />
+    <item>
+      <title>Los AI Overviews ya se quedan con el 58% de los clics que antes llegaban a tu web</title>
+      <description>&lt;p&gt;El estudio más citado hasta la fecha para medir el daño real de los AI Overviews acaba de poner cifras al miedo de todo editor. Ahrefs analizó &lt;strong&gt;300.000 keywords&lt;/strong&gt; cruzando datos de Google Search Console y el resultado es contundente: cuando aparece un AI Overview, el CTR orgánico general cae un 61% (del 1,76% al 0,61%). Para la posición 1, ese codiciado primer puesto, el CTR baja del 3,73% al 1,57%.&lt;/p&gt;&lt;p&gt;Lo inquietante no es solo el dato, sino la velocidad. En abril de 2025 el recorte de clics era del 34,5%; en diciembre de 2025 ya llegaba al &lt;strong&gt;58%&lt;/strong&gt;. En menos de un año el problema casi se ha duplicado, y la lógica detrás es sencilla: cuantas más búsquedas activan un AI Overview, más tráfico se queda en la propia página de resultados. Google confirmó en el I/O del 19 de mayo de 2026, por boca de Sundar Pichai, que ya hay 2.500 millones de usuarios mensuales con AI Overviews activos.&lt;/p&gt;&lt;p&gt;Los datos de terceros apuntan en la misma dirección: Business Insider reportó un -55% de tráfico y Forbes un -50%. No son outliers, son la nueva normalidad para el contenido informacional, justo el tipo de consulta que la IA resuelve sin necesidad de que hagas clic.&lt;/p&gt;&lt;p&gt;El conflicto ha saltado además a los tribunales. En febrero de 2026, Penske Media Corporation (editora de Rolling Stone y Variety, entre otras) presentó evidencia judicial que acusa a Google de &lt;em&gt;canibalizar&lt;/em&gt; el tráfico editorial mediante los AI Overviews. Es la primera vez que un grupo editorial de peso lleva esta cuestión a una demanda antimonopolio con números encima de la mesa.&lt;/p&gt;&lt;p&gt;¿Qué vigilar? Primero, si la curva se estabiliza o sigue subiendo durante 2026: si pasa del 58% al 70%, el modelo de tráfico informacional gratuito deja de ser viable para muchos medios. Segundo, el desenlace del caso Penske, que puede marcar el límite legal de lo que Google puede hacer con el contenido ajeno. Y tercero, un cambio de enfoque ineludible: el contenido puramente informacional y resumible es el más expuesto, mientras que el que aporta criterio, datos propios o experiencia de primera mano sigue generando clics porque la IA no lo puede replicar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://ecosistemastartup.com/google-ai-overviews-58-clicks-en-2026-y-como-proteger-tu-startup/"&gt;https://ecosistemastartup.com/google-ai-overviews-58-clicks-en-2026-y-como-proteger-tu-startup/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.medianama.com/2026/02/223-google-ai-overviews-click-through-rates-58-study/"&gt;https://www.medianama.com/2026/02/223-google-ai-overviews-click-through-rates-58-study/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://thenextweb.com/news/google-ai-overviews-publisher-links-search-traffic"&gt;https://thenextweb.com/news/google-ai-overviews-publisher-links-search-traffic&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://almcorp.com/blog/google-ai-overviews-publisher-traffic-decline-antitrust-lawsuit-analysis/"&gt;https://almcorp.com/blog/google-ai-overviews-publisher-traffic-decline-antitrust-lawsuit-analysis/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">716ecf8e-c183-5761-b507-4f35ac0136a6</guid>
+      <pubDate>Fri, 29 May 2026 07:51:28 +0000</pubDate>
+      <category>seo-llm-ranking</category>
+      <link>https://ecosistemastartup.com/google-ai-overviews-58-clicks-en-2026-y-como-proteger-tu-startup/</link>
+      <enclosure url="https://ecosistemastartup.com/wp-content/uploads/2026/05/google-ai-overviews-trafico-organico-startup-scaled.jpg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Google I/O 2026: AI Mode rompe el vínculo entre rankear bien y ser citado</title>
+      <description>&lt;p&gt;Durante años la ecuación fue simple: si rankeabas en el Top 10, Google te mostraba. Ese vínculo se está rompiendo. En el Google I/O del 19 de mayo de 2026, la compañía consolidó &lt;strong&gt;AI Mode&lt;/strong&gt;, su buscador conversacional impulsado por Gemini 3.5 Flash, que ha alcanzado 1.000 millones de usuarios mensuales en su primer año y duplica consultas cada trimestre.&lt;/p&gt;&lt;p&gt;El dato que mejor retrata el cambio viene de Discovered Labs: las citas que AI Mode toma del Top 10 de resultados orgánicos cayeron del &lt;strong&gt;76% a mediados de 2025 al 38% a principios de 2026&lt;/strong&gt;. Dicho de otro modo, más de la mitad de las fuentes que cita la IA hoy salen de páginas que ni siquiera están en la primera página de Google. Posicionar bien ya no garantiza ser la fuente de la respuesta.&lt;/p&gt;&lt;p&gt;AI Mode también cambia el tipo de consulta que recibe. Acepta entradas multimodales (imágenes, archivos y pestañas del navegador) y la longitud media de las preguntas se ha triplicado respecto al buscador clásico. La gente ya no escribe &lt;em&gt;zapatillas running baratas&lt;/em&gt;, sino párrafos enteros describiendo su caso. Eso premia al contenido que responde preguntas concretas y profundas, no al que repite keywords.&lt;/p&gt;&lt;p&gt;Como contrapeso, el May 2026 Core Update arrancó el 21 de mayo y puede tardar hasta dos semanas en desplegarse del todo. No es casualidad que coincida con el I/O: Google refuerza a la vez las señales clásicas de calidad y el nuevo paradigma de visibilidad en IA. El update prioriza autoridad temática, E-E-A-T y contenido original frente al material parafraseado por IA, que es precisamente lo que más ha proliferado.&lt;/p&gt;&lt;p&gt;La conclusión práctica es incómoda pero clara: hace falta una estrategia doble. Por un lado, seguir optimizando para los rankings tradicionales, porque siguen importando. Por otro, optimizar para ser citado como fuente dentro de AI Mode, lo que pasa por contenido original, datos propios y una marca con autoridad reconocible. ¿Qué vigilar? El despliegue completo del Core Update y sus ganadores y perdedores, y si la cifra de Discovered Labs sigue cayendo: si las citas del Top 10 bajan del 38%, el SEO clásico y la visibilidad en IA se habrán convertido en dos juegos casi independientes.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://aeoengine.ai/podcast/google-io-2026-ai-mode-rewrites-search-visibility"&gt;https://aeoengine.ai/podcast/google-io-2026-ai-mode-rewrites-search-visibility&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://ecosistemastartup.com/google-i-o-2026-5-cambios-en-search-que-afectan-tu-seo/"&gt;https://ecosistemastartup.com/google-i-o-2026-5-cambios-en-search-que-afectan-tu-seo/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://orangemonke.com/blogs/google-may-2026-core-update/"&gt;https://orangemonke.com/blogs/google-may-2026-core-update/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.searchenginejournal.com/seo-pulse-google-launches-core-update-amid-i-o-ai-search-overhaul/575676/"&gt;https://www.searchenginejournal.com/seo-pulse-google-launches-core-update-amid-i-o-ai-search-overhaul/575676/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">ac780778-1e86-55f8-b14f-bb1e691df9fe</guid>
+      <pubDate>Fri, 29 May 2026 07:51:53 +0000</pubDate>
+      <category>seo-llm-ranking</category>
+      <link>https://aeoengine.ai/podcast/google-io-2026-ai-mode-rewrites-search-visibility</link>
+      <enclosure url="https://ecosistemastartup.com/wp-content/uploads/2026/05/google-io-2026-seo-estrategia-scaled.jpg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>LLM Perception Drift: la métrica que mide si los modelos te citan bien o te están olvidando</title>
+      <description>&lt;p&gt;Puedes mantener intactos tus rankings en Google y, aun así, estar perdiendo terreno donde cada vez más se decide la compra: en cómo ChatGPT, Gemini o Perplexity hablan de tu marca. Para medir exactamente eso, Jordan Koene (CEO de Previsible) propuso en Search Engine Land, el 8 de diciembre de 2025, una métrica nueva: el &lt;strong&gt;LLM Perception Drift&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;El concepto mide el cambio mensual en cómo los modelos de IA referencian y posicionan una marca dentro de su categoría. No se fija en si te mencionan cuando te nombran, sino en el &lt;em&gt;unaided recall&lt;/em&gt;: con qué frecuencia y en qué posición media apareces cuando el usuario no te ha nombrado y el modelo elige a quién citar por su cuenta. Es la diferencia entre que te busquen y que te recomienden.&lt;/p&gt;&lt;p&gt;Los datos de Evertune (septiembre-octubre de 2025) muestran que el drift es real y a veces brutal. En ese periodo, &lt;strong&gt;Slack cayó 8,10 puntos y Trello 5,59&lt;/strong&gt;, mientras Atlassian subía 5,50 y Microsoft 2,08. Marcas conocidas, con SEO impecable, perdiendo presencia en las respuestas de la IA en cuestión de semanas, sin que sus posiciones en keywords se movieran un milímetro.&lt;/p&gt;&lt;p&gt;¿Por qué importa ahora? Porque el 80% de los compradores tecnológicos ya usan IA generativa tanto como la búsqueda tradicional para investigar proveedores. Si la mitad de tu audiencia descubre opciones preguntándole a un modelo, tu visibilidad en esas respuestas pesa tanto como tu posición orgánica. Koene plantea el LLM Perception Drift como un indicador estándar más, junto al share of voice y las posiciones en keywords, y herramientas como el AI brand score tracking de Evertune ya empiezan a medirlo.&lt;/p&gt;&lt;p&gt;El cambio de mentalidad es el verdadero titular: aquí el juego no es influir en un algoritmo de ranking, sino en cómo un modelo de lenguaje percibe y presenta tu marca. Eso se trabaja con presencia consistente en fuentes que los modelos consumen, menciones de terceros y una narrativa de marca coherente, no con backlinks. ¿Qué vigilar? Si las herramientas de tracking de percepción en LLMs se consolidan durante 2026 y si más marcas empiezan a reportar su drift como un KPI tan rutinario como el tráfico orgánico.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://searchengineland.com/why-llm-perception-drift-will-be-2026s-key-seo-metric-465676"&gt;https://searchengineland.com/why-llm-perception-drift-will-be-2026s-key-seo-metric-465676&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.webpronews.com/llm-perception-drift-ais-shifting-brand-views-and-seo-strategies/"&gt;https://www.webpronews.com/llm-perception-drift-ais-shifting-brand-views-and-seo-strategies/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.digitalapplied.com/blog/llm-perception-drift-new-seo-metric-brand-tracking-2026"&gt;https://www.digitalapplied.com/blog/llm-perception-drift-new-seo-metric-brand-tracking-2026&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid isPermaLink="false">c30c40eb-658a-56d3-a3c5-1bf68c3c876c</guid>
+      <pubDate>Fri, 29 May 2026 07:52:25 +0000</pubDate>
+      <category>seo-llm-ranking</category>
+      <link>https://searchengineland.com/why-llm-perception-drift-will-be-2026s-key-seo-metric-465676</link>
+      <enclosure url="https://searchengineland.com/wp-content/seloads/2025/12/LLM-perception-drift-2026s-key-SEO-metric.png" type="image/jpeg" length="0" />
+    </item>
+  </channel>
+</rss>
